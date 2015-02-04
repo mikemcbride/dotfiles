@@ -52,6 +52,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 alias vi=vim
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
+alias filesync_apps="cd ~/Documents/WWT/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command; exit;"
 alias filesync_all='for f in $(find ~/Documents/WWT/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
