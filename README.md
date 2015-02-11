@@ -13,9 +13,9 @@ If you have, or once that's done running, do this:
 ```
 cd ~
 rm .zshrc
-git clone http://github.com/mmcbride1007/zshrc.git zshrc
-mv ~/.zshrc ~/zshrc/zshrc
-ln -s ~/zshrc/zshrc ~/.zshrc
+git clone http://github.com/mmcbride1007/zsh.git zsh
+mv ~/.zshrc ~/zsh/zshrc
+ln -s ~/zshrc/zsh ~/.zshrc
 ```
 
 ## Updating
@@ -23,7 +23,7 @@ ln -s ~/zshrc/zshrc ~/.zshrc
 oh-my-zsh will automatically check for updates and prompt you to upgrade when it finds one, so you don't have to worry about that. As you make changes to the .zshrc file, you can push those changes to this repo by running:
 
 ```
-cd ~/zshrc
+cd ~/zsh
 git add .
 git commit -m 'These are some changes I made'
 git push
