@@ -51,13 +51,14 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 alias vi=vim
+alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
 alias ssh_cvharris="ssh 50.116.21.75"
 alias fs_apps="cd ~/Documents/WWT/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
 alias filesync_all='for f in $(find ~/Documents/WWT/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
-export PATH="/Users/mcbridem/.node/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4@global/bin:/Users/mcbridem/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/mcbridem/.rvm/bin"
+export $PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 function cd(){
   emulate -L zsh
