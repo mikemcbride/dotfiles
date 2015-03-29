@@ -15,7 +15,7 @@ cd ~
 rm .zshrc
 git clone http://github.com/mmcbride1007/zsh.git zsh
 mv ~/.zshrc ~/zsh/zshrc
-ln -s ~/zshrc/zsh ~/.zshrc
+ln -s ~/zsh/zshrc ~/.zshrc
 ```
 
 ## Updating
