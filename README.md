@@ -18,6 +18,12 @@ mv ~/.zshrc ~/zsh/zshrc
 ln -s ~/zsh/zshrc ~/.zshrc
 ```
 
+To get colors working (this repo will set terminal colors to use the base16 ocean dark scheme), run the following:
+
+```
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+```
+
 ## Updating
 
 oh-my-zsh will automatically check for updates and prompt you to upgrade when it finds one, so you don't have to worry about that. As you make changes to the .zshrc file, you can push those changes to this repo by running:
