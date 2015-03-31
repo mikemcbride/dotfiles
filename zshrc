@@ -66,7 +66,13 @@ function cd(){
   ls -la
 }
 
- #export MANPATH="/usr/local/man:$MANPATH"
+function replace_ext {
+  for f in *.$1; do 
+    mv -- "$f" "${f%.$1}.$2"
+  done
+}
+
+#export MANPATH="/usr/local/man:$MANPATH"
 
 
 # Base16 Shell
