@@ -15,7 +15,13 @@ cd ~
 rm .zshrc
 git clone http://github.com/mmcbride1007/zsh.git zsh
 mv ~/.zshrc ~/zsh/zshrc
-ln -s ~/zshrc/zsh ~/.zshrc
+ln -s ~/zsh/zshrc ~/.zshrc
+```
+
+To get colors working (this repo will set terminal colors to use the base16 ocean dark scheme), run the following:
+
+```
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 ```
 
 ## Updating
