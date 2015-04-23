@@ -54,8 +54,8 @@ alias vi=vim
 alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
 alias ssh_cvharris="ssh 50.116.21.75"
-alias wwt="cd ~/Documents/WWT"
-alias fs_apps="cd ~/Documents/WWT/ServiceNow/filesync/"
+alias wwt="cd ~/wwt"
+alias fs_apps="cd ~/wwt/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
 alias filesync_all='for f in $(find ~/Documents/WWT/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
