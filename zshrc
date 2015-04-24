@@ -57,7 +57,7 @@ alias ssh_cvharris="ssh 50.116.21.75"
 alias wwt="cd ~/wwt"
 alias fs_apps="cd ~/wwt/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
-alias filesync_all='for f in $(find ~/Documents/WWT/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
+alias filesync_all='for f in $(find ~/wwt/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 export PATH="/Users/mcbridem/.node/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4@global/bin:/Users/mcbridem/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/mcbridem/.rvm/bin"
 
