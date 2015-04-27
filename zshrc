@@ -76,10 +76,6 @@ function replace_ext {
 #export MANPATH="/usr/local/man:$MANPATH"
 
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
