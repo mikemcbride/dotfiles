@@ -55,6 +55,7 @@ alias pull="git pull"
 alias push="git push"
 alias gmm="git merge master"
 
+alias gs="grunt serve"
 alias vi=vim
 alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
