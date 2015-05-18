@@ -55,6 +55,7 @@ alias pull="git pull"
 alias push="git push"
 alias gmm="git merge master"
 
+alias k="clear"
 alias gs="grunt serve"
 alias vi=vim
 alias tmux="TERM=screen-256color tmux"
