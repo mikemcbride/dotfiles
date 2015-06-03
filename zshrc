@@ -58,6 +58,7 @@ alias gmm="git merge master"
 alias k="clear"
 alias gs="grunt serve"
 alias vi=vim
+alias atom="atom ."
 alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
 alias ssh_cvharris="ssh 50.116.21.75"
