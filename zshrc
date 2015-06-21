@@ -50,6 +50,8 @@ alias gmm="git merge master"
 alias k="clear"
 alias gs="grunt serve"
 alias vi=vim
+alias delete="rm -rf"
+alias please=sudo
 alias atom="atom ."
 alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
