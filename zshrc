@@ -48,6 +48,7 @@ alias push="git push"
 alias gmm="git merge master"
 
 alias k="clear"
+alias x="exit"
 alias gs="grunt serve"
 alias vi=vim
 alias ...="../.."
