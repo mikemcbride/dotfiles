@@ -26,9 +26,6 @@ source $ZSH/oh-my-zsh.sh
 # use z for better fuzzy searching
 source ~/z/z.sh
 
-# use nvm
-source ~/.nvm/nvm.sh
-
 # User configuration
 # Git
 alias pull="git pull"
@@ -38,6 +35,9 @@ alias gmm="git merge master"
 # NPM
 alias set_registry_npm="npm set registry https://registry.npmjs.org/"
 alias set_registry_wwt="npm set registry http://sinopia.wwt.com/"
+
+# start screensaver
+alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 
 alias k="clear"
 alias x="exit"
@@ -49,6 +49,7 @@ alias .....="../../../.."
 alias delete="rm -rf"
 alias please=sudo
 alias atom="atom ."
+alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
 alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
@@ -60,7 +61,15 @@ alias fs_apps="cd ~/wwt/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
 alias filesync_all='for f in $(find ~/wwt/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
-export PATH="/Users/mcbridem/.node/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4@global/bin:/Users/mcbridem/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/mcbridem/.rvm/bin"
+export PATH="/Users/mcbridem/.node/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4@global/bin:/Users/mcbridem/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:/Users/mcbridem/.rvm/bin"
+
+# use nvm
+export NVM_DIR=~/.nvm
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  source "$NVM_DIR/nvm.sh"
+fi
+NODE_DEFAULT_VERSION=$(<"$NVM_DIR/alias/default")
+export PATH="$NVM_DIR/versions/node/$NODE_DEFAULT_VERSION/bin":$PATH
 
 function cd(){
   emulate -L zsh
@@ -75,9 +84,6 @@ function replace_ext {
 }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export DYLD_LIBRARY_PATH=/opt/oracle/instantclient:$DYLD_LIBRARY_PATH
-export OCI_LIB_DIR=/opt/oracle/instantclient
-export OCI_INC_DIR=/opt/oracle/instantclient/sdk/include
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/mcbridem/.gvm/bin/gvm-init.sh" ]] && source "/Users/mcbridem/.gvm/bin/gvm-init.sh"
