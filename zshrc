@@ -37,7 +37,7 @@ alias set_registry_npm="npm set registry https://registry.npmjs.org/"
 alias set_registry_wwt="npm set registry http://sinopia.wwt.com/"
 
 # start screensaver
-alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+alias afk="sh ~/scripts/screensaver.sh"
 
 alias k="clear"
 alias x="exit"
@@ -56,7 +56,7 @@ alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin mas
 alias ssh_cvharris="ssh 50.116.21.75"
 alias wwt="cd ~/wwt"
 alias tomcat_start="/Library/Tomcat/bin/startup.sh"
-alias tomcat_start="/Library/Tomcat/bin/shutdown.sh"
+alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
 alias fs_apps="cd ~/wwt/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
 alias filesync_all='for f in $(find ~/wwt/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
@@ -77,6 +77,10 @@ function cd(){
   ls -la
 }
 
+function bitly(){
+  sh ~/scripts/bitly.sh $1
+}
+
 function replace_ext {
   for f in *.$1; do 
     mv -- "$f" "${f%.$1}.$2"
@@ -87,3 +91,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/mcbridem/.gvm/bin/gvm-init.sh" ]] && source "/Users/mcbridem/.gvm/bin/gvm-init.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/mcbridem/.sdkman"
+[[ -s "/Users/mcbridem/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mcbridem/.sdkman/bin/sdkman-init.sh"
