@@ -37,7 +37,7 @@ alias set_registry_npm="npm set registry https://registry.npmjs.org/"
 alias set_registry_wwt="npm set registry http://sinopia.wwt.com/"
 
 # start screensaver
-alias afk="sh ~/scripts/screensaver.sh"
+alias afk="sh ~/zsh/scripts/screensaver.sh"
 
 alias k="clear"
 alias x="exit"
@@ -78,7 +78,7 @@ function cd(){
 }
 
 function bitly(){
-  sh ~/scripts/bitly.sh $1
+  sh ~/zsh/scripts/bitly.sh $1
 }
 
 function replace_ext {
