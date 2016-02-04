@@ -78,7 +78,7 @@ function cd(){
 }
 
 function bitly(){
-  sh ~/zsh/scripts/bitly.sh $1
+python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
 }
 
 function replace_ext {
