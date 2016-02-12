@@ -31,6 +31,7 @@ source ~/z/z.sh
 alias pull="git pull"
 alias push="git push"
 alias gmm="git merge master"
+alias gf="git fetch --all --prune"
 
 # NPM
 alias set_registry_npm="npm set registry https://registry.npmjs.org/"
@@ -61,7 +62,7 @@ alias fs_apps="cd ~/wwt/ServiceNow/filesync/"
 alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
 alias filesync_all='for f in $(find ~/wwt/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
-export PATH="/Users/mcbridem/.node/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4/bin:/Users/mcbridem/.rvm/gems/ruby-2.1.4@global/bin:/Users/mcbridem/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:/Users/mcbridem/.rvm/bin"
+export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
 
 # use nvm
 export NVM_DIR=~/.nvm
@@ -90,8 +91,8 @@ function replace_ext {
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/mcbridem/.gvm/bin/gvm-init.sh" ]] && source "/Users/mcbridem/.gvm/bin/gvm-init.sh"
+[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source "~/.gvm/bin/gvm-init.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/mcbridem/.sdkman"
-[[ -s "/Users/mcbridem/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mcbridem/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"

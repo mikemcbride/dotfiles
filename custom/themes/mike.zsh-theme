@@ -18,14 +18,14 @@ $ COMMAND
 
 For example:
 
-% ys@ys-mbp in ~/.oh-my-zsh on master * [21:47:42]
+% mike @ mike-macbook in ~/.oh-my-zsh on master * [21:47:42]
 $
 
 FORMAT
 
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}%#%{$reset_color%} \
-%{$fg[cyan]%}%n \
+%{$fg[blue]%}%n \
 %{$fg[white]%}@ \
 %{$fg[green]%}%m \
 %{$fg[white]%}in \
