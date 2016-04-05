@@ -16,6 +16,7 @@ alias pull="git pull"
 alias push="git push"
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
+alias gs="git status"
 
 # NPM
 alias set_registry_npm="npm set registry https://registry.npmjs.org/"
@@ -23,6 +24,9 @@ alias set_registry_wwt="npm set registry http://sinopia.wwt.com/"
 
 # start screensaver
 alias afk="sh ~/zsh/scripts/screensaver.sh"
+
+# get current weather
+alias weather="curl -4 wttr.in"
 
 # other aliases
 alias k="clear"
@@ -32,21 +36,14 @@ alias vi=vim
 alias ...="../.."
 alias ....="../../.."
 alias .....="../../../.."
+alias t="tree"
 alias rm=trash # safer deleting using trash-cli
 alias please=sudo
 alias atom="atom ."
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
-alias tmux="TERM=screen-256color tmux"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
 alias ssh_cvharris="ssh 50.116.21.75"
-alias wwt="cd ~/wwt"
-alias tomcat_start="/Library/Tomcat/bin/startup.sh"
-alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
-alias fs_apps="cd ~/wwt/ServiceNow/filesync/"
-alias filesync="/Applications/ServiceNow/filesync/filesync.command;"
-alias filesync_all='for f in $(find ~/wwt/ServiceNow/filesync -name "*" -type f); do cat /dev/null | tee "$f"; done;'
-alias filesync_this='for f in $(find . -name "*" -type f); do cat /dev/null | tee "$f"; done;'
 export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
 
 # use nvm
@@ -70,16 +67,16 @@ python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
 }
 
 function replace_ext {
-  for f in *.$1; do 
+  for f in *.$1; do
     mv -- "$f" "${f%.$1}.$2"
   done
 }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source "~/.gvm/bin/gvm-init.sh"
+export JENV_ROOT=/usr/local/opt/jenv
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="~/.sdkman"
-[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/mcbridem/.sdkman"
+[[ -s "/Users/mcbridem/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mcbridem/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

@@ -25,11 +25,11 @@ FORMAT
 
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}%#%{$reset_color%} \
-%{$fg[blue]%}%n \
+%{$terminfo[bold]$fg[blue]%}%n \
 %{$fg[white]%}@ \
 %{$fg[green]%}%m \
 %{$fg[white]%}in \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
-${git_info} \
+${$terminfo[bold]git_info} \
 %{$fg[white]%}[%*]
 %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
