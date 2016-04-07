@@ -1,10 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="mike"
+autoload -U promptinit && promptinit
+prompt pure
+
+ZSH_THEME="pure-alt"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git atom)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,6 +20,7 @@ alias push="git push"
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
 alias gs="git status"
+alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 
 # NPM
 alias set_registry_npm="npm set registry https://registry.npmjs.org/"
@@ -26,7 +30,7 @@ alias set_registry_wwt="npm set registry http://sinopia.wwt.com/"
 alias afk="sh ~/zsh/scripts/screensaver.sh"
 
 # get current weather
-alias weather="curl -4 wttr.in"
+alias weather="curl wttr.in"
 
 # other aliases
 alias k="clear"
@@ -80,3 +84,4 @@ export SDKMAN_DIR="/Users/mcbridem/.sdkman"
 [[ -s "/Users/mcbridem/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mcbridem/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
