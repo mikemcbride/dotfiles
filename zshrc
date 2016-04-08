@@ -40,7 +40,6 @@ alias vi=vim
 alias ...="../.."
 alias ....="../../.."
 alias .....="../../../.."
-alias t="tree"
 alias rm=trash # safer deleting using trash-cli
 alias please=sudo
 alias atom="atom ."
@@ -63,6 +62,11 @@ function cd(){
   emulate -L zsh
   builtin cd $@ &&
   ls -la
+}
+
+# tree
+function t() {
+  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
 }
 
 # function to generate a bitly url and copy to clipboard
