@@ -21,10 +21,11 @@ alias gmm="git merge master"
 alias gf="git fetch --all --prune"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+alias clone="git clone"
 
 # NPM
-alias set_registry_npm="npm set registry https://registry.npmjs.org/"
-alias set_registry_wwt="npm set registry http://sinopia.wwt.com/"
+alias use_npm="npm set registry https://registry.npmjs.org/"
+alias use_wwt="npm set registry http://sinopia.wwt.com/"
 
 # start screensaver
 alias afk="sh ~/zsh/scripts/screensaver.sh"
@@ -42,7 +43,6 @@ alias ....="../../.."
 alias .....="../../../.."
 alias rm=trash # safer deleting using trash-cli
 alias please=sudo
-alias atom="atom ."
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
