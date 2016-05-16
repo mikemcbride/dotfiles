@@ -15,8 +15,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/z/z.sh
 
 # Git
-alias pull="git pull"
-alias push="git push"
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
 alias gs="git status"
