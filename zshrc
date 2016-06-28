@@ -20,6 +20,7 @@ alias gf="git fetch --all --prune"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
+alias gpu="!git push -u origin $(git branch-name)"
 
 # NPM
 alias use_npm="npm set registry https://registry.npmjs.org/"
@@ -30,6 +31,10 @@ alias afk="sh ~/zsh/scripts/screensaver.sh"
 
 # get current weather
 alias weather="curl wttr.in"
+
+# start/stop tomcat server
+alias tomcat_start="/Library/Tomcat/bin/startup.sh"
+alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
 
 # other aliases
 alias k="clear"
@@ -86,4 +91,3 @@ export SDKMAN_DIR="/Users/mcbridem/.sdkman"
 [[ -s "/Users/mcbridem/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mcbridem/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
