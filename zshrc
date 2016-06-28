@@ -9,7 +9,7 @@ prompt pure
 ZSH_THEME="pure-alt"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git zsh-syntax-highlighting custom_git)
+plugins=(git zsh-syntax-highlighting osx)
 
 source $ZSH/oh-my-zsh.sh
 

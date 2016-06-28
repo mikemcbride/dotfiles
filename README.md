@@ -1,14 +1,26 @@
 # zsh
 
-This is my zsh config. It's pretty much only here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included. Installing oh-my-zsh is a pre-requisite for using this, but a lot of the stuff also applies to a .bashrc if you want to use it.
+This is my zsh config. It's pretty much only here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included.
 
 ## Installation
 
+### Prerequisites
+
 If you have not installed oh-my-zsh, run this:
 
-`curl -L http://install.ohmyz.sh | sh`
+```
+curl -L http://install.ohmyz.sh | sh
+```
 
-If you have, or once that's done running, do this:
+You will also need [Homebrew](http://brew.sh) for the `zsh-syntax-highlighting` plugin. If you don't have Homebrew:
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Configure
+
+Once you've done all that, you're ready to clone the repo and get set up:
 
 ```
 cd ~
@@ -18,19 +30,32 @@ mv ~/.zshrc ~/zsh/zshrc
 ln -s ~/zsh/zshrc ~/.zshrc
 ```
 
-To get colors working (this repo will set terminal colors to use the base16 ocean dark scheme), run the following:
+### Theme
+
+This uses the [Pure](/sindresorhus/pure) theme. It's :fire:. To install that:
 
 ```
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+npm install -g pure-prompt
 ```
+
+The configs for the prompt to work are already in the `zshrc`, so nothing further is required.
+
+### Plugins
+
+You should have installed Homebrew above. If you haven't, do that now. Then run:
+
+```
+brew install zsh-syntax-highlighting
+```
+
 
 ## Updating
 
-oh-my-zsh will automatically check for updates and prompt you to upgrade when it finds one, so you don't have to worry about that. As you make changes to the .zshrc file, you can push those changes to this repo by running:
+oh-my-zsh will automatically check for updates and prompt you to upgrade when it finds one, so you don't have to worry about that. As you make changes to the .zshrc file, you can push those changes to this repo (or your own) so your configs will never be lost. Simply run these commands:
 
 ```
 cd ~/zsh
-git add .
-git commit -m 'These are some changes I made'
-git push
+ga .
+gcmsg 'These are some changes I made'
+gp
 ```
