@@ -20,14 +20,10 @@ You will also need [Homebrew](http://brew.sh) for the `zsh-syntax-highlighting` 
 
 ### Configure
 
-Once you've done all that, you're ready to clone the repo and get set up:
+Once you've done all that, run this install script. This will clone this repo into  `~/zsh` and set up your `.zshrc`:
 
 ```
-cd ~
-rm .zshrc
-git clone http://github.com/mmcbride1007/zsh.git zsh
-mv ~/.zshrc ~/zsh/zshrc
-ln -s ~/zsh/zshrc ~/.zshrc
+curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/tools/install.sh | sh
 ```
 
 ### Theme
