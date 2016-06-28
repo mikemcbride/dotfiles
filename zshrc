@@ -1,13 +1,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+ZSH_CUSTOM=$HOME/zsh/custom
+
 autoload -U promptinit && promptinit
 prompt pure
 
 ZSH_THEME="pure-alt"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting custom_git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,7 +22,7 @@ alias gf="git fetch --all --prune"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
-alias gpub="ggsup && gp" # git publish. sets upstream origin and pushes to it
+alias gpub="git push -u origin $(git_current_branch)"
 
 # NPM
 alias use_npm="npm set registry https://registry.npmjs.org/"
@@ -74,7 +76,7 @@ function t() {
 
 # function to generate a bitly url and copy to clipboard
 function bitly(){
-python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
+  python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
 }
 
 function replace_ext {
