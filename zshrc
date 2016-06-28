@@ -20,7 +20,7 @@ alias gf="git fetch --all --prune"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
-alias gpu="!git push -u origin $(git branch-name)"
+alias gpub="ggsup && gp" # git publish. sets upstream origin and pushes to it
 
 # NPM
 alias use_npm="npm set registry https://registry.npmjs.org/"
