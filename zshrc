@@ -1,15 +1,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_CUSTOM=$HOME/zsh/custom
-
 autoload -U promptinit && promptinit
 prompt pure
 
 ZSH_THEME="pure-alt"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git zsh-syntax-highlighting osx)
+plugins=(git osx zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
