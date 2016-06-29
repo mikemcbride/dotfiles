@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 autoload -U promptinit && promptinit
 prompt pure
 
-ZSH_THEME="pure-alt"
+ZSH_THEME="pure-alt" # copied the pure theme and tweaked some colors
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git osx zsh-syntax-highlighting)
@@ -40,16 +40,15 @@ alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
 alias k="clear"
 alias x="exit"
 alias ltr="ls -ltr"
-alias vi=vim
+alias vi=vim # prefer vim to vi
 alias ...="../.."
 alias ....="../../.."
 alias .....="../../../.."
 alias rm=trash # safer deleting using trash-cli
-alias please=sudo
+alias please=sudo # nicer sudo command
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
-alias ssh_cvharris="ssh 50.116.21.75"
 export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
 
 # use nvm
@@ -87,7 +86,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export JENV_ROOT=/usr/local/opt/jenv
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/mcbridem/.sdkman"
-[[ -s "/Users/mcbridem/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/mcbridem/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
