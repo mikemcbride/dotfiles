@@ -31,7 +31,7 @@ curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/install.sh | s
 
 ### Theme
 
-I built a terminal theme that works with both Terminal.app and iTerm 2. Head [here](/mmcbride1007/electron-terminal-colors) for instructions on how to install that.
+I built a terminal theme that works with both Terminal.app and iTerm 2, which is what I use for this. It works really nicely with the prompt. Head [here](/mmcbride1007/electron-terminal-colors) for instructions on how to install that.
 
 I also recommend the [Hack font](http://sourcefoundry.org/hack/). It's an open source monospace font designed specifically for source code. It's super legit :fire: :fire:
 
