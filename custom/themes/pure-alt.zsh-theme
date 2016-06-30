@@ -3,6 +3,8 @@
 # https://github.com/sindresorhus/pure
 # MIT License
 
+# modified by mmcbride1007 - mostly a few color tweaks
+
 # For my own and others sanity
 # git:
 # %b => current branch
