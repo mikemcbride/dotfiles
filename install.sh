@@ -14,8 +14,11 @@ main() {
   # install z
   git clone https://github.com/rupa/z z
 
-  # install the pure prompt
-  npm install -g pure-prompt
+  # ditto for zpreztorc
+  ln -s ~/zsh/zpreztorc ~/.zpreztorc
+
+  # in case we are in bash...
+  chsh -s /bin/zsh
 
   # install Prezto
   git clone --recursive https://github.com/mmcbride1007/prezto.git  ~/prezto
