@@ -1,15 +1,7 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-autoload -U promptinit && promptinit
-prompt pure
-
-ZSH_THEME="pure-alt" # copied the pure theme and tweaked some colors
-COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git osx zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 # use z for better fuzzy searching
 source ~/z/z.sh
@@ -17,6 +9,7 @@ source ~/z/z.sh
 # Git
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
+alias pull="git pull"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
@@ -48,8 +41,10 @@ alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo command
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
+alias update_prezto="cd ~/.zprezto && git pull && git submodule update --init --recursive"
 alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
 export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
+
 
 # use nvm
 export NVM_DIR=~/.nvm
@@ -58,6 +53,7 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
 fi
 NODE_DEFAULT_VERSION=$(<"$NVM_DIR/alias/default")
 export PATH="$NVM_DIR/versions/node/$NODE_DEFAULT_VERSION/bin":$PATH
+
 
 # print contents of directory immediately when switching
 function cd(){

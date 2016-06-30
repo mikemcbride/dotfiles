@@ -4,26 +4,11 @@ This is my zsh config. It's pretty much only here so that I don't lose any of my
 
 ## Installation
 
-### Prerequisites
-
-If you have not installed oh-my-zsh, run this first:
-
-```
-curl -L http://install.ohmyz.sh | sh
-```
-
-You will also need [Homebrew](http://brew.sh) for the `zsh-syntax-highlighting` plugin. If you don't have Homebrew, you need to install this before continuing:
-
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
-
-### Configure
-
-Once you've done all that, run this install script. This will:
+Run this install script. This will:
+- install [Prezto](https://github.com/sorin-ionescu/prezto)
 - clone this repo into  `~/zsh` and set up your `.zshrc`:
+- install [z](https://github.com/rupa/z)
 - install the [Pure](http://github.com/sindresorhus/pure) theme, which is used in the config
-- install the `zsh-syntax-highlighting` plugin (so it's important that you have Homebrew installed before running this!)
 
 ```
 curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/install.sh | sh
