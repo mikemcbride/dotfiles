@@ -27,10 +27,10 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:syntax-highlighting' color 'yes'
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 # Set the prompt theme to load.
-zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme 'pure_alt'
 
 # Set the SSH identities to load into the agent.
 zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'

@@ -10,10 +10,17 @@ source ~/z/z.sh
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
 alias pull="git pull"
+alias ga="git add"
+alias gcm="git checkout master"
+alias gcmsg="git commit -m"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
-alias gpub="git push --set-upstream origin $(git-branch-current):$(git-branch-current)"
+
+function gpub() {
+  local current_branch=git_current_branch()
+  git push --set-upstream origin $current_branch:$current_branch
+}
 
 # NPM
 alias use_npm="npm set registry https://registry.npmjs.org/"
@@ -41,10 +48,7 @@ alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo command
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
-alias update_prezto="cd ~/.zprezto && git pull && git submodule update --init --recursive"
-alias update_vim_plugins="cd ~/.vim && git submodule foreach git pull origin master"
 export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
-
 
 # use nvm
 export NVM_DIR=~/.nvm
@@ -57,9 +61,29 @@ export PATH="$NVM_DIR/versions/node/$NODE_DEFAULT_VERSION/bin":$PATH
 
 # print contents of directory immediately when switching
 function cd(){
-  emulate -L zsh
-  builtin cd $@ &&
-  ls -la
+  builtin cd $@ && ls -la
+}
+
+# running take $dirName will make a directory of that name and cd into it
+function take() {
+  mkdir $@ && cd $@
+}
+
+# current git branch
+function git_current_branch() {
+  if ! git rev-parse 2> /dev/null; then
+    print "$0: not a repository: $PWD" >&2
+    return 1
+  fi
+
+  local ref="$(git symbolic-ref HEAD 2> /dev/null)"
+
+  if [[ -n "$ref" ]]; then
+    print "${ref#refs/heads/}"
+    return 0
+  else
+    return 1
+  fi
 }
 
 # tree
