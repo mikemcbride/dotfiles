@@ -10,6 +10,7 @@ source ~/z/z.sh
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
 alias gl="git pull"
+alias gd="git diff"
 alias ga="git add"
 alias gcm="git checkout master"
 alias gcam="git commit -am"
@@ -18,7 +19,7 @@ alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
 
 function gpub() {
-  local current_branch=git_current_branch()
+  local current_branch="$(git_current_branch)"
   git push --set-upstream origin $current_branch:$current_branch
 }
 
