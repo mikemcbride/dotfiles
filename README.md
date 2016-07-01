@@ -2,23 +2,22 @@
 
 This is my zsh config. It's pretty much only here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included.
 
-## Installation
 
-### Prerequisites
+## Prerequisites
 
-#### Operating system
+### Operating system
 
 This setup is for macOS. It will almost certainly not work on Linux and definitely won't work on Windows. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can also install it via Homebrew (see more below).
 
-#### SSH for GitHub
+### SSH for GitHub
 
 The install script will clone git repos via SSH. Make sure you're set up to do that before pushing any updates or you'll have some issues.
 
-#### NodeJS
+### NodeJS
 
-You need to have [NodeJS](https://nodejs.org/en/download/) installed.
+You need to have [NodeJS](https://nodejs.org/en/download) installed.
 
-#### Homebrew
+### Homebrew
 
 [Homebrew](http://brew.sh) needs to be installed so that we can install some dependencies. If you don't have it, you'll want it anyway. Just paste this into your terminal and you'll be set:
 
@@ -27,7 +26,7 @@ You need to have [NodeJS](https://nodejs.org/en/download/) installed.
 ```
 
 
-### Install
+## Install
 
 Got all that? Great. Run this install script. It will do the following:
 - set your shell to zsh
