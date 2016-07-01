@@ -9,7 +9,7 @@ source ~/z/z.sh
 # Git
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
-alias pull="git pull"
+alias gl="git pull"
 alias ga="git add"
 alias gcm="git checkout master"
 alias gcam="git commit -am"
