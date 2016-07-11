@@ -58,6 +58,6 @@ As you make changes to the `zshrc` or `zpreztorc`, you can push those changes to
 ```
 cd ~/zsh
 ga .
-gcm 'These are some changes I made'
+gcmsg 'These are some changes I made'
 gp
 ```
