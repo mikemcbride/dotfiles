@@ -13,6 +13,7 @@ alias gl="git pull"
 alias gd="git diff"
 alias ga="git add"
 alias gcm="git checkout master"
+alias glm="git checkout master && git pull"
 alias gcam="git commit -am"
 alias gcmsg="git commit --message"
 alias gs="git status"
@@ -50,23 +51,15 @@ alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo command
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
-export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
 
-# use nvm
-export NVM_DIR=~/.nvm
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-  source "$NVM_DIR/nvm.sh"
-fi
-NODE_DEFAULT_VERSION=$(<"$NVM_DIR/alias/default")
-export PATH="$NVM_DIR/versions/node/$NODE_DEFAULT_VERSION/bin":$PATH
-
+# FUNCTIONS
 
 # print contents of directory immediately when switching
 function cd(){
   builtin cd $@ && ls -la
 }
 
-# running take $dirName will make a directory of that name and cd into it
+# running take will make a directory and cd into it
 function take() {
   mkdir $@ && cd $@
 }
@@ -93,18 +86,36 @@ function t() {
   tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
 }
 
-# function to generate a bitly url and copy to clipboard
+# generate a bitly url and copy to clipboard
 function bitly(){
   python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
 }
 
+# replace all extensions of type X with Y in current directory
+# ex: "replace_ext css less" will turn all ".css" files into ".less" files
 function replace_ext {
   for f in *.$1; do
     mv -- "$f" "${f%.$1}.$2"
   done
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# exports
+
+export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
+
+# nvm
+export NVM_DIR=~/.nvm
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  source "$NVM_DIR/nvm.sh"
+fi
+NODE_DEFAULT_VERSION=$(<"$NVM_DIR/alias/default")
+export PATH="$NVM_DIR/versions/node/$NODE_DEFAULT_VERSION/bin":$PATH
+
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# set JENV_ROOT for jenv to work
 export JENV_ROOT=/usr/local/opt/jenv
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
