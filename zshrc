@@ -19,13 +19,35 @@ alias gcmsg="git commit --message"
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias clone="git clone"
+alias gpub="publish_current_branch"
+alias gbam="delete_local_merged_branches"
+alias gbamr="delete_remote_merged_branches"
+alias gprune="gbam && gbamr"
 
-function gpub() {
+function publish_current_branch() {
   local current_branch="$(git_current_branch)"
   git push --set-upstream origin $current_branch:$current_branch
 }
 
+function delete_local_merged_branches() {
+  git branch --merged master | grep -v master | xargs git branch -d
+}
+
+function delete_remote_merged_branches() {
+  git fetch origin
+  git remote prune origin
+
+  for BRANCH in `git branch -r --merged origin/master |\
+                 egrep "^\s*origin/"                  |\
+                 grep -v master                       |\
+                 cut -d/ -f2-`
+  do
+    git push origin :$BRANCH
+  done
+}
+
 # NPM
+alias ni="npm install"
 alias use_npm="npm set registry https://registry.npmjs.org/"
 alias use_wwt="npm set registry http://sinopia.wwt.com/"
 
@@ -51,6 +73,9 @@ alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo command
 alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
+
+# ssh logins
+alias mike@pol="ssh mike@67.205.140.44"
 
 # FUNCTIONS
 
@@ -83,7 +108,7 @@ function git_current_branch() {
 
 # tree
 function t() {
-  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
+  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 30 -L ${1:-3} -aC $2
 }
 
 # generate a bitly url and copy to clipboard
@@ -102,15 +127,7 @@ function replace_ext {
 
 # exports
 
-export PATH="~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
-
-# nvm
-export NVM_DIR=~/.nvm
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-  source "$NVM_DIR/nvm.sh"
-fi
-NODE_DEFAULT_VERSION=$(<"$NVM_DIR/alias/default")
-export PATH="$NVM_DIR/versions/node/$NODE_DEFAULT_VERSION/bin":$PATH
+export PATH="$PATH:~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
