@@ -22,7 +22,7 @@ alias clone="git clone"
 alias gpub="publish_current_branch"
 alias gbam="delete_local_merged_branches"
 alias gbamr="delete_remote_merged_branches"
-alias gprune="gbam && gbamr"
+alias gprune="delete_local_merged_branches && delete_remote_merged_branches"
 
 function publish_current_branch() {
   local current_branch="$(git_current_branch)"
