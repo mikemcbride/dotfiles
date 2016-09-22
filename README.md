@@ -1,7 +1,6 @@
-# zsh
+# dotfiles
 
-This is my zsh config. It's pretty much only here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included.
-
+These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included.
 
 ## Prerequisites
 
@@ -11,53 +10,48 @@ This setup is for macOS. It will almost certainly not work on Linux and definite
 
 ### SSH for GitHub
 
-The install script will clone git repos via SSH. Make sure you're set up to do that before pushing any updates or you'll have some issues.
+The setup script will clone git repos via SSH. Make sure you're set up to do that before pushing any updates or you'll have some issues.
 
 ### NodeJS
 
-You need to have [NodeJS](https://nodejs.org/en/download) installed.
-
-### Homebrew
-
-[Homebrew](http://brew.sh) needs to be installed so that we can install some dependencies. If you don't have it, you'll want it anyway. Just paste this into your terminal and you'll be set:
-
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+You need to have [NodeJS](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
 
 
-## Install
+## Setup
 
 Got all that? Great. Run this install script. It will do the following:
 - set your shell to zsh
 - install [Prezto](https://github.com/sorin-ionescu/prezto) that I forked and modified
-- clone this repo into  `~/zsh` and set up your `.zshrc`
-- install a few packages that I have aliases or functions for that might throw errors when you try to source the `.zshrc`
+- install [Homebrew](http://brew.sh) if you don't already have it, or run `brew update` if you do
+- install [Homebrew Cask](https://caskroom.github.io/) (again, if you already have it, this won't do anything)
+- clone this repo into  `~/github/dotfiles` and set up your `.zshrc`
+- install a few packages that I have aliases or functions for that will throw errors when you try to source the `.zshrc`
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
-  - [nvm](https://github.com/creationix/nvm) - for managing multiple versions of Node.js
-  - [pure](http://github.com/sindresorhus/pure) terminal theme, which is used in the config
+  - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
+- install [Hyperterm](https://hyperterm.org) as a terminal replacement and set up an opinionated `.hyperterm.js` config file
 
-Just paste this into your terminal:
+Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 
 ```
-curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/install.sh | sh
+curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/setup.sh | sh
 ```
 
 ### Theme
 
-I built a terminal theme that works with both Terminal.app and iTerm 2, which is what I use for this. The colors work really nicely with the prompt. Head [here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install that.
+The setup script installs Hyperterm, which I highly recommend. It also sets up a config file for Hyperterm that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
 
-I also recommend checking out the font [Hack](http://sourcefoundry.org/hack/). It's an open source monospace font designed specifically for source code. It's super legit :fire: :fire:
+I also recommend checking out the font [Hack](http://sourcefoundry.org/hack/). It's an open source monospace font designed specifically for source code. It's super legit, and is what I use in my code editor and terminal :fire: :fire:
 
 ## Updating
 
-As you make changes to the `zshrc` or `zpreztorc`, you can push those changes to this repo (or your own) so your configs will never be lost. Simply run these commands:
+As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked.
+
+## Other Goodies
+
+For a new Mac setup, I copied the legendary script from @mathiasbynens. The canonical version lives [here](). I have removed and changed some things according to my own preferences. To get those defaults, simply `cd` into the dotfiles directory and execute the `.macos` file as seen below. **NOTE: I highly recommend reading through this before executing the script. Please make sure you know what it is doing to your machine.**
 
 ```
-cd ~/zsh
-ga .
-gcmsg 'These are some changes I made'
-gp
+sh .macos
 ```

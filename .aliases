@@ -1,0 +1,49 @@
+alias k="clear"
+alias x="exit"
+alias q="exit"
+alias :q="exit"
+alias ltr="ls -ltr"
+alias vi=vim # prefer vim to vi
+alias ...="../.."
+alias ....="../../.."
+alias .....="../../../.."
+alias rm=trash # safer deleting using trash-cli
+alias please=sudo # nicer sudo command
+alias ab="atom-beta ."
+alias resource="source ~/.zshrc"
+
+# Git
+alias gmm="git merge master"
+alias gf="git fetch --all --prune"
+alias gl="git pull"
+alias gd="git diff"
+alias ga="git add"
+alias gcm="git checkout master"
+alias glm="git checkout master && git pull"
+alias gcam="git commit -am"
+alias gcmsg="git commit --message"
+alias gs="git status"
+alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+alias clone="git clone"
+alias gpub="publish_current_branch"
+alias gbam="delete_local_merged_branches"
+alias gbamr="delete_remote_merged_branches"
+alias gcleanup="delete_local_merged_branches && delete_remote_merged_branches"
+
+# NPM
+alias ni="npm install"
+alias use_npm="npm set registry https://registry.npmjs.org/"
+alias use_wwt="npm set registry http://sinopia.wwt.com/"
+
+# start screensaver
+alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+
+# get current weather
+alias weather="curl wttr.in"
+
+# start/stop tomcat server
+alias tomcat_start="/Library/Tomcat/bin/startup.sh"
+alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
+
+# ssh logins
+alias mike@pol="ssh mike@67.205.140.44"

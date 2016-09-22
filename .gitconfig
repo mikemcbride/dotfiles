@@ -1,0 +1,11 @@
+[user]
+	name = Mike McBride
+	email = mike.mcbride@wwt.com 
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[core]
+	editor = /usr/local/bin/vim

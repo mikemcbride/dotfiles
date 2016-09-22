@@ -1,0 +1,66 @@
+# print contents of directory immediately when switching
+function cd(){
+  builtin cd $@ && ls -la
+}
+
+# running take will make a directory and cd into it
+function take() {
+  mkdir -p $@ && cd $@
+}
+
+# Git stuff
+function git_current_branch() {
+  if ! git rev-parse 2> /dev/null; then
+    print "$0: not a repository: $PWD" >&2
+    return 1
+  fi
+
+  local ref="$(git symbolic-ref HEAD 2> /dev/null)"
+
+  if [[ -n "$ref" ]]; then
+    print "${ref#refs/heads/}"
+    return 0
+  else
+    return 1
+  fi
+}
+
+function publish_current_branch() {
+  local current_branch="$(git_current_branch)"
+  git push --set-upstream origin $current_branch:$current_branch
+}
+
+function delete_local_merged_branches() {
+  git branch --merged master | grep -v master | xargs git branch -d
+}
+
+function delete_remote_merged_branches() {
+  git fetch origin
+  git remote prune origin
+
+  for BRANCH in `git branch -r --merged origin/master |\
+                 egrep "^\s*origin/"                  |\
+                 grep -v master                       |\
+                 cut -d/ -f2-`
+  do
+    git push origin :$BRANCH
+  done
+}
+
+# tree
+function t() {
+  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 30 -L ${1:-3} -aC $2
+}
+
+# generate a bitly url and copy to clipboard
+function bitly(){
+  python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
+}
+
+# replace all extensions of type X with Y in current directory
+# ex: "replace_ext css less" will turn all ".css" files into ".less" files
+function replace_ext {
+  for f in *.$1; do
+    mv -- "$f" "${f%.$1}.$2"
+  done
+}
