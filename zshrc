@@ -19,10 +19,10 @@ if [[ -f ~/dotfiles/.functions ]]; then
 fi
 
 # exports
-export PATH="$PATH:~/.node/bin:~/.rvm/gems/ruby-2.1.4/bin:~/.rvm/gems/ruby-2.1.4@global/bin:~/.rvm/rubies/ruby-2.1.4/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:~/.rvm/bin"
+export PATH="$PATH:~/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin"
 
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+# init rbenv
+eval "$(rbenv init -)"
 
 # set JENV_ROOT for jenv to work
 export JENV_ROOT=/usr/local/opt/jenv
