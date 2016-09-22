@@ -30,6 +30,7 @@ Got all that? Great. Run this install script. It will do the following:
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
+  - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
 - install [Hyperterm](https://hyperterm.org) as a terminal replacement and set up an opinionated `.hyperterm.js` config file
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
