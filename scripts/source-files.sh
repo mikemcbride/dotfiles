@@ -8,11 +8,6 @@ if [[ -s ~/z/z.sh ]]; then
 	source ~/z/z.sh
 fi
 
-# source .inputrc
-if [[ -f ~/dotfiles/.inputrc ]]; then
-  source ~/dotfiles/.inputrc
-fi
-
 # source aliases
 if [[ -f ~/dotfiles/.aliases ]]; then
   source ~/dotfiles/.aliases
