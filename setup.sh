@@ -11,9 +11,11 @@ main() {
   echo "Removing any existing .zshrc config..."
   rm .zshrc
 
-  # install z
-  echo "Installing z..."
-  git clone git@github.com:rupa/z.git z
+  # try to install z
+  if [[ ! -d ~/z ]]; then
+    echo "Installing z..."
+    git clone git@github.com:rupa/z.git z
+  fi
 
   # install or update Homebrew
   echo "Checking for existing Homebrew installation..."
@@ -26,9 +28,15 @@ main() {
     brew update
   fi
 
-  # make sure Homebrew Cask is installed
-  echo "Installing Cask..."
-  brew tap caskroom/cask
+  # Install or update Homebrew Cask
+  if [[ ! -d /usr/local/Caskroom ]]; then
+    # unless user specified another location, they do not have Cask. Just try to install it, nothing will break
+    echo "Installing Cask..."
+    brew tap caskroom/cask
+  else
+    echo "Updating Cask..."
+    brew cask update
+  fi
 
   # install tree
   echo "Installing tree..."
@@ -66,11 +74,23 @@ main() {
   # ~/prezto is just a facade, but Prezto expects certain things to be in that location
   echo "Setting up symlinks..."
   ln -s ~/github/dotfiles ~/dotfiles
-  ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-  ln -s ~/dotfiles/.hyperterm.js ~/.hyperterm.js
   ln -s ~/dotfiles/zpreztorc ~/github/prezto/runcoms/zpreztorc
   ln -s ~/dotfiles/zshrc ~/github/prezto/runcoms/zshrc
   ln -s ~/github/prezto ~/.zprezto
+
+  if [ -f ~/.gitconfig ]; then
+    echo "Overriding .gitconfig..."
+    rm ~/.gitconfig
+  fi
+
+  ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+
+  if [ -f ~/.hyperterm.js ]; then
+    echo "Overriding .hyperterm.js..."
+    rm ~/.hyperterm.js
+  fi
+  
+  ln -s ~/dotfiles/.hyperterm.js ~/.hyperterm.js
 
   # set up Prezto
   echo "Setting up Prezto config files..."
