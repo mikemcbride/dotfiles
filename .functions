@@ -53,8 +53,8 @@ function t() {
 }
 
 # generate a bitly url and copy to clipboard
-function bitly(){
-  python ~/zsh/scripts/bitly.py $1 | tee >(pbcopy)
+function bitly() {
+  python ~/dotfiles/scripts/bitly.py $1 | tee >(pbcopy)
 }
 
 # replace all extensions of type X with Y in current directory
