@@ -42,6 +42,10 @@ main() {
   echo "Installing tree..."
   brew install tree
 
+  # install rbenv
+  echo "Installing rbenv..."
+  brew install rbenv
+
   # install Hyperterm
   echo "Installing Hyperterm..."
   brew cask install hyperterm
