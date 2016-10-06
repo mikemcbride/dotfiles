@@ -31,7 +31,7 @@ Got all that? Great. Run this install script. It will do the following:
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
-- install [Hyperterm](https://hyperterm.org) as a terminal replacement and set up an opinionated `.hyperterm.js` config file
+- install [Hyper](https://hyper.is) as a terminal replacement and set up an opinionated `.hyper.js` config file
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 
@@ -41,7 +41,7 @@ curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/setup.sh | sh
 
 ### Theme
 
-The setup script installs Hyperterm, which I highly recommend. It also sets up a config file for Hyperterm that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
+The setup script installs Hyper, which I highly recommend. It also sets up a config file for Hyper that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
 
 I also recommend checking out the font [Hack](http://sourcefoundry.org/hack/). It's an open source monospace font designed specifically for source code. It's super legit, and is what I use in my code editor and terminal :fire: :fire:
 

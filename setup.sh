@@ -46,9 +46,9 @@ main() {
   echo "Installing rbenv..."
   brew install rbenv
 
-  # install Hyperterm
-  echo "Installing Hyperterm..."
-  brew cask install hyperterm
+  # install Hyper
+  echo "Installing Hyper..."
+  brew cask install hyper
 
   # install global node modules
   echo "Installing n and trash-cli..."
@@ -89,12 +89,12 @@ main() {
 
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
-  if [ -f ~/.hyperterm.js ]; then
-    echo "Overriding .hyperterm.js..."
-    rm ~/.hyperterm.js
+  if [ -f ~/.hyper.js ]; then
+    echo "Overriding .hyper.js..."
+    rm ~/.hyper.js
   fi
   
-  ln -s ~/dotfiles/.hyperterm.js ~/.hyperterm.js
+  ln -s ~/dotfiles/.hyper.js ~/.hyper.js
 
   # set up Prezto
   echo "Setting up Prezto config files..."
