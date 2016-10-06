@@ -33,7 +33,7 @@ module.exports = {
 
   // a list of plugins to fetch and install from npm
   plugins: [
-    'hyperterm-electron-highlighter',
+    'hyper-electron-highlighter',
     'hyperlinks',
     'hyperterm-blink',
     'hyperterm-subpixel-antialiased'
