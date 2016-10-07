@@ -38,7 +38,7 @@ module.exports = {
   plugins: [
     'hyper-electron-highlighter',
     'hyperlinks',
-    'hyperterm-blink',
+    'hypertitle',
     'hyperterm-subpixel-antialiased'
   ],
 
