@@ -21,6 +21,9 @@ module.exports = {
     termCSS: '',
     css: '',
 
+    // custom transparency value
+    transparentBgAlpha: 0.7,
+
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
@@ -28,7 +31,7 @@ module.exports = {
 
     // some color overrides. see http://bit.ly/29k1iU2 for
     // the full list
-    colors: {}
+    colors: {},
   },
 
   // a list of plugins to fetch and install from npm
