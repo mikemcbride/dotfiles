@@ -22,7 +22,7 @@ module.exports = {
     css: '',
 
     // custom transparency value
-    transparentBgAlpha: 0.7,
+    transparentBgAlpha: 0.75,
 
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
