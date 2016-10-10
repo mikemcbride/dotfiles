@@ -39,6 +39,7 @@ module.exports = {
     'hyper-electron-highlighter',
     'hyperlinks',
     'hypertitle',
+    'hypercwd',
     'hyperterm-subpixel-antialiased'
   ],
 
