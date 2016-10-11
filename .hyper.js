@@ -1,51 +1,116 @@
+'use strict'
+const black = '#212836'
+const white = '#97a7c8'
+const red = '#e76572'
+const green = '#6af699'
+const yellow = '#fffa9e'
+const blue = '#71b1fe'
+const magenta = '#d59df6'
+const cyan = '#4ff2f8'
+
+// some color overrides. see http://bit.ly/29k1iU2 for
+// the full list
+const colors = {
+  black,
+  red,
+  green,
+  yellow,
+  blue,
+  magenta,
+  cyan,
+  white,
+  lightBlack: black,
+  lightRed: red,
+  lightGreen: green,
+  lightYellow: yellow,
+  lightBlue: blue,
+  lightMagenta: magenta,
+  lightCyan: cyan,
+  lightWhite: white
+}
+
+const backgroundColor = `rgba(33, 40, 54, 0.7)`
+const foregroundColor = white
+const cursorColor = 'rgba(255,46,136,1)'
+const borderColor = '#4d596b'
+const fontSize = 14
+const fontFamily = 'Menlo, Monaco, monospace'
+const padding = '12px 14px'
+const cursorShape = 'BLOCK'
+
+
+const tabBgDark = 'rgba(0,0,0,.15)'
+const tabText = 'rgba(153,163,184)'
+const tabTextActive = '#d5d9e2'
+const dividerBg = borderColor
+
+const termCSS = `
+  .cursor-node {
+    mix-blend-mode: difference;
+  }
+`
+const css = `
+  .tabs_list {
+    margin-left: 0;
+  }
+  .tab_tab.tab_first {
+    padding-left: 82px;
+  }
+  .tab_textInner {
+    color: ${tabText};
+  }
+  .tab_tab:not(.tab_active) {
+    background-color: ${tabBgDark};
+  }
+  .tab_tab.tab_active .tab_textInner {
+    color: ${tabTextActive};
+  }
+  .tab_tab.tab_active {
+    font-weight: 600;
+  }
+  .tab_firstActive {
+    border-left-width: 0px;
+  }
+  .tabs_borderShim {
+    border-width: 0 !important;
+  }
+  .splitpane_divider {
+    background-color: ${dividerBg};
+  }
+`
+
+// build config object
+const config = {
+  fontSize,
+  fontFamily,
+  cursorColor,
+  foregroundColor,
+  backgroundColor,
+  borderColor,
+  termCSS,
+  css,
+  padding,
+  cursorShape,
+  colors
+}
+
+// a list of plugins to fetch and install from npm
+const plugins = [
+  'hyperlinks',
+  'hypertitle',
+  'hypercwd',
+  'hyperterm-subpixel-antialiased'
+]
+
+// in development, you can create a directory under
+// `~/.hyper_plugins/local/` and include it here
+// to load it and avoid it being `npm install`ed
+const localPlugins = []
+
+
+// export all the stuff we care about
 module.exports = {
-  config: {
-    // default font size in pixels for all tabs
-    fontSize: 14,
-
-    // font family with optional fallbacks
-    fontFamily: 'Hack, Menlo, Monaco, monospace',
-
-    // terminal cursor background color (hex)
-    cursorColor: '',
-
-    // color of the text
-    foregroundColor: '',
-
-    // terminal background color
-    backgroundColor: '',
-
-    // border color (window, tabs)
-    borderColor: '',
-
-    termCSS: '',
-    css: '',
-
-    // custom transparency value
-    transparentBgAlpha: 0.75,
-
-    // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
-
-    cursorShape: 'BLOCK',
-
-    // some color overrides. see http://bit.ly/29k1iU2 for
-    // the full list
-    colors: {},
-  },
-
-  // a list of plugins to fetch and install from npm
-  plugins: [
-    'hyper-electron-highlighter',
-    'hyperlinks',
-    'hypertitle',
-    'hypercwd',
-    'hyperterm-subpixel-antialiased'
-  ],
-
-  // in development, you can create a directory under
-  // `~/.hyperterm_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
-  localPlugins: [
-  ]
+  config,
+  plugins,
+  localPlugins
 };
