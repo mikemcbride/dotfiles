@@ -36,7 +36,7 @@ Got all that? Great. Run this install script. It will do the following:
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 
 ```
-curl -L https://raw.githubusercontent.com/mmcbride1007/zsh/master/setup.sh | sh
+curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/setup.sh | sh
 ```
 
 ### Theme

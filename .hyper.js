@@ -1,4 +1,5 @@
 'use strict'
+
 const black = '#212836'
 const white = '#97a7c8'
 const red = '#e76572'
@@ -7,6 +8,7 @@ const yellow = '#fffa9e'
 const blue = '#71b1fe'
 const magenta = '#d59df6'
 const cyan = '#4ff2f8'
+const lightBlack = '#506686'
 
 // some color overrides. see http://bit.ly/29k1iU2 for
 // the full list
@@ -19,7 +21,7 @@ const colors = {
   magenta,
   cyan,
   white,
-  lightBlack: black,
+  lightBlack,
   lightRed: red,
   lightGreen: green,
   lightYellow: yellow,
@@ -30,17 +32,16 @@ const colors = {
 }
 
 const backgroundColor = `rgba(33,40,54,.7)`
-const foregroundColor = white
+const foregroundColor = white 
 const cursorColor = 'rgba(82,139,255,.7)'
 const borderColor = '#4d596b'
 const fontSize = 14
-const fontFamily = 'Menlo, Monaco, monospace'
+const fontFamily = 'Hack, Menlo, Monaco, monospace'
 const padding = '12px 14px'
 const cursorShape = 'BLOCK'
 
-
-const tabBgDark = 'rgba(0,0,0,.15)'
-const tabText = 'rgba(153,163,184)'
+const tabBgDark = 'rgba(0,0,0,.2)'
+const tabText = 'rgb(153,163,184)'
 const tabTextActive = '#d5d9e2'
 const dividerBg = borderColor
 
@@ -99,7 +100,8 @@ const plugins = [
   'hyperlinks',
   'hypertitle',
   'hypercwd',
-  'hyperterm-subpixel-antialiased'
+  'hyperterm-subpixel-antialiased',
+  'hyperterm-lastpass'
 ]
 
 // in development, you can create a directory under
@@ -113,4 +115,4 @@ module.exports = {
   config,
   plugins,
   localPlugins
-};
+}
