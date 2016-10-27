@@ -31,7 +31,7 @@ const colors = {
   lightWhite: white
 }
 
-const backgroundColor = `rgba(33,40,54,.7)`
+const backgroundColor = 'rgb(33,40,54)'
 const foregroundColor = white 
 const cursorColor = 'rgba(82,139,255,.7)'
 const borderColor = '#4d596b'
