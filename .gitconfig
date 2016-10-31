@@ -3,9 +3,28 @@
 	email = mmcbride1007@gmail.com
 [push]
 	default = simple
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [core]
 	editor = /usr/local/bin/vim
+[alias]
+	g = git
+	c = commit -am
+	co = checkout
+	branch-name = rev-parse --abbrev-ref HEAD
+	publish = push -u origin $(git branch-name)
+	mm = "!git merge master"
+	f = "!git fetch --all --prune"
+	l = "!git pull"
+	d = "!git diff"
+	a = "!git add"
+	cm = "!git checkout master"
+	lm = "!git checkout master && git pull"
+	cam = "!git commit -am"
+	cmsg = "!git commit --message"
+	s = "!git status"
+	ba = "!git branch --all"
+	lg = "!git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+	conflicts = "!git diff --name-only --diff-filter=U"
+	pub = "!git $(publish)"
+	# Delete any branches that have been merged into master
+	# See also: https://gist.github.com/robmiller/5133264
+	cleanup = !git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
