@@ -31,9 +31,9 @@ const colors = {
   lightWhite: white
 }
 
-const backgroundColor = 'rgba(33,40,54,0.7)'
+const backgroundColor = black
 const foregroundColor = white 
-const cursorColor = 'rgba(82,139,255,.7)'
+const cursorColor = 'rgba(113,177,254, .7)'
 const borderColor = '#4d596b'
 const fontSize = 14
 const fontFamily = 'Hack, Menlo, Monaco, monospace'
