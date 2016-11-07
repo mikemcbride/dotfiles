@@ -31,7 +31,7 @@ function publish_current_branch() {
 }
 
 function delete_local_merged_branches() {
-  git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
+  git branch --merged master | grep -v master | xargs git branch -d
 }
 
 function delete_remote_merged_branches() {
