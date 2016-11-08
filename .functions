@@ -31,13 +31,13 @@ function publish_current_branch() {
 }
 
 function delete_local_merged_branches() {
-  git branch --merged master | grep -v master | xargs git branch -d
+  git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
 }
 
 function delete_remote_merged_branches() {
   git fetch origin
   git remote prune origin
-  git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
+  git branch -r --merged | egrep -v "(^\*|master)" | xargs git branch -d
 }
 
 # tree
