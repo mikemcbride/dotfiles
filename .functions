@@ -37,7 +37,11 @@ function delete_local_merged_branches() {
 function delete_remote_merged_branches() {
   git fetch origin
   git remote prune origin
-  git branch -r --merged | egrep -v "(^\*|master)" | xargs git branch -d
+
+  for BRANCH in `git branch -r --merged origin/master | egrep -v "^\s*origin/" | grep -v master | cut -d/ -f2-`
+  do
+    git push origin $:BRANCH
+  done
 }
 
 # tree
