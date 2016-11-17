@@ -34,8 +34,8 @@ alias gcleanup="delete_local_merged_branches && delete_remote_merged_branches"
 
 # NPM
 alias ni="npm install"
-alias use_npm="npm set registry https://registry.npmjs.org/"
-alias use_wwt="npm set registry http://sinopia.wwt.com/"
+alias use_npm="npm set registry https://registry.npmjs.org/ && npm get registry"
+alias use_wwt="npm set registry http://sinopia.wwt.com/ && npm get registry"
 alias ee="elementary-electron" # nodeschool shortcut
 
 # start screensaver
