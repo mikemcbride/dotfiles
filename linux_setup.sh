@@ -14,7 +14,7 @@ main() {
   # try to install z
   if [[ ! -d ~/z ]]; then
     echo "Installing z..."
-    git clone git@github.com:rupa/z.git z
+    git clone https://github.com/rupa/z.git z
   fi
   
   # if ~/github does not exist, create it
@@ -29,11 +29,11 @@ main() {
 
   # clone the repo to get all the dotfile goodness
   echo "Cloning dotfiles..."
-  git clone git@github.com:mmcbride1007/dotfiles.git dotfiles
+  git clone https://github.com/mmcbride1007/dotfiles.git dotfiles
 
   # install Prezto
   echo "Cloning Prezto..."
-  git clone --recursive git@github.com:mmcbride1007/prezto.git prezto
+  git clone --recursive https://github.com/mmcbride1007/prezto.git prezto
 
   # symlink ~/github/dotfiles to ~/dotfiles to make it easier to manage
   # symlink some files from ~/dotfiles to ~/prezto for the setup
