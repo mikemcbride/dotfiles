@@ -49,7 +49,7 @@ alias tomcat_start="/Library/Tomcat/bin/startup.sh"
 alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
 
 # ssh logins
-alias mike@pol="ssh mike@67.205.140.44"
+alias mike@pol="ssh mike@104.131.41.251"
 
 # Hyper terminal
 alias reset_hyper="ln -s ~/dotfiles/.hyper.js ~/.hyper.js"
