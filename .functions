@@ -10,7 +10,7 @@ function take() {
 
 # I hate remembering syntax for copying to clipboard
 function copy() {
-  pbcopy < $1; tput setaf 2; echo "Contents of ${1} copied to clipboard!"
+  pbcopy < $1; echo "$(tput setaf 2)Contents of $(tput setaf 5)${1} $(tput setaf 2)copied to clipboard!"
 }
 
 # Git stuff
