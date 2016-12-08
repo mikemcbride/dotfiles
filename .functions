@@ -30,6 +30,14 @@ function git_current_branch() {
   fi
 }
 
+function pull_and_merge_master() {
+  local current_branch="$(git_current_branch)"
+  git checkout master
+  git pull
+  git checkout $current_branch
+  git merge master
+}
+
 function publish_current_branch() {
   local current_branch="$(git_current_branch)"
   git push --set-upstream origin $current_branch:$current_branch

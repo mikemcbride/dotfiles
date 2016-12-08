@@ -28,3 +28,5 @@
 	# Delete any branches that have been merged into master
 	# See also: https://gist.github.com/robmiller/5133264
 	cleanup = !git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
+[log]
+	date = iso
