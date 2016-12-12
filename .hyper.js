@@ -39,7 +39,6 @@ const fontSize = 14
 const fontFamily = 'Hack, Menlo, Monaco, monospace'
 const padding = '12px 14px'
 const cursorShape = 'BEAM'
-
 const tabBgDark = 'rgba(0,0,0,.2)'
 const tabText = 'rgb(153,163,184)'
 const tabTextActive = '#d5d9e2'
@@ -98,10 +97,9 @@ const config = {
 // a list of plugins to fetch and install from npm
 const plugins = [
   'hyperlinks',
-  'hypertitle',
   'hypercwd',
   'hyperterm-subpixel-antialiased',
-  'hyperterm-lastpass'
+  'hyperterm-lastpass',
 ]
 
 // in development, you can create a directory under
@@ -109,14 +107,9 @@ const plugins = [
 // to load it and avoid it being `npm install`ed
 const localPlugins = []
 
-// onWindow allows us to set vibrancy
-const onWindow = browserWindow => browserWindow.setVibrancy('dark')
-
-
 // export all the stuff we care about
 module.exports = {
   config,
   plugins,
-  localPlugins,
-  onWindow
+  localPlugins
 }
