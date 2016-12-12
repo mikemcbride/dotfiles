@@ -31,14 +31,14 @@ const colors = {
   lightWhite: white
 }
 
-const backgroundColor = black
+const backgroundColor = 'rgba(33,40,54,.8)'
 const foregroundColor = white 
-const cursorColor = 'rgba(113,177,254, .7)'
+const cursorColor = '#528bff'
 const borderColor = '#4d596b'
 const fontSize = 14
 const fontFamily = 'Hack, Menlo, Monaco, monospace'
 const padding = '12px 14px'
-const cursorShape = 'BLOCK'
+const cursorShape = 'BEAM'
 
 const tabBgDark = 'rgba(0,0,0,.2)'
 const tabText = 'rgb(153,163,184)'
@@ -109,10 +109,14 @@ const plugins = [
 // to load it and avoid it being `npm install`ed
 const localPlugins = []
 
+// onWindow allows us to set vibrancy
+const onWindow = browserWindow => browserWindow.setVibrancy('dark')
+
 
 // export all the stuff we care about
 module.exports = {
   config,
   plugins,
-  localPlugins
+  localPlugins,
+  onWindow
 }
