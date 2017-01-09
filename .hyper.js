@@ -1,17 +1,13 @@
-'use strict'
-
 // build config object
 const config = {
-  transparentBgAlpha: 0.6,
   fontSize: 14,
-  cursorShape: 'BEAM'
 }
 
 // a list of plugins to fetch and install from npm
 const plugins = [
-  'hyper-electron-highlighter',
+  'hyper-website-theme',
+  // 'hyper-electron-highlighter',
   'hyperlinks',
-  'hypercwd',
   'hyper-font-smoothing',
   'hyperterm-lastpass'
 ]
