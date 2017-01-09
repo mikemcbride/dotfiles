@@ -1,6 +1,7 @@
 // build config object
 const config = {
-  fontSize: 14
+  fontSize: 14,
+  cursorShape: 'UNDERLINE'
 }
 
 // a list of plugins to fetch and install from npm
