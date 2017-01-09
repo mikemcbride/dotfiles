@@ -1,6 +1,6 @@
 // build config object
 const config = {
-  fontSize: 14,
+  fontSize: 14
 }
 
 // a list of plugins to fetch and install from npm
