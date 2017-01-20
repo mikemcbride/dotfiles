@@ -1,7 +1,7 @@
 const os = require('os')
 const internalIp = require('internal-ip')
 
-function getIp () {
+function getIp() {
   const interfaces = os.networkInterfaces()
 
   let ip = null
