@@ -4,13 +4,13 @@
 const config = {
   fontSize: 14,
   fontFamily: 'Hack, SF Mono, Menlo, DejaVu Sans Mono, Lucida Console, monospace',
-  cursorShape: 'BLOCK',
-  cursorColor: 'rgb(255, 46, 136)'
+  cursorShape: 'BEAM',
+  // cursorColor: 'rgb(255, 46, 136)'
 }
 
 // a list of plugins to fetch and install from npm
 const plugins = [
-  'hyper-website-theme',
+  'hyper-electron-highlighter',
   'hypercwd',
   'hyperlinks',
   'hyper-font-smoothing',
