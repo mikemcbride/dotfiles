@@ -31,13 +31,31 @@ Got all that? Great. Run this install script. It will do the following:
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
-- install [Hyper](https://hyper.is) as a terminal replacement and set up an opinionated `.hyper.js` config file
+- install a few desktop applications to make your life better:
+  - Google Chrome
+  - [Hyper](https://hyper.is) as a terminal replacement (and set up an opinionated `.hyper.js` config file)
+  - [Postman](https://www.getpostman.com/) for testing REST calls
+  - Slack
+  - Spotify
+  - [Kap](https://getkap.co/) for screen captures
+  - Robomongo (helpful for managing MongoDB collections outside of the terminal)
+  - [Spectacle](https://www.spectacleapp.com/) for window management
+  - LastPass for password vault
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 
 ```
 curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/setup.sh | sh
 ```
+
+### Additional App Setup
+
+This is mostly just for me. Here are some apps that aren't available for download via homebrew cask (yet) that you'll currently need to download manually:
+
+- Atom Beta (stable is available via cask, not beta)
+- Pixelmator
+- Noizio
+- Tweetbot
 
 ### Theme
 

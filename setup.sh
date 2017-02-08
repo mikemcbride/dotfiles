@@ -46,13 +46,51 @@ main() {
   echo "Installing rbenv..."
   brew install rbenv
 
-  # install Hyper
-  echo "Installing Hyper..."
-  brew cask install hyper
-
   # install global node modules
   echo "Installing n and trash-cli..."
   npm install --global n trash-cli
+  
+  
+  echo "Now we're going to install a few desktop applications."
+  
+  # install Chrome so you don't hate your life
+  echo "Installing Google Chrome..."
+  brew cask install google-chrome
+  
+  # install Hyper for a better terminal
+  echo "Installing Hyper..."
+  brew cask install hyper
+    
+  # install Postman for API testing
+  echo "Installing Postman..."
+  brew cask install postman
+  
+  # install Slack
+  echo "Installing Slack..."
+  brew cask install slack
+  
+  # install Spotify
+  echo "Installing Spotify..."
+  brew cask install spotify
+
+# install Kap for screen captures
+  echo "Installing Kap..."
+  brew cask install kap
+  
+  # install Robomongo for working with MongoDB
+  echo "Installing Robomongo..."
+  brew cask install robomongo
+  
+  # install Spectacle for window management
+  echo "Installing Spectacle..."
+  brew cask install spectacle
+  
+  # install LastPass for password management
+  echo "Installing LastPass..."
+  brew cask install lastpass
+  
+  echo "Done installing desktop applications."
+  echo "Now for the dotfile magic."
 
   # if ~/github does not exist, create it
   if [ ! -d ~/github ]; then
