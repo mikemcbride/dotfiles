@@ -73,3 +73,8 @@ function getip() {
 function replace_ext() {
   node ~/dotfiles/scripts/replaceFileExtension.js $1 $2
 }
+
+# kill process running on specified port
+function killport() {
+  lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
+}
