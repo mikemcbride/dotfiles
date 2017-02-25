@@ -21,14 +21,16 @@ fi
 # exports
 export PATH="$PATH:~/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin"
 
-# init rbenv
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # set JENV_ROOT for jenv to work
-export JENV_ROOT=/usr/local/opt/jenv
+export JENV_ROOT="/usr/local/opt/jenv"
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+export JAVA_HOME="/usr/local/opt/jenv/versions/1.8.0.77"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
