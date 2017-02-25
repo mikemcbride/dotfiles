@@ -4,18 +4,17 @@ These are my dotfiles. It's here so that I don't lose any of my setups when swit
 
 ## Prerequisites
 
-### Operating system
+#### Operating system
 
-This setup is for macOS. It will almost certainly not work on Linux and definitely won't work on Windows. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can also install it via Homebrew (see more below).
+This setup is for macOS. If you want this on Linux, use the provided Linux install script, which omits some macOS specific things. It definitely won't work on Windows, sorry. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can also install it via Homebrew (see more below).
 
-### SSH for GitHub
+#### SSH for GitHub
 
-The setup script will clone git repos via SSH. Make sure you're set up to do that before pushing any updates or you'll have some issues.
+The setup script will clone git repos via SSH (Linux script will clone via HTTP in case its a server). Make sure you're set up to do that before pushing any updates or you'll have some issues.
 
-### NodeJS
+#### Node
 
-You need to have [NodeJS](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
-
+You need to have [Node](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
 
 ## Setup
 
@@ -31,6 +30,7 @@ Got all that? Great. Run this install script. It will do the following:
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
+  - [Hack](http://sourcefoundry.org/hack/) - an open source monospace font designed specifically for source code. It's :fire:
 - install a few desktop applications to make your life better:
   - Google Chrome
   - [Hyper](https://hyper.is) as a terminal replacement (and set up an opinionated `.hyper.js` config file)
@@ -48,9 +48,17 @@ Ready to get started?? Just paste this into your terminal. **WARNING:** Please m
 curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/setup.sh | sh
 ```
 
+**For Linux users:**
+
+```
+curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/linux_setup.sh | sh
+```
+
 ### Additional App Setup
 
-This is mostly just for me. Here are some apps that aren't available for download via homebrew cask (yet) that you'll currently need to download manually:
+This part is mostly just for me to remember what I still need to download.
+
+Here are some apps that aren't available for download via Homebrew cask (yet) that you'll currently need to download manually:
 
 - Atom Beta (stable is available via cask, not beta)
 - Pixelmator
@@ -60,8 +68,6 @@ This is mostly just for me. Here are some apps that aren't available for downloa
 ### Theme
 
 The setup script installs Hyper, which I highly recommend. It also sets up a config file for Hyper that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
-
-I also recommend checking out the font [Hack](http://sourcefoundry.org/hack/). It's an open source monospace font designed specifically for source code. It's super legit, and is what I use in my code editor and terminal :fire: :fire:
 
 ## Updating
 

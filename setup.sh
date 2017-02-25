@@ -49,7 +49,11 @@ main() {
   # install global node modules
   echo "Installing n and trash-cli..."
   npm install --global n trash-cli
-  
+
+  # install hack font
+  echo "Installing Hack font..."
+  brew tap caskroom/fonts
+  brew cask install font-hack
   
   echo "Now we're going to install a few desktop applications."
   
@@ -73,7 +77,7 @@ main() {
   echo "Installing Spotify..."
   brew cask install spotify
 
-# install Kap for screen captures
+  # install Kap for screen captures
   echo "Installing Kap..."
   brew cask install kap
   
