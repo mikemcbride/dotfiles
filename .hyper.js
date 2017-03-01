@@ -3,12 +3,17 @@
 module.exports = {
   config: {
     fontSize: 14,
-    fontFamily: 'Hack'
+    fontFamily: 'Hack',
+    cursorShape: 'BLOCK'
   },
   plugins: [
     'hyper-electron-highlighter',
     'hypercwd',
     'hyperlinks'
   ],
-  localPlugins: []
+  localPlugins: [],
+  hyperlinks: {
+    clickAction: 'ignore',
+    defaultBrowser: true
+  }
 }
