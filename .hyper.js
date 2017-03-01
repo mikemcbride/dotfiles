@@ -4,12 +4,14 @@ module.exports = {
   config: {
     fontSize: 14,
     fontFamily: 'Hack',
-    cursorShape: 'BLOCK'
+    cursorShape: 'BLOCK',
+    cursorColor: 'rgb(113, 177, 254)'
   },
   plugins: [
     'hyper-electron-highlighter',
     'hypercwd',
-    'hyperlinks'
+    'hyperlinks',
+    'hyper-font-smoothing'
   ],
   localPlugins: [],
   hyperlinks: {
