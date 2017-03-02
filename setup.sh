@@ -88,6 +88,10 @@ main() {
   # install Spectacle for window management
   echo "Installing Spectacle..."
   brew cask install spectacle
+
+  # install Rocket for quick emoji access
+  echo "Installing Rocket..."
+  brew cask install rocket
   
   # install LastPass for password management
   echo "Installing LastPass..."

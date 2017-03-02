@@ -40,6 +40,7 @@ Got all that? Great. Run this install script. It will do the following:
   - [Kap](https://getkap.co/) for screen captures
   - Robomongo (helpful for managing MongoDB collections outside of the terminal)
   - [Spectacle](https://www.spectacleapp.com/) for window management
+  - [Rocket](https://matthewpalmer.net/rocket/) for quick and easy emoji access
   - LastPass for password vault
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
