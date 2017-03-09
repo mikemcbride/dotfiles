@@ -96,6 +96,10 @@ main() {
   # install LastPass for password management
   echo "Installing LastPass..."
   brew cask install lastpass
+
+  # install Nylas Mail client
+  echo "Installing Nylas Mail..."
+  brew cask install nylas-mail
   
   echo "Done installing desktop applications."
   echo "Now for the dotfile magic."
