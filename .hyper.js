@@ -12,7 +12,8 @@ module.exports = {
     'hyper-electron-highlighter',
     'hypercwd',
     'hyperlinks',
-    'hyper-font-smoothing'
+    'hyper-font-smoothing',
+    'hyper-hide-title'
   ],
   localPlugins: [],
   hyperlinks: {
