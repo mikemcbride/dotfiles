@@ -6,7 +6,16 @@ module.exports = {
     fontSize: 14,
     fontFamily: 'Hack',
     cursorShape: 'BLOCK',
-    cursorColor: 'rgb(113, 177, 254)'
+    cursorColor: 'rgb(113, 177, 254)',
+    termCSS: `
+      x-screen a {
+        color: #4ff2f8;
+      }
+    `,
+    hyperlinks: {
+      clickAction: 'ignore',
+      defaultBrowser: true
+    }
   },
   plugins: [
     'hyper-electron-highlighter',
@@ -15,9 +24,5 @@ module.exports = {
     'hyper-font-smoothing',
     'hyper-hide-title'
   ],
-  localPlugins: [],
-  hyperlinks: {
-    clickAction: 'ignore',
-    defaultBrowser: true
-  }
+  localPlugins: []
 }
