@@ -23,6 +23,7 @@ Got all that? Great. Run this install script. It will do the following:
 - install [Prezto](https://github.com/sorin-ionescu/prezto) that I forked and modified
 - install [Homebrew](http://brew.sh) if you don't already have it, or run `brew update` if you do
 - install [Homebrew Cask](https://caskroom.github.io/) (again, if you already have it, this won't do anything)
+- install [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
 - clone this repo into  `~/github/dotfiles` and set up your `.zshrc`
 - install a few packages that I have aliases or functions for that will throw errors when you try to source the `.zshrc`
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
@@ -69,11 +70,19 @@ Here are some apps that aren't available for download via Homebrew cask (yet) th
 
 ### Theme
 
-The setup script installs Hyper, which I highly recommend. It also sets up a config file for Hyper that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
+The setup script installs Hyper, which I highly recommend as a terminal emulator. It also sets up a config file for Hyper that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
 
 ## Updating
 
-As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked.
+As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked. To do a backup of any Homebrew applications, you can run this command:
+
+```
+cd ~/github/dotfiles
+brew bundle dump --force
+git add .
+git commit -m 'updating homebrew apps'
+git push
+```
 
 ## Other Goodies
 
