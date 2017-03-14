@@ -38,71 +38,15 @@ main() {
     brew cask update
   fi
 
-  # install tree
-  echo "Installing tree..."
-  brew install tree
-
-  # install rbenv
-  echo "Installing rbenv..."
-  brew install rbenv
+  # Install Homebrew Bundle
+  echo "Installing Homebrew Bundle"
+  brew tap Homebrew/bundle
 
   # install global node modules
   echo "Installing n and trash-cli..."
   npm install --global n trash-cli
 
-  # install hack font
-  echo "Installing Hack font..."
-  brew tap caskroom/fonts
-  brew cask install font-hack
-  
-  echo "Now we're going to install a few desktop applications."
-  
-  # install Chrome so you don't hate your life
-  echo "Installing Google Chrome..."
-  brew cask install google-chrome
-  
-  # install Hyper for a better terminal
-  echo "Installing Hyper..."
-  brew cask install hyper
-    
-  # install Postman for API testing
-  echo "Installing Postman..."
-  brew cask install postman
-  
-  # install Slack
-  echo "Installing Slack..."
-  brew cask install slack
-  
-  # install Spotify
-  echo "Installing Spotify..."
-  brew cask install spotify
-
-  # install Kap for screen captures
-  echo "Installing Kap..."
-  brew cask install kap
-  
-  # install MongoDB Compass for working with MongoDB
-  echo "Installing MongoDB Compass..."
-  brew cask install mongodb-compass
-  
-  # install Spectacle for window management
-  echo "Installing Spectacle..."
-  brew cask install spectacle
-
-  # install Rocket for quick emoji access
-  echo "Installing Rocket..."
-  brew cask install rocket
-  
-  # install LastPass for password management
-  echo "Installing LastPass..."
-  brew cask install lastpass
-
-  # install Nylas Mail client
-  echo "Installing Nylas Mail..."
-  brew cask install nylas-mail
-  
-  echo "Done installing desktop applications."
-  echo "Now for the dotfile magic."
+  echo "Now for some dotfile magic."
 
   # if ~/github does not exist, create it
   if [ ! -d ~/github ]; then
@@ -138,6 +82,13 @@ main() {
   fi
 
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+
+  # install homebrew applications
+  echo "Installing applications via Homebrew and Cask..."
+  cd ~/github/dotfiles
+  brew bundle
+
+  echo "Done installing command utility and desktop applications."
 
   if [ -f ~/.hyper.js ]; then
     echo "Overriding .hyper.js..."
