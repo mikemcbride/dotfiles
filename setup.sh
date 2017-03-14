@@ -81,9 +81,9 @@ main() {
   echo "Installing Kap..."
   brew cask install kap
   
-  # install Robomongo for working with MongoDB
-  echo "Installing Robomongo..."
-  brew cask install robomongo
+  # install MongoDB Compass for working with MongoDB
+  echo "Installing MongoDB Compass..."
+  brew cask install mongodb-compass
   
   # install Spectacle for window management
   echo "Installing Spectacle..."

@@ -38,7 +38,7 @@ Got all that? Great. Run this install script. It will do the following:
   - Slack
   - Spotify
   - [Kap](https://getkap.co/) for screen captures
-  - Robomongo (helpful for managing MongoDB collections outside of the terminal)
+  - [MongoDB Compass](https://www.mongodb.com/products/compass) for a GUI to do admin stuff with MongoDB
   - [Spectacle](https://www.spectacleapp.com/) for window management
   - [Rocket](https://matthewpalmer.net/rocket/) for quick and easy emoji access
   - LastPass for password vault
