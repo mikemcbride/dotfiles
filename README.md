@@ -33,7 +33,7 @@ Got all that? Great. Run this install script. It will do the following:
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
   - [Hack](http://sourcefoundry.org/hack/) - an open source monospace font designed specifically for source code. It's :fire:
 - install a few desktop applications to make your life better:
-  - Google Chrome
+  - Google Chrome, Firefox, and Opera browsers
   - [Hyper](https://hyper.is) as a terminal replacement (and set up an opinionated `.hyper.js` config file)
   - [Postman](https://www.getpostman.com/) for testing REST calls
   - Slack
@@ -42,7 +42,6 @@ Got all that? Great. Run this install script. It will do the following:
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a GUI to do admin stuff with MongoDB
   - [Spectacle](https://www.spectacleapp.com/) for window management
   - [Rocket](https://matthewpalmer.net/rocket/) for quick and easy emoji access
-  - LastPass for password vault
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 
@@ -63,6 +62,7 @@ This part is mostly just for me to remember what I still need to download.
 Here are some apps that aren't available for download via Homebrew cask (yet) that you'll currently need to download manually:
 
 - Atom Beta (stable is available via cask, not beta)
+- LastPass
 - Pixelmator
 - Noizio
 - Tweetbot
