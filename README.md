@@ -43,7 +43,6 @@ Got all that? Great. Run this install script. It will do the following:
   - [Spectacle](https://www.spectacleapp.com/) for window management
   - [Rocket](https://matthewpalmer.net/rocket/) for quick and easy emoji access
   - LastPass for password vault
-  - [Nylas Mail](https://nylas.com) as a desktop email client
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 

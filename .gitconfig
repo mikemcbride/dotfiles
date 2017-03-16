@@ -30,3 +30,7 @@
 	cleanup = !git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
 [log]
 	date = iso
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
