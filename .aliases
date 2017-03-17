@@ -31,7 +31,7 @@ alias clone="git clone"
 alias gpub="publish_current_branch"
 alias gbam="delete_local_merged_branches"
 alias gbamr="delete_remote_merged_branches"
-alias gcleanup="delete_local_merged_branches && delete_remote_merged_branches"
+alias gclean="delete_local_merged_branches && delete_remote_merged_branches"
 
 # NPM
 alias ni="npm install"
