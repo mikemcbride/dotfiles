@@ -71,6 +71,12 @@ main() {
   # we want all our version controlled configs in ~/dotfiles.
   # ~/prezto is just a facade, but Prezto expects certain things to be in that location
   echo "Setting up symlinks..."
+  
+  # first we have to remove some files that already exist in prezto
+  rm ~/github/prezto/runcoms/zpreztorc
+  rm ~/github/prezto/runcoms/zshrc
+  
+  # now we can safely set up symlinks
   ln -s ~/github/dotfiles ~/dotfiles
   ln -s ~/dotfiles/zpreztorc ~/github/prezto/runcoms/zpreztorc
   ln -s ~/dotfiles/zshrc ~/github/prezto/runcoms/zshrc
