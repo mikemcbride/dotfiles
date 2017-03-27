@@ -41,8 +41,8 @@ eval "$(rbenv init -)"
 export JENV_ROOT="/usr/local/opt/jenv"
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 export JAVA_HOME="/usr/local/opt/jenv/versions/1.8.0.77"
+export PATH="$HOME/.jenv/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="~/.sdkman"
-[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
-export PATH="$HOME/.jenv/bin:$PATH"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

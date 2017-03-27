@@ -13,7 +13,6 @@ module.exports = {
       }
     `,
     hyperlinks: {
-      clickAction: 'ignore',
       defaultBrowser: true
     }
   },
