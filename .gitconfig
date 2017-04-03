@@ -1,6 +1,3 @@
-[user]
-	name = Mike McBride
-	email = mmcbride1007@gmail.com
 [push]
 	default = simple
 [core]
@@ -34,3 +31,7 @@
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+
+# use separate file for user info
+[include]
+  path = ~/.gitconfig.local
