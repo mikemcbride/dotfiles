@@ -55,10 +55,6 @@ curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/setup.sh 
 curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/linux_setup.sh | sh
 ```
 
-### Some Caveats
-
-- The `.gitconfig` will need to be modified as it is set to my name and email, so unless you want all your GitHub activity attributed to me, maybe change that.
-
 ### Additional App Setup
 
 This part is mostly just for me to remember what I still need to download.
