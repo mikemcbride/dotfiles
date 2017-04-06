@@ -66,6 +66,7 @@ Here are some apps that aren't available for download via Homebrew cask (yet) th
 - Pixelmator
 - Noizio
 - Tweetbot
+- Battery Indicator
 
 ### Theme
 

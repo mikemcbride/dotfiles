@@ -13,6 +13,11 @@ if [[ -f ~/dotfiles/.aliases ]]; then
   source ~/dotfiles/.aliases
 fi
 
+# source local aliases
+if [[ -f ~/.aliases.local ]]; then
+  source ~/.aliases.local
+fi
+
 # source functions
 if [[ -f ~/dotfiles/.functions ]]; then
   source ~/dotfiles/.functions
