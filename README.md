@@ -90,7 +90,7 @@ git push
 
 ## Other Goodies
 
-For a new Mac setup, I copied the legendary script from [@mathiasbynens](https://github.com/mathiasbynens). The canonical version lives [here](https://github.com/mathiasbynens/dotfiles/blob/master/.macos). I have removed and changed some things according to my own preferences. To get those defaults, simply `cd` into the dotfiles directory and execute the `.macos` file as seen below. **NOTE: I highly recommend reading through this before executing the script. Please make sure you know what it is doing to your machine.**
+For a new Mac setup, I copied the legendary script from [@mathiasbynens](https://github.com/mathiasbynens). The canonical version lives [here](https://mths.be/macos). I have removed and changed some things according to my own preferences. To get those defaults, simply `cd` into the dotfiles directory and execute the `.macos` file as seen below. **NOTE: I highly recommend reading through this before executing the script. Please make sure you know what it is doing to your machine.**
 
 ```
 sh .macos
