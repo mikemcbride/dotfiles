@@ -4,15 +4,19 @@ These are my dotfiles. It's here so that I don't lose any of my setups when swit
 
 ## Prerequisites
 
-#### Operating system
+**Operating system**
 
-This setup is for macOS. If you want this on Linux, use the provided Linux install script, which omits some macOS specific things. It definitely won't work on Windows, sorry. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can also install it via Homebrew (see more below).
+This setup is for macOS. If you want this on Linux, use the provided Linux install script, which omits some macOS specific things. It definitely won't work on Windows, sorry. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
 
-#### SSH for GitHub
+```shell
+xcode-select --install
+```
 
-The setup script will clone git repos via SSH (Linux script will clone via HTTP in case its a server). Make sure you're set up to do that before pushing any updates or you'll have some issues.
+**SSH for GitHub**
 
-#### Node
+The setup script will clone git repos via SSH (Linux script will clone via HTTP in case its a server). Make sure you're [set up to do that](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) before running the install script or it won't work.
+
+**Node**
 
 You need to have [Node](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
 
@@ -86,7 +90,7 @@ git push
 
 ## Other Goodies
 
-For a new Mac setup, I copied the legendary script from @mathiasbynens. The canonical version lives [here](). I have removed and changed some things according to my own preferences. To get those defaults, simply `cd` into the dotfiles directory and execute the `.macos` file as seen below. **NOTE: I highly recommend reading through this before executing the script. Please make sure you know what it is doing to your machine.**
+For a new Mac setup, I copied the legendary script from [@mathiasbynens](https://github.com/mathiasbynens). The canonical version lives [here](https://github.com/mathiasbynens/dotfiles/blob/master/.macos). I have removed and changed some things according to my own preferences. To get those defaults, simply `cd` into the dotfiles directory and execute the `.macos` file as seen below. **NOTE: I highly recommend reading through this before executing the script. Please make sure you know what it is doing to your machine.**
 
 ```
 sh .macos
