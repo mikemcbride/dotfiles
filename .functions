@@ -1,6 +1,6 @@
 # print contents of directory immediately when switching
 function cd(){
-  builtin cd $@ && ls -la
+  builtin cd "$@" && ls -la
 }
 
 # running take will make a directory and cd into it
