@@ -45,7 +45,7 @@ Got all that? Great. Run this install script. It will do the following:
   - [Kap](https://getkap.co/) for screen captures
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a GUI to do admin stuff with MongoDB
   - [Spectacle](https://www.spectacleapp.com/) for window management
-  - [Rocket](https://matthewpalmer.net/rocket/) for quick and easy emoji access
+  - [Mojibar](https://github.com/muan/mojibar) for quick emoji access with a hotkey
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 
