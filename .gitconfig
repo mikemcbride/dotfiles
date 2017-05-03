@@ -2,6 +2,7 @@
 	default = simple
 [core]
 	editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore.global
 [alias]
 	g = git
 	c = commit -am
