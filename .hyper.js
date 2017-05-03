@@ -4,7 +4,7 @@ module.exports = {
   config: {
     shell: '/bin/zsh',
     fontSize: 14,
-    fontFamily: 'Hack',
+    fontFamily: 'SF Mono',
     cursorShape: 'BLOCK',
     cursorColor: 'rgb(113, 177, 254)',
     termCSS: `
@@ -21,7 +21,6 @@ module.exports = {
     'hypercwd',
     'hyperlinks',
     'hyper-font-smoothing',
-    'hyper-hide-title'
   ],
   localPlugins: []
 }
