@@ -88,6 +88,7 @@ main() {
   fi
 
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+  ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
 
   # install homebrew applications
   echo "Installing applications via Homebrew and Cask..."
