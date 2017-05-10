@@ -29,7 +29,8 @@ zstyle ':prezto:module:syntax-highlighting' color 'yes'
 zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 # Set the prompt theme to load.
-zstyle ':prezto:module:prompt' theme 'pure_alt'
+# zstyle ':prezto:module:prompt' theme 'pure_alt'
+zstyle ':prezto:module:prompt' theme 'zeit'
 
 # Set the SSH identities to load into the agent.
 zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'

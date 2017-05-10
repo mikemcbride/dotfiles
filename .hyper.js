@@ -4,12 +4,11 @@ module.exports = {
   config: {
     shell: '/bin/zsh',
     fontSize: 14,
-    fontFamily: 'SF Mono',
+    fontFamily: 'Hack, SF Mono',
     cursorShape: 'BLOCK',
-    cursorColor: 'rgb(113, 177, 254)',
     termCSS: `
       x-screen a {
-        color: #4ff2f8;
+        color: '#ff2e88';
       }
     `,
     hyperlinks: {
@@ -17,8 +16,10 @@ module.exports = {
     }
   },
   plugins: [
-    'hyper-electron-highlighter',
+    // 'hyper-electron-highlighter',
+    'hyper-website-theme',
     'hypercwd',
+    'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
   ],
