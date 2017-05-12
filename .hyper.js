@@ -11,6 +11,11 @@ module.exports = {
         color: '#ff2e88';
       }
     `,
+    css: `
+      .tab_text.tab_textActive {
+        font-weight: 600;
+      }
+    `,
     hyperlinks: {
       defaultBrowser: true
     }
