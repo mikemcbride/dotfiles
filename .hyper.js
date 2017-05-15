@@ -18,6 +18,20 @@ module.exports = {
     `,
     hyperlinks: {
       defaultBrowser: true
+    },
+    paneNavigation: {
+      hotkeys: {
+        navigation: {
+          up: 'alt+shift+up',
+          down: 'alt+shift+down',
+          left: 'alt+shift+left',
+          right: 'alt+shift+right'
+        },
+        jump_prefix: 'alt+shift',
+        permutation_modifier: 'ctrl',
+        maximize: 'meta+enter'
+      },
+      showIndicators: false
     }
   },
   plugins: [
@@ -27,6 +41,7 @@ module.exports = {
     'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
+    'hyper-pane',
   ],
   localPlugins: []
 }
