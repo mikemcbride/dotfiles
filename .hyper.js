@@ -13,7 +13,7 @@ module.exports = {
     `,
     css: `
       .tab_text.tab_textActive {
-        font-weight: 600;
+        font-weight: 500;
       }
     `,
     hyperlinks: {
