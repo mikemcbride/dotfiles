@@ -35,8 +35,8 @@ module.exports = {
     }
   },
   plugins: [
-    // 'hyper-electron-highlighter',
-    'hyper-website-theme',
+    'hyper-electron-highlighter',
+    // 'hyper-website-theme',
     'hypercwd',
     'hyper-hide-title',
     'hyperlinks',
