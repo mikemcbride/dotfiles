@@ -1,12 +1,14 @@
 # dotfiles
 
-These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included.
+These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included. I would, however, highly recommend forking this repo and changing my user name to yours to avoid any issues. That will also allow you to add your own customizations and remove any of mine that you don't like.
 
 ## Prerequisites
 
 **Operating system**
 
-This setup is for macOS. If you want this on Linux, use the provided Linux install script, which omits some macOS specific things. It definitely won't work on Windows, sorry. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
+This setup is for macOS. If you want this on Linux, use the provided Linux install script, which omits some macOS specific things (admittedly I do not keep that install script super updated as I don't use Linux very often, but  it should be a good starting point).
+
+You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
 
 ```shell
 xcode-select --install
