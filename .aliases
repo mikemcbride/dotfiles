@@ -7,9 +7,9 @@ alias vi=vim # prefer vim to vi
 alias ...="../.."
 alias ....="../../.."
 alias .....="../../../.."
+alias ......="../../../../.."
 alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo command
-alias ab="atom-beta ."
 alias resource="source ~/.zshrc"
 
 # Git
@@ -44,12 +44,14 @@ alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/R
 # get current weather
 alias weather="curl wttr.in"
 
+# Atom
+# These might be a bad idea but I only have Atom Beta installed and it's annoying to have to use the separate -beta cli
+# This is quite likely going to be an issue for anyone who forks/clones this repo and uses regular Atom.
+alias atom="atom-beta"
+alias apm="apm-beta"
+alias ab="atom-beta ."
+
 # start/stop tomcat server
 alias tomcat_start="/Library/Tomcat/bin/startup.sh"
 alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
 
-# ssh logins
-alias mike@pol="ssh mike@104.131.41.251"
-
-# Hyper terminal
-alias reset_hyper="ln -s ~/dotfiles/.hyper.js ~/.hyper.js"
