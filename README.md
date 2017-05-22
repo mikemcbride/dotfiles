@@ -43,9 +43,9 @@ Got all that? Great. Run this install script. It will do the following:
   - Slack
   - Spotify
   - [Kap](https://getkap.co/) for screen captures
-  - [MongoDB Compass](https://www.mongodb.com/products/compass) for a GUI to do admin stuff with MongoDB
+  - [Robomongo](https://robomongo.org/) for a MongoDB GUI
   - [Spectacle](https://www.spectacleapp.com/) for window management
-  - [Mojibar](https://github.com/muan/mojibar) for quick emoji access with a hotkey
+  - [Mojibar](https://github.com/muan/mojibar) for quick emoji access with a hotkey (I alias mine to <kbd>cmd</kbd><kbd>;</kbd>)
 
 Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
 

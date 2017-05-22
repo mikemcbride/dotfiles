@@ -44,7 +44,7 @@ main() {
 
   # install global node modules
   echo "Installing n and trash-cli..."
-  npm install --global n trash-cli
+  npm install --global n trash-cli empty-trash-cli
 
   echo "Now for some dotfile magic."
 
@@ -96,6 +96,10 @@ main() {
   brew bundle
 
   echo "Done installing command utility and desktop applications."
+  
+  # install dependencies required for some scripts in dotfiles to work
+  echo "Installing dependencies via npm..."
+  npm install
 
   if [ -f ~/.hyper.js ]; then
     echo "Overriding .hyper.js..."
