@@ -214,7 +214,6 @@ def main(argv):
     if len(sys.argv) < 2:
         print "Usage: bitly.py '[url]'"
         return 1
-    print ''
     if not API_USERNAME or not API_KEY:
         print 'API_USERNAME and API_KEY must be set.'
         return 1

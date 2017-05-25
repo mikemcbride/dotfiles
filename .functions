@@ -60,7 +60,9 @@ function t() {
 
 # generate a bitly url and copy to clipboard
 function bitly() {
-  python ~/dotfiles/scripts/bitly.py $1 | tee >(pbcopy)
+  printf '\n'
+  echo -n $(python ~/dotfiles/scripts/bitly.py $1) | tee >(pbcopy)
+  printf " $(tput setaf 2)[copied to clipboard]\n\n"
 }
 
 # get current IP address
