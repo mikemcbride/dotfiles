@@ -11,6 +11,7 @@ alias ......="../../../../.."
 alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo command
 alias resource="source ~/.zshrc"
+alias ip="getip" # shorter alias for getip() function in .functions setup
 
 # Git
 alias gmm="git merge master"
