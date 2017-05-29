@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/mmcbride1007/dotfiles#readme",
   "dependencies": {
-    "internal-ip": "^1.2.0"
+    "execa": "^0.6.3",
+    "internal-ip": "^1.2.0",
+    "is-git-repository": "^1.1.1",
+    "open": "0.0.5"
   }
 }
