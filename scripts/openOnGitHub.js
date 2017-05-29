@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+'use strict'
 
-(async function () {
-  const execa = require('execa')
-  const isGit = require('is-git-repository')
-  const open = require('open')
-  
+const execa = require('execa')
+const isGit = require('is-git-repository')
+const open = require('open')
+
+async function openGitHub() {
   if (isGit()) {
     const remoteOrigin = await execa('git', ['config', '--get', 'remote.origin.url'])
     const httpRegex = /http(s)?:\/\/github\./gi
@@ -30,4 +31,6 @@
   }
   
   return
-})()
+}
+
+openGitHub()
