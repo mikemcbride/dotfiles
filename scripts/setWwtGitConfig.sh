@@ -11,5 +11,5 @@ for d in */*/; do
 	fi
   
   # get back to where we started so the loop doesn't break
-  cd ../..;
+  cd ~/wwt/github;
 done

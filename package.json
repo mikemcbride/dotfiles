@@ -20,6 +20,8 @@
     "execa": "^0.6.3",
     "internal-ip": "^1.2.0",
     "is-git-repository": "^1.1.1",
-    "open": "0.0.5"
+    "open": "0.0.5",
+    "ora": "^1.2.0",
+    "simple-git": "^1.73.0"
   }
 }
