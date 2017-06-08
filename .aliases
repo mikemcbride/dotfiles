@@ -9,7 +9,7 @@ alias ....="../../.."
 alias .....="../../../.."
 alias ......="../../../../.."
 alias rm=trash # safer deleting using trash-cli
-alias please=sudo # nicer sudo command
+alias please=sudo # nicer sudo
 alias resource="source ~/.zshrc"
 alias ip="getip" # shorter alias for getip() function in .functions setup
 

@@ -41,7 +41,6 @@ module.exports = {
     'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
-    'hyper-pane',
   ],
   localPlugins: []
 }
