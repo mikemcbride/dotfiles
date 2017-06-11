@@ -48,13 +48,10 @@ set_prompts() {
     
     for line in $gitstatus; do
       if [ "$line" = "D" ]; then
-        echo "D"
         del=1
       elif [ "$line" = "M" ]; then
-        echo "M"
         changed=1
       else
-        echo "N"
         new=1
       fi
     done
