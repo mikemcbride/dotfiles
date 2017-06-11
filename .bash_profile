@@ -15,6 +15,11 @@ if [[ -f ~/.aliases.local ]]; then
   source ~/.aliases.local
 fi
 
+# source git-completion
+if [[ -f ~/dotfiles/git-completion.bash ]]; then
+  source ~/dotfiles/git-completion.bash
+fi
+
 # set vi mode
 set -o vi
 

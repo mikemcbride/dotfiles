@@ -16,12 +16,14 @@ alias resource="source ~/.bash_profile"
 alias ip="getip" # shorter alias for getip() function in .functions setup
 
 # Git
+alias g="git"
 alias gmm="git merge master"
 alias gf="git fetch --all --prune"
 alias gl="git pull"
 alias gd="git diff"
 alias ga="git add"
 alias gp="git push"
+alias gbx="git branch -D"
 alias gco="git checkout"
 alias gbc="git checkout -b"
 alias gcm="git checkout master"
