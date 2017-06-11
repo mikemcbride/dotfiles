@@ -14,10 +14,6 @@ You will need to have Git and Ruby installed. macOS comes bundled with these, bu
 xcode-select --install
 ```
 
-**SSH for GitHub**
-
-The setup script will clone git repos via SSH (Linux script will clone via HTTP in case its a server). Make sure you're [set up to do that](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) before running the install script or it won't work.
-
 **Node**
 
 You need to have [Node](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
@@ -72,7 +68,6 @@ Here are some apps that aren't available for download via Homebrew cask (yet) th
 - Pixelmator
 - Noizio
 - Tweetbot
-- Battery Indicator
 
 ### Theme
 

@@ -1,8 +1,4 @@
 main() {
-  # in case we are in bash
-  echo "Switching to zsh..."
-  zsh
-
   # go home
   echo "Going home..."
   cd ~
@@ -14,7 +10,7 @@ main() {
   # try to install z
   if [[ ! -d ~/z ]]; then
     echo "Installing z..."
-    git clone git@github.com:rupa/z.git z
+    git clone https://github.com/rupa/z.git z
   fi
 
   # install or update Homebrew
@@ -44,7 +40,7 @@ main() {
 
   # install global node modules
   echo "Installing n and trash-cli..."
-  npm install --global n trash-cli empty-trash-cli
+  npm i -g n trash-cli empty-trash-cli
 
   echo "Now for some dotfile magic."
 
@@ -60,11 +56,11 @@ main() {
 
   # clone the repo to get all the dotfile goodness
   echo "Cloning dotfiles..."
-  git clone git@github.com:mmcbride1007/dotfiles.git dotfiles
+  git clone https://github.com/mmcbride1007/dotfiles.git dotfiles
 
   # install Prezto
   echo "Cloning Prezto..."
-  git clone --recursive git@github.com:mmcbride1007/prezto.git prezto
+  git clone --recursive https://github.com/mmcbride1007/prezto.git prezto
 
   # symlink ~/github/dotfiles to ~/dotfiles to make it easier to manage
   # symlink some files from ~/dotfiles to ~/prezto for the setup
@@ -87,6 +83,13 @@ main() {
     rm ~/.gitconfig
   fi
 
+  ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+  ln -s ~/dotfiles/.aliases ~/.aliases
+  ln -s ~/dotfiles/.functions ~/.functions
+  ln -s ~/dotfiles/.bash_prompt ~/.bash_prompt
+  ln -s ~/dotfiles/.exports ~/.exports
+  ln -s ~/dotfiles/.inputrc ~/.inputrc
+  ln -s ~/dotfiles/.dircolors ~/.dircolors
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
   ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
 

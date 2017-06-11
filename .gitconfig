@@ -8,6 +8,7 @@
 	g = git
 	c = commit -am
 	co = checkout
+	unstage = reset HEAD --
 	branch-name = rev-parse --abbrev-ref HEAD
 	publish = push -u origin $(git branch-name)
 	mm = "!git merge master"

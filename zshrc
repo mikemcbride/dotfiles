@@ -14,8 +14,8 @@ if [[ -f ~/dotfiles/.aliases ]]; then
 fi
 
 # source local aliases
-if [[ -f ~/.aliases.local ]]; then
-  source ~/.aliases.local
+if [[ -f ~/.extras ]]; then
+  source ~/.extras
 fi
 
 # source functions
