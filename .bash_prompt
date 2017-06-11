@@ -43,7 +43,7 @@ set_prompts() {
     git rev-parse --short HEAD 2> /dev/null || \
     echo 'unknown')";
     
-    # dirty check. This is probably the fastest way.
+    # dirty check
     local clean=0 del=0 changed=0 new=0
     
     for line in $gitstatus; do
