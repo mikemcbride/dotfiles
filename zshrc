@@ -8,20 +8,12 @@ if [[ -s ~/z/z.sh ]]; then
 	source ~/z/z.sh
 fi
 
-# source aliases
-if [[ -f ~/dotfiles/.aliases ]]; then
-  source ~/dotfiles/.aliases
-fi
-
-# source local aliases
-if [[ -f ~/.extras ]]; then
-  source ~/.extras
-fi
-
-# source functions
-if [[ -f ~/dotfiles/.functions ]]; then
-  source ~/dotfiles/.functions
-fi
+# load extras, aliases, functions, exports
+# ~/.extras can be used for things you don't want to commit
+for file in ~/.{extras,exports,aliases,functions}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
 
 # set vi mode
 bindkey -v

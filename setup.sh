@@ -1,4 +1,7 @@
 main() {
+  echo "Switching to zsh"
+  zsh
+  
   # go home
   echo "Going home..."
   cd ~

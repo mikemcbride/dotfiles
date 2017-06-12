@@ -10,11 +10,6 @@ for file in ~/.{extras,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
-# source local aliases
-if [[ -f ~/.aliases.local ]]; then
-  source ~/.aliases.local
-fi
-
 # source git-completion
 if [[ -f ~/dotfiles/git-completion.bash ]]; then
   source ~/dotfiles/git-completion.bash
