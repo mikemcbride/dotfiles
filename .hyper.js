@@ -2,7 +2,7 @@
 
 module.exports = {
   config: {
-    shell: '/usr/local/bin/bash',
+    shell: '/bin/zsh',
     fontSize: 14,
     fontFamily: 'Hack, SF Mono',
     cursorShape: 'BLOCK',
