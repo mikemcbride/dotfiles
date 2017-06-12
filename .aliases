@@ -12,7 +12,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias rm=trash # safer deleting using trash-cli
 alias please=sudo # nicer sudo
-alias resource="source ~/.bash_profile"
+alias resource="source ~/.zshrc"
 alias ip="getip" # shorter alias for getip() function in .functions setup
 
 # Git
