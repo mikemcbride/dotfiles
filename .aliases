@@ -45,7 +45,7 @@ alias gopen="open_in_github"
 # NPM
 alias ni="npm install"
 alias use_npm="npm set registry https://registry.npmjs.org/ && npm get registry"
-alias use_wwt="npm set registry http://sinopia.wwt.com/ && npm get registry"
+alias use_wwt="npm set registry https://npm.wwt.com/ && npm get registry"
 
 # start screensaver
 alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
