@@ -11,6 +11,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias rm=trash # safer deleting using trash-cli
+alias dump="empty-trash"
 alias please=sudo # nicer sudo
 alias resource="source ~/.zshrc"
 alias ip="getip" # shorter alias for getip() function in .functions setup
