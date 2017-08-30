@@ -4,7 +4,7 @@ module.exports = {
   config: {
     shell: '/bin/zsh',
     fontSize: 16,
-    fontFamily: 'Hack, SF Mono',
+    fontFamily: 'Operator Mono, SF Mono',
     cursorShape: 'BLOCK',
     termCSS: `
       x-screen a {
