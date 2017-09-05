@@ -10,6 +10,8 @@ module.exports = {
       x-screen a {
         color: '#ff2e88';
       }
+      
+      x-row span.unicode-node { vertical-align: text-bottom; }
     `,
     css: `
       .tab_text.tab_textActive {
@@ -22,10 +24,12 @@ module.exports = {
   },
   plugins: [
     'hyper-electron-highlighter',
+    // 'hyper-website-theme',
     'hypercwd',
     'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
   ],
-  localPlugins: []
+  localPlugins: [],
+  updateChannel: 'canary'
 }
