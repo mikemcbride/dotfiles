@@ -7,11 +7,13 @@ module.exports = {
     fontFamily: 'Operator Mono, SF Mono',
     cursorShape: 'BLOCK',
     termCSS: `
-      x-screen a {
+      x-screen a,
+      .terminal a {
         color: '#ff2e88';
       }
       
-      x-row span.unicode-node { vertical-align: text-bottom; }
+      x-row span.unicode-node,
+      .terminal span.unicode-node { vertical-align: text-bottom; }
     `,
     css: `
       .tab_text.tab_textActive {
