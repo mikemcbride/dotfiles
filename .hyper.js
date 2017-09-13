@@ -6,6 +6,7 @@ module.exports = {
     fontSize: 16,
     fontFamily: 'Operator Mono, SF Mono',
     cursorShape: 'BLOCK',
+    cursorColor: '#528bff',
     termCSS: `
       x-screen a,
       .terminal a {
