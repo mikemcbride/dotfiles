@@ -69,15 +69,6 @@ Here are some apps that aren't available for download via Homebrew cask (yet) th
 - Noizio
 - Tweetbot
 
-### Alfred Workflows
-
-Alfred is awesome. Here are some workflows to install manually:
-
-- [UUID generator](http://www.packal.org/workflow/uuid-generator-0)
-- [Homebrew and Cask](http://www.packal.org/workflow/homebrew-and-cask-alfred)
-- [Kill Process](https://github.com/ngreenstein/alfred-process-killer)
-- [Lastpass](http://www.packal.org/workflow/lastpass-cli-workflow-alfred)
-
 ### Theme
 
 The setup script installs Hyper, which I highly recommend as a terminal emulator. It also sets up a config file for Hyper that includes a custom theme that I built. If you prefer to use Terminal.app or iTerm2, I have the same theme available for those applications. [Head over here](http://github.com/mmcbride1007/electron-terminal-colors) for instructions on how to install them.
