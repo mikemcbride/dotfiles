@@ -3,8 +3,8 @@
 module.exports = {
   config: {
     shell: '/bin/zsh',
-    fontSize: 16,
-    fontFamily: 'Operator Mono, SF Mono',
+    fontSize: 15,
+    fontFamily: 'Operator Mono, Hack, SF Mono',
     cursorShape: 'BLOCK',
     cursorColor: '#528bff',
     termCSS: `
