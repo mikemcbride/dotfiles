@@ -98,7 +98,8 @@ main() {
   ln -s ~/dotfiles/zpreztorc ~/github/prezto/runcoms/zpreztorc
   ln -s ~/dotfiles/zshrc ~/github/prezto/runcoms/zshrc
   ln -s ~/github/prezto ~/.zprezto
-  ln -s ~/github/dotvim/vimrc ~/.vimrc
+  ln -s ~/github/dotvim ~/.vim
+  ln -s ~/.vim/vimrc ~/.vimrc
 
   if [ -f ~/.gitconfig ]; then
     echo "Overriding .gitconfig..."
