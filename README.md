@@ -40,7 +40,7 @@ Got all that? Great. Run this install script. It will do the following:
   - Slack
   - Spotify
   - [Kap](https://getkap.co/) for screen captures
-  - [Robomongo](https://robomongo.org/) for a MongoDB GUI
+  - [Robo 3T](https://robomongo.org/) for a MongoDB GUI
   - [Spectacle](https://www.spectacleapp.com/) for window management
   - [Mojibar](https://github.com/muan/mojibar) for quick emoji access with a hotkey (I alias mine to <kbd>cmd</kbd><kbd>;</kbd>)
 
