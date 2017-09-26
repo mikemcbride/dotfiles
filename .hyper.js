@@ -36,6 +36,7 @@ const borderColor = '#383838'
 const tabText = '#999' 
 const tabTextActive = white
 const dividerBg = 'rgba(255,255,255,.2)'
+const linkColor = '#4ff2f8'
 
 module.exports = {
   config: {
@@ -54,7 +55,7 @@ module.exports = {
         mix-blend-mode: difference;
       }
       .xterm-rows a {
-        color: #ff2e88;
+        color: ${linkColor};
       }
       
       .terminal span.unicode-node { vertical-align: text-bottom; }
