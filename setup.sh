@@ -59,11 +59,26 @@ main() {
 
   # clone the repo to get all the dotfile goodness
   echo "Cloning dotfiles..."
-  git clone https://github.com/mmcbride1007/dotfiles.git dotfiles
+  git clone https://github.com/mmcbride1007/dotfiles.git
 
   # install Prezto
   echo "Cloning Prezto..."
-  git clone --recursive https://github.com/mmcbride1007/prezto.git prezto
+  git clone --recursive https://github.com/mmcbride1007/prezto.git
+  
+  # clone vim config.
+  # .vimrc will be symlinked with the other symlinks below.
+  echo "Cloning dotvim..."
+  git clone http://github.com/mmcbride1007/dotvim.git
+  
+  echo "Heading into dotvim..."
+  cd ~/github/dotvim
+  
+  echo "Initiating git submodules..."
+  git submodule init
+  git submodule update
+  
+  echo "Done in dotvim, heading back to ~/github"
+  cd ~/github
 
   # symlink ~/github/dotfiles to ~/dotfiles to make it easier to manage
   # symlink some files from ~/dotfiles to ~/prezto for the setup
@@ -75,11 +90,15 @@ main() {
   rm ~/github/prezto/runcoms/zpreztorc
   rm ~/github/prezto/runcoms/zshrc
   
+  # and if there's an existing vimrc, kill it
+  rm ~/.vimrc
+  
   # now we can safely set up symlinks
   ln -s ~/github/dotfiles ~/dotfiles
   ln -s ~/dotfiles/zpreztorc ~/github/prezto/runcoms/zpreztorc
   ln -s ~/dotfiles/zshrc ~/github/prezto/runcoms/zshrc
   ln -s ~/github/prezto ~/.zprezto
+  ln -s ~/github/dotvim/vimrc ~/.vimrc
 
   if [ -f ~/.gitconfig ]; then
     echo "Overriding .gitconfig..."
