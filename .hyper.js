@@ -1,49 +1,49 @@
 'use strict'
 
-const black = '#181818'
-const white = '#f8f8f8'
+// color definitions
+const mono1 = '#181818'
+const mono2 = '#383838'
+const mono3 = '#585858'
+const mono4 = '#989898'
+const mono5 = '#b8b8b8'
+const mono6 = '#d8d8d8'
+const mono7 = '#f8f8f8'
+
+// only red and green are not mono-chrome
 const red = '#ff5869'
-const green = '#50e3c2'
-const cyan = green
-const yellow = '#b8b8b8'
-const blue = '#989898'
-const magenta = '#b8b8b8'
-const lightWhite = '#b8b8b8'
-const lightBlack = '#585858'
+const green = '#6af699'
+
+const cursorColor = green
+const borderColor = mono2
+const tabText = mono4
+const tabTextActive = mono7
+const dividerBg = 'rgba(255,255,255,.2)'
 
 const colors = {
-  black,
+  black: mono1,
   red,
   green,
-  yellow,
-  blue,
-  magenta,
-  cyan,
-  white,
-  lightBlack,
+  yellow: mono5,
+  blue: mono4,
+  magenta: mono5,
+  cyan: mono5,
+  white: mono7,
+  lightBlack: mono3,
   lightRed: red,
   lightGreen: green,
-  lightYellow: yellow,
-  lightBlue: blue,
-  lightMagenta: magenta,
-  lightCyan: cyan,
-  lightWhite
+  lightYellow: mono5,
+  lightBlue: mono4,
+  lightMagenta: mono5,
+  lightCyan: mono5,
+  lightWhite: mono6
 }
-
-const cursorColor = 'rgb(248,29,229)'
-const borderColor = '#383838'
-
-const tabText = '#999' 
-const tabTextActive = white
-const dividerBg = 'rgba(255,255,255,.2)'
-const linkColor = '#4ff2f8'
 
 module.exports = {
   config: {
     updateChannel: 'canary',
     shell: '/bin/zsh',
-    foregroundColor: white,
-    backgroundColor: black,
+    foregroundColor: mono7,
+    backgroundColor: mono1,
     borderColor,
     cursorColor,
     colors,
@@ -55,7 +55,7 @@ module.exports = {
         mix-blend-mode: difference;
       }
       .xterm-rows a {
-        color: ${linkColor};
+        color: ${green};
       }
       
       .terminal span.unicode-node { vertical-align: text-bottom; }
