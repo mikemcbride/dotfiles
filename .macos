@@ -22,8 +22,8 @@ sudo pmset -a standbydelay 86400
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-# Set highlight color to blue-green
-defaults write NSGlobalDomain AppleHighlightColor -string "0.780392 0.972549 0.988235"
+# Set highlight color to a nice green
+defaults write NSGlobalDomain AppleHighlightColor -string "0.469197 0.957216 0.663519"
 
 # Disable the over-the-top focus ring animation
 defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
