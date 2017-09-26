@@ -6,17 +6,15 @@ These are my dotfiles. It's here so that I don't lose any of my setups when swit
 
 **Operating system**
 
-This setup is for macOS. If you want this on Linux, use the provided Linux install script, which omits some macOS specific things (admittedly I do not keep that install script super updated as I don't use Linux very often, but  it should be a good starting point).
-
-You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
+This setup is for macOS only. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
 
 ```shell
 xcode-select --install
 ```
 
-**Node**
+**Node.js**
 
-You need to have [Node](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
+You need to have [Node.js](https://nodejs.org/en/download) installed. I'd suggest making sure you are on a current version prior to executing the install script.
 
 ## Setup
 
@@ -50,12 +48,6 @@ Ready to get started?? Just paste this into your terminal. **WARNING:** Please m
 
 ```
 curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/setup.sh | sh
-```
-
-**For Linux users:**
-
-```
-curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/linux_setup.sh | sh
 ```
 
 ### Additional App Setup
