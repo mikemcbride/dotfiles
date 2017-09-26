@@ -27,6 +27,7 @@ Got all that? Great. Run this install script. It will do the following:
 - install [Homebrew Cask](https://caskroom.github.io/) (again, if you already have it, this won't do anything)
 - install [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
 - clone this repo into  `~/github/dotfiles` and set up your `.zshrc`
+- clone my [dotvim](https://github.com/mmcbride1007/dotvim) repo into `~/github/dotvim` and set up an opinionated `.vimrc`
 - install a few packages that I have aliases or functions for that will throw errors when you try to source the `.zshrc`
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
