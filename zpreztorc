@@ -17,6 +17,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'git' \
   'syntax-highlighting' \
+  'autosuggestions' \
   'prompt'
 
 # Set the key mapping style to 'emacs' or 'vi'.
