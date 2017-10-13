@@ -49,8 +49,8 @@ module.exports = {
     borderColor,
     cursorColor,
     colors,
-    fontSize: 15,
-    fontFamily: 'Operator Mono, Hack, SF Mono',
+    fontSize: 14,
+    fontFamily: 'Fira Mono, Operator Mono, Hack, SF Mono',
     cursorShape: 'BLOCK',
     termCSS: `
       .terminal-cursor {
