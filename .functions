@@ -67,7 +67,7 @@ function bitly() {
 
 # get current IP address
 function getip() {
-  node ~/dotfiles/scripts/getIp.js | tee >(pbcopy)
+  node ~/dotfiles/scripts/getIp.js
 }
 
 # open current repo in GitHub if it's a git repo
