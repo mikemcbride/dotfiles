@@ -34,7 +34,7 @@ pbcopy(ip)
 const msg = '     ' + chalk.green(ip) + chalk.gray('\n(copied to clipboard)')
 const opts = {
   padding: 1,
-  borderColor: 'yellow'
+  borderColor: 'blue'
 }
 
 console.log('\n' + boxen(msg, opts) + '\n')
