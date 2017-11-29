@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const spawn = require('child_process').spawn
 const os = require('os')
 const internalIp = require('internal-ip')
 const chalk = require('chalk')
 const boxen = require('boxen')
+const clipboardy = require('clipboardy')
 
 function getIp() {
   const interfaces = os.networkInterfaces()
@@ -22,14 +22,8 @@ function getIp() {
   return ip
 }
 
-function pbcopy(data) {
-  const proc = spawn('pbcopy') 
-  proc.stdin.write(data)
-  proc.stdin.end()
-}
-
 const ip = getIp()
-pbcopy(ip)
+clipboardy.writeSync(ip)
 
 const msg = '     ' + chalk.green(ip) + chalk.gray('\n(copied to clipboard)')
 const opts = {

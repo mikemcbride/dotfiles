@@ -124,8 +124,8 @@ main() {
   echo "Done installing command utility and desktop applications."
   
   # install dependencies required for some scripts in dotfiles to work
-  echo "Installing dependencies via npm..."
-  npm install
+  echo "Installing dependencies..."
+  yarn install
 
   if [ -f ~/.hyper.js ]; then
     echo "Overriding .hyper.js..."
