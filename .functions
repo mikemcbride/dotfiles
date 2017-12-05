@@ -13,6 +13,13 @@ function copy() {
   pbcopy < $1; echo "$(tput setaf 2)Contents of $(tput setaf 5)${1} $(tput setaf 2)copied to clipboard!"
 }
 
+# use smarter clone script
+# clone will copy the new repo url,
+# we just need to paste it afterwards
+function clone() {
+  node ~/dotfiles/scripts/clone.js $1 && cd $(pbpaste)
+}
+
 # Git stuff
 function git_current_branch() {
   if ! git rev-parse 2> /dev/null; then
