@@ -19,7 +19,8 @@ module.exports = {
   },
   plugins: [
     'hypercwd',
-    'hyper-mono-christmas',
+    // 'hyper-mono-christmas',
+    'hyper-electron-highlighter',
     'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
