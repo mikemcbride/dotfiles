@@ -106,13 +106,9 @@ main() {
     rm ~/.gitconfig
   fi
 
-  ln -s ~/dotfiles/.bash_profile ~/.bash_profile
   ln -s ~/dotfiles/.aliases ~/.aliases
   ln -s ~/dotfiles/.functions ~/.functions
-  ln -s ~/dotfiles/.bash_prompt ~/.bash_prompt
   ln -s ~/dotfiles/.exports ~/.exports
-  ln -s ~/dotfiles/.inputrc ~/.inputrc
-  ln -s ~/dotfiles/.dircolors ~/.dircolors
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
   ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
 

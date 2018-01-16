@@ -50,9 +50,9 @@ Ready to get started?? Just paste this into your terminal. **WARNING:** Please m
 curl -L https://raw.githubusercontent.com/mmcbride1007/dotfiles/master/setup.sh | sh
 ```
 
-### Additional App Setup
+### Additional Setup
 
-This part is mostly just for me to remember what I still need to download.
+This section is mostly just for me to remember what I still need to download/setup after running the install script.
 
 Here are some apps that aren't available for download via Homebrew cask (yet) that you'll currently need to download manually:
 
@@ -61,6 +61,8 @@ Here are some apps that aren't available for download via Homebrew cask (yet) th
 - Pixelmator
 - Noizio
 - Tweetbot
+
+You'll also need to create a `.extras` file in the home directory that contains things like the `PATH`
 
 ### Theme
 

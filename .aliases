@@ -2,19 +2,14 @@ alias k="clear"
 alias x="exit"
 alias q="exit"
 alias :q="exit"
-alias la="ls -la"
 alias ltr="ls -ltr"
 alias vi=vim # prefer vim to vi
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
 alias rm=trash # safer deleting using trash-cli
 alias dump="empty-trash"
 alias please=sudo # nicer sudo
 alias resource="source ~/.zshrc"
 alias ip="getip" # shorter alias for getip() function in .functions setup
+alias bbd="brew bundle dump --force" # homebrew bundle
 
 # Git
 alias g="git"
@@ -59,8 +54,3 @@ alias weather="curl wttr.in"
 alias atom="atom-beta"
 alias apm="apm-beta"
 alias ab="atom-beta ."
-
-# start/stop tomcat server
-alias tomcat_start="/Library/Tomcat/bin/startup.sh"
-alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
-
