@@ -27,16 +27,6 @@ main() {
     brew update
   fi
 
-  # Install or update Homebrew Cask
-  if [[ ! -d /usr/local/Caskroom ]]; then
-    # unless user specified another location, they do not have Cask. Just try to install it, nothing will break
-    echo "Installing Cask..."
-    brew tap caskroom/cask
-  else
-    echo "Updating Cask..."
-    brew cask update
-  fi
-
   # Install Homebrew Bundle
   echo "Installing Homebrew Bundle"
   brew tap Homebrew/bundle
