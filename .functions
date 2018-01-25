@@ -77,9 +77,9 @@ function getip() {
   node ~/dotfiles/scripts/getIp.js
 }
 
-# open current repo in GitHub if it's a git repo
-function open_in_github() {
-  node  ~/dotfiles/scripts/openOnGitHub.js
+# open current repo online if it's a git repo
+function open_git_repo_online() {
+  node  ~/dotfiles/scripts/openGitRepo.js
 }
 
 # replace all extensions of type X with Y in current directory
