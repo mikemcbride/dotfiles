@@ -5,7 +5,7 @@
   1. remoteType: ssh or https
   2. levels: how many levels deep your repositories start from that directory.
     - for example: if all your git repos are in ~/src, you will run it with 0 from the ~/src directory
-    - if you have something like ~/github and then a set of org folders, which each contain repos, pass 1 to tell it to go one level deeper
+    - if you have something like ~/src and then a set of org folders, which each contain repos, pass 1 to tell it to go one level deeper
 */
 
 const fs = require('fs')

@@ -24,8 +24,8 @@ Got all that? Great. Run this install script. It will do the following:
 - install [Homebrew](http://brew.sh) if you don't already have it, or run `brew update` if you do
 - install [Homebrew Cask](https://caskroom.github.io/) (again, if you already have it, this won't do anything)
 - install [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- clone this repo into  `~/github/dotfiles` and set up your `.zshrc`
-- clone my [dotvim](https://github.com/mmcbride1007/dotvim) repo into `~/github/dotvim` and set up an opinionated `.vimrc`
+- clone this repo into  `~/src/dotfiles` and set up your `.zshrc`
+- clone my [dotvim](https://github.com/mmcbride1007/dotvim) repo into `~/src/dotvim` and set up an opinionated `.vimrc`
 - install a few packages that I have aliases or functions for that will throw errors when you try to source the `.zshrc`
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
@@ -73,7 +73,7 @@ The setup script installs Hyper, which I highly recommend as a terminal emulator
 As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked. To do a backup of any Homebrew applications, you can run this command:
 
 ```
-cd ~/github/dotfiles
+cd ~/src/dotfiles
 brew bundle dump --force
 git add .
 git commit -m 'updating homebrew apps'

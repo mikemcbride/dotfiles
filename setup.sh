@@ -37,15 +37,15 @@ main() {
 
   echo "Now for some dotfile magic."
 
-  # if ~/github does not exist, create it
-  if [ ! -d ~/github ]; then
-    echo "Creating ~/github..."
-    mkdir ~/github
+  # if ~/src does not exist, create it
+  if [ ! -d ~/src ]; then
+    echo "Creating ~/src..."
+    mkdir ~/src
   fi
 
-  # cd into ~/github to clone git repos
-  echo "Heading over to ~/github to clone some repos..."
-  cd ~/github
+  # cd into ~/src to clone git repos
+  echo "Heading over to ~/src to clone some repos..."
+  cd ~/src
 
   # clone the repo to get all the dotfile goodness
   echo "Cloning dotfiles..."
@@ -61,34 +61,34 @@ main() {
   git clone http://github.com/mmcbride1007/dotvim.git
   
   echo "Heading into dotvim..."
-  cd ~/github/dotvim
+  cd ~/src/dotvim
   
   echo "Initiating git submodules..."
   git submodule init
   git submodule update
   
-  echo "Done in dotvim, heading back to ~/github"
-  cd ~/github
+  echo "Done in dotvim, heading back to ~/src"
+  cd ~/src
 
-  # symlink ~/github/dotfiles to ~/dotfiles to make it easier to manage
+  # symlink ~/src/dotfiles to ~/dotfiles to make it easier to manage
   # symlink some files from ~/dotfiles to ~/prezto for the setup
   # we want all our version controlled configs in ~/dotfiles.
   # ~/prezto is just a facade, but Prezto expects certain things to be in that location
   echo "Setting up symlinks..."
   
   # first we have to remove some files that already exist in prezto
-  rm ~/github/prezto/runcoms/zpreztorc
-  rm ~/github/prezto/runcoms/zshrc
+  rm ~/src/prezto/runcoms/zpreztorc
+  rm ~/src/prezto/runcoms/zshrc
   
   # and if there's an existing vimrc, kill it
   rm ~/.vimrc
   
   # now we can safely set up symlinks
-  ln -s ~/github/dotfiles ~/dotfiles
-  ln -s ~/dotfiles/zpreztorc ~/github/prezto/runcoms/zpreztorc
-  ln -s ~/dotfiles/zshrc ~/github/prezto/runcoms/zshrc
-  ln -s ~/github/prezto ~/.zprezto
-  ln -s ~/github/dotvim ~/.vim
+  ln -s ~/src/dotfiles ~/dotfiles
+  ln -s ~/dotfiles/zpreztorc ~/src/prezto/runcoms/zpreztorc
+  ln -s ~/dotfiles/zshrc ~/src/prezto/runcoms/zshrc
+  ln -s ~/src/prezto ~/.zprezto
+  ln -s ~/src/dotvim ~/.vim
   ln -s ~/.vim/vimrc ~/.vimrc
 
   if [ -f ~/.gitconfig ]; then
@@ -104,7 +104,7 @@ main() {
 
   # install homebrew applications
   echo "Installing applications via Homebrew and Cask..."
-  cd ~/github/dotfiles
+  cd ~/src/dotfiles
   brew bundle
 
   echo "Done installing command utility and desktop applications."
