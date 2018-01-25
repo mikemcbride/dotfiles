@@ -10,6 +10,10 @@ alias please=sudo # nicer sudo
 alias resource="source ~/.zshrc"
 alias ip="getip" # shorter alias for getip() function in .functions setup
 alias bbd="brew bundle dump --force" # homebrew bundle
+alias ...="../.."
+alias ....="../../.."
+alias .....="../../../.."
+alias ......="../../../../.."
 
 # Git
 alias g="git"
