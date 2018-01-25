@@ -12,6 +12,15 @@ module.exports = {
         -webkit-backface-visibility: unset;
         backface-visibility: unset;
       }
+      .tab_tab.tab_active::after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        right: 0;
+        left: 0;
+        height: 3px;
+        background-color: #528bff;
+      }
     `,
     hyperlinks: {
       defaultBrowser: true
