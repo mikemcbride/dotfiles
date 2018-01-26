@@ -18,7 +18,7 @@ module.exports = {
         top: -1px;
         right: 0;
         left: 0;
-        height: 3px;
+        height: 2px;
         background-color: #528bff;
       }
     `,
