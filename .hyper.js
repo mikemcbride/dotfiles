@@ -5,7 +5,7 @@ module.exports = {
     updateChannel: 'canary',
     shell: '/bin/zsh',
     fontSize: 14,
-    fontFamily: 'Fira Mono, Operator Mono, Hack, SF Mono',
+    fontFamily: 'Fira Code, Fira Mono, Operator Mono, Hack, SF Mono',
     cursorShape: 'BLOCK',
     css: `
       body {
