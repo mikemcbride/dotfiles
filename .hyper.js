@@ -12,14 +12,14 @@ module.exports = {
         -webkit-backface-visibility: unset;
         backface-visibility: unset;
       }
-      .tab_tab.tab_active::after {
-        content: '';
-        position: absolute;
-        top: -1px;
-        right: 0;
-        left: 0;
-        height: 2px;
-        background-color: #528bff;
+      .hyper_main {
+        border-width: 2px !important;
+        border-color: #4ff2f8 !important;
+      }
+      .header_header {
+        top: 2px;
+        left: 2px;
+        right: 2px;
       }
     `,
     hyperlinks: {
