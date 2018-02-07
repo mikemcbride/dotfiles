@@ -20,8 +20,8 @@ module.exports = {
   plugins: [
     'hypercwd',
     // 'hyper-mono-christmas',
-    // 'hyper-electron-highlighter',
-    'hyper-firefox-devtools',
+    'hyper-electron-highlighter',
+    // 'hyper-firefox-devtools',
     'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
