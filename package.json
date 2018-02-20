@@ -2,16 +2,11 @@
   "name": "dotfiles",
   "version": "1.0.0",
   "description": "my dotfiles",
-  "main": ".hyper.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mmcbride1007/dotfiles.git"
   },
   "author": "mmcbride1007",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/mmcbride1007/dotfiles/issues"
   },

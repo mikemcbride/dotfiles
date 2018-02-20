@@ -5,6 +5,8 @@ module.exports = {
     updateChannel: 'canary',
     shell: '/bin/zsh',
     fontSize: 14,
+    fontWeight: 'normal',
+    fontWeightBold: 'normal',
     fontFamily: 'Fira Mono, Operator Mono, Hack, SF Mono',
     cursorShape: 'BLOCK',
     css: `
@@ -19,9 +21,7 @@ module.exports = {
   },
   plugins: [
     'hypercwd',
-    // 'hyper-mono-christmas',
     'hyper-electron-highlighter',
-    // 'hyper-firefox-devtools',
     'hyper-hide-title',
     'hyperlinks',
     'hyper-font-smoothing',
