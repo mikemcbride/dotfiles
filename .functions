@@ -88,6 +88,11 @@ function replace_ext() {
   node ~/dotfiles/scripts/replaceFileExtension.js $1 $2
 }
 
+# run node-prune in all directories within the current dir
+function prune() {
+  sh ~/dotfiles/scripts/prune.sh
+}
+
 # kill process running on specified port
 function killport() {
   lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
