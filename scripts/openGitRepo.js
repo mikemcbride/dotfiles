@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-'use strict'
 
-const execa = require('execa')
-const isGit = require('is-git-repository')
-const open = require('open')
-
-async function openGit() {
+(async function openGit() {
+  const execa = require('execa')
+  const isGit = require('is-git-repository')
+  const open = require('open')
+  
   if (isGit()) {
     const remoteOrigin = await execa('git', ['config', '--get', 'remote.origin.url'])
     const httpRegex = /http(s)?:\/\/(github|gitlab)\./gi
@@ -36,6 +35,4 @@ async function openGit() {
   }
   
   return
-}
-
-openGit()
+})()
