@@ -32,8 +32,8 @@ main() {
   brew tap Homebrew/bundle
 
   # install global node modules
-  echo "Installing n and trash-cli..."
-  npm i -g n trash-cli empty-trash-cli
+  echo "Installing some global npm modules..."
+  npm i -g n trash-cli empty-trash-cli fkill-cli
 
   echo "Now for some dotfile magic."
 
