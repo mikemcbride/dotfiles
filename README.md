@@ -54,7 +54,9 @@ Got all that? Great. Run the install script below. It will do the following:
   - [Spectacle](https://www.spectacleapp.com/) for window management
   - [Mojibar](https://github.com/muan/mojibar) for quick emoji access with a hotkey (I alias mine to <kbd>cmd</kbd><kbd>;</kbd>)
 
-Ready to get started?? Just paste this into your terminal. **WARNING:** Please make sure you have read through the setup script so you understand what this is doing before executing this.
+Ready to get started?? Just paste the script below into your terminal and let it rip.
+
+> **WARNING:** Please make sure you have read through the setup script so you understand what this is doing to your machine before executing this.
 
 ```
 curl -L https://raw.githubusercontent.com/mikemcbride/dotfiles/master/setup.sh | sh
@@ -64,7 +66,7 @@ curl -L https://raw.githubusercontent.com/mikemcbride/dotfiles/master/setup.sh |
 
 This section is mostly just for me to remember what I still need to download/setup after running the install script.
 
-Here are some apps that aren't available for download via Homebrew cask (yet) that you'll currently need to download manually:
+Here are some apps that aren't available for download via Homebrew cask that you'll currently need to download manually:
 
 - Atom Beta (stable is available via cask, not beta)
 - LastPass (App Store)

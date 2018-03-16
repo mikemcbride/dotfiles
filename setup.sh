@@ -33,7 +33,7 @@ main() {
 
   # install global node modules
   echo "Installing some global npm modules..."
-  npm i -g n trash-cli empty-trash-cli fkill-cli
+  npm i -g @vue/cli diff-so-fancy empty-trash-cli fkill-cli grunt-cli gulp n node-prune np poi trash-cli vtop
 
   echo "Now for some dotfile magic."
 
