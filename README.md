@@ -53,6 +53,7 @@ Got all that? Great. Run the install script below. It will do the following:
   - [Robo 3T](https://robomongo.org/) for a MongoDB GUI
   - [Spectacle](https://www.spectacleapp.com/) for window management
   - [Mojibar](https://github.com/muan/mojibar) for quick emoji access with a hotkey (I alias mine to <kbd>cmd</kbd><kbd>;</kbd>)
+  - An Automator script that I have bundled as an app that allows you to run `afk` from Spotlight to start your screensaver.
 
 Ready to get started?? Just paste the script below into your terminal and let it rip.
 
