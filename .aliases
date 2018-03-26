@@ -5,7 +5,6 @@ alias :q="exit"
 alias ltr="ls -ltr"
 alias vi=vim # prefer vim to vi
 alias rm=trash # safer deleting using trash-cli
-alias dump="empty-trash"
 alias please=sudo # nicer sudo
 alias resource="source ~/.zshrc"
 alias ip="getip" # shorter alias for getip() function in .functions setup

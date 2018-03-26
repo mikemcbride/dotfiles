@@ -22,7 +22,7 @@ module.exports = {
         top: -1px;
         left: 0;
         right: 0;
-        height: 2px;
+        height: 3px;
         background-color: #568af2;
       }
     `,
