@@ -13,6 +13,7 @@ main() {
   # if they have a .config/fish, kill it
   echo "Removing any existing fish configuration..."
   rm -rf ~/.config/fish
+  rm -rf ~/.config/fisherman
 
   # install or update Homebrew
   echo "Checking for existing Homebrew installation..."
