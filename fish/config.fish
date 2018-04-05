@@ -1,8 +1,7 @@
-set fish_color_command green
-set fish_prompt_pwd_dir_length 1
-
 # default greeting is 'Welcome to fish, the friendly interactive shell'
 set fish_greeting ''
+set fish_color_command green
+set fish_color_param normal
 
 # vim as default
 set -x EDITOR vim
