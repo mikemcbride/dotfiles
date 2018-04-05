@@ -79,7 +79,9 @@ async function updateRemote(dir, remote) {
   
   // TODO: this should work, but for some reason the command is saying no upstream found for origin/master
   // When I cd into a directory and run the same thing, it works just fine.
-  await execa('cd', [dir, '&&', 'git', 'checkout', 'master', '&&', 'git', 'branch', '-u', 'origin/master'])
+  await execa('cd', [dir])
+  await execa('git', ['checkout', 'master'])
+  await execa('git', ['branch', '-u', 'origin/master'])
 }
 
 spinner.stop()
