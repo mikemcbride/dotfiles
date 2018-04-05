@@ -1,27 +1,25 @@
 main() {
-  echo "Switching to zsh"
-  zsh
+  # we are going to need to be sudo for some stuff later on.
+  # ask for permission right away.
+  if [ $EUID != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+  fi
   
   # go home
   echo "Going home..."
   cd ~
 
-  # if they have a .zshrc, kill it
-  echo "Removing any existing .zshrc config..."
-  rm .zshrc
-
-  # try to install z
-  if [[ ! -d ~/z ]]; then
-    echo "Installing z..."
-    git clone https://github.com/rupa/z.git z
-  fi
+  # if they have a .config/fish, kill it
+  echo "Removing any existing fish configuration..."
+  rm -rf ~/.config/fish
 
   # install or update Homebrew
   echo "Checking for existing Homebrew installation..."
   which -s brew
   if [[ $? != 0 ]] ; then
-      echo "Installing Homebrew..."
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "Installing Homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
     echo "Updating Homebrew..."
     brew update
@@ -49,16 +47,12 @@ main() {
 
   # clone the repo to get all the dotfile goodness
   echo "Cloning dotfiles..."
-  git clone https://github.com/mmcbride1007/dotfiles.git
-
-  # install Prezto
-  echo "Cloning Prezto..."
-  git clone --recursive https://github.com/mmcbride1007/prezto.git
+  git clone https://github.com/mikemcbride/dotfiles.git
   
   # clone vim config.
   # .vimrc will be symlinked with the other symlinks below.
   echo "Cloning dotvim..."
-  git clone http://github.com/mmcbride1007/dotvim.git
+  git clone http://github.com/mikemcbride/dotvim.git
   
   echo "Heading into dotvim..."
   cd ~/src/dotvim
@@ -71,34 +65,23 @@ main() {
   cd ~/src
 
   # symlink ~/src/dotfiles to ~/dotfiles to make it easier to manage
-  # symlink some files from ~/dotfiles to ~/prezto for the setup
   # we want all our version controlled configs in ~/dotfiles.
-  # ~/prezto is just a facade, but Prezto expects certain things to be in that location
   echo "Setting up symlinks..."
   
-  # first we have to remove some files that already exist in prezto
-  rm ~/src/prezto/runcoms/zpreztorc
-  rm ~/src/prezto/runcoms/zshrc
-  
-  # and if there's an existing vimrc, kill it
+  # if there's an existing vimrc, kill it
   rm ~/.vimrc
   
   # now we can safely set up symlinks
   ln -s ~/src/dotfiles ~/dotfiles
-  ln -s ~/dotfiles/zpreztorc ~/src/prezto/runcoms/zpreztorc
-  ln -s ~/dotfiles/zshrc ~/src/prezto/runcoms/zshrc
-  ln -s ~/src/prezto ~/.zprezto
   ln -s ~/src/dotvim ~/.vim
   ln -s ~/.vim/vimrc ~/.vimrc
+  ln -s ~/src/dotfiles/fish ~/.config/fish
 
   if [ -f ~/.gitconfig ]; then
     echo "Overriding .gitconfig..."
     rm ~/.gitconfig
   fi
 
-  ln -s ~/dotfiles/.aliases ~/.aliases
-  ln -s ~/dotfiles/.functions ~/.functions
-  ln -s ~/dotfiles/.exports ~/.exports
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
   ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
 
@@ -106,6 +89,10 @@ main() {
   echo "Installing applications via Homebrew and Cask..."
   cd ~/src/dotfiles
   brew bundle
+  
+  # install fisher for managing fish plugins
+  echo "Installing fisher..."
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
   echo "Done installing command utility and desktop applications."
   
@@ -118,24 +105,20 @@ main() {
     rm ~/.hyper.js
   fi
   
+  echo "Setting up Hyper config..."
   ln -s ~/dotfiles/.hyper.js ~/.hyper.js
+  
+  # add fish to our available list of shells we can use
+  echo "Adding fish to list of available shells..."
+  echo /usr/local/bin/fish | sudo tee -a /etc/shells
 
-  # set up Prezto
-  echo "Setting up Prezto config files..."
-  ln -s ~/.zprezto/runcoms/zlogin ~/.zlogin
-  ln -s ~/.zprezto/runcoms/zlogout ~/.zlogout
-  ln -s ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
-  ln -s ~/.zprezto/runcoms/zprofile ~/.zprofile
-  ln -s ~/.zprezto/runcoms/zshenv ~/.zshenv
-  ln -s ~/.zprezto/runcoms/zshrc ~/.zshrc
-
-  # in case we are in bash...
-  echo "Changing shell to zsh..."
-  chsh -s /bin/zsh
-
-  # don't make me wait! I want to use this ASAP
-  echo "Sourcing .zshrc..."
-  source ~/.zshrc
+  # switch to fish! I wanna use this immediately!
+  echo "Changing shell to fish..."
+  chsh -s /usr/local/bin/fish
+  
+  # this only works once we have changed the shell to be fish.
+  echo "Installing fisher plugins..."
+  fisher
 
   # let them know what to do
   echo "All done! Open a new tab or window to start using your new shell."
