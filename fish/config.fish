@@ -20,7 +20,3 @@ set -x LANG en_US
 if test -e ~/.extras
   source ~/.extras
 end
-
-# add rbenv to the path and initialize it
-set -x PATH "$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
