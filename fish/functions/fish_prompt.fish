@@ -2,6 +2,7 @@ function fish_prompt
   # blue working directory
   set_color blue
   
+  # function to get current working directory plus one level up
   echo -n (pwd_plus_one)
   
   # get the current git branch

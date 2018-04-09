@@ -1,4 +1,4 @@
-function pwd_plus_one
+function pwd_plus_one --description 'prints current working directory plus one level up and replaces $HOME with ~'
   # replace $HOME with ~
   set realhome ~
   set tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
