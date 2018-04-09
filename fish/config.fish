@@ -6,6 +6,9 @@ set fish_color_param normal
 # vim as default
 set -x EDITOR vim
 
+# use vi mode on prompt
+fish_vi_key_bindings
+
 # Don’t clear the screen after quitting a manual page
 set -x MANPAGER 'less -X'
 
