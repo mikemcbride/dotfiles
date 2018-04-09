@@ -8,7 +8,7 @@ module.exports = {
     fontWeight: 'normal',
     fontWeightBold: 'normal',
     fontFamily: 'Fira Mono, Operator Mono, Hack, SF Mono',
-    cursorShape: 'BLOCK',
+    cursorShape: 'BEAM',
     cursorColor: '#34febb',
     css: `
       body {
