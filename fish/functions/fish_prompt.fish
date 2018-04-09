@@ -5,7 +5,7 @@ function fish_prompt
   # function to get current working directory plus one level up
   echo -n (pwd_plus_one)
   
-  # get the current git branch
+  # get the current git branch, using vcprompt (installed via homebrew)
   set branch (vcprompt -f '%b')
   
   if test -n "$branch"
