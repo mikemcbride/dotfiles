@@ -1,0 +1,3 @@
+function .....
+  builtin cd ../../../..
+end
