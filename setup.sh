@@ -1,11 +1,4 @@
 main() {
-  # we are going to need to be sudo for some stuff later on.
-  # ask for permission right away.
-  if [ $EUID != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
-  fi
-  
   # go home
   echo "Going home..."
   cd ~
