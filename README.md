@@ -60,7 +60,7 @@ Ready to get started?? Just paste the script below into your terminal and let it
 > **WARNING:** Please make sure you have read through the setup script so you understand what this is doing to your machine before executing this.
 
 ```
-curl -L https://raw.githubusercontent.com/mikemcbride/dotfiles/master/setup.sh | sh
+sudo curl -sSL https://raw.githubusercontent.com/mikemcbride/dotfiles/master/setup.sh | sh
 ```
 
 ### Additional Setup
