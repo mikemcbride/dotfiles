@@ -5,6 +5,7 @@ module.exports = {
     updateChannel: 'canary',
     shell: '/usr/local/bin/fish',
     fontSize: 14,
+    lineHeight: 1.2,
     fontWeight: 'normal',
     fontWeightBold: 'normal',
     fontFamily: 'Fira Mono, Operator Mono, Hack, SF Mono',
