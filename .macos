@@ -22,6 +22,9 @@ sudo pmset -a standbydelay 86400
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Disable the sound effect when plugging in a charger
+defaults write com.apple.PowerChime ChimeOnNoHardware -bool true
+
 # Set highlight color to a nice green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.469197 0.957216 0.663519"
 
@@ -602,7 +605,7 @@ defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Dock" "Finder" "Siri" "Google Chrome" "Mail" "Messages" \
-	"Opera" "Photos" "Safari" "Spectacle" "SystemUIServer" "Terminal" \
+	"Opera" "Photos" "PowerChime" "Safari" "Spectacle" "SystemUIServer" "Terminal" \
 	"Tweetbot" "iCal"; do
 	killall "${app}" &> /dev/null
 done
