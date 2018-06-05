@@ -36,7 +36,6 @@ module.exports = {
     'hypercwd',
     'hyper-electron-highlighter',
     'hyper-hide-title',
-    'hyperlinks',
   ],
   localPlugins: [],
 }
