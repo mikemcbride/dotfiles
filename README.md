@@ -12,6 +12,12 @@ This setup is for macOS only. You will need to have Git and Ruby installed. macO
 xcode-select --install
 ```
 
+You will also need to be the owner of the `/usr` directory. To make sure you are, run this:
+
+```shell
+sudo chown -r `whoami` /usr
+```
+
 **Node.js**
 
 You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher.
@@ -19,12 +25,11 @@ You need to have [Node.js](https://nodejs.org/en/download) installed. This setup
 ## Setup
 
 Got all that? Great. Run the install script below. It will do the following:
-- set your shell to zsh
-- install [Prezto](https://github.com/sorin-ionescu/prezto) that I forked and modified
+- set your shell to fish
 - install [Homebrew](http://brew.sh) if you don't already have it, or run `brew update` if you do
 - install [Homebrew Cask](https://caskroom.github.io/) (again, if you already have it, this won't do anything)
 - install [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- clone this repo into  `~/src/dotfiles` and set up your `.zshrc`
+- clone this repo into  `~/src/dotfiles` and set up your fish configs
 - clone my [dotvim](https://github.com/mikemcbride/dotvim) repo into `~/src/dotvim` and set up an opinionated `.vimrc`
 - install a few packages that I have aliases or functions for that will throw errors when you try to source the `.zshrc`
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
