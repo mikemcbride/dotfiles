@@ -6,7 +6,7 @@
   const chalk = require('chalk')
   
   const spinner = ora({
-    text: 'Emptying trash...',
+    text: '🗑 Emptying trash...',
     color: 'green'
   }).start()
   
