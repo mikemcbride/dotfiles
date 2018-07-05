@@ -4,11 +4,11 @@ module.exports = {
   config: {
     updateChannel: 'canary',
     shell: '/usr/local/bin/fish',
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 1.2,
     fontWeight: 'normal',
     fontWeightBold: 'normal',
-    fontFamily: 'Fira Mono, Operator Mono, Hack, SF Mono',
+    fontFamily: 'Fira Mono',
     cursorShape: 'UNDERLINE',
     cursorColor: '#34febb',
     css: `
@@ -27,10 +27,7 @@ module.exports = {
         width: 2px;
         background-color: #568af2;
       }
-    `,
-    hyperlinks: {
-      defaultBrowser: true
-    }
+    `
   },
   plugins: [
     'hypercwd',
