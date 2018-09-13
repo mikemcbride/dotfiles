@@ -15,7 +15,7 @@ xcode-select --install
 You will also need to be the owner of the `/usr` directory. To make sure you are, run this:
 
 ```shell
-sudo chown -r `whoami` /usr
+sudo chown -R `whoami` /usr
 ```
 
 **Node.js**
