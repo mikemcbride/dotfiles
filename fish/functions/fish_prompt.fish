@@ -9,18 +9,21 @@ function fish_prompt
   set branch (vcprompt -f '%b')
   
   if test -n "$branch"
-    set gitstatus (vcprompt -f '%m')
     # we have a git branch
+
+    set gitstatus (vcprompt -f '%m')
+    set_color brblack
+
     if test -n "$gitstatus"
       # git status is dirty
-      set_color yellow
+      set branch_prompt "$branch*"
     else
       # git status is clean
-      set_color brblack
+      set branch_prompt "$branch"
     end
     
     # now that we have set our color, print the git branch.
-    echo -n " [$branch]"
+    echo -n " [$branch_prompt]"
   end
   
   set_color purple
