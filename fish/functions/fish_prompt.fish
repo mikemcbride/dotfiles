@@ -3,7 +3,7 @@ function fish_prompt
   set_color blue
   
   # function to get current working directory plus one level up
-  echo -n (basename $PWD)
+  echo -n (base_dir)
   
   # get the current git branch, using vcprompt (installed via homebrew)
   set branch (vcprompt -f '%b')
