@@ -16,14 +16,11 @@ function fish_prompt
 
     if test -n "$gitstatus"
       # git status is dirty
-      set branch_prompt "$branch*"
-    else
-      # git status is clean
-      set branch_prompt "$branch"
+      set_color yellow
     end
     
     # now that we have set our color, print the git branch.
-    echo -n " [$branch_prompt]"
+    echo -n " [$branch]"
   end
   
   set_color purple
