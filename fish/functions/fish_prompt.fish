@@ -24,6 +24,6 @@ function fish_prompt
   end
   
   set_color purple
-  echo -n " ❯ "
+  echo -n " » "
   set_color normal
 end
