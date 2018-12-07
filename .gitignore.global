@@ -24,6 +24,7 @@ bundle.js
 *.swo
 *.swp
 *.vi
+.vscode
 
 
 # Override bad GitHub for Mac default
