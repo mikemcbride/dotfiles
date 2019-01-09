@@ -33,7 +33,6 @@ bundle.js
 
 # Always ignore
 .DS_Store
-Icon?
 Thumbs.db
 
 pids

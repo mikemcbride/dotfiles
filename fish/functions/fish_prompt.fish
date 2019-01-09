@@ -1,4 +1,10 @@
 function fish_prompt
+  # lightblack timestamp
+  set_color brblack
+
+  set cur_time (date +%T)
+  echo -n "[$cur_time] "
+
   # blue working directory
   set_color blue
   
