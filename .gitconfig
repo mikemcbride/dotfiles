@@ -12,7 +12,7 @@
 	bx = branch -D
 	ba = branch --all
 	cmsg = commit -m
-	unstage = reset HEAD --
+	unstage = reset --
 	branch-name = rev-parse --abbrev-ref HEAD
 	publish = push -u origin $(git branch-name)
 	pub = push -u origin $(git branch-name)
