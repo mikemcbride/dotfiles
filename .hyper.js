@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: [
     'hypercwd',
+    // 'hyper-snazzy',
     'hyper-electron-highlighter',
     'hyper-hide-title'
   ]
