@@ -21,7 +21,7 @@
     color: 'green'
   }).start()
   
-  emptyTrash()
+  await emptyTrash()
   
   spinner.stop()
 
