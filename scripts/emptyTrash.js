@@ -3,18 +3,9 @@
 (async function () {
   const emptyTrash = require('empty-trash')
   const randomItem = require('random-item')
-  // const ora = require('ora')
+  const ora = require('ora')
   const chalk = require('chalk')
   
-  // const spinner = ora({
-  //   text: 'Emptying trash...',
-  //   color: 'green'
-  // }).start()
-  
-  emptyTrash()
-  
-  // spinner.stop()
-
   const messages = [
     'Taking out the trash',
     'Scheduling trash pickup',
@@ -25,5 +16,14 @@
   ]
   
   const message = randomItem(messages)
-  console.log(chalk.green(message))
+  const spinner = ora({
+    text: message,
+    color: 'green'
+  }).start()
+  
+  emptyTrash()
+  
+  spinner.stop()
+
+  console.log(chalk.green('All done!'))
 })()
