@@ -47,3 +47,5 @@
 	newHighlight = green bold 22
 [credential]
 	helper = osxkeychain
+[remote "origin"]
+	prune = true
