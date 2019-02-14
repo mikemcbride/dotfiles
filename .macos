@@ -143,8 +143,11 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Enable subpixel font rendering on non-Apple LCDs
+# Enable subpixel font rendering on non-Apple LCDs for High Sierra
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+# And also for Mojave
+defaults write NSGlobalDomain CGFontRenderingFontSmoothingDisabled -bool FALSE
 
 # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
