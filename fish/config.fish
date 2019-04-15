@@ -17,3 +17,7 @@ set -x LC_ALL 'en_US.UTF-8'
 set -x LANG en_US
 
 thefuck --alias | source
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[ -f /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish

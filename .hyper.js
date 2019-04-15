@@ -10,11 +10,11 @@ module.exports = {
     fontWeightBold: 'normal',
     fontFamily: 'Fira Mono',
     cursorShape: 'UNDERLINE',
-    cursorColor: '#34febb'
+    cursorColor: '#34febb',
   },
   plugins: [
     'hypercwd',
-    'hyper-electron-highlighter',
-    'hyper-hide-title'
+    'hyper-hide-title',
+    'hyper-electron-highlighter'
   ]
 }

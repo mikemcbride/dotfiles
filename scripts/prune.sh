@@ -2,6 +2,7 @@
 # runs node_prune in all directories within the current directory
 
 function node_prune {
+  
   # Port of https://github.com/tj/node-prune to bash
   # Also,
   #   - fixed "*.ts" being overzealous and killing .d.ts files
@@ -108,10 +109,7 @@ function node_prune {
   echo "Files: "$(find node_modules/ -type f | wc -l)
 }
 
-for d in */; do
-  echo "pruning files in $d";
-  cd $d;
-  node_prune;
-  cd ..;
-  echo "------------------"
-done
+echo "pruning files in $1";
+cd $1;
+node_prune;
+echo "------------------"
