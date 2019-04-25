@@ -1,3 +1,3 @@
 function prune
-  sh ~/dotfiles/scripts/prune.sh
+  node ~/dotfiles/scripts/prune.js $argv
 end
