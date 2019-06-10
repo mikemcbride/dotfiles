@@ -2354,7 +2354,6 @@ Show everything you\'ve installed\.
 * mono       # the current prompt
   bass
   fzf
-  thefuck
   z
 .
 .fi
@@ -2406,8 +2405,6 @@ Remove plugins\.
 .IP "" 4
 .
 .nf
-
-'"$fisher_cmd_name"' rm thefuck
 .
 .fi
 .
