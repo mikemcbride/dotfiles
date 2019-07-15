@@ -1,7 +1,7 @@
 function ab
   if test -n "$argv"
-    atom-beta $argv
+    atom-nightly $argv
   else
-    atom-beta .
+    atom-nightly .
   end
 end
