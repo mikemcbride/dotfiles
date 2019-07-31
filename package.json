@@ -18,6 +18,7 @@
     "emphasize": "^2.0.0",
     "empty-trash": "^2.1.1",
     "execa": "^0.6.3",
+    "gifify": "^2.4.3",
     "internal-ip": "^1.2.0",
     "is-git-repository": "^1.1.1",
     "open": "0.0.5",
