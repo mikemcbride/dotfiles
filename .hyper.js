@@ -8,17 +8,16 @@ module.exports = {
     fontWeight: 'normal',
     fontWeightBold: 'normal',
     fontFamily: 'Fira Mono',
-    cursorShape: 'UNDERLINE',
+    cursorShape: 'BLOCK',
     cursorColor: '#34febb',
   },
   plugins: [
     'hypercwd',
     'hyper-hide-title',
-    // 'hyper-early-riser'
     'hyper-electron-highlighter'
   ],
   localPlugins: [
-    // 'hyper-early-riser'
-    // 'hyper-electron-highlighter'
+    // 'hyper-tailwind-dark'
+    // 'hyper-geist'
   ]
 }
