@@ -1,4 +1,4 @@
-function ab
+function co
   if test -n "$argv"
     code $argv
   else
