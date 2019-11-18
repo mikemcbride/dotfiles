@@ -2,6 +2,8 @@
 
 module.exports = {
   config: {
+    webGLRenderer: false,
+    updateChannel: 'canary',
     shell: '/usr/local/bin/fish',
     fontSize: 15,
     lineHeight: 1.2,
@@ -10,6 +12,7 @@ module.exports = {
     fontFamily: 'Fira Mono',
     cursorShape: 'BLOCK',
     cursorColor: '#34febb',
+    selectionColor: 'rgba(33, 40, 54, .5)'
   },
   plugins: [
     'hypercwd',
