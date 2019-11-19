@@ -1,3 +1,3 @@
-function unstage --description 'Unstage staged files'
-  git reset --
+function unstage --description 'Unstage staged files' --wrap 'git reset' 
+  git reset -- $argv
 end
