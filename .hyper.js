@@ -3,9 +3,8 @@
 module.exports = {
   config: {
     webGLRenderer: false,
-    updateChannel: 'canary',
     shell: '/usr/local/bin/fish',
-    fontSize: 15,
+    fontSize: 14,
     lineHeight: 1.2,
     fontWeight: 'normal',
     fontWeightBold: 'normal',
