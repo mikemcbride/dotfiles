@@ -14,8 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import urllib,urllib2
-import urlparse
+import urllib.request, urllib.parse, urllib.error
 import string
 import sys
 try:
@@ -53,7 +52,7 @@ class Api(object):
     def __init__(self, login, apikey):
         self.login = login
         self.apikey = apikey
-        self._urllib = urllib2
+        self._urllib = urllib
 
     def shorten(self,longURLs,params={}):
         """
@@ -129,7 +128,7 @@ class Api(object):
         '''Override the default urllib implementation.
 
         Args:
-          urllib: an instance that supports the same API as the urllib2 module
+          urllib: an instance that supports the same API as the urllib module
         '''
         self._urllib = urllib
 
@@ -145,14 +144,14 @@ class Api(object):
             }
 
         params.update(more_params)
-        params = params.items()
+        params = list(params.items())
 
         verbParam = VERBS_PARAM[verb]
         if verbParam:
             for val in paramVal:
                 params.append(( verbParam,val ))
 
-        encoded_params = urllib.urlencode(params)
+        encoded_params = urllib.parse.urlencode(params)
         return "%s%s?%s" % (BITLY_BASE_URL,verb,encoded_params)
 
     def _fetchUrl(self,url):
@@ -166,7 +165,7 @@ class Api(object):
         '''
 
         # Open and return the URL
-        url_data = self._urllib.urlopen(url).read()
+        url_data = self._urllib.request.urlopen(url).read()
         return url_data
 
     def _CheckForError(self, data):
@@ -180,11 +179,11 @@ class Api(object):
         # bitly errors are relatively unlikely, so it is faster
         # to check first, rather than try and catch the exception
         if 'ERROR' in data or data['statusCode'] == 'ERROR':
-            raise BitlyError, data['errorMessage']
+            raise BitlyError(data['errorMessage'])
         for key in data['results']:
             if type(data['results']) is dict and type(data['results'][key]) is dict:
                 if 'statusCode' in data['results'][key] and data['results'][key]['statusCode'] == 'ERROR':
-                    raise BitlyError, data['results'][key]['errorMessage']
+                    raise BitlyError(data['results'][key]['errorMessage'])
 
 class Stats(object):
     '''A class representing the Statistics returned by the bitly api.
@@ -212,14 +211,14 @@ class Stats(object):
 
 def main(argv):
     if len(sys.argv) < 2:
-        print "Usage: bitly.py '[url]'"
+        print("Usage: bitly.py '[url]'")
         return 1
     if not API_USERNAME or not API_KEY:
-        print 'API_USERNAME and API_KEY must be set.'
+        print('API_USERNAME and API_KEY must be set.')
         return 1
 
     shortUrl = Api(login=API_USERNAME, apikey=API_KEY).shorten(sys.argv[1])
-    print shortUrl
+    print(shortUrl)
     return 0
 
 if __name__ == '__main__':
