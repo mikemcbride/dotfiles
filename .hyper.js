@@ -4,7 +4,7 @@ module.exports = {
   config: {
     webGLRenderer: false,
     shell: '/usr/local/bin/fish',
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 1.2,
     fontWeight: 'normal',
     fontWeightBold: 'normal',
@@ -12,6 +12,9 @@ module.exports = {
     cursorShape: 'BLOCK',
     cursorColor: '#34febb',
     selectionColor: 'rgba(33, 40, 54, .5)'
+  },
+  hypercwd: {
+    initialWorkingDirectory: '~'
   },
   plugins: [
     'hypercwd',
