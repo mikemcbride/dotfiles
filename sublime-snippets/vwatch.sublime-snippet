@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+watch: {
+  ${1:name}(${2:newValue}, ${3:oldValue}) {
+    $0
+  }
+},
+]]></content>
+  <tabTrigger>vwatch</tabTrigger>
+  <description>Vue Watchers</description>
+  <scope>text.html.vue source.js.embedded.html</scope>
+</snippet>

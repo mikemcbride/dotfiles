@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+components: {
+  ${1:New},
+},
+]]></content>
+  <tabTrigger>vcomponents</tabTrigger>
+  <description>Vue Components block</description>
+  <scope >text.html.vue source.js.embedded.html</scope >
+</snippet>

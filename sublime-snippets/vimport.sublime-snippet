@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+import ${1:New} from '@/components/${1:New}'
+]]></content>
+  <tabTrigger>vimport</tabTrigger>
+  <description>Import Vue Component</description>
+  <scope >text.html.vue source.js.embedded.html</scope>
+</snippet>

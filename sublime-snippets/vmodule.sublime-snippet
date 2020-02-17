@@ -1,0 +1,32 @@
+<snippet>
+  <content><![CDATA[
+'use strict'
+
+const state = {
+  $0
+}
+
+export const getters = {
+  
+}
+
+export const mutations = {
+  
+}
+
+export const actions = {
+  
+}
+
+export default {
+  ${1:namespaced: true,
+  }state,
+  getters,
+  mutations,
+  actions
+}
+]]></content>
+  <tabTrigger>vmodule</tabTrigger>
+  <description>Vuex Module</description>
+  <scope>source.js</scope>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+module.exports = function ($1) {
+	$2
+}
+]]></content>
+  <tabTrigger>mef</tabTrigger>
+  <description>module.exports function</description>
+  <scope>source.js</scope>
+</snippet>

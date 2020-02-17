@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+filters: {
+  ${1:name}(${2:value}) {
+    return ${2:value}$0
+  }
+},
+]]></content>
+  <tabTrigger>vfilters</tabTrigger>
+  <description>Vue Filters block</description>
+  <scope>text.html.vue source.js.embedded.html</scope>
+</snippet>
