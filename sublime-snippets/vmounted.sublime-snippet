@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+mounted() {
+  $0
+},
+]]></content>
+  <tabTrigger>vmounted</tabTrigger>
+  <description>Vue Mounted Hook</description>
+  <scope>text.html.vue source.js.embedded.html</scope>
+</snippet>

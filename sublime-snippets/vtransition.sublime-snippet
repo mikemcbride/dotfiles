@@ -1,0 +1,16 @@
+<snippet>
+  <content><![CDATA[
+.${1:transition-name}-enter-active,
+.${1:transition-name}-leave-active {
+	${2:transition}: ${3:all} ${4:.2s} ${5:ease};
+}
+
+.${1:transition-name}-enter,
+.${1:transition-name}-leave-to {
+  ${6:property}: ${7:value};
+}
+]]></content>
+  <tabTrigger>vtransition</tabTrigger>
+  <description>Vue Transition</description>
+  <scope>text.html.vue source.scss.embedded.html,text.html.vue source.css.embedded.html,text.html.vue source.less.embedded.html,source.scss,source.css,source.less</scope>
+</snippet>

@@ -1,0 +1,23 @@
+<snippet>
+  <content><![CDATA[
+<template lang="html" functional>
+  ${2:<svg width="100%" height="100%"}
+</template>
+
+<script>
+export default {
+  name: '${1:ComponentName}',
+  props: {
+    fillColor: {
+      type: String,
+      default: 'currentColor'
+    }
+  }
+}
+</script>
+
+]]></content>
+  <tabTrigger>vicon</tabTrigger>
+  <description>Vue SVG Icon Component</description>
+  <scope>text.html.vue</scope>
+</snippet>

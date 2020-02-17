@@ -1,0 +1,22 @@
+<snippet>
+  <content><![CDATA[
+<template lang="html">
+  <div>
+    $4
+  </div>
+</template>
+
+<script>
+export default {
+  name: '${1:MyComponent}'
+}
+</script>
+
+<style lang="${2:scss}"${3: scoped}>
+
+</style>
+]]></content>
+  <tabTrigger>vbase</tabTrigger>
+  <description>Basic Vue Component</description>
+  <scope>text.html.vue</scope>
+</snippet>
