@@ -4,6 +4,7 @@ module.exports = {
   config: {
     webGLRenderer: false,
     shell: '/usr/local/bin/fish',
+    scrollback: 10000,
     fontSize: 15,
     lineHeight: 1.2,
     fontWeight: 'normal',
