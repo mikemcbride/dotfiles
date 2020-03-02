@@ -16,6 +16,9 @@ set -x MANPAGER 'less -X'
 set -x LC_ALL 'en_US.UTF-8'
 set -x LANG en_US
 
+# Preserve npm version when switching node versions with n
+set -x N_PRESERVE_NPM 1
+
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [ -f /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish
