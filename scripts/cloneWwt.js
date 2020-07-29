@@ -10,7 +10,7 @@ const chalk = require('chalk')
 const simpleGit = require('simple-git/promise')
 const clipboard = require('clipboardy')
 
-const cloneUrl = process.argv[2]
+let [orgName, repoName] = getRepoAndOrgNames(process.argv[2])
 
 const spinner = ora({
   text: 'Cloning...',
@@ -23,6 +23,18 @@ return cloneRepo().then(res => {
   return
 })
 
+function getRepoAndOrgNames(input) {
+  let orgName = 'custom-apps'
+  let repoName = input
+  let orgRepo = repoName.split('/')
+  if (orgRepo[1]) {
+    orgName = orgRepo[0]
+    repoName = orgRepo[1]
+  }
+
+  return [orgName, repoName]
+}
+
 async function cloneRepo() {
   // get local directories so we can see which one we added in the clone
   // unfortunately, simple-git does not return anything from the Promise after clone,
@@ -30,6 +42,7 @@ async function cloneRepo() {
   const dirsBefore = getDirectories(process.cwd())
 
   // clone the repo
+  const cloneUrl = `https://github.wwt.com/${orgName}/${repoName}.git`
   await clone(cloneUrl)
 
   // this should give us a single directory... the one that didn't exist before cloning
@@ -49,11 +62,7 @@ async function cloneRepo() {
   
   process.chdir(newRepo)
   
-  // if remote contains github.wwt.com, set the WWT git config user info
-  if (cloneUrl.includes('github.wwt.com')) {
-    setWwtRemoteInfo()
-  }
-
+  setWwtRemoteInfo()
   spinner.stop()
   return process.cwd()
 }
