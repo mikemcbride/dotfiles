@@ -23,5 +23,4 @@ set -x N_PRESERVE_NPM 1
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [ -f /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mcbridem/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/mcbridem/Downloads/google-cloud-sdk/path.fish.inc'; end
+starship init fish | source

@@ -1,0 +1,36 @@
+# disable the newline at the start of the prompt
+add_newline = false
+
+prompt_order = [
+  "time",
+  "directory",
+  "git_branch",
+  "git_status",
+  "character"
+]
+
+# replace the prompt character
+[character]
+symbol = "»"
+style_success = "purple"
+style_failure = "red"
+
+[directory]
+truncation_length = 1
+style = "blue"
+prefix = ""
+
+[line_break]
+disabled = true
+
+[time]
+disabled = false
+style = "bright-black"
+format = "[%T]"
+
+[git_branch]
+style = "yellow"
+symbol = ""
+
+[git_status]
+style = "yellow"
