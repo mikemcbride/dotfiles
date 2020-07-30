@@ -30,8 +30,7 @@ style = "bright-black"
 format = "[%T]"
 
 [git_branch]
-style = "yellow"
-symbol = ""
+style = "purple"
 
 [git_status]
 style = "yellow"
