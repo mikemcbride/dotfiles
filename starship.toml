@@ -20,14 +20,19 @@ symbol = "»"
 style_success = "purple"
 style_failure = "red"
 
+# only show current directory name
+# remove directory prefix, and make it blue
 [directory]
 truncation_length = 1
 style = "blue"
 prefix = ""
 
+# do not put prompt character on new line
+# might revisit this in the future...
 [line_break]
 disabled = true
 
+# show the time in the prompt
 [time]
 disabled = false
 style = "bright-black"
@@ -38,3 +43,19 @@ style = "purple"
 
 [git_status]
 style = "yellow"
+
+# remove bold styling from language prompts
+[golang]
+style = "cyan"
+
+[nodejs]
+style = "green"
+
+[python]
+style = "yellow"
+
+[ruby]
+style = "red"
+
+[rust]
+style = "red"
