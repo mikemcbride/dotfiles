@@ -1,0 +1,39 @@
+window:
+  padding:
+    x: 8
+    y: 8
+font:
+  normal:
+    family: OperatorMono Nerd Font
+  bold:
+    family: OperatorMono Nerd Font
+  size: 16
+  use_thin_strokes: false
+colors:
+  primary:
+    background: '#1d232f'
+    foreground: '#a8b5d1'
+  cursor:
+    cursor: '#34febb'
+    text: '#141820'
+  normal:
+    red: '#ff5874'
+    yellow: '#fffa9e'
+    green: '#6af699'
+    cyan: '#4ff2f8'
+    blue: '#82aaff'
+    magenta: '#c792ea'
+    black: '#141820'
+    gray: '#99a3b8'
+    white: '#a8b5d1'
+  bright:
+    red: '#ff5874'
+    yellow: '#fffa9e'
+    green: '#6af699'
+    cyan: '#4ff2f8'
+    blue: '#82aaff'
+    magenta: '#c792ea'
+    black: '#506686'
+    white: '#a8b5d1'
+
+

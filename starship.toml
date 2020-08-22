@@ -11,12 +11,13 @@ prompt_order = [
   "python",
   "ruby",
   "rust",
+  "line_break",
   "character"
 ]
 
 # replace the prompt character
 [character]
-symbol = "»"
+# symbol = "»"
 style_success = "purple"
 style_failure = "red"
 
@@ -30,7 +31,7 @@ prefix = ""
 # do not put prompt character on new line
 # might revisit this in the future...
 [line_break]
-disabled = true
+# disabled = true
 
 # show the time in the prompt
 [time]
@@ -59,3 +60,4 @@ style = "red"
 
 [rust]
 style = "red"
+symbol = "⚙ "
