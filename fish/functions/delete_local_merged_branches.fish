@@ -1,3 +1,4 @@
 function delete_local_merged_branches
-  git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
+    set -l default_branch (git_default_branch)
+    git branch --merged | egrep -v "(^\*|$default_branch)" | xargs git branch -d
 end
