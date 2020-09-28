@@ -24,3 +24,5 @@ set -x N_PRESERVE_NPM 1
 [ -f /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish ]; and . /Users/mcbridem/.npm/_npx/60122/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.fish
 
 starship init fish | source
+
+thefuck --alias | source
