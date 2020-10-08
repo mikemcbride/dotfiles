@@ -1,28 +1,28 @@
 # disable the newline at the start of the prompt
 add_newline = false
 
-prompt_order = [
-  "time",
-  "directory",
-  "git_branch",
-  "git_status",
-  "nodejs",
-  "golang",
-  "python",
-  "ruby",
-  "rust",
-  "line_break",
-  "character"
-]
+format = """\
+  $time\
+  $directory\
+  $git_branch\
+  $git_status\
+  $nodejs\
+  $golang\
+  $python\
+  $ruby\
+  $rust\
+  $line_break\
+  $character\
+"""
 
 # replace the prompt character
 [character]
-# symbol = "»"
-style_success = "purple"
-style_failure = "red"
+success_symbol = "[❯](bold purple)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold purple)"
 
 # only show current directory name
-# remove directory prefix, and make it blue
+# remove directory, and make it blue
 [directory]
 truncation_length = 1
 style = "blue"
@@ -37,7 +37,8 @@ prefix = ""
 [time]
 disabled = false
 style = "bright-black"
-format = "[%T]"
+time_format = "[%T] "
+format = "[$time]($style)"
 
 [git_branch]
 style = "purple"
