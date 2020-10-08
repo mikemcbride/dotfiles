@@ -26,7 +26,7 @@ vicmd_symbol = "[❮](bold purple)"
 [directory]
 truncation_length = 1
 style = "blue"
-prefix = ""
+format = "[$path ]($style)[$read_only]($read_only_style)"
 
 # do not put prompt character on new line
 # might revisit this in the future...
