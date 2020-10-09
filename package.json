@@ -4,13 +4,13 @@
   "description": "my dotfiles",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmcbride1007/dotfiles.git"
+    "url": "git+https://github.com/mikemcbride/dotfiles.git"
   },
-  "author": "mmcbride1007",
+  "author": "mikemcbride",
   "bugs": {
-    "url": "https://github.com/mmcbride1007/dotfiles/issues"
+    "url": "https://github.com/mikemcbride/dotfiles/issues"
   },
-  "homepage": "https://github.com/mmcbride1007/dotfiles#readme",
+  "homepage": "https://github.com/mikemcbride/dotfiles#readme",
   "dependencies": {
     "boxen": "^1.2.2",
     "chalk": "^2.3.0",

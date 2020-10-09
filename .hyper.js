@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     'hypercwd',
     'hyper-hide-title',
-    'hyper-early-riser'
+    'hyper-electron-highlighter'
   ],
   localPlugins: [
     // 'hyper-tailwind-dark'
