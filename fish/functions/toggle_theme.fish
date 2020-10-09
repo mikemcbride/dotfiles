@@ -1,3 +1,3 @@
 function toggle_theme
-  node ~/dotfiles/scripts/toggleThemes.js
+  node ~/dotfiles/scripts/toggleThemes.js $argv
 end
