@@ -92,15 +92,18 @@ async function getFilesize(dir) {
 }
 
 function getAllFiles(dirPath, arrayOfFiles = []) {
-  let files = fs.readdirSync(dirPath)
+    let files = fs.readdirSync(dirPath)
 
-  files.forEach(function(file) {
-    if (fs.statSync(path.join(dirPath, file)).isDirectory()) {
-      arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles)
-    } else {
-      arrayOfFiles.push(path.join(dirPath, file))
-    }
-  })
+    files.forEach(function (file) {
+        const fullPath = path.join(dirPath, file)
+        if (fs.existsSync(fullPath)) {
+            if (fs.statSync(fullPath).isDirectory()) {
+                arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles)
+            } else {
+                arrayOfFiles.push(path.join(dirPath, file))
+            }
+        }
+    })
 
-  return arrayOfFiles
+    return arrayOfFiles
 }
