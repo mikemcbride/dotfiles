@@ -52,3 +52,5 @@
 [user]
 	name = Mike McBride
 	email = mike.mcbride@hey.com
+[pull]
+	rebase = false
