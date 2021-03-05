@@ -15,13 +15,11 @@ Some commands to run to tidy up your Homebrew environment.
 brew update
 brew upgrade
 brew cleanup -s
-brew cask cleanup
 ```
 - `brew update` will update the local database of available packages and versions.
 - `brew upgrade` will actually upgrade the ones you have installed to the latest. You can also run `brew upgrade {package}` to only upgrade an individual package to the latest version, like `brew upgrade vim`.
 - `brew cleanup` will remove old versions of packages. The `-s` flag does this, which frees up even more space:
     > Scrub the cache, including downloads for even the latest versions. Note downloads for any installed formulae or casks will still not be deleted. If you want to delete those too: `rm -rf "$(brew --cache)"`
-- `brew cask cleanup` will clean up the cache for unfinished downloads of any casks you make have installed.
 
 For general Homebrew maintenance,  `brew doctor` and `brew missing` are diagnostic tools to find any problems with the installation and fix issues. Run these anytime. `brew doctor` will give you some additional commands to run to actually perform the chores - it won't do it for you.
 
