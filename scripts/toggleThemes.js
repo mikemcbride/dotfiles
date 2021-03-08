@@ -11,6 +11,7 @@ const writeFile = util.promisify(fs.writeFile)
 
 const hyperConfigFile = path.join(homedir, 'src/dotfiles/.hyper.js')
 const vsCodeConfigFile = path.join(homedir, 'Library/Application\ Support/Code/User/settings.json')
+const vimrc = path.join(homedir, 'src/dotvim/vimrc')
 
 let desiredTheme = process.argv[2]
 
@@ -78,6 +79,36 @@ readFile(vsCodeConfigFile, 'utf8').then(res => {
         })
     } else {
         console.log(`VS Code is already using ${desiredTheme} theme`)
+    }
+}).catch(err => {
+    console.error(err)
+})
+
+readFile(vimrc, 'utf8').then(res => {
+    let newTheme = desiredTheme
+    const darkTheme = 'let ayucolor="mirage"'
+    const lightTheme = 'let ayucolor="light"'
+    let isDark = res.includes(darkTheme)
+    let isLight = res.includes(lightTheme)
+    let didChange = false
+    if (!newTheme) {
+        newTheme = isDark ? 'light' : 'dark'
+    }
+    if (newTheme === 'light' && !isLight) {
+        didChange = true
+        newFile = res.replace(darkTheme, lightTheme)
+    } else if (newTheme === 'dark' && !isDark) {
+        didChange = true
+        newFile = res.replace(lightTheme, darkTheme)
+    }
+    if (didChange) {
+        writeFile(vimrc, newFile).then(() => {
+            console.log('Updated vimrc')
+        }).catch(err => {
+            console.error(err)
+        })
+    } else {
+        console.log(`vimrc is already using ${desiredTheme} theme`)
     }
 }).catch(err => {
     console.error(err)
