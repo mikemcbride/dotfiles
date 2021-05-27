@@ -11,7 +11,7 @@ module.exports = {
     fontWeightBold: 'normal',
     fontFamily: 'MonoLisa',
     cursorShape: 'BLOCK',
-    // cursorColor: '#34febb',
+    cursorColor: '#34febb',
     selectionColor: 'rgba(33, 40, 54, .5)'
   },
   hypercwd: {
@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     'hypercwd',
     'hyper-hide-title',
-    'hyper-early-riser'
+    'hyper-electron-highlighter'
   ],
   localPlugins: [
     // 'hyper-tailwind-dark'

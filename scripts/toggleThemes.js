@@ -86,8 +86,8 @@ readFile(vsCodeConfigFile, 'utf8').then(res => {
 
 readFile(vimrc, 'utf8').then(res => {
     let newTheme = desiredTheme
-    const darkTheme = 'let ayucolor="mirage"'
-    const lightTheme = 'let ayucolor="light"'
+    const darkTheme = 'let mikecolor="dark"'
+    const lightTheme = 'let mikecolor="light"'
     let isDark = res.includes(darkTheme)
     let isLight = res.includes(lightTheme)
     let didChange = false
