@@ -54,3 +54,5 @@
 	email = mike.mcbride@hey.com
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
