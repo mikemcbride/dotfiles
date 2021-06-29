@@ -4,106 +4,102 @@
 // if an argument x is passed as a second parameter,
 // it will traverse the directories x levels starting at cwd.
 // otherwise, runs prune.sh in the current directory.
-const fs = require('fs')
 const path = require('path')
-const util = require('util')
-const asyncStat = util.promisify(fs.stat)
+const fsPromises = require('fs/promises')
 
 const execa = require('execa')
-const prettyBytes = require('pretty-bytes')
 const chalk = require('chalk')
+const Timer = require('nodejs-process-timer')
+const prettyBytes = require('pretty-bytes')
 
 const levels = parseInt(process.argv[2], 10) || 0
-let totalFileSize = 0 // accumulator for filesize in bytes
 
-if (levels > 0) {
-    pruneFiles()
-} else {
-    // run it in the current directory
-    const currentDir = process.cwd()
-    if (currentDir.endsWith('/node_modules')) {
-        execute(currentDir)
-    } else {
-        const nmDir = path.join(currentDir, 'node_modules')
-        if (fs.existsSync(nmDir)) {
-            execute(nmDir)
-        } else {
-            console.log('this command must be run in a directory that contains node_modules')
-        }
-    }
+let totalSize = 0
+
+const byteConversion = {
+    B: 1,
+    KB: 1000,
+    MB: 1000*1000,
+    GB: 1000*1000*1000
 }
 
-function getRecursiveDirectories(srcpath, levels) {
+// run it!
+pruneFiles()
+
+async function pruneFiles() {
+    // figure out which directories we're pruning.
+    // calculate total filesize beforehand, then again after removing the files
+    console.log(chalk.green(`Pruning files ${levels} levels deep starting in ${process.cwd()}`))
+    const t = new Timer()
+    t.start()
+    let dirsToPrune = await getRecursiveDirectories(process.cwd(), levels)
+    await Promise.allSettled(dirsToPrune.map(dir => execute(dir)))
+    logTotalSizeRemoved()
+}
+
+async function getRecursiveDirectories(srcpath, levels) {
     let dirs = [srcpath]
 
     // while levels is not zero, recursively get directories for each dir and decrement levels
     while (levels > 0) {
-        dirs = dirs.reduce((acc, dir) => {
-            return [...acc, ...getDirectories(dir)]
-        }, [])
-
+        let newDirs = await Promise.allSettled(dirs.map(dir => getDirectories(dir)))
+        dirs = newDirs.filter(dir => dir.status === 'fulfilled').map(dir => dir.value).flat()
         levels--
     }
 
     return dirs
 }
 
-function getDirectories(srcpath) {
-    return fs.readdirSync(srcpath)
-        .filter(file => fs.lstatSync(path.join(srcpath, file)).isDirectory())
-        .reduce((acc, it) => {
-            const dirPath = path.join(srcpath, it)
-            const nodeModulesPath = path.join(dirPath, 'node_modules')
-            if (fs.existsSync(nodeModulesPath)) {
-                acc.push(nodeModulesPath)
-            }
-            return acc
-        }, [])
-}
-
-async function pruneFiles() {
-    let dirsToPrune = getRecursiveDirectories(process.cwd(), levels)
-    for (d in dirsToPrune) {
-        let dir = dirsToPrune[d]
-        await execute(dir)
+async function getDirectories(srcpath) {
+    let files = await fsPromises.readdir(srcpath)
+    let fileStats = await Promise.allSettled(files.map(file => fsPromises.lstat(path.join(srcpath, file))))
+    let directories = []
+    for (let i in fileStats) {
+        // files and corresponding stats will have the same index since we're using .map
+        const stat = fileStats[i]
+        const dir = files[i]
+        if (stat.status === 'fulfilled' && stat.value.isDirectory()) {
+            directories.push(path.join(srcpath, dir))
+        }
     }
-    console.log(chalk.green('Total filesize removed:', prettyBytes(totalFileSize)))
+    let pExists = await Promise.allSettled(directories.map(d => fsPromises.access(path.join(d, 'node_modules'))))
+    let exist = []
+    for (let i in pExists) {
+        // same index trick here to relate promise response to corresponding directory
+        const response = pExists[i]
+        const dir = directories[i]
+        if (response.status === 'fulfilled' && response.value === undefined) {
+            exist.push(dir)
+        }
+    }
+    return exist
 }
 
 async function execute(dir) {
-    console.log(`pruning files in ${dir}`)
-    const filesizeBefore = await getFilesize(dir)
     const r = await execa('node-prune', [dir])
-    const filesizeAfter = await getFilesize(dir)
-    const removedFilesize = filesizeBefore - filesizeAfter
-    totalFileSize += removedFilesize
+    console.log(`pruning files in ${dir}`)
     console.log(r.stdout)
     console.log('-------------------------\n')
+    parseTotalSizeRemoved(r.stdout)
 }
 
-async function getFilesize(dir) {
-    const allFiles = getAllFiles(dir)
-    let totalSize = 0
-    for (let file of allFiles) {
-        const stats = await asyncStat(file)
-        totalSize += stats.size
+function parseTotalSizeRemoved(input) {
+    const re = /size removed.*\s(\d*)\s(B|KB|MB|GB)/gmi
+    const match = re.exec(input)
+    const size = parseInt(match[1], 10)
+    const b = match[2]
+    const sizeInBytes = convertToBytes(size, b)
+    totalSize += sizeInBytes
+}
+
+function logTotalSizeRemoved() {
+    console.log(chalk.green(`Total file size removed: ${prettyBytes(totalSize)}`))
+}
+
+function convertToBytes(size, type) {
+    if (byteConversion[type]) {
+        return size * byteConversion[type]
+    } else {
+        return 0
     }
-    return totalSize
-}
-
-function getAllFiles(dirPath, arrayOfFiles = []) {
-    let files = fs.readdirSync(dirPath)
-
-    files.forEach(function (file) {
-        const fullPath = path.join(dirPath, file)
-        if (fs.existsSync(fullPath)) {
-            if (fs.statSync(fullPath).isDirectory()) {
-                arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles)
-            } else {
-                arrayOfFiles.push(path.join(dirPath, file))
-            }
-        }
-    })
-
-    return arrayOfFiles
 }
