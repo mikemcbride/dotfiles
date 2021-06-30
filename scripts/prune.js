@@ -59,10 +59,10 @@ async function getDirectories(srcpath) {
         const stat = fileStats[i]
         const dir = files[i]
         if (stat.status === 'fulfilled' && stat.value.isDirectory()) {
-            directories.push(path.join(srcpath, dir))
+            directories.push(path.join(srcpath, dir, 'node_modules'))
         }
     }
-    let pExists = await Promise.allSettled(directories.map(d => fsPromises.access(path.join(d, 'node_modules'))))
+    let pExists = await Promise.allSettled(directories.map(d => fsPromises.access(d)))
     let exist = []
     for (let i in pExists) {
         // same index trick here to relate promise response to corresponding directory
