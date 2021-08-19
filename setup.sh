@@ -13,7 +13,7 @@ main() {
   which -s brew
   if [[ $? != 0 ]] ; then
     echo "Installing Homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
     echo "Updating Homebrew..."
     brew update
@@ -25,8 +25,7 @@ main() {
 
   # install global node modules
   echo "Installing some global npm modules..."
-  npm i -g @vue/cli diff-so-fancy empty-trash-cli fkill-cli n np trash-cli convert-color-cli gifify
-  curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin
+  npm i -g diff-so-fancy empty-trash-cli fkill-cli np trash-cli convert-color-cli
 
   echo "Now for some dotfile magic."
 
@@ -43,29 +42,29 @@ main() {
   # clone the repo to get all the dotfile goodness
   echo "Cloning dotfiles..."
   git clone https://github.com/mikemcbride/dotfiles.git
-  
+
   # clone vim config.
   # .vimrc will be symlinked with the other symlinks below.
   echo "Cloning dotvim..."
   git clone http://github.com/mikemcbride/dotvim.git
-  
+
   echo "Heading into dotvim..."
   cd ~/src/dotvim
-  
+
   echo "Initiating git submodules..."
   git submodule init
   git submodule update
-  
+
   echo "Done in dotvim, heading back to ~/src"
   cd ~/src
 
   # symlink ~/src/dotfiles to ~/dotfiles to make it easier to manage
   # we want all our version controlled configs in ~/dotfiles.
   echo "Setting up symlinks..."
-  
+
   # if there's an existing vimrc, kill it
   rm ~/.vimrc
-  
+
   # now we can safely set up symlinks
   ln -s ~/src/dotfiles ~/dotfiles
   ln -s ~/src/dotvim ~/.vim
@@ -84,13 +83,17 @@ main() {
   echo "Installing applications via Homebrew and Cask..."
   cd ~/src/dotfiles
   brew bundle
-  
+
   # install fisher for managing fish plugins
   echo "Installing fisher..."
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
+  # install GO binaries
+  echo "Installing GO binaries..."
+  go get github.com/tj/node-prune
+
   echo "Done installing command utility and desktop applications."
-  
+
   # install dependencies required for some scripts in dotfiles to work
   echo "Installing dependencies..."
   yarn install
@@ -99,10 +102,10 @@ main() {
     echo "Overriding .hyper.js..."
     rm ~/.hyper.js
   fi
-  
+
   echo "Setting up Hyper config..."
   ln -s ~/dotfiles/.hyper.js ~/.hyper.js
-  
+
   # add fish to our available list of shells we can use
   echo "Adding fish to list of available shells..."
   echo /usr/local/bin/fish | sudo tee -a /etc/shells
@@ -110,7 +113,7 @@ main() {
   # switch to fish! I wanna use this immediately!
   echo "Changing shell to fish..."
   chsh -s /usr/local/bin/fish
-  
+
   # this only works once we have changed the shell to be fish.
   echo "Installing fisher plugins..."
   fisher

@@ -13,7 +13,7 @@ This setup is for macOS only. You will need to have Git and Ruby installed. macO
 xcode-select --install
 ```
 
-You will also need to be the owner of the `/usr` directory. To make sure you are, run this:
+You will also need to have write permissions to the `/usr` directory.
 
 ```shell
 sudo chown -R `whoami` /usr
@@ -21,7 +21,7 @@ sudo chown -R `whoami` /usr
 
 **Node.js**
 
-You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher.
+You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before getting started.
 
 ## Setup
 
@@ -37,11 +37,9 @@ Got all that? Great. Run the install script below. It will do the following:
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
-  - Hack and Fira Mono fonts for code editing
   - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 - install some command line utilities:
   - ripgrep
-  - ag (aka "the_silver_searcher")
   - wget
 - install some services commonly used in development:
   - Docker
@@ -49,8 +47,7 @@ Got all that? Great. Run the install script below. It will do the following:
   - MongoDB
   - Java
 - install a few desktop applications to make your life better:
-  - Chrome, Firefox, Opera, and Brave browsers
-  - [Hyper](https://hyper.is) as a terminal replacement (and set up an opinionated `.hyper.js` config file)
+  - Brave browser
   - [Insomnia](https://insomnia.rest/) for testing REST calls
   - Slack
   - [Kap](https://getkap.co/) for screen captures
@@ -72,8 +69,11 @@ This section is mostly just for me to remember what I still need to download/set
 Here are some apps that aren't available for download via Homebrew cask that you'll currently need to download manually:
 
 - 1Password (App Store)
-- Pixelmator (App Store)
+- Pixelmator Pro (App Store)
 - Noizio (App Store)
+- Sleeve
+- Bartender
+- Any fonts you want installed
 
 You'll also need to create a `.extras` file in the home directory that contains things like the `PATH`
 
@@ -91,12 +91,4 @@ brew bundle dump --force
 git add .
 git commit -m 'updating homebrew apps'
 git push
-```
-
-## Other Goodies
-
-For a new Mac setup, I copied the legendary script from [@mathiasbynens](https://github.com/mathiasbynens). The canonical version lives [here](https://mths.be/macos). I have removed and changed some things according to my own preferences. To get those defaults, simply `cd` into the dotfiles directory and execute the `.macos` file as seen below. **NOTE: I highly recommend reading through this before executing the script. Please make sure you know what it is doing to your machine.**
-
-```
-sh .macos
 ```
