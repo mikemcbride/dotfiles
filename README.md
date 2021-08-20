@@ -73,6 +73,7 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - Noizio (App Store)
 - Sleeve
 - Bartender
+- Battery Indicator (App Store)
 - Any fonts you want installed
 
 You'll also need to create a `.extras` file in the home directory that contains things like the `PATH`
