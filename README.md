@@ -23,6 +23,10 @@ sudo chown -R `whoami` /usr
 
 You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before getting started.
 
+**1Password**
+
+It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want too.
+
 ## Setup
 
 Got all that? Great. Run the install script below. It will do the following:
