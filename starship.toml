@@ -52,6 +52,7 @@ style = "cyan"
 
 [nodejs]
 style = "green"
+symbol = "⬢ "
 
 [python]
 style = "yellow"

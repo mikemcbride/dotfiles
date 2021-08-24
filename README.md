@@ -3,54 +3,187 @@
 
 These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included. I would, however, highly recommend forking this repo and changing my user name to yours to avoid any issues. That will also allow you to add your own customizations and remove any of mine that you don't like.
 
-## Prerequisites
+## Setup
+
+It's worth noting up front that this setup assumes you're using `bash` or `zsh`. We'll install `fish`, but all the install commands would be run on a fresh system, so it's one of those shells. It's also worth noting that this setup is for macOS only.
+
+One other important thing to note is that the Homebrew install location is different for Apple Silicon macs vs Apple Intel macs:
+
+| Apple Silicon | Intel |
+| --- | --- |
+| `/opt/homebrew` | `/usr/local` |
+
+You can set that prefix as an ENV variable if that would make things easier. For now, I'm going to assume Apple Silicon since they're phasing out the Intel macs, but just know that if you're using an Intel mac the Homebrew prefix is different so you'll need to tweak some of the scripts. I'll try to remember to make a note below.
+
+### Prerequisites
 
 **Operating system**
 
-This setup is for macOS only. You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
+You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
 
 ```shell
 xcode-select --install
 ```
 
-You will also need to have write permissions to the `/usr` directory.
+You will need write permissions to various folders in the `/usr` directory for the things we're going to install. Run this to grant yourself those permissions:
 
 ```shell
-sudo chown -R `whoami` /usr
+sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+```
+
+We'll also end up creating a new folder for `n`, which we use to manage Node versions. Let's go ahead and create that and set up permissions so we don't have to fiddle with it later:
+
+```shell
+sudo mkdir -p /usr/local/n
+sudo chown -R $(whoami) /usr/local/n
 ```
 
 **Node.js**
 
-You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before getting started.
+You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+
+**Golang**
+
+We use Golang for a few CLIs, and we'll need Go installed on our system before we start. You can [follow the instructions here](https://golang.org/doc/install).
 
 **1Password**
 
-It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want too.
+It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want. But signing in to your Apple ID, GitHub, etc is easier than typing those long passwords manually.
 
-## Setup
+### Scripts
 
-Got all that? Great. Run the install script below. It will do the following:
+We'll start in the home directory. If we have any existing configuration files, we need to kill those.
+
+```sh
+cd ~
+rm -rf ~/.config/fish
+rm -rf ~/.config/fisherman
+```
+
+Next we'll install [Homebrew](http://brew.sh). If you already have it, run `brew update` instead of installing it:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+We'll use Homebrew Bundle to look at our Bundle file and install a bunch of stuff:
+
+```sh
+brew tap Homebrew/bundle
+```
+
+Now we're going to install some global node modules that we'll use to accomplish various things:
+
+```sh
+npm i -g diff-so-fancy empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
+```
+
+Now that we've got all that installed, we'll set up the dotfiles:
+
+```sh
+mkdir -p ~/src && cd ~/src
+git clone https://github.com/mikemcbride/dotfiles.git
+git clone http://github.com/mikemcbride/dotvim.git
+```
+
+Then we'll head into the Vim files and initialize some submodules:
+
+```sh
+cd ~/src/dotvim
+git submodule init
+git submodule update
+cd ~/src
+```
+
+Now we're going to set up a bunch of symlinks to link things from our dotfiles and dotvim repos to the user directory:
+
+```sh
+# remove existing vimrc if there is one
+rm ~/.vimrc
+
+# make sure we don't have an existing .gitconfig
+rm ~/.gitconfig
+
+# now we can safely set up symlinks
+ln -s ~/src/dotfiles ~/dotfiles
+ln -s ~/src/dotvim ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/src/dotfiles/fish ~/.config/fish
+ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
+```
+
+Now we're going to install all the Homebrew applications:
+
+```sh
+cd ~/src && brew bundle
+```
+
+We'll install `fisher`, a plugin manager for the `fish` shell:
+
+```sh
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+```
+
+We'll also install a GO binary that's used in some scripts:
+
+```sh
+go get github.com/tj/node-prune
+```
+
+Now we've got some dependencies to install for those utility scripts to work. Let's do that now:
+
+```sh
+cd ~/src/dotfiles
+yarn install
+```
+
+Next we need to add `fish` to our list of available shells, then we'll switch to using it:
+
+```sh
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+```
+
+If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew:
+
+```sh
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew
+```
+
+Finally, we'll install any plugins with fisher:
+
+```sh
+fisher install fisherman/z
+fisher install fisherman/rbenv
+```
+
+## What just happened?
+
+Got all that working? Great. Here's what we did:
 - set your shell to fish
-- install [Homebrew](http://brew.sh) if you don't already have it, or run `brew update` if you do
-- install [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- clone this repo into  `~/src/dotfiles` and set up your fish configs
-- clone my [dotvim](https://github.com/mikemcbride/dotvim) repo into `~/src/dotvim` and set up an opinionated `.vimrc`
-- install a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
+- installed [Homebrew](http://brew.sh)
+- installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
+- cloned this repo into  `~/src/dotfiles` and set up your fish configs
+- installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
+- cloned my [dotvim](https://github.com/mikemcbride/dotvim) repo into `~/src/dotvim` and set up an opinionated `.vimrc`
+- installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
   - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-- install some command line utilities:
+- installed some command line utilities:
   - ripgrep
   - wget
-- install some services commonly used in development:
+- installed some services commonly used in development:
   - Docker
   - RabbitMQ
   - MongoDB
-  - Java
-- install a few desktop applications to make your life better:
+- installed a few desktop applications to make your life better:
   - Brave browser
   - [Insomnia](https://insomnia.rest/) for testing REST calls
   - Slack
@@ -59,26 +192,20 @@ Got all that? Great. Run the install script below. It will do the following:
   - [Rectangle](https://www.rectangleapp.com/) for window management
   - [Alfred](https://alfredapp.com) for app launching and some automation
 
-Ready to get started? Just paste the script below into your terminal and let it rip.
-
-> **WARNING:** Please make sure you have read through the setup script so you understand what this is doing to your machine before executing this.
-```
-sudo curl -sSL https://raw.githubusercontent.com/mikemcbride/dotfiles/master/setup.sh | sh
-```
-
 ### Additional Setup
 
 This section is mostly just for me to remember what I still need to download/setup after running the install script.
 
 Here are some apps that aren't available for download via Homebrew cask that you'll currently need to download manually:
 
-- 1Password (App Store)
+- 1Password (App Store) if you didn't do it before
 - Pixelmator Pro (App Store)
 - Noizio (App Store)
 - Sleeve
 - Bartender
 - Battery Indicator (App Store)
-- Any fonts you want installed
+- Any fonts you want installed (grab them from iCloud)
+- Aqueux desktop backgrounds (grab installer link from email)
 
 You'll also need to create a `.extras` file in the home directory that contains things like the `PATH`
 
