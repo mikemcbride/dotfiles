@@ -146,11 +146,12 @@ echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 ```
 
-If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew:
+If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
 
 ```sh
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew
+fish_add_path (go env GOPATH)/bin
 ```
 
 Finally, we'll install any plugins with fisher:
@@ -192,26 +193,39 @@ Got all that working? Great. Here's what we did:
   - [Rectangle](https://www.rectangleapp.com/) for window management
   - [Alfred](https://alfredapp.com) for app launching and some automation
 
-### Additional Setup
+## Additional Setup
 
 This section is mostly just for me to remember what I still need to download/setup after running the install script.
+
+### Logins
+
+- Sign in to 1Password and add the browser extension.
+- You'll need to log in to Alfred and set up your config. This repo has a bunch of Alfred workflows you can install. Snippets don't live here because of personally identifiable information, but you can grab those from iCloud or export them from your old machine.
+- Set Firefox as your default browser and log in to sync bookmarks/preferences.
+- You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
+- Sign in to VS Code Settings Sync to bring over settings and extensions.
+
+
+### More Apps to Install
 
 Here are some apps that aren't available for download via Homebrew cask that you'll currently need to download manually:
 
 - 1Password (App Store) if you didn't do it before
 - Pixelmator Pro (App Store)
 - Noizio (App Store)
-- Sleeve
-- Bartender
+- Sleeve (check email for download link)
+- Bartender (website)
 - Battery Indicator (App Store)
-- Any fonts you want installed (grab them from iCloud)
+- Any fonts you want installed (grab Fonts folder from iCloud)
 - Aqueux desktop backgrounds (grab installer link from email)
-
-You'll also need to create a `.extras` file in the home directory that contains things like the `PATH`
 
 ### Theme
 
-The setup script installs iTerm2, which I use as a terminal emulator. I have an `iTerm_Profiles.json` file that you can import to load light and dark themes.
+The setup script installs iTerm2, which I use as a terminal emulator. I have an `iTerm_Profiles.json` file that you can import to load light and dark themes. VS Code theme will be synced with the settings-sync package, so you just need to sign in with that extension and it will re-install all extensions and sync your config.
+
+### Browser Extensions
+
+Reinstall browser extensions for Brave and Firefox. For Firefox, you should be able to log in to your Firefox account and it will sync bookmarks and extensions. For Brave, you need to add to the existing Sync Chain to import bookmarks (or manually import a bookmarks file) and then manually reinstall extensions.
 
 ## Updating
 
