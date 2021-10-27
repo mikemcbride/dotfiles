@@ -3,7 +3,7 @@
 module.exports = {
   config: {
     webGLRenderer: false,
-    shell: '/usr/local/bin/fish',
+    shell: '/opt/homebrew/bin/fish',
     scrollback: 10000,
     fontSize: 14,
     lineHeight: 1.3,
@@ -11,7 +11,6 @@ module.exports = {
     fontWeightBold: 'normal',
     fontFamily: 'MonoLisa',
     cursorShape: 'BLOCK',
-    cursorColor: '#34febb',
     selectionColor: 'rgba(33, 40, 54, .5)'
   },
   hypercwd: {
@@ -22,8 +21,5 @@ module.exports = {
     'hyper-hide-title',
     'hyper-electron-highlighter'
   ],
-  localPlugins: [
-    // 'hyper-tailwind-dark'
-    // 'hyper-geist'
-  ]
+  localPlugins: []
 }

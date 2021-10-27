@@ -139,6 +139,13 @@ cd ~/src/dotfiles
 yarn install
 ```
 
+While we're in here, we probably want to set our file handling for common code file extensions to all open in VS Code instead of whatever the OS decides to use to open the files:
+
+```sh
+cd ~/src/dotfiles
+node ./scripts/setDefaultApplications.js
+```
+
 Next we need to add `fish` to our list of available shells, then we'll switch to using it:
 
 ```sh

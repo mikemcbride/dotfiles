@@ -74,18 +74,12 @@ function bitly() {
 
 # get current IP address
 function getip() {
-  node ~/dotfiles/scripts/getIp.js
+  node ~/dotfiles/scripts/getIp.mjs
 }
 
 # open current repo online if it's a git repo
 function open_git_repo_online() {
-  node  ~/dotfiles/scripts/openGitRepo.js
-}
-
-# replace all extensions of type X with Y in current directory
-# ex: "replace_ext css less" will turn all ".css" files into ".less" files
-function replace_ext() {
-  node ~/dotfiles/scripts/replaceFileExtension.js $1 $2
+  node  ~/dotfiles/scripts/openGitRepo.mjs
 }
 
 # run node-prune in all directories within the current dir
@@ -100,5 +94,5 @@ function killport() {
 
 # empty the trash
 function dump() {
-  node ~/dotfiles/scripts/emptyTrash.js
+  node ~/dotfiles/scripts/emptyTrash.mjs
 }

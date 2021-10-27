@@ -4,13 +4,11 @@
 // if an argument x is passed as a second parameter,
 // it will traverse the directories x levels starting at cwd.
 // otherwise, runs prune.sh in the current directory.
-const path = require('path')
-const fsPromises = require('fs/promises')
-
-const execa = require('execa')
-const chalk = require('chalk')
-const Timer = require('nodejs-process-timer')
-const prettyBytes = require('pretty-bytes')
+import path from 'node:path'
+import fsPromises from 'node:fs/promises'
+import execa from 'execa'
+import { green } from 'kleur/colors'
+import prettyBytes from 'pretty-bytes'
 
 const levels = parseInt(process.argv[2], 10) || 0
 
@@ -23,19 +21,12 @@ const byteConversion = {
     GB: 1000*1000*1000
 }
 
-// run it!
-pruneFiles()
-
-async function pruneFiles() {
-    // figure out which directories we're pruning.
-    // calculate total filesize beforehand, then again after removing the files
-    console.log(chalk.green(`Pruning files ${levels} levels deep starting in ${process.cwd()}`))
-    const t = new Timer()
-    t.start()
-    let dirsToPrune = await getRecursiveDirectories(process.cwd(), levels)
-    await Promise.allSettled(dirsToPrune.map(dir => execute(dir)))
-    logTotalSizeRemoved()
-}
+// figure out which directories we're pruning.
+// calculate total filesize beforehand, then again after removing the files
+console.log(green(`Pruning files ${levels} levels deep starting in ${process.cwd()}`))
+let dirsToPrune = await getRecursiveDirectories(process.cwd(), levels)
+await Promise.allSettled(dirsToPrune.map(dir => execute(dir)))
+console.log(green(`Total file size removed: ${prettyBytes(totalSize)}`))
 
 async function getRecursiveDirectories(srcpath, levels) {
     let dirs = [srcpath]
@@ -43,7 +34,7 @@ async function getRecursiveDirectories(srcpath, levels) {
     // while levels is not zero, recursively get directories for each dir and decrement levels
     while (levels > 0) {
         let newDirs = await Promise.allSettled(dirs.map(dir => getDirectories(dir)))
-        dirs = newDirs.filter(dir => dir.status === 'fulfilled').map(dir => dir.value).flat()
+        dirs = newDirs.filter(dir => dir.status === 'fulfilled').flatMap(dir => dir.value)
         levels--
     }
 
@@ -90,10 +81,6 @@ function parseTotalSizeRemoved(input) {
     const b = match[2]
     const sizeInBytes = convertToBytes(size, b)
     totalSize += sizeInBytes
-}
-
-function logTotalSizeRemoved() {
-    console.log(chalk.green(`Total file size removed: ${prettyBytes(totalSize)}`))
 }
 
 function convertToBytes(size, type) {
