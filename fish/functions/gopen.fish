@@ -1,3 +1,3 @@
 function gopen
-  node ~/dotfiles/scripts/openGitRepo.js
+  node ~/dotfiles/scripts/openGitRepo.mjs
 end

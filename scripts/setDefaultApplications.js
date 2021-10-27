@@ -1,31 +1,34 @@
 #!/usr/bin/env node
 
-(async function setDefaultApps() {  
-  const execa = require('execa')
-  const appId = 'com.microsoft.VSCode'
-  const extensions = [
-    'js',
-    'jsx',
-    'vue',
-    'md',
-    'json',
-    'css',
-    'sass',
-    'scss',
-    'less',
-    'svelte',
-    'd',
-    'fish',
-    'txt',
-    'xml',
-    'sh',
-    'styl',
-    'markdown',
-  ]
-  const promises = extensions.map(ext => {
-    return execa('duti', ['-s', appId, ext, 'all'])
-  })
+// I'm intentionally leaving this one as commonJS because it's only got one dependency,
+// which hasn't yet been updated to ESM.
+const execa = require('execa');
 
-  await Promise.all(promises)
-  console.log('done')
-})()
+(async () => {
+    const appId = 'com.microsoft.VSCode'
+    const extensions = [
+        'js',
+        'jsx',
+        'vue',
+        'md',
+        'json',
+        'css',
+        'sass',
+        'scss',
+        'less',
+        'svelte',
+        'd',
+        'fish',
+        'txt',
+        'xml',
+        'sh',
+        'styl',
+        'markdown',
+    ]
+    const promises = extensions.map(ext => {
+        return execa('duti', ['-s', appId, ext, 'all'])
+    })
+
+    await Promise.allSettled(promises)
+    console.log('done')
+})();
