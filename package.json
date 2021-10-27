@@ -12,20 +12,16 @@
   },
   "homepage": "https://github.com/mikemcbride/dotfiles#readme",
   "dependencies": {
-    "boxen": "^1.2.2",
-    "chalk": "^2.3.0",
-    "clipboardy": "^1.2.2",
-    "emphasize": "^2.0.0",
-    "empty-trash": "^2.1.1",
-    "execa": "^0.6.3",
-    "gifify": "^2.4.3",
-    "internal-ip": "^1.2.0",
-    "is-git-repository": "^1.1.1",
-    "nodejs-process-timer": "^1.0.0",
-    "open": "^6.0.0",
-    "ora": "^1.2.0",
+    "boxen": "^5.1.2",
+    "clipboardy": "^2.3.0",
+    "empty-trash": "^3.0.0",
+    "execa": "^5.1.1",
+    "internal-ip": "^7.0.0",
+    "is-git-repository": "^2.0.0",
+    "kleur": "^4.1.4",
+    "open": "^8.4.0",
+    "ora": "^5.4.1",
     "pretty-bytes": "^5.5.0",
-    "random-item": "^1.0.0",
-    "simple-git": "^1.84.0"
+    "simple-git": "^2.47.0"
   }
 }
