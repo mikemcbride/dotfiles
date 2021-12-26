@@ -112,14 +112,14 @@ ln -s ~/src/dotvim ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
+ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
 ```
 
 Now we're going to install all the Homebrew applications:
 
 ```sh
-cd ~/src && brew bundle
+cd ~/src/dotfiles && brew bundle
 ```
 
 We'll install `fisher`, a plugin manager for the `fish` shell:
