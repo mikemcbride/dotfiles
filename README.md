@@ -31,6 +31,12 @@ You will need write permissions to various folders in the `/usr` directory for t
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
 ```
 
+If any of those directories don't exist, you can create them and then re-run that command. Create them like this:
+
+```shell
+sudo mkdir -p /usr/local/{dirname}
+```
+
 We'll also end up creating a new folder for `n`, which we use to manage Node versions. Let's go ahead and create that and set up permissions so we don't have to fiddle with it later:
 
 ```shell
@@ -41,10 +47,6 @@ sudo chown -R $(whoami) /usr/local/n
 **Node.js**
 
 You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
-
-**Golang**
-
-We use Golang for a few CLIs, and we'll need Go installed on our system before we start. You can [follow the instructions here](https://golang.org/doc/install).
 
 **1Password**
 
