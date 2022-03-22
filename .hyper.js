@@ -2,7 +2,7 @@
 
 module.exports = {
   config: {
-    webGLRenderer: false,
+    preserveCWD: true,
     shell: '/opt/homebrew/bin/fish',
     scrollback: 10000,
     fontSize: 14,
@@ -13,12 +13,7 @@ module.exports = {
     cursorShape: 'BLOCK',
     selectionColor: 'rgba(33, 40, 54, .5)'
   },
-  hypercwd: {
-    initialWorkingDirectory: '~'
-  },
   plugins: [
-    'hypercwd',
-    'hyper-hide-title',
     'hyper-electron-highlighter'
   ],
   localPlugins: []

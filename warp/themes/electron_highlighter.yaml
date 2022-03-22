@@ -10,7 +10,7 @@ foreground: '#a8b5d1'
 # Ansi escape colors.
 terminal_colors:
   bright:
-    black: '#141820'
+    black: '#7992b4'
     blue: '#82aaff'
     cyan: '#4ff2f8'
     green: '#6af699'

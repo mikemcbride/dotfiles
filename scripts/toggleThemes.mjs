@@ -20,7 +20,13 @@ const configs = [
         configFile: path.join(os.homedir(), 'src/dotfiles/.hyper.js'),
         darkTheme: 'hyper-electron-highlighter',
         lightTheme: 'hyper-early-riser'
-    }
+    },
+    {
+        appName: 'Zed',
+        configFile: path.join(os.homedir(), '.zed/settings.json'),
+        darkTheme: `"theme": "dark"`,
+        lightTheme: `"theme": "light"`
+    },
 ]
 
 await Promise.allSettled(configs.map(config => parseFileAndSetTheme(config)))
@@ -29,7 +35,10 @@ async function parseFileAndSetTheme(opts) {
     const fileContents = await fs.readFile(opts.configFile, 'utf-8')
     const isDark = fileContents.includes(opts.darkTheme)
     const isLight = fileContents.includes(opts.lightTheme)
-    let newTheme = process.argv[2] || isDark ? 'light' : 'dark'
+    let newTheme = isDark ? 'light' : 'dark'
+    if (process.argv[2] === 'light' || process.argv[2] === 'dark') {
+        newTheme = process.argv[2]
+    }
     if (newTheme === 'light' && !isLight) {
         const updated = fileContents.replace(opts.darkTheme, opts.lightTheme)
         await fs.writeFile(opts.configFile, updated).catch(err => { console.error(err) })
