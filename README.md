@@ -112,14 +112,14 @@ ln -s ~/src/dotvim ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.gitignore.global ~/.gitignore.global
+ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
 ```
 
 Now we're going to install all the Homebrew applications:
 
 ```sh
-cd ~/src && brew bundle
+cd ~/src/dotfiles && brew bundle
 ```
 
 We'll install `fisher`, a plugin manager for the `fish` shell:
@@ -151,8 +151,8 @@ node ./scripts/setDefaultApplications.js
 Next we need to add `fish` to our list of available shells, then we'll switch to using it:
 
 ```sh
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
 ```
 
 If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
