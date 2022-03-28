@@ -1,7 +1,111 @@
 #!/usr/bin/env node
+import { readFile } from 'fs/promises'
+const words = JSON.parse(await readFile(new URL('../wordle/word-data.json', import.meta.url)))
+const input = process.argv[2]
 
-import words from '../wordle/wordlist.mjs'
-const start = new Date('2021-06-19')
-const today = new Date()
-const index = Math.floor((today-start)/(1000*60*60*24))
-console.log('todays word is:', words[index])
+if (!input || input === '--help') {
+    console.log(`usage:
+    $ wordle [guesses]
+
+    where [guesses] is a comma-separated list of words (no spaces).
+      - lowercase letters for incorrect letters (gray tiles)
+      - uppercase letters for correct guesses in the wrong spot (yellow tiles)
+      - uppercase prefixed with _ for correct letters in the correct spot (green tiles)
+
+    example:
+        $ wordle shakE,T_Enth
+
+    explanation of that input:
+        - s, h, a, and k are gray tiles. e is a yellow tile.
+        - T is a yellow tile, E is a green tile, n, t, and h are gray tiles.
+    `)
+} else {
+    getBestGuess(input)
+}
+
+function getBestGuess(data) {
+    let availableWords = [...words.common, ...words.other]
+    let guesses = data.split(',')
+    let correctLetters = []
+    let correctPlacement = []
+    let incorrectLetters = []
+    let noDoubles = []
+    // loop through guesses, grabbing the correct letters and incorrect letters
+    for (let guess of guesses) {
+        let letters = guess.split('')
+        let nextLetterCorrectPlace = false
+        let idx = 0
+        for (let letter of letters) {
+            if (nextLetterCorrectPlace === true) {
+                nextLetterCorrectPlace = false
+                correctPlacement.push(`${letter.toLowerCase()}:${idx}`)
+                idx++
+            } else if (letter === '_') {
+                nextLetterCorrectPlace = true
+            } else {
+                nextLetterCorrectPlace = false
+                if (letter === letter.toUpperCase()) {
+                    // letter is correct
+                    // I could do something to handle correct double letter guesses...
+                    // but that logic gets REAL nasty real quick. I'm not gonna mess with it.
+                    if (!correctLetters.includes(letter.toLowerCase())) {
+                        correctLetters.push(letter.toLowerCase())
+                    }
+                } else {
+                    // if this letter is already in correctLetters,
+                    // then it was a double letter guess and is incorrect.
+                    // we can eliminate words with double letters
+                    if (correctLetters.includes(letter)) {
+                        noDoubles.push(letter)
+                    } else {
+                        incorrectLetters.push(letter.toLowerCase())
+                    }
+                }
+                idx++
+            }
+        }
+    }
+    // console.log('correct placements:', correctPlacement)
+    // console.log('correct letters:', correctLetters)
+    // console.log('incorrect letters:', incorrectLetters)
+    // filter out words that have letters we know aren't possible
+    availableWords = availableWords.filter(word => {
+        // if the word doesn't have a correct placement letter where we know one exists, it can't be right.
+        if (!correctPlacement.every(pair => {
+            const [l, i] = pair.split(':')
+            return word[i] === l
+        })) {
+            return false
+        }
+        // if the word contains an incorrect letter, it can't be right.
+        if (incorrectLetters.some(letter => word.includes(letter))) {
+            return false
+        }
+        // if the word is missing a letter we know is in the word, it can't be right.
+        if (!correctLetters.every(letter => word.includes(letter))) {
+            return false
+        }
+        // if the word has multiple instances of a letter and we know it only has one, it can't be right.
+        if (noDoubles.some(letter => countLettersInWord(word, letter) > 1)) {
+            return false
+        }
+        return true
+    })
+    console.log('Number of possible words remaining:', availableWords.length)
+    if (availableWords.length === 1) {
+        console.log('The word is:', availableWords[0])
+    } else {
+        console.log('most common words remaining:', availableWords.slice(0, 10))
+    }
+}
+
+function countLettersInWord(word, letter) {
+    let count = 0
+    let letters = word.split('')
+    for (let l of letters) {
+        if (l === letter) {
+            count++
+        }
+    }
+    return count
+}
