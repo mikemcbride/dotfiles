@@ -1,3 +1,3 @@
 function wordle
-  node ~/dotfiles/scripts/wordle.mjs
+  node ~/dotfiles/scripts/wordle.mjs $argv
 end
