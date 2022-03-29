@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { readFile } from 'fs/promises'
+import { green } from 'kleur/colors'
 const words = JSON.parse(await readFile(new URL('../wordle/word-data.json', import.meta.url)))
 const input = process.argv[2]
 
@@ -118,9 +119,10 @@ function getBestGuess(data) {
     })
     console.log('Number of possible words remaining:', availableWords.length)
     if (availableWords.length === 1) {
-        console.log('The word is:', availableWords[0])
+        console.log('The word is:', green(availableWords[0]))
     } else {
-        console.log('Most common words remaining:', availableWords.slice(0, 10))
+        console.log('My next guess would be:', green(availableWords[0]))
+        console.log('Some other good choices:', green(availableWords.slice(1, Math.min(availableWords.length, 11)).join(', ')))
     }
 }
 
