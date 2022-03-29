@@ -13,23 +13,33 @@ if (!input || input === '--help') {
       - uppercase prefixed with _ for correct letters in the correct spot (green tiles)
 
     example:
-        $ wordle shakE,T_Enth
+        $ wordle shakE,B_EiNg
 
     explanation of that input:
-        - s, h, a, and k are gray tiles. e is a yellow tile.
-        - T is a yellow tile, E is a green tile, n, t, and h are gray tiles.
+        - S, H, A, and K are gray tiles. E is a yellow tile.
+        - B is a yellow tile, E is a green tile, I is a gray tile, N is a yellow tile, and G is a gray tile.
     `)
 } else {
     getBestGuess(input)
 }
 
 function getBestGuess(data) {
+    // set up our data. we need all the words, with more common words first in the array.
+    // those are more likely to be correct, so we'll show them first as suggestions.
     let availableWords = [...words.common, ...words.other]
+    // split our guesses by comma
     let guesses = data.split(',')
-    let correctLetters = []
+    // we'll keep track of a few things as we loop through these guesses:
+    // 1. correct letters will be stored as a map. the letter will be the key, the value will be an array of indices.
+    // 2. correct placement will be stored as an array of `letter:index` values.
+    // 3. incorrect letters are stored in an array.
+    // 4. no doubles - if we guess a word with double letters and it's correct once but incorrect the second time, we know that word only has the letter once.
+    //    We'll keep track of this so we can filter out any words that have that letter more than once.
+    let correctLetters = {}
     let correctPlacement = []
     let incorrectLetters = []
     let noDoubles = []
+
     // loop through guesses, grabbing the correct letters and incorrect letters
     for (let guess of guesses) {
         let letters = guess.split('')
@@ -38,7 +48,10 @@ function getBestGuess(data) {
         for (let letter of letters) {
             if (nextLetterCorrectPlace === true) {
                 nextLetterCorrectPlace = false
-                correctPlacement.push(`${letter.toLowerCase()}:${idx}`)
+                // avoid pushing it in multiple times
+                if (!correctPlacement.includes(`${letter.toLowerCase()}:${idx}`)) {
+                    correctPlacement.push(`${letter.toLowerCase()}:${idx}`)
+                }
                 idx++
             } else if (letter === '_') {
                 nextLetterCorrectPlace = true
@@ -47,27 +60,29 @@ function getBestGuess(data) {
                 if (letter === letter.toUpperCase()) {
                     // letter is correct
                     // I could do something to handle correct double letter guesses...
-                    // but that logic gets REAL nasty real quick. I'm not gonna mess with it.
-                    if (!correctLetters.includes(letter.toLowerCase())) {
-                        correctLetters.push(letter.toLowerCase())
+                    // but that logic gets REAL nasty real quick. I'm not gonna mess with it yet.
+                    if (!correctLetters[letter.toLowerCase()]) {
+                        correctLetters[letter.toLowerCase()] = []
                     }
+                    // push the index so we know where the letter is NOT - this will help us further refine our list,
+                    // rather than simply guessing the letter in a spot we know is incorrect.
+                    correctLetters[letter.toLowerCase()].push(idx)
                 } else {
                     // if this letter is already in correctLetters,
                     // then it was a double letter guess and is incorrect.
                     // we can eliminate words with double letters
-                    if (correctLetters.includes(letter)) {
+                    if (correctLetters[letter]) {
                         noDoubles.push(letter)
                     } else {
-                        incorrectLetters.push(letter.toLowerCase())
+                        if (!incorrectLetters.includes(letter.toLowerCase())) {
+                            incorrectLetters.push(letter.toLowerCase())
+                        }
                     }
                 }
                 idx++
             }
         }
     }
-    // console.log('correct placements:', correctPlacement)
-    // console.log('correct letters:', correctLetters)
-    // console.log('incorrect letters:', incorrectLetters)
     // filter out words that have letters we know aren't possible
     availableWords = availableWords.filter(word => {
         // if the word doesn't have a correct placement letter where we know one exists, it can't be right.
@@ -82,12 +97,22 @@ function getBestGuess(data) {
             return false
         }
         // if the word is missing a letter we know is in the word, it can't be right.
-        if (!correctLetters.every(letter => word.includes(letter))) {
+        if (!Object.keys(correctLetters).every(letter => word.includes(letter))) {
             return false
         }
         // if the word has multiple instances of a letter and we know it only has one, it can't be right.
         if (noDoubles.some(letter => countLettersInWord(word, letter) > 1)) {
             return false
+        }
+        // finally, check letter placement for correct letters
+        // we do this last because it's the most inefficient operation to test for.
+        for (let letter of Object.keys(correctLetters)) {
+            let indices = correctLetters[letter]
+            for (let index of indices) {
+                if (word[index] === letter) {
+                    return false
+                }
+            }
         }
         return true
     })
@@ -95,7 +120,7 @@ function getBestGuess(data) {
     if (availableWords.length === 1) {
         console.log('The word is:', availableWords[0])
     } else {
-        console.log('most common words remaining:', availableWords.slice(0, 10))
+        console.log('Most common words remaining:', availableWords.slice(0, 10))
     }
 }
 
