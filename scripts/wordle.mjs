@@ -27,7 +27,14 @@ if (!input || input === '--help') {
 function getBestGuess(data) {
     // set up our data. we need all the words, with more common words first in the array.
     // those are more likely to be correct, so we'll show them first as suggestions.
-    let availableWords = [...words.common, ...words.other]
+    // we'll also sort common and other words by number of unique letters, since these
+    // are more favorable words to play if still available. So the final order will be:
+    // 1. common words, sorted by unique letter count
+    // 2. uncommon words, sorted by unique letter count
+    // This still keeps more common words first since they're more likely, but also accounts for double letters.
+    const sortedCommon = words.common.sort((a, b) => uniqueLetters(b) - uniqueLetters(a))
+    const sortedOther = words.other.sort((a, b) => uniqueLetters(b) - uniqueLetters(a))
+    let availableWords = [...sortedCommon, ...sortedOther]
     // split our guesses by comma
     let guesses = data.split(',')
     // we'll keep track of a few things as we loop through these guesses:
@@ -135,4 +142,10 @@ function countLettersInWord(word, letter) {
         }
     }
     return count
+}
+
+function uniqueLetters(word) {
+    let letters = word.split('')
+    let unique = Array.from(new Set(letters))
+    return unique.length
 }
