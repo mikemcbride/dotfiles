@@ -79,7 +79,7 @@ function getBestGuess(data) {
                     // if this letter is already in correctLetters,
                     // then it was a double letter guess and is incorrect.
                     // we can eliminate words with double letters
-                    if (correctLetters[letter]) {
+                    if (correctLetters[letter] || correctPlacement.some(x => x.startsWith(letter.toLowerCase()))) {
                         noDoubles.push(letter)
                     } else {
                         if (!incorrectLetters.includes(letter.toLowerCase())) {
