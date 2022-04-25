@@ -1,7 +1,7 @@
 [push]
 	default = simple
 [core]
-	editor = /opt/homebrew/bin/vim
+	editor = /opt/homebrew/bin/nvim
   excludesfile = ~/.gitignore.global
 	pager = diff-so-fancy | less --tabs=2 -RFX
 [alias]

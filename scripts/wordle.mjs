@@ -32,9 +32,10 @@ function getBestGuess(data) {
     // 1. common words, sorted by unique letter count
     // 2. uncommon words, sorted by unique letter count
     // This still keeps more common words first since they're more likely, but also accounts for double letters.
+    const sortedPossible = words.possible.sort((a, b) => uniqueLetters(b) - uniqueLetters(a))
     const sortedCommon = words.common.sort((a, b) => uniqueLetters(b) - uniqueLetters(a))
     const sortedOther = words.other.sort((a, b) => uniqueLetters(b) - uniqueLetters(a))
-    let availableWords = [...sortedCommon, ...sortedOther]
+    let availableWords = Array.from(new Set([...sortedPossible, ...sortedCommon, ...sortedOther]))
     // split our guesses by comma
     let guesses = data.split(',')
     // we'll keep track of a few things as we loop through these guesses:
