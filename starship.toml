@@ -46,7 +46,7 @@ symbol = " "
 
 [git_status]
 style = "yellow"
-deleted = ""
+deleted = "×"
 
 # remove bold styling from language prompts
 [golang]
