@@ -42,24 +42,29 @@ format = "[$time]($style)"
 
 [git_branch]
 style = "purple"
+symbol = " "
 
 [git_status]
 style = "yellow"
+deleted = ""
 
 # remove bold styling from language prompts
 [golang]
 style = "cyan"
+symbol = " "
 
 [nodejs]
 style = "green"
-symbol = "⬢ "
+symbol = " "
 
 [python]
 style = "yellow"
+symbol = " "
 
 [ruby]
 style = "red"
+symbol = " "
 
 [rust]
 style = "red"
-symbol = "⚙ "
+symbol = " "

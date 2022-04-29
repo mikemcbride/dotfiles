@@ -6,16 +6,17 @@ module.exports = {
         preserveCWD: true,
         shell: '/opt/homebrew/bin/fish',
         scrollback: 10000,
-        fontSize: 14,
-        lineHeight: 1.3,
+        fontSize: 16,
+        lineHeight: 1.5,
         fontWeight: 'normal',
         fontWeightBold: 'normal',
-        fontFamily: 'MonoLisa',
+        fontFamily: 'MonoLisa Nerd Font',
         cursorShape: 'BLOCK',
         selectionColor: 'rgba(33, 40, 54, .5)'
     },
-    plugins: [
-        'hyper-electron-highlighter'
-    ],
-    localPlugins: []
+    plugins: [],
+    localPlugins: [
+        // 'hyper-gruvbox'
+        'hyper-everforest'
+    ]
 }
