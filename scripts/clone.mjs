@@ -10,7 +10,16 @@ import { green, red } from 'kleur/colors'
 import simpleGit from 'simple-git'
 import clipboard from 'clipboardy'
 
-const cloneUrl = process.argv[2]
+let cloneUrl = process.argv[2]
+
+// this allows us to pass in a string like 'org/repo', or a fully qualified url.
+let isWwt = process.argv.includes('--wwt') || process.argv[2].includes('github.wwt.com')
+if (!cloneUrl.startsWith('https://')) {
+  cloneUrl = `https://github.${isWwt ? 'wwt.' : ''}com/${cloneUrl}`
+}
+if (!cloneUrl.endsWith('.git')) {
+  cloneUrl = `${cloneUrl}.git`
+}
 
 function getDirectories(srcpath) {
     return fs.readdirSync(srcpath).filter(file => fs.lstatSync(path.join(srcpath, file)).isDirectory())
@@ -48,7 +57,7 @@ const newRepo = dirsAfter[0]
 process.chdir(newRepo)
 
 // if remote contains github.wwt.com, set the WWT git config user info
-if (cloneUrl.includes('github.wwt.com')) {
+if (isWwt) {
     await execa('git', ['config', 'user.name', 'Mike McBride'])
     await execa('git', ['config', 'user.email', 'mike.mcbride@wwt.com'])
 }
