@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { readFile } from 'fs/promises'
 import { green } from 'kleur/colors'
-const words = JSON.parse(await readFile(new URL('../wordle/word-data.json', import.meta.url)))
+const words = JSON.parse(await readFile(new URL('./wordle/word-data.json', import.meta.url)))
 const input = process.argv[2]
 
 if (!input || input === '--help') {
