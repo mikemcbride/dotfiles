@@ -4,23 +4,23 @@ import os from 'node:os'
 import path from 'node:path'
 const configs = [
     {
-        appName: 'vimrc',
-        configFile: path.join(os.homedir(), 'src/dotvim/vimrc'),
-        darkTheme: 'let mikecolor="dark"',
-        lightTheme: 'let mikecolor="light"'
+        appName: 'vim',
+        configFile: path.join(os.homedir(), '~/.config/nvim/lua/user/colorscheme.lua'),
+        darkTheme: 'vim.opt.background = "dark"',
+        lightTheme: 'vim.opt.background = "light"'
     },
-    {
-        appName: 'VS Code',
-        configFile: path.join(os.homedir(), 'Library/Application\ Support/Code/User/settings.json'),
-        darkTheme: `"workbench.colorTheme": "Electron Highlighter"`,
-        lightTheme: `"workbench.colorTheme": "Early Riser"`
-    },
-    {
-        appName: 'Hyper',
-        configFile: path.join(os.homedir(), 'src/dotfiles/.hyper.js'),
-        darkTheme: 'hyper-electron-highlighter',
-        lightTheme: 'hyper-early-riser'
-    },
+    // {
+    //     appName: 'VS Code',
+    //     configFile: path.join(os.homedir(), 'Library/Application\ Support/Code/User/settings.json'),
+    //     darkTheme: `"workbench.colorTheme": "Electron Highlighter"`,
+    //     lightTheme: `"workbench.colorTheme": "Early Riser"`
+    // },
+    // {
+    //     appName: 'Hyper',
+    //     configFile: path.join(os.homedir(), 'src/dotfiles/.hyper.js'),
+    //     darkTheme: 'everforestTheme: "dark"',
+    //     lightTheme: 'everforestTheme: "light"'
+    // },
     {
         appName: 'Zed',
         configFile: path.join(os.homedir(), '.zed/settings.json'),
