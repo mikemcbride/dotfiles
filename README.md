@@ -186,11 +186,12 @@ Got all that working? Great. Here's what we did:
   - Firefox
   - Brave browser
   - iTerm
+  - Alfred
   - [Insomnia](https://insomnia.rest/) for testing REST calls
   - Slack
   - [Kap](https://getkap.co/) for screen captures
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
-  - [Raycast](https://raycast.com) for a whole slew of stuff. Snippets, window management, app launcher and uninstaller, emoji picker...
+  - [Rectangle](https://rectangleapp.com) for window management
 
 ## Additional Setup
 
@@ -204,6 +205,9 @@ This section is mostly just for me to remember what I still need to download/set
 - Open any file in vim and run `:PackerInstall` to install all plugins
 - Sign in to VS Code Settings Sync to bring over settings and extensions.
 
+### Alfred
+
+You can export your Alfred preferences and import them when setting up a new machine. I highly suggest doing this.
 
 ### More Apps to Install
 
