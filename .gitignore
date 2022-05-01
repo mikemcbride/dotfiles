@@ -6,3 +6,5 @@ fish/conf.d
 fish/completions
 fish/functions/__z*
 fish/functions/rbenv.fish
+
+nvim/*/packer_compiled.lua

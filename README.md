@@ -85,32 +85,21 @@ Now that we've got all that installed, we'll set up the dotfiles:
 ```sh
 mkdir -p ~/src && cd ~/src
 git clone https://github.com/mikemcbride/dotfiles.git
-git clone http://github.com/mikemcbride/dotvim.git
 ```
 
-Then we'll head into the Vim files and initialize some submodules:
+Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
 
 ```sh
-cd ~/src/dotvim
-git submodule init
-git submodule update
-cd ~/src
-```
-
-Now we're going to set up a bunch of symlinks to link things from our dotfiles and dotvim repos to the user directory:
-
-```sh
-# remove existing vimrc if there is one
-rm ~/.vimrc
+# make sure ~/.config exists
+mkdir -p ~/.config
 
 # make sure we don't have an existing .gitconfig
 rm ~/.gitconfig
 
 # now we can safely set up symlinks
 ln -s ~/src/dotfiles ~/dotfiles
-ln -s ~/src/dotvim ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/src/dotfiles/fish ~/.config/fish
+ln -s ~/src/dotfiles/nvim ~/.config/nvim
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
@@ -178,14 +167,14 @@ Got all that working? Great. Here's what we did:
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
 - cloned this repo into  `~/src/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
-- cloned my [dotvim](https://github.com/mikemcbride/dotvim) repo into `~/src/dotvim` and set up an opinionated `.vimrc`
+- set up Neovim config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
   - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
-  - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+  - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - the fanciest diffs
 - installed some command line utilities:
   - ripgrep
   - wget
@@ -194,13 +183,14 @@ Got all that working? Great. Here's what we did:
   - RabbitMQ
   - MongoDB
 - installed a few desktop applications to make your life better:
+  - Firefox
   - Brave browser
+  - iTerm
   - [Insomnia](https://insomnia.rest/) for testing REST calls
   - Slack
   - [Kap](https://getkap.co/) for screen captures
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
-  - [Rectangle](https://www.rectangleapp.com/) for window management
-  - [Alfred](https://alfredapp.com) for app launching and some automation
+  - [Raycast](https://raycast.com) for a whole slew of stuff. Snippets, window management, app launcher and uninstaller, emoji picker...
 
 ## Additional Setup
 
@@ -209,9 +199,9 @@ This section is mostly just for me to remember what I still need to download/set
 ### Logins
 
 - Sign in to 1Password and add the browser extension.
-- You'll need to log in to Alfred and set up your config. This repo has a bunch of Alfred workflows you can install. Snippets don't live here because of personally identifiable information, but you can grab those from iCloud or export them from your old machine.
 - Set Firefox as your default browser and log in to sync bookmarks/preferences.
 - You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
+- Open any file in vim and run `:PackerInstall` to install all plugins
 - Sign in to VS Code Settings Sync to bring over settings and extensions.
 
 
@@ -222,7 +212,6 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - 1Password (App Store) if you didn't do it before
 - Pixelmator Pro (App Store)
 - Noizio (App Store)
-- Sleeve (check email for download link)
 - Bartender (website)
 - Battery Indicator (App Store)
 - Any fonts you want installed (grab Fonts folder from iCloud)
@@ -230,11 +219,11 @@ Here are some apps that aren't available for download via Homebrew cask that you
 
 ### Theme
 
-The setup script installs iTerm2, which I use as a terminal emulator. I have an `iTerm_Profiles.json` file that you can import to load light and dark themes. VS Code theme will be synced with the settings-sync package, so you just need to sign in with that extension and it will re-install all extensions and sync your config.
+The setup script installs iTerm2, which I use as a terminal emulator. This repo has an `iterm/profiles.json` file that you can import to load light and dark themes. VS Code theme will be synced with the settings-sync package, so you just need to sign in with that extension and it will re-install all extensions and sync your config.
 
 ### Browser Extensions
 
-Reinstall browser extensions for Brave and Firefox. For Firefox, you should be able to log in to your Firefox account and it will sync bookmarks and extensions. For Brave, you need to add to the existing Sync Chain to import bookmarks (or manually import a bookmarks file) and then manually reinstall extensions.
+Reinstall browser extensions. For Firefox, just sign in to your Firefox account and it will sync them. Export the bookmarks file and import into any other browser you want.
 
 ## Updating
 
