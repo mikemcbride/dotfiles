@@ -51,7 +51,7 @@ deleted = "×"
 # remove bold styling from language prompts
 [golang]
 style = "cyan"
-symbol = " "
+symbol = "ﳑ "
 
 [nodejs]
 style = "green"

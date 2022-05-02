@@ -103,6 +103,7 @@ ln -s ~/src/dotfiles/nvim ~/.config/nvim
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
+ln -s ~/src/dotfiles/zed ~/.zed
 ```
 
 Now we're going to install all the Homebrew applications:
