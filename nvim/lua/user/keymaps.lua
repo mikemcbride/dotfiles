@@ -26,10 +26,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Toggle explore panel
-keymap("n", "<leader>e", ":Ex<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Clear highlight search results
-keymap("n", "<leader>ch", ":nohlsearch<cr>", opts)
+-- keymap("n", "<leader>ch", ":nohl<cr>", opts)
 
 -- move lines
 keymap('n', '˙', ":MoveHChar(-1)<CR>", opts)  -- Alt-h
