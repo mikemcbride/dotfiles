@@ -52,7 +52,6 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -83,7 +82,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
