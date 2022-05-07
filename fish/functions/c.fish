@@ -1,7 +1,7 @@
 function c
   if test -n "$argv"
-    code $argv
+    vim $argv
   else
-    code .
+    vim
   end
 end
