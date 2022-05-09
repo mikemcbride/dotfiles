@@ -1,3 +1,3 @@
 function resource
-  source ~/.config/fish/config.fish
+    exec fish
 end
