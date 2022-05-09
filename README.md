@@ -100,6 +100,7 @@ rm ~/.gitconfig
 ln -s ~/src/dotfiles ~/dotfiles
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/nvim ~/.config/nvim
+ln -s ~/src/dotfiles/bat ~/.config/bat
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
