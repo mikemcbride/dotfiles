@@ -53,7 +53,6 @@ return packer.startup(function(use)
         },
     }
     use "ryanoasis/vim-devicons"
-    -- use "kyazdani42/nvim-web-devicons"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim"
@@ -64,6 +63,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim"
     use "tpope/vim-fugitive"
     use 'fedepujol/move.nvim'
+    use 'gpanders/editorconfig.nvim'
 
     -- game to practice vim
     use "ThePrimeagen/vim-be-good"
