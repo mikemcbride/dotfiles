@@ -1,4 +1,3 @@
-
 # dotfiles
 
 These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included. I would, however, highly recommend forking this repo and changing my user name to yours to avoid any issues. That will also allow you to add your own customizations and remove any of mine that you don't like.
@@ -100,6 +99,7 @@ rm ~/.gitconfig
 ln -s ~/src/dotfiles ~/dotfiles
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/nvim ~/.config/nvim
+ln -s ~/src/dotfiles/kitty ~/.config/kitty
 ln -s ~/src/dotfiles/bat ~/.config/bat
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
