@@ -99,7 +99,6 @@ rm ~/.gitconfig
 ln -s ~/src/dotfiles ~/dotfiles
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/nvim ~/.config/nvim
-ln -s ~/src/dotfiles/kitty ~/.config/kitty
 ln -s ~/src/dotfiles/bat ~/.config/bat
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
@@ -178,7 +177,8 @@ Got all that working? Great. Here's what we did:
   - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
   - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - the fanciest diffs
 - installed some command line utilities:
-  - ripgrep
+  - ripgrep - grep but like a million times better
+  - bat - a `cat` clone with awesome features
   - wget
 - installed some services commonly used in development:
   - Docker
@@ -188,12 +188,12 @@ Got all that working? Great. Here's what we did:
   - Firefox
   - Brave browser
   - iTerm
-  - Alfred
+  - [Raycast](https://raycast.com)
   - [Insomnia](https://insomnia.rest/) for testing REST calls
   - Slack
   - [Kap](https://getkap.co/) for screen captures
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
-  - [Rectangle](https://rectangleapp.com) for window management
+  - TablePlus for working with relational databases
 
 ## Additional Setup
 
@@ -207,9 +207,9 @@ This section is mostly just for me to remember what I still need to download/set
 - Open any file in vim and run `:PackerInstall` to install all plugins
 - Sign in to VS Code Settings Sync to bring over settings and extensions.
 
-### Alfred
+### Raycast
 
-You can export your Alfred preferences and import them when setting up a new machine. I highly suggest doing this.
+In this repo there's a `/raycast/[file].rayconfig` that you can import to bring over all your Raycast preferences.
 
 ### More Apps to Install
 
@@ -217,15 +217,13 @@ Here are some apps that aren't available for download via Homebrew cask that you
 
 - 1Password (App Store) if you didn't do it before
 - Pixelmator Pro (App Store)
-- Noizio (App Store)
 - Bartender (website)
 - Battery Indicator (App Store)
 - Any fonts you want installed (grab Fonts folder from iCloud)
-- Aqueux desktop backgrounds (grab installer link from email)
 
 ### Theme
 
-The setup script installs iTerm2, which I use as a terminal emulator. This repo has an `iterm/profiles.json` file that you can import to load light and dark themes. VS Code theme will be synced with the settings-sync package, so you just need to sign in with that extension and it will re-install all extensions and sync your config.
+The setup script installs iTerm2, which I use as a terminal emulator. This repo has an `iterm/profiles.json` file that you can import to load a bunch of themes. Vim theme is already set up with the process above.
 
 ### Browser Extensions
 
