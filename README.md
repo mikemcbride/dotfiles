@@ -193,7 +193,7 @@ Got all that working? Great. Here's what we did:
   - Slack
   - [Kap](https://getkap.co/) for screen captures
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
-  - TablePlus for working with relational databases
+  - DBeaver Community Edition for working with relational databases
 
 ## Additional Setup
 
