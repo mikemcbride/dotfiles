@@ -3,8 +3,8 @@ set fish_greeting ''
 set fish_color_command green
 set fish_color_param normal
 
-# vim as default
-set -x EDITOR vim
+# neovim as default editor
+set -x EDITOR nvim
 
 # use vi mode on prompt
 fish_vi_key_bindings

@@ -17,9 +17,9 @@ format = """\
 
 # replace the prompt character
 [character]
-success_symbol = "[❯](bold purple)"
-error_symbol = "[❯](bold red)"
-vicmd_symbol = "[❮](bold purple)"
+success_symbol = "[](bold purple)"
+error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold purple)"
 
 # only show current directory name
 # remove directory, and make it blue
@@ -51,7 +51,7 @@ deleted = "×"
 # remove bold styling from language prompts
 [golang]
 style = "cyan"
-symbol = "ﳑ "
+symbol = " "
 
 [nodejs]
 style = "green"
@@ -59,7 +59,7 @@ symbol = " "
 
 [python]
 style = "yellow"
-symbol = " "
+symbol = " "
 
 [ruby]
 style = "red"
