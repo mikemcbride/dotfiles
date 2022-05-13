@@ -1,0 +1,50 @@
+{
+    "name": "mikemcbride-snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "css",
+                    "scss",
+                    "sass",
+                    "less",
+                    "postcss",
+                    "stylus"
+                ],
+                "path": "./css.json"
+            },
+            {
+                "language": "go",
+                "path": "./go.json"
+            },
+            {
+                "language": [
+                    "javascript",
+                    "javascriptreact",
+                    "vue",
+                    "svelte"
+                ],
+                "path": "./javascript.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./javascriptreact.json"
+            },
+            {
+                "language": "rust",
+                "path": "./rust.json"
+            },
+            {
+                "language": "vue",
+                "path": "./vue-html.json"
+            },
+            {
+                "language": "vue",
+                "path": "./vue.json"
+            }
+        ]
+    }
+}
