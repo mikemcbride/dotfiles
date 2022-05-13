@@ -1,0 +1,34 @@
+{
+	"Basic Vue Component": {
+		"prefix": "vbase",
+		"body": "<template>\n\t<${5:div}>\n\t\t$6\n\t</${5:div}>\n</template>\n\n<script>\nexport default {\n\tname: '${1:MyComponent}'\n}\n</script>${2:\n\n<style lang=\"${3:scss}\"${4: scoped}>\n\n</style>}",
+		"description": "Scaffold out a basic Vue single file component"
+	},
+	"Scaffold Vue Component": {
+		"prefix": "vscaffold",
+		"body": "<template>\n\t<${5:div}>\n\t\t$0\n\t</${5:div}>\n</template>\n\n<script>\nexport default {\n\tname: '${1:MyComponent}',\n\tcomponents: {\n\t\t\n\t},\n\tprops: {\n\t\t\n\t},\n\tdata() {\n\t\treturn {\n\t\t\t\n\t\t}\n\t},\n\tcomputed: {\n\t\t\n\t},\n\t${4:async }created() {\n\t\t\n\t},\n\tmethods: {\n\t\t\n\t}\n}\n</script>\n\n<style lang=\"${2:scss}\"${3: scoped}>\n\n</style>",
+		"description": "Scaffold out a Vue single file component with the most commonly used component options"
+	},
+	"SVG Vue Icon Component": {
+		"prefix": "vicon",
+		"body": [
+			"<template>",
+			"\t<svg :width=\"size\" :height=\"size\"$2",
+			"</template>",
+			"",
+			"<script>",
+			"export default {",
+			"\tname: '${1:ComponentName}',",
+			"\tprops: {",
+			"\t\tsize: {",
+			"\t\t\ttype: String,",
+			"\t\t\tdefault: '1em'",
+			"\t\t}",
+			"\t}",
+			"}",
+			"</script>",
+			""
+		],
+		"description": "Scaffold out a Vue component for an icon"
+	}
+}
