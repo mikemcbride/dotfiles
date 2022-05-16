@@ -25,7 +25,7 @@ vicmd_symbol = "[](bold purple)"
 # remove directory, and make it blue
 [directory]
 truncation_length = 1
-style = "blue"
+style = "bright-blue"
 format = "[$path ]($style)[$read_only]($read_only_style)"
 
 # do not put prompt character on new line
@@ -36,7 +36,7 @@ format = "[$path ]($style)[$read_only]($read_only_style)"
 # show the time in the prompt
 [time]
 disabled = false
-style = "bright-black"
+style = "#7782b3" # "bright-black" # bright-black is pretty dark in tokyonight... using a custom color.
 time_format = "[%T] "
 format = "[$time]($style)"
 
@@ -54,7 +54,7 @@ style = "cyan"
 symbol = " "
 
 [nodejs]
-style = "green"
+style = "bright-green"
 symbol = " "
 
 [python]
