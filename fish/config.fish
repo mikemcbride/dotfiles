@@ -4,7 +4,7 @@ set fish_color_command green
 set fish_color_param normal
 
 # neovim as default editor
-set -x EDITOR nvim
+set -gx EDITOR nvim
 
 # use vi mode on prompt
 fish_vi_key_bindings

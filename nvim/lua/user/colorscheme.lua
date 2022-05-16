@@ -1,8 +1,8 @@
 vim.cmd "colorscheme default"
 
 local colorscheme = "gruvbox-material"
-vim.opt.background = "dark"
 vim.g.gruvbox_material_better_performance = 1
+vim.opt.background = "dark"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
