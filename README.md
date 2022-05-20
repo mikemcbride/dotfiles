@@ -76,7 +76,7 @@ brew tap Homebrew/bundle
 Now we're going to install some global node modules that we'll use to accomplish various things:
 
 ```sh
-npm i -g diff-so-fancy empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
+npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
 ```
 
 Now that we've got all that installed, we'll set up the dotfiles:
@@ -89,13 +89,8 @@ git clone https://github.com/mikemcbride/dotfiles.git
 Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
 
 ```sh
-# make sure ~/.config exists
 mkdir -p ~/.config
-
-# make sure we don't have an existing .gitconfig
 rm ~/.gitconfig
-
-# now we can safely set up symlinks
 ln -s ~/src/dotfiles ~/dotfiles
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/nvim ~/.config/nvim
@@ -115,7 +110,7 @@ cd ~/src/dotfiles && brew bundle
 We'll install `fisher`, a plugin manager for the `fish` shell:
 
 ```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
 We'll also install a GO binary that's used in some scripts:
@@ -131,7 +126,7 @@ cd ~/src/dotfiles
 yarn install
 ```
 
-While we're in here, we probably want to set our file handling for common code file extensions to all open in VS Code instead of whatever the OS decides to use to open the files:
+While we're in here, we probably want to set our file handling for common code file extensions to all open in Zed instead of whatever the OS decides to use to open the files:
 
 ```sh
 cd ~/src/dotfiles
@@ -194,6 +189,7 @@ Got all that working? Great. Here's what we did:
   - [Kap](https://getkap.co/) for screen captures
   - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
   - DBeaver Community Edition for working with relational databases
+  - Karabiner Elements for overriding some keymaps
 
 ## Additional Setup
 

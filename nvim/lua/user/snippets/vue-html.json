@@ -20,6 +20,11 @@
 		],
 		"description": "Scaffold out a basic Vue single file component"
 	},
+    "Vue 3 Script Setup": {
+        "prefix": "vsetup",
+        "body": "<template>\n\t<${2:div}>\n\t\t$3\n\t</${2:div}>\n</template>\n\n<script setup>\n$1\n</script>",
+        "description": "Scaffold out a Vue 3 component using the setup script"
+    },
 	"Scaffold Vue Component": {
 		"prefix": "vscaffold",
 		"body": ["<template>",
