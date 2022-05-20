@@ -62,6 +62,8 @@ return packer.startup(function(use)
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
     use "folke/which-key.nvim"
     use "tpope/vim-fugitive"
+    use "tpope/vim-surround"
+    use "tpope/vim-repeat"
     use 'fedepujol/move.nvim'
     use 'gpanders/editorconfig.nvim'
 
@@ -70,7 +72,6 @@ return packer.startup(function(use)
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"
-    use 'folke/tokyonight.nvim'
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin

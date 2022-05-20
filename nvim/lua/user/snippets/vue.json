@@ -4,6 +4,11 @@
 		"body": "<template>\n\t<${5:div}>\n\t\t$6\n\t</${5:div}>\n</template>\n\n<script>\nexport default {\n\tname: '${1:MyComponent}'\n}\n</script>${2:\n\n<style lang=\"${3:scss}\"${4: scoped}>\n\n</style>}",
 		"description": "Scaffold out a basic Vue single file component"
 	},
+    "Vue 3 Script Setup": {
+        "prefix": "vsetup",
+        "body": "<template>\n\t<${2:div}>\n\t\t$3\n\t</${2:div}>\n</template>\n\n<script setup>\n$1\n</script>",
+        "description": "Scaffold out a Vue 3 component using the setup script"
+    },
 	"Scaffold Vue Component": {
 		"prefix": "vscaffold",
 		"body": "<template>\n\t<${5:div}>\n\t\t$0\n\t</${5:div}>\n</template>\n\n<script>\nexport default {\n\tname: '${1:MyComponent}',\n\tcomponents: {\n\t\t\n\t},\n\tprops: {\n\t\t\n\t},\n\tdata() {\n\t\treturn {\n\t\t\t\n\t\t}\n\t},\n\tcomputed: {\n\t\t\n\t},\n\t${4:async }created() {\n\t\t\n\t},\n\tmethods: {\n\t\t\n\t}\n}\n</script>\n\n<style lang=\"${2:scss}\"${3: scoped}>\n\n</style>",

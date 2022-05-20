@@ -36,7 +36,7 @@ format = "[$path ]($style)[$read_only]($read_only_style)"
 # show the time in the prompt
 [time]
 disabled = false
-style = "#7782b3" # "bright-black" # bright-black is pretty dark in tokyonight... using a custom color.
+style = "bright-black"
 time_format = "[%T] "
 format = "[$time]($style)"
 
