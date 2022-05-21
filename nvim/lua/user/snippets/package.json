@@ -39,10 +39,6 @@
             },
             {
                 "language": "vue",
-                "path": "./vue-html.json"
-            },
-            {
-                "language": "vue",
                 "path": "./vue.json"
             }
         ]
