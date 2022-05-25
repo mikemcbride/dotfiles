@@ -15,10 +15,10 @@ const levels = parseInt(process.argv[2], 10) || 0
 let totalSize = 0
 
 const byteConversion = {
-    B: 1,
-    KB: 1000,
-    MB: 1000*1000,
-    GB: 1000*1000*1000
+  B: 1,
+  KB: 1000,
+  MB: 1000 * 1000,
+  GB: 1000 * 1000 * 1000
 }
 
 // figure out which directories we're pruning.
@@ -29,64 +29,64 @@ await Promise.allSettled(dirsToPrune.map(dir => execute(dir)))
 console.log(green(`Total file size removed: ${prettyBytes(totalSize)}`))
 
 async function getRecursiveDirectories(srcpath, levels) {
-    let dirs = [srcpath]
+  let dirs = [srcpath]
 
-    // while levels is not zero, recursively get directories for each dir and decrement levels
-    while (levels > 0) {
-        let newDirs = await Promise.allSettled(dirs.map(dir => getDirectories(dir)))
-        dirs = newDirs.filter(dir => dir.status === 'fulfilled').flatMap(dir => dir.value)
-        levels--
-    }
+  // while levels is not zero, recursively get directories for each dir and decrement levels
+  while (levels > 0) {
+    let newDirs = await Promise.allSettled(dirs.map(dir => getDirectories(dir)))
+    dirs = newDirs.filter(dir => dir.status === 'fulfilled').flatMap(dir => dir.value)
+    levels--
+  }
 
-    return dirs
+  return dirs
 }
 
 async function getDirectories(srcpath) {
-    let files = await fsPromises.readdir(srcpath)
-    let fileStats = await Promise.allSettled(files.map(file => fsPromises.lstat(path.join(srcpath, file))))
-    let directories = []
-    for (let i in fileStats) {
-        // files and corresponding stats will have the same index since we're using .map
-        const stat = fileStats[i]
-        const dir = files[i]
-        if (stat.status === 'fulfilled' && stat.value.isDirectory()) {
-            directories.push(path.join(srcpath, dir, 'node_modules'))
-        }
+  let files = await fsPromises.readdir(srcpath)
+  let fileStats = await Promise.allSettled(files.map(file => fsPromises.lstat(path.join(srcpath, file))))
+  let directories = []
+  for (let i in fileStats) {
+    // files and corresponding stats will have the same index since we're using .map
+    const stat = fileStats[i]
+    const dir = files[i]
+    if (stat.status === 'fulfilled' && stat.value.isDirectory()) {
+      directories.push(path.join(srcpath, dir, 'node_modules'))
     }
-    let pExists = await Promise.allSettled(directories.map(d => fsPromises.access(d)))
-    let exist = []
-    for (let i in pExists) {
-        // same index trick here to relate promise response to corresponding directory
-        const response = pExists[i]
-        const dir = directories[i]
-        if (response.status === 'fulfilled' && response.value === undefined) {
-            exist.push(dir)
-        }
+  }
+  let pExists = await Promise.allSettled(directories.map(d => fsPromises.access(d)))
+  let exist = []
+  for (let i in pExists) {
+    // same index trick here to relate promise response to corresponding directory
+    const response = pExists[i]
+    const dir = directories[i]
+    if (response.status === 'fulfilled' && response.value === undefined) {
+      exist.push(dir)
     }
-    return exist
+  }
+  return exist
 }
 
 async function execute(dir) {
-    const r = await execa('node-prune', [dir])
-    console.log(`pruning files in ${dir}`)
-    console.log(r.stdout)
-    console.log('-------------------------\n')
-    parseTotalSizeRemoved(r.stdout)
+  const r = await execa('node-prune', [dir])
+  console.log(`pruning files in ${dir}`)
+  console.log(r.stdout)
+  console.log('-------------------------\n')
+  parseTotalSizeRemoved(r.stdout)
 }
 
 function parseTotalSizeRemoved(input) {
-    const re = /size removed.*\s(\d*)\s(B|KB|MB|GB)/gmi
-    const match = re.exec(input)
-    const size = parseInt(match[1], 10)
-    const b = match[2]
-    const sizeInBytes = convertToBytes(size, b)
-    totalSize += sizeInBytes
+  const re = /size removed.*\s(\d*)\s(B|KB|MB|GB)/gmi
+  const match = re.exec(input)
+  const size = parseInt(match[1], 10)
+  const b = match[2]
+  const sizeInBytes = convertToBytes(size, b)
+  totalSize += sizeInBytes
 }
 
 function convertToBytes(size, type) {
-    if (byteConversion[type]) {
-        return size * byteConversion[type]
-    } else {
-        return 0
-    }
+  if (byteConversion[type]) {
+    return size * byteConversion[type]
+  } else {
+    return 0
+  }
 }

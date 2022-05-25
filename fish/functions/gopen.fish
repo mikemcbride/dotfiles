@@ -1,3 +1,3 @@
 function gopen
-  node ~/dotfiles/scripts/openGitRepo.mjs
+    gh repo view --web
 end

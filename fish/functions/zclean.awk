@@ -1,1 +1,0 @@
-/Users/mcbridem/.config/fisherman/z/functions/zclean.awk
