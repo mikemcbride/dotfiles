@@ -36,13 +36,6 @@ If any of those directories don't exist, you can create them and then re-run tha
 sudo mkdir -p /usr/local/{dirname}
 ```
 
-We'll also end up creating a new folder for `n`, which we use to manage Node versions. Let's go ahead and create that and set up permissions so we don't have to fiddle with it later:
-
-```shell
-sudo mkdir -p /usr/local/n
-sudo chown -R $(whoami) /usr/local/n
-```
-
 **Node.js**
 
 You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
@@ -58,7 +51,6 @@ We'll start in the home directory. If we have any existing configuration files, 
 ```sh
 cd ~
 rm -rf ~/.config/fish
-rm -rf ~/.config/fisherman
 ```
 
 Next we'll install [Homebrew](http://brew.sh). If you already have it, run `brew update` instead of installing it:
@@ -107,12 +99,6 @@ Now we're going to install all the Homebrew applications:
 cd ~/src/dotfiles && brew bundle
 ```
 
-We'll install `fisher`, a plugin manager for the `fish` shell:
-
-```sh
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-
 We'll also install a GO binary that's used in some scripts:
 
 ```sh
@@ -140,6 +126,12 @@ echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
 chsh -s /opt/homebrew/bin/fish
 ```
 
+We'll install `fisher`, a plugin manager for the `fish` shell:
+
+```sh
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+```
+
 If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
 
 ```sh
@@ -148,11 +140,17 @@ fish_add_path /opt/homebrew
 fish_add_path (go env GOPATH)/bin
 ```
 
+Add github-cli completions to fish:
+
+```sh
+gh completion -s fish > ~/.config/fish/completions/gh.fish
+```
+
 Finally, we'll install any plugins with fisher:
 
 ```sh
-fisher install fisherman/z
-fisher install fisherman/rbenv
+fisher install jethrokuan/z
+fisher install rbenv/fish-rbenv
 ```
 
 ## What just happened?
@@ -165,24 +163,24 @@ Got all that working? Great. Here's what we did:
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
-  - [z](http://github.com/rupa/z) - super fast way to jump around files/folders
+  - [z](http://github.com/jethrokuan/z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
-  - [n](https://github.com/tj/n) - for managing multiple versions of Node.js
-  - [rbenv](https://github.com/rbenv/rbenv) - for managing your Ruby versions/environment
+  - [fnm](https://github.com/Schniz/fnm) - for managing multiple versions of Node.js
+  - [rbenv](https://github.com/rbenv/fish-rbenv) - for managing your Ruby versions/environment
   - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - the fanciest diffs
 - installed some command line utilities:
-  - ripgrep - grep but like a million times better
-  - bat - a `cat` clone with awesome features
-  - wget
+  - [ripgrep](https://github.com/BurntSushi/ripgrep) - grep but like a million times better
+  - [bat](https://github.com/sharkdp/bat) - a `cat` clone with awesome features
+  - [wget](https://www.gnu.org/software/wget/) - better than curl for downloading resources from a url
 - installed some services commonly used in development:
-  - Docker
-  - RabbitMQ
-  - MongoDB
+  - docker
+  - rabbitmq
+  - mongo
 - installed a few desktop applications to make your life better:
   - Firefox
   - Brave browser
-  - iTerm
+  - iTerm2
   - [Raycast](https://raycast.com)
   - [Insomnia](https://insomnia.rest/) for testing REST calls
   - Slack
@@ -201,11 +199,10 @@ This section is mostly just for me to remember what I still need to download/set
 - Set Firefox as your default browser and log in to sync bookmarks/preferences.
 - You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
 - Open any file in vim and run `:PackerInstall` to install all plugins
-- Sign in to VS Code Settings Sync to bring over settings and extensions.
 
 ### Raycast
 
-In this repo there's a `/raycast/[file].rayconfig` that you can import to bring over all your Raycast preferences.
+In this repo there's a `/raycast/[file].rayconfig` that you can import to bring over all your Raycast preferences. It's password protected. The password is in 1Password.
 
 ### More Apps to Install
 
@@ -215,7 +212,7 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - Pixelmator Pro (App Store)
 - Bartender (website)
 - Battery Indicator (App Store)
-- Any fonts you want installed (grab Fonts folder from iCloud)
+- Any fonts you want installed (grab Fonts folder from iCloud), also consider using Homebrew for fonts
 
 ### Theme
 
