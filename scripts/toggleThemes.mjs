@@ -9,18 +9,6 @@ const configs = [
     darkTheme: 'vim.opt.background = "dark"',
     lightTheme: 'vim.opt.background = "light"'
   },
-  // {
-  //     appName: 'VS Code',
-  //     configFile: path.join(os.homedir(), 'Library/Application\ Support/Code/User/settings.json'),
-  //     darkTheme: `"workbench.colorTheme": "Electron Highlighter"`,
-  //     lightTheme: `"workbench.colorTheme": "Early Riser"`
-  // },
-  // {
-  //     appName: 'Hyper',
-  //     configFile: path.join(os.homedir(), 'src/dotfiles/.hyper.js'),
-  //     darkTheme: 'everforestTheme: "dark"',
-  //     lightTheme: 'everforestTheme: "light"'
-  // },
   {
     appName: 'Zed',
     configFile: path.join(os.homedir(), '.zed/settings.json'),
