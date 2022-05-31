@@ -5,7 +5,6 @@
 const execa = require('execa');
 
 (async () => {
-    // const appId = 'com.microsoft.VSCode'
     const appId = 'dev.zed.Zed'
     const extensions = [
         'js',
