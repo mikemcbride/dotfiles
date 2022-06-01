@@ -1,8 +1,9 @@
 # disable the newline at the start of the prompt
 add_newline = false
 
+# $time\ was originally at the beginning, but dropping it for extra space
+# add/remove $line_break\ before $character\ to get prompt character on same line as prompt
 format = """\
-  $time\
   $directory\
   $git_branch\
   $git_status\
@@ -11,7 +12,6 @@ format = """\
   $python\
   $ruby\
   $rust\
-  $line_break\
   $character\
 """
 

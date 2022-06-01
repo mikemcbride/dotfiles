@@ -38,14 +38,6 @@ vim.opt.guifont = "MonoLisa Nerd Font:h16"         -- the font used in graphical
 
 vim.opt.shortmess:append "c"
 
--- this option needs to be set before we require the nvim_tree plugin if we want to hide icons
-vim.g.nvim_tree_show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1,
-  folder_arrows = 0
-}
-
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
