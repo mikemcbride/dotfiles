@@ -193,6 +193,15 @@ Got all that working? Great. Here's what we did:
 
 This section is mostly just for me to remember what I still need to download/setup after running the install script.
 
+### .macos
+
+There's a `.macos` file that you can execute. It's taken from Mathias Bynens' famous `.macos` dotfile config with a ton of sensible macOS defaults.
+I've tweaked it to add/remove items that are relevant for me. You can set the defaults by executing the script:
+
+```sh
+sh ~/dotfiles/.macos
+```
+
 ### Logins
 
 - Sign in to 1Password and add the browser extension.
