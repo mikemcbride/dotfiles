@@ -82,6 +82,7 @@ Now we're going to set up a bunch of symlinks to link things from this repo to t
 
 ```sh
 mkdir -p ~/.config
+mkdir -p ~/.zed
 rm ~/.gitconfig
 ln -s ~/src/dotfiles ~/dotfiles
 ln -s ~/src/dotfiles/fish ~/.config/fish
@@ -90,7 +91,7 @@ ln -s ~/src/dotfiles/bat ~/.config/bat
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
-ln -s ~/src/dotfiles/zed ~/.zed
+ln -s ~/src/dotfiles/zed/settings.json ~/.zed/settings.json
 ```
 
 Now we're going to install all the Homebrew applications:
