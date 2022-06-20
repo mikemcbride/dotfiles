@@ -5,28 +5,28 @@ if status is-interactive
     # set fish_color_param normal
 
     # Gruvbox Material Color Palette
-    # set -l foreground d4be98
-    # set -l selection 424242
-    # set -l comment 777777
-    # set -l red ea6962
-    # set -l orange e78a4e
-    # set -l yellow d8a657
-    # set -l green a9b665
-    # set -l purple d3869b
-    # set -l cyan 89b482
-    # set -l pink f6a0b7
+    set -l foreground d4be98
+    set -l selection 424242
+    set -l comment 777777
+    set -l red ea6962
+    set -l orange e78a4e
+    set -l yellow d8a657
+    set -l green a9b665
+    set -l purple d3869b
+    set -l cyan 89b482
+    set -l pink f6a0b7
 
     # TokyoNight Color Palette
-    set -l foreground c0caf5
-    set -l selection 364A82
-    set -l comment 565f89
-    set -l red f7768e
-    set -l orange ff9e64
-    set -l yellow e0af68
-    set -l green 9ece6a
-    set -l purple 9d7cd8
-    set -l cyan 7dcfff
-    set -l pink bb9af7
+    # set -l foreground c0caf5
+    # set -l selection 364A82
+    # set -l comment 565f89
+    # set -l red f7768e
+    # set -l orange ff9e64
+    # set -l yellow e0af68
+    # set -l green 9ece6a
+    # set -l purple 9d7cd8
+    # set -l cyan 7dcfff
+    # set -l pink bb9af7
     
     # Syntax Highlighting Colors
     set -g fish_color_normal $foreground
