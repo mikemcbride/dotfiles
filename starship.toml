@@ -12,6 +12,7 @@ format = """\
   $python\
   $ruby\
   $rust\
+  $line_break\
   $character\
 """
 
