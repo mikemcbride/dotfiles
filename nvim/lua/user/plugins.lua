@@ -40,12 +40,11 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-    -- My plugins here
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+    use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-    use "numToStr/Comment.nvim"
+    use "numToStr/Comment.nvim" -- like tpope commentary but in lua
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -66,6 +65,7 @@ return packer.startup(function(use)
     use "tpope/vim-repeat"
     use 'fedepujol/move.nvim'
     use 'gpanders/editorconfig.nvim'
+    use "ThePrimeagen/harpoon"
 
     -- game to practice vim
     use "ThePrimeagen/vim-be-good"
@@ -73,6 +73,7 @@ return packer.startup(function(use)
     -- Colorschemes
     use "sainnhe/gruvbox-material"
     use "folke/tokyonight.nvim"
+    use "mikemcbride/electron-highlighter.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin

@@ -1,7 +1,8 @@
 vim.cmd "colorscheme default"
 
-local colorscheme = "gruvbox-material"
+-- local colorscheme = "gruvbox-material"
 -- local colorscheme = "tokyonight"
+local colorscheme = "electronhighlighter"
 vim.g.gruvbox_material_better_performance = 1
 vim.opt.background = "dark"
 
