@@ -46,11 +46,11 @@ It's pretty helpful to have 1Password set up before doing a lot of this stuff so
 
 ### Scripts
 
-We'll start in the home directory. If we have any existing configuration files, we need to kill those.
+We'll start in the home directory. If we have any existing configuration files, we need to kill those. Ideally we don't have a `~/.config` directory, but if so... you probably need to delete it. Store your existing configs somewhere else for the time being and re-apply afterwards.
 
 ```sh
 cd ~
-rm -rf ~/.config/fish
+rm -rf ~/.config
 ```
 
 Next we'll install [Homebrew](http://brew.sh). If you already have it, run `brew update` instead of installing it:
@@ -74,31 +74,28 @@ npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
 Now that we've got all that installed, we'll set up the dotfiles:
 
 ```sh
-mkdir -p ~/src && cd ~/src
+cd ~
 git clone https://github.com/mikemcbride/dotfiles.git
-```
-
-Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
-
-```sh
-mkdir -p ~/.config
-mkdir -p ~/.zed
-rm ~/.gitconfig
-ln -s ~/src/dotfiles ~/dotfiles
-ln -s ~/src/dotfiles/fish ~/.config/fish
-ln -s ~/src/dotfiles/nvim ~/.config/nvim
-ln -s ~/src/dotfiles/bat ~/.config/bat
-ln -s ~/src/dotfiles/karabiner ~/.config/karabiner
-ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
-ln -s ~/src/dotfiles/zed/settings.json ~/.zed/settings.json
 ```
 
 Now we're going to install all the Homebrew applications:
 
 ```sh
-cd ~/src/dotfiles && brew bundle
+cd ~/dotfiles && brew bundle
+```
+
+Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
+
+```sh
+mkdir -p ~/.zed
+rm ~/.gitconfig
+stow fish
+stow nvim
+stow bat
+stow karabiner
+stow starship
+stow git
+stow zed
 ```
 
 We'll also install a GO binary that's used in some scripts. We should have Golang set up from Homebrew at this point:
@@ -110,14 +107,14 @@ go get github.com/tj/node-prune
 Now we've got some dependencies to install for those utility scripts to work. Let's do that now:
 
 ```sh
-cd ~/src/dotfiles
+cd ~/dotfiles
 yarn install
 ```
 
 While we're in here, we probably want to set our file handling for common code file extensions to all open in Zed instead of whatever the OS decides to use to open the files:
 
 ```sh
-cd ~/src/dotfiles
+cd ~/dotfiles
 node ./scripts/setDefaultApplications.js
 ```
 
@@ -161,7 +158,7 @@ Got all that working? Great. Here's what we did:
 - set your shell to fish
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- cloned this repo into  `~/src/dotfiles` and set up your fish configs
+- cloned this repo into  `~/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
