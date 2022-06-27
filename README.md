@@ -88,6 +88,7 @@ ln -s ~/src/dotfiles ~/dotfiles
 ln -s ~/src/dotfiles/fish ~/.config/fish
 ln -s ~/src/dotfiles/nvim ~/.config/nvim
 ln -s ~/src/dotfiles/bat ~/.config/bat
+ln -s ~/src/dotfiles/karabiner ~/.config/karabiner
 ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
@@ -100,7 +101,7 @@ Now we're going to install all the Homebrew applications:
 cd ~/src/dotfiles && brew bundle
 ```
 
-We'll also install a GO binary that's used in some scripts:
+We'll also install a GO binary that's used in some scripts. We should have Golang set up from Homebrew at this point:
 
 ```sh
 go get github.com/tj/node-prune
@@ -183,12 +184,12 @@ Got all that working? Great. Here's what we did:
   - Brave browser
   - iTerm2
   - [Raycast](https://raycast.com)
-  - [Insomnia](https://insomnia.rest/) for testing REST calls
+  - [Insomnia](https://insomnia.rest/)
   - Slack
-  - [Kap](https://getkap.co/) for screen captures
-  - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
-  - DBeaver Community Edition for working with relational databases
-  - Karabiner Elements for overriding some keymaps
+  - [Kap](https://getkap.co/)
+  - [MongoDB Compass](https://www.mongodb.com/products/compass)
+  - DBeaver Community Edition
+  - Karabiner Elements
 
 ## Additional Setup
 
@@ -234,12 +235,4 @@ Reinstall browser extensions. For Firefox, just sign in to your Firefox account 
 
 ## Updating
 
-As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked. To do a backup of any Homebrew applications, you can run this command:
-
-```sh
-cd ~/src/dotfiles
-brew bundle dump --force
-git add .
-git commit -m 'updating homebrew apps'
-git push
-```
+As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked.
