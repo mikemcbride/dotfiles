@@ -72,7 +72,6 @@ return packer.startup(function(use)
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"
-    use "folke/tokyonight.nvim"
     use "mikemcbride/electron-highlighter.nvim"
 
     -- cmp plugins
