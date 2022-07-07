@@ -18,13 +18,13 @@ You can set that prefix as an ENV variable if that would make things easier. For
 
 **Operating system**
 
-You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
+We need git and some other stuff that the Apple command line tools provides:
 
 ```shell
 xcode-select --install
 ```
 
-You will need write permissions to various folders in the `/usr` directory for the things we're going to install. Run this to grant yourself those permissions:
+We will need write permissions to various folders in the `/usr` directory for the things we're going to install. Run this to grant yourself those permissions:
 
 ```shell
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
@@ -36,13 +36,23 @@ If any of those directories don't exist, you can create them and then re-run tha
 sudo mkdir -p /usr/local/{dirname}
 ```
 
-**Node.js**
+**Ansible**
 
-You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+We'll use Ansible to install the rest of our stuff.  So let's get that:
+
+```
+export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
+sudo pip3 install --upgrade pip
+pip3 install ansible
+```
 
 **1Password**
 
 It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want. But signing in to your Apple ID, GitHub, etc is easier than typing those long passwords manually.
+
+**Node.js**
+
+You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
 
 ### Scripts
 

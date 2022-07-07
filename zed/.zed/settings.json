@@ -4,5 +4,10 @@
     "theme": "cave-dark",
     "format_on_save": false,
     "soft_wrap": "editor_width",
-    "vim_mode": true
+    "vim_mode": true,
+    "language_overrides": {
+        "Markdown": {
+            "soft_wrap": "preferred_line_length"
+        }
+    }
 }

@@ -3,28 +3,28 @@ if status is-interactive
     set fish_greeting ''
 
     # Electron Highlighter
-    # set -l foreground a8b5d1
-    # set -l selection c1ddff
-    # set -l comment 506686
-    # set -l red ff5874
-    # set -l orange ffbf7a
-    # set -l yellow fffa9e
-    # set -l green 6af699
-    # set -l purple c792ea
-    # set -l cyan 4ff2f8
-    # set -l pink ff2c83
+    set -l foreground a8b5d1
+    set -l selection c1ddff
+    set -l comment 506686
+    set -l red ff5874
+    set -l orange ffbf7a
+    set -l yellow fffa9e
+    set -l green 6af699
+    set -l purple c792ea
+    set -l cyan 4ff2f8
+    set -l pink ff2c83
 
     # Gruvbox Material Color Palette
-    set -l foreground d4be98
-    set -l selection 424242
-    set -l comment 777777
-    set -l red ea6962
-    set -l orange e78a4e
-    set -l yellow d8a657
-    set -l green a9b665
-    set -l purple d3869b
-    set -l cyan 89b482
-    set -l pink f6a0b7
+    # set -l foreground d4be98
+    # set -l selection 424242
+    # set -l comment 777777
+    # set -l red ea6962
+    # set -l orange e78a4e
+    # set -l yellow d8a657
+    # set -l green a9b665
+    # set -l purple d3869b
+    # set -l cyan 89b482
+    # set -l pink f6a0b7
     
     # Syntax Highlighting Colors
     set -g fish_color_normal $foreground
