@@ -72,7 +72,6 @@ return packer.startup(function(use)
 
     -- Colorschemes
     use "sainnhe/gruvbox-material"
-    use "mikemcbride/electron-highlighter.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
