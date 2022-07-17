@@ -2,9 +2,9 @@
     "buffer_font_family": "MonoLisa Nerd Font",
     "buffer_font_size": 16,
     "theme": "cave-dark",
-    "format_on_save": false,
+    "format_on_save": "off",
     "soft_wrap": "editor_width",
-    "vim_mode": true,
+    "vim_mode": false,
     "language_overrides": {
         "Markdown": {
             "soft_wrap": "preferred_line_length"
