@@ -18,13 +18,13 @@ You can set that prefix as an ENV variable if that would make things easier. For
 
 **Operating system**
 
-You will need to have Git and Ruby installed. macOS comes bundled with these, but you may have to install Git via Xcode if you haven't done that yet. You can do this by running:
+We need git and some other stuff that the Apple command line tools provides:
 
 ```shell
 xcode-select --install
 ```
 
-You will need write permissions to various folders in the `/usr` directory for the things we're going to install. Run this to grant yourself those permissions:
+We will need write permissions to various folders in the `/usr` directory for the things we're going to install. Run this to grant yourself those permissions:
 
 ```shell
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
@@ -36,21 +36,21 @@ If any of those directories don't exist, you can create them and then re-run tha
 sudo mkdir -p /usr/local/{dirname}
 ```
 
-**Node.js**
-
-You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
-
 **1Password**
 
 It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want. But signing in to your Apple ID, GitHub, etc is easier than typing those long passwords manually.
 
+**Node.js**
+
+You need to have [Node.js](https://nodejs.org/en/download) installed. I looked into installing this with Ansible but it was a pain in the rear, and installing Node manually isn't hard. If you really are opposed to doing this you can install it with Homebrew. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+
 ### Scripts
 
-We'll start in the home directory. If we have any existing configuration files, we need to kill those.
+We'll start in the home directory. If we have any existing configuration files, we need to kill those. Ideally we don't have a `~/.config` directory, but if so... you probably need to delete it. Store your existing configs somewhere else for the time being and re-apply afterwards.
 
 ```sh
 cd ~
-rm -rf ~/.config/fish
+rm -rf ~/.config
 ```
 
 Next we'll install [Homebrew](http://brew.sh). If you already have it, run `brew update` instead of installing it:
@@ -74,33 +74,31 @@ npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
 Now that we've got all that installed, we'll set up the dotfiles:
 
 ```sh
-mkdir -p ~/src && cd ~/src
+cd ~
 git clone https://github.com/mikemcbride/dotfiles.git
-```
-
-Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
-
-```sh
-mkdir -p ~/.config
-mkdir -p ~/.zed
-rm ~/.gitconfig
-ln -s ~/src/dotfiles ~/dotfiles
-ln -s ~/src/dotfiles/fish ~/.config/fish
-ln -s ~/src/dotfiles/nvim ~/.config/nvim
-ln -s ~/src/dotfiles/bat ~/.config/bat
-ln -s ~/src/dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/src/dotfiles/.gitignore.global ~/.gitignore.global
-ln -s ~/src/dotfiles/zed/settings.json ~/.zed/settings.json
 ```
 
 Now we're going to install all the Homebrew applications:
 
 ```sh
-cd ~/src/dotfiles && brew bundle
+cd ~/dotfiles && brew bundle
 ```
 
-We'll also install a GO binary that's used in some scripts:
+Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
+
+```sh
+mkdir -p ~/.zed
+rm ~/.gitconfig
+stow fish
+stow nvim
+stow bat
+stow karabiner
+stow starship
+stow git
+stow zed
+```
+
+We'll also install a GO binary that's used in some scripts. We should have Golang set up from Homebrew at this point:
 
 ```sh
 go get github.com/tj/node-prune
@@ -109,14 +107,14 @@ go get github.com/tj/node-prune
 Now we've got some dependencies to install for those utility scripts to work. Let's do that now:
 
 ```sh
-cd ~/src/dotfiles
+cd ~/dotfiles
 yarn install
 ```
 
 While we're in here, we probably want to set our file handling for common code file extensions to all open in Zed instead of whatever the OS decides to use to open the files:
 
 ```sh
-cd ~/src/dotfiles
+cd ~/dotfiles
 node ./scripts/setDefaultApplications.js
 ```
 
@@ -160,7 +158,7 @@ Got all that working? Great. Here's what we did:
 - set your shell to fish
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- cloned this repo into  `~/src/dotfiles` and set up your fish configs
+- cloned this repo into  `~/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
@@ -183,12 +181,12 @@ Got all that working? Great. Here's what we did:
   - Brave browser
   - iTerm2
   - [Raycast](https://raycast.com)
-  - [Insomnia](https://insomnia.rest/) for testing REST calls
+  - [Insomnia](https://insomnia.rest/)
   - Slack
-  - [Kap](https://getkap.co/) for screen captures
-  - [MongoDB Compass](https://www.mongodb.com/products/compass) for a MongoDB GUI
-  - DBeaver Community Edition for working with relational databases
-  - Karabiner Elements for overriding some keymaps
+  - [Kap](https://getkap.co/)
+  - [MongoDB Compass](https://www.mongodb.com/products/compass)
+  - DBeaver Community Edition
+  - Karabiner Elements
 
 ## Additional Setup
 
@@ -206,7 +204,7 @@ sh ~/dotfiles/.macos
 ### Logins
 
 - Sign in to 1Password and add the browser extension.
-- Set Firefox as your default browser and log in to sync bookmarks/preferences.
+- Download and install Arc and log in there
 - You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
 - Open any file in vim and run `:PackerInstall` to install all plugins
 
@@ -222,7 +220,7 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - Pixelmator Pro (App Store)
 - Bartender (website)
 - Battery Indicator (App Store)
-- Any fonts you want installed (grab Fonts folder from iCloud), also consider using Homebrew for fonts
+- Any fonts you want installed (grab Fonts folder from iCloud)
 
 ### Theme
 
@@ -230,16 +228,12 @@ The setup script installs iTerm2, which I use as a terminal emulator. This repo 
 
 ### Browser Extensions
 
-Reinstall browser extensions. For Firefox, just sign in to your Firefox account and it will sync them. Export the bookmarks file and import into any other browser you want.
+Reinstall browser extensions. 1Password, Vue and React dev tools, JSON formatter, etc.
+
+### Peripherals
+
+Download and install the Logitech app to sync mouse config/preferences.
 
 ## Updating
 
-As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked. To do a backup of any Homebrew applications, you can run this command:
-
-```sh
-cd ~/src/dotfiles
-brew bundle dump --force
-git add .
-git commit -m 'updating homebrew apps'
-git push
-```
+As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked.
