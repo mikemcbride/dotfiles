@@ -36,23 +36,13 @@ If any of those directories don't exist, you can create them and then re-run tha
 sudo mkdir -p /usr/local/{dirname}
 ```
 
-**Ansible**
-
-We'll use Ansible to install the rest of our stuff.  So let's get that:
-
-```
-export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
-sudo pip3 install --upgrade pip
-pip3 install ansible
-```
-
 **1Password**
 
 It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want. But signing in to your Apple ID, GitHub, etc is easier than typing those long passwords manually.
 
 **Node.js**
 
-You need to have [Node.js](https://nodejs.org/en/download) installed. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+You need to have [Node.js](https://nodejs.org/en/download) installed. I looked into installing this with Ansible but it was a pain in the rear, and installing Node manually isn't hard. If you really are opposed to doing this you can install it with Homebrew. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
 
 ### Scripts
 
@@ -214,7 +204,7 @@ sh ~/dotfiles/.macos
 ### Logins
 
 - Sign in to 1Password and add the browser extension.
-- Set Firefox as your default browser and log in to sync bookmarks/preferences.
+- Download and install Arc and log in there
 - You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
 - Open any file in vim and run `:PackerInstall` to install all plugins
 
@@ -230,7 +220,7 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - Pixelmator Pro (App Store)
 - Bartender (website)
 - Battery Indicator (App Store)
-- Any fonts you want installed (grab Fonts folder from iCloud), also consider using Homebrew for fonts
+- Any fonts you want installed (grab Fonts folder from iCloud)
 
 ### Theme
 
@@ -238,7 +228,11 @@ The setup script installs iTerm2, which I use as a terminal emulator. This repo 
 
 ### Browser Extensions
 
-Reinstall browser extensions. For Firefox, just sign in to your Firefox account and it will sync them. Export the bookmarks file and import into any other browser you want.
+Reinstall browser extensions. 1Password, Vue and React dev tools, JSON formatter, etc.
+
+### Peripherals
+
+Download and install the Logitech app to sync mouse config/preferences.
 
 ## Updating
 
