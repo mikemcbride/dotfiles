@@ -1,5 +1,6 @@
 [push]
 	default = simple
+    autoSetupRemote = true
 [core]
 	editor = /opt/homebrew/bin/nvim
   excludesfile = ~/.gitignore.global
