@@ -42,7 +42,7 @@ It's pretty helpful to have 1Password set up before doing a lot of this stuff so
 
 **Node.js**
 
-You need to have [Node.js](https://nodejs.org/en/download) installed. I looked into installing this with Ansible but it was a pain in the rear, and installing Node manually isn't hard. If you really are opposed to doing this you can install it with Homebrew. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+You need to have [Node.js](https://nodejs.org/en/download) installed. If you really are opposed to doing this you can install it with Homebrew. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
 
 ### Scripts
 
