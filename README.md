@@ -174,15 +174,11 @@ Got all that working? Great. Here's what we did:
   - rabbitmq
   - mongo
 - installed a few desktop applications to make your life better:
-  - Firefox
-  - Brave browser
   - iTerm2
   - [Raycast](https://raycast.com)
   - [Insomnia](https://insomnia.rest/)
   - Slack
   - [Kap](https://getkap.co/)
-  - [MongoDB Compass](https://www.mongodb.com/products/compass)
-  - DBeaver Community Edition
   - Karabiner Elements
 
 ## Additional Setup
