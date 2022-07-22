@@ -24,16 +24,11 @@ We need git and some other stuff that the Apple command line tools provides:
 xcode-select --install
 ```
 
-We will need write permissions to various folders in the `/usr` directory for the things we're going to install. Run this to grant yourself those permissions:
+We will need write permissions to various folders in the `/usr/local` directory for the things we're going to install. We'll make sure they exist first. Run this to grant yourself those permissions:
 
 ```shell
-sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-```
-
-If any of those directories don't exist, you can create them and then re-run that command. Create them like this:
-
-```shell
-sudo mkdir -p /usr/local/{dirname}
+sudo mkdir -p /usr/local/{bin,lib,include,share}
+sudo chown -R $(whoami) /usr/local/{bin,lib,include,share}
 ```
 
 **1Password**
@@ -121,8 +116,8 @@ node ./scripts/setDefaultApplications.js
 Next we need to add `fish` to our list of available shells, then we'll switch to using it:
 
 ```sh
-echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
 ```
 
 We'll install `fisher`, a plugin manager for the `fish` shell:
