@@ -93,7 +93,7 @@ stow git
 stow zed
 ```
 
-We'll also install a GO binary that's used in some scripts. We should have Golang set up from Homebrew at this point:
+We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
 
 ```sh
 go get github.com/tj/node-prune
@@ -146,6 +146,8 @@ Finally, we'll install any plugins with fisher:
 fisher install jethrokuan/z
 fisher install rbenv/fish-rbenv
 ```
+
+If you want all of these scripts in one file, you can run `setup.sh`
 
 ## What just happened?
 
