@@ -201,6 +201,10 @@ sh ~/dotfiles/.macos
 - You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
 - Open any file in vim and run `:PackerInstall` to install all plugins
 
+### Shortcuts
+
+You can set keyboard shortcuts for switching to specific workspaces (desktops) in Mission Control. System Preferences > Keyboard > Shortcuts > Mission Control. I like to set them to Hyper + {workspace number}, so Hyper+1 takes me to desktop 1. I haven't figured out how to do this inside of the .macos script yet, so for now it's a manual change.
+
 ### Raycast
 
 In this repo there's a `/raycast/[file].rayconfig` that you can import to bring over all your Raycast preferences. It's password protected. The password is in 1Password.
