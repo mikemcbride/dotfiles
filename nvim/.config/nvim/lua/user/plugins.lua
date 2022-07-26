@@ -45,12 +45,6 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- like tpope commentary but in lua
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-    }
     use "ryanoasis/vim-devicons"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
@@ -60,9 +54,6 @@ return packer.startup(function(use)
     use "goolord/alpha-nvim"
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
     use "folke/which-key.nvim"
-    use "tpope/vim-fugitive"
-    use "tpope/vim-surround"
-    use "tpope/vim-repeat"
     use 'fedepujol/move.nvim'
     use 'gpanders/editorconfig.nvim'
     use "ThePrimeagen/harpoon"
