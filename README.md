@@ -8,8 +8,8 @@ It's worth noting up front that this setup assumes you're using `bash` or `zsh`.
 
 One other important thing to note is that the Homebrew install location is different for Apple Silicon macs vs Apple Intel macs:
 
-| Apple Silicon | Intel |
-| --- | --- |
+| Apple Silicon   | Intel        |
+| --------------- | ------------ |
 | `/opt/homebrew` | `/usr/local` |
 
 You can set that prefix as an ENV variable if that would make things easier. For now, I'm going to assume Apple Silicon since they're phasing out the Intel macs, but just know that if you're using an Intel mac the Homebrew prefix is different so you'll need to tweak some of the scripts. I'll try to remember to make a note below.
@@ -152,10 +152,11 @@ If you want all of these scripts in one file, you can run `setup.sh`
 ## What just happened?
 
 Got all that working? Great. Here's what we did:
+
 - set your shell to fish
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- cloned this repo into  `~/dotfiles` and set up your fish configs
+- cloned this repo into `~/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
