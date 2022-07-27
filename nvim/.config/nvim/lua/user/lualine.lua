@@ -10,6 +10,7 @@ local branch = {
 }
 
 lualine.setup({
+    theme = "tokyonight",
 	options = {
 		icons_enabled = true,
 		theme = "auto",
