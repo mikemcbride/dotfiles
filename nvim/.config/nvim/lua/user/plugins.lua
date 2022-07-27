@@ -56,13 +56,14 @@ return packer.startup(function(use)
     use "folke/which-key.nvim"
     use 'fedepujol/move.nvim'
     use 'gpanders/editorconfig.nvim'
-    use "ThePrimeagen/harpoon"
+    -- use "ThePrimeagen/harpoon"
 
     -- game to practice vim
-    use "ThePrimeagen/vim-be-good"
+    -- use "ThePrimeagen/vim-be-good"
 
     -- Colorschemes
-    use "sainnhe/gruvbox-material"
+    use 'folke/tokyonight.nvim'
+    -- use "sainnhe/gruvbox-material"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -81,6 +82,13 @@ return packer.startup(function(use)
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {}
+      end
+    }
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
