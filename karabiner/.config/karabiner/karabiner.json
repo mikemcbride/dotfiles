@@ -85,6 +85,26 @@
                                 "type": "basic"
                             },
                             {
+                                "description": "r = Raycast",
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_shift",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a Raycast"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "description": "s = Slack",
                                 "from": {
                                     "key_code": "s",
