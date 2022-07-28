@@ -13,6 +13,13 @@ function copy() {
   pbcopy < $1; echo "$(tput setaf 2)Contents of $(tput setaf 5)${1} $(tput setaf 2)copied to clipboard!"
 }
 
+# use smarter clone script
+# clone will copy the new repo url,
+# we just need to paste it afterwards
+function clone() {
+  node ~/dotfiles/scripts/clone.js $1 && cd $(pbpaste)
+}
+
 # Git stuff
 function git_current_branch() {
   if ! git rev-parse 2> /dev/null; then
@@ -67,12 +74,12 @@ function bitly() {
 
 # get current IP address
 function getip() {
-  node ~/dotfiles/scripts/getIp.js | tee >(pbcopy)
+  node ~/dotfiles/scripts/getIp.js
 }
 
-# open current repo in GitHub if it's a git repo
-function open_in_github() {
-  node  ~/dotfiles/scripts/openOnGitHub.js
+# open current repo online if it's a git repo
+function open_git_repo_online() {
+  node  ~/dotfiles/scripts/openGitRepo.js
 }
 
 # replace all extensions of type X with Y in current directory
@@ -81,7 +88,17 @@ function replace_ext() {
   node ~/dotfiles/scripts/replaceFileExtension.js $1 $2
 }
 
+# run node-prune in all directories within the current dir
+function prune() {
+  sh ~/dotfiles/scripts/prune.sh
+}
+
 # kill process running on specified port
 function killport() {
   lsof -i TCP:$1 | grep LISTEN | awk '{print $2}' | xargs kill -9
+}
+
+# empty the trash
+function dump() {
+  node ~/dotfiles/scripts/emptyTrash.js
 }

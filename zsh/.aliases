@@ -2,18 +2,18 @@ alias k="clear"
 alias x="exit"
 alias q="exit"
 alias :q="exit"
-alias la="ls -la"
 alias ltr="ls -ltr"
-alias vi=vim # prefer vim to vi
+alias vi=nvim # prefer nvim to vim or vi
+alias rm=trash # safer deleting using trash-cli
+alias please=sudo # nicer sudo
+alias resource="source ~/.zshrc"
+alias ip="getip" # shorter alias for getip() function in .functions setup
+alias bbd="brew bundle dump --force" # homebrew bundle
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
-alias rm=trash # safer deleting using trash-cli
-alias please=sudo # nicer sudo
-alias resource="source ~/.zshrc"
-alias ip="getip" # shorter alias for getip() function in .functions setup
 
 # Git
 alias g="git"
@@ -35,31 +35,19 @@ alias gs="git status"
 alias gba="git branch --all"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gconflicts="git diff --name-only --diff-filter=U"
-alias clone="git clone"
 alias gpub="publish_current_branch"
 alias gbam="delete_local_merged_branches"
 alias gbamr="delete_remote_merged_branches"
 alias gclean="delete_local_merged_branches && delete_remote_merged_branches"
-alias gopen="open_in_github"
+alias gopen="open_git_repo_online"
 
 # NPM
+alias r="npm run"
 alias ni="npm install"
 alias use_npm="npm set registry https://registry.npmjs.org/ && npm get registry"
-alias use_wwt="npm set registry http://sinopia.wwt.com/ && npm get registry"
 
 # start screensaver
 alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 
 # get current weather
 alias weather="curl wttr.in"
-
-# Atom
-# These might be a bad idea but I only have Atom Beta installed and it's annoying to have to use the separate -beta cli
-# This is quite likely going to be an issue for anyone who forks/clones this repo and uses regular Atom.
-alias atom="atom-beta"
-alias apm="apm-beta"
-alias ab="atom-beta ."
-
-# start/stop tomcat server
-alias tomcat_start="/Library/Tomcat/bin/startup.sh"
-alias tomcat_stop="/Library/Tomcat/bin/shutdown.sh"
