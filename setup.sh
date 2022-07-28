@@ -44,3 +44,5 @@ fish_add_path (go env GOPATH)/bin
 gh completion -s fish > ~/.config/fish/completions/gh.fish
 fisher install jethrokuan/z
 fisher install rbenv/fish-rbenv
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
