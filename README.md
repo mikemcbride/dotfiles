@@ -147,7 +147,31 @@ fisher install jethrokuan/z
 fisher install rbenv/fish-rbenv
 ```
 
-If you want all of these scripts in one file, you can run `setup.sh`
+I love the Fish shell, but sometimes there are issues. In the circumstances when fish doesn't work well, I've got some configs for zsh that make it about the same as my fish setup.
+
+- Install oh-my-zsh
+- Run `stow zsh`
+- Clone custom plugin repos to `~/.oh-my-zsh/custom/plugins/`:
+
+```
+zsh-autosuggestions
+zsh-syntax-highlighting
+zsh-z
+```
+
+The zshrc file and OMZ will take care of most of the aliases and setting up Starship. Fortunately Starship uses the same config file regardless of which shell is running.
+
+Now if you need to switch to zsh, the experience should be pretty similar to what I get in fish.
+
+### Install script
+
+Mike, that's a lot of stuff to do...
+
+It's really not bad, but if you want you can run the setup script to have it execute all of these commands in order.
+
+```
+sh ./setup.sh
+```
 
 ## What just happened?
 
