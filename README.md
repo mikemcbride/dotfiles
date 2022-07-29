@@ -152,12 +152,9 @@ I love the Fish shell, but sometimes there are issues. In the circumstances when
 - Install oh-my-zsh
 - Run `stow zsh`
 - Clone custom plugin repos to `~/.oh-my-zsh/custom/plugins/`:
-
-```
-zsh-autosuggestions
-zsh-syntax-highlighting
-zsh-z
-```
+    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+    - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+    - [zsh-z](https://github.com/agkozak/zsh-z#for-oh-my-zsh-users)
 
 The zshrc file and OMZ will take care of most of the aliases and setting up Starship. Fortunately Starship uses the same config file regardless of which shell is running.
 
