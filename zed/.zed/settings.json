@@ -1,7 +1,7 @@
 {
     "buffer_font_family": "MonoLisa Nerd Font",
     "buffer_font_size": 16,
-    "theme": "cave-dark",
+    "theme": "one-dark",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
     "vim_mode": false,
