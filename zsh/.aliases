@@ -1,53 +1,30 @@
-alias k="clear"
-alias x="exit"
-alias q="exit"
-alias :q="exit"
+alias k=clear
 alias ltr="ls -ltr"
-alias vim=nvim # prefer nvim to vim or vi
-alias rm=trash # safer deleting using trash-cli
-alias please=sudo # nicer sudo
+alias vim=nvim
+alias rm=trash
+alias please=sudo
 alias resource="source ~/.zshrc"
-alias ip="getip" # shorter alias for getip() function in .functions setup
-alias bbd="brew bundle dump --force" # homebrew bundle
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
+alias ip=getip
+alias bbd="brew bundle dump --force"
+alias cat=bat
+alias sed=gsed
+alias n=fnm
 
 # Git
-alias g="git"
-alias gmm="git merge master"
-alias gf="git fetch --all --prune"
-alias gl="git pull"
-alias gd="git diff"
-alias ga="git add"
-alias gp="git push"
+alias gmm="git merge origin/$(git_main_branch)"
 alias gbx="git branch -D"
-alias gco="git checkout"
 alias gbc="git checkout -b"
-alias gcm="git checkout master"
-alias glm="git checkout master && git pull"
-alias glmm="pull_and_merge_master"
-alias gcam="git commit -am"
-alias gcmsg="git commit --message"
+alias glm="git checkout origin/$(git_main_branch) && git pull"
+alias glmm="git checkout origin/$(git_main_branch) && git pull && git checkout - && git merge $(git_main_branch)"
 alias gs="git status"
-alias gba="git branch --all"
+alias gc="git commit -m"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gconflicts="git diff --name-only --diff-filter=U"
 alias gpub="publish_current_branch"
-alias gbam="delete_local_merged_branches"
-alias gbamr="delete_remote_merged_branches"
 alias gclean="delete_local_merged_branches && delete_remote_merged_branches"
-alias gopen="open_git_repo_online"
+alias gopen="gh repo view --web"
+alias gpr="gh pr create --web"
 
-# NPM
+# npm
 alias r="npm run"
 alias ni="npm install"
-alias use_npm="npm set registry https://registry.npmjs.org/ && npm get registry"
-
-# start screensaver
-alias afk="open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
-
-# get current weather
-alias weather="curl wttr.in"
