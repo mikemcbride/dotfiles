@@ -73,9 +73,6 @@ if status is-interactive
     set -x LC_ALL 'en_US.UTF-8'
     set -x LANG en_US
 
-    # Preserve npm version when switching node versions with n
-    set -x N_PRESERVE_NPM 1
-
     starship init fish | source
 end
 
