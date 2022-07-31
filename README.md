@@ -145,18 +145,17 @@ sh ./setup.sh
 
 Got all that working? Great. Here's what we did:
 
-- set your shell to fish
+- set your shell to zsh and installed oh-my-zsh
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
 - cloned this repo into `~/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
-  - [z](http://github.com/jethrokuan/z) - super fast way to jump around files/folders
+  - [z](http://github.com/agkozak/zsh-z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [fnm](https://github.com/Schniz/fnm) - for managing multiple versions of Node.js
-  - [rbenv](https://github.com/rbenv/fish-rbenv) - for managing your Ruby versions/environment
   - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - the fanciest diffs
 - installed some command line utilities:
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - grep but like a million times better
@@ -234,6 +233,7 @@ I used fish for years but it's not POSIX compliant so I've switched back zsh to 
 
 <details>
 <summary>Installing fish</summary>
+
 We'll install fish via homebrew, then install our config, then switch to fish. The starship config we set up earlier will apply to fish as well.
 
 ```sh
