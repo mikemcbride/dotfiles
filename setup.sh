@@ -16,9 +16,8 @@ git clone https://github.com/mikemcbride/dotfiles.git
 cd ~/dotfiles
 brew bundle
 
-mkdir -p ~/.zed
 rm ~/.gitconfig
-stow fish
+stow zsh
 stow nvim
 stow bat
 stow karabiner
@@ -29,20 +28,13 @@ stow zed
 go get github.com/tj/node-prune
 
 cd ~/dotfiles
-yarn install
+npm install
 node ./scripts/setDefaultApplications.js
 
-echo $(which fish) | sudo tee -a /etc/shells
-chsh -s $(which fish)
-
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew
-fish_add_path (go env GOPATH)/bin
-
-gh completion -s fish > ~/.config/fish/completions/gh.fish
-fisher install jethrokuan/z
-fisher install rbenv/fish-rbenv
-
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+gh completion -s zsh > /usr/local/share/zsh/site-functions/_gh
+chsh -s $(which zsh)
+source ~/.zshrc

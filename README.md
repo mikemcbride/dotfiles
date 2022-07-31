@@ -4,7 +4,7 @@ These are my dotfiles. It's here so that I don't lose any of my setups when swit
 
 ## Setup
 
-It's worth noting up front that this setup assumes you're using `bash` or `zsh`. We'll install `fish`, but all the install commands would be run on a fresh system, so it's one of those shells. It's also worth noting that this setup is for macOS only.
+It's worth noting that this setup is for macOS only and assumes you're using bash or zsh to execute the scripts.
 
 One other important thing to note is that the Homebrew install location is different for Apple Silicon macs vs Apple Intel macs:
 
@@ -28,6 +28,7 @@ We will need write permissions to various folders in the `/usr/local` directory 
 
 ```shell
 sudo mkdir -p /usr/local/{bin,lib,include,share}
+sudo mkdir -p /usr/local/share/zsh/site-functions
 sudo chown -R $(whoami) /usr/local/{bin,lib,include,share}
 ```
 
@@ -82,9 +83,8 @@ cd ~/dotfiles && brew bundle
 Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
 
 ```sh
-mkdir -p ~/.zed
 rm ~/.gitconfig
-stow fish
+stow zsh
 stow nvim
 stow bat
 stow karabiner
@@ -103,7 +103,7 @@ Now we've got some dependencies to install for those utility scripts to work. Le
 
 ```sh
 cd ~/dotfiles
-yarn install
+npm install
 ```
 
 While we're in here, we probably want to set our file handling for common code file extensions to all open in Zed instead of whatever the OS decides to use to open the files:
@@ -113,52 +113,23 @@ cd ~/dotfiles
 node ./scripts/setDefaultApplications.js
 ```
 
-Next we need to add `fish` to our list of available shells, then we'll switch to using it:
+Install oh-my-zsh and install some plugins (we already have them defined in our zshrc). We'll also make sure zsh is our default shell:
 
 ```sh
-echo $(which fish) | sudo tee -a /etc/shells
-chsh -s $(which fish)
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+gh completion -s zsh > /usr/local/share/zsh/site-functions/_gh
 ```
 
-We'll install `fisher`, a plugin manager for the `fish` shell:
+Now we need to add the Homebrew version of zsh (we want to use this one so it's easier to upgrade) to our shells and switch to it:
 
 ```sh
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+echo $(which zsh) | sudo tee -a /etc/shells
+chsh -s $(which zsh)
+source ~/.zshrc
 ```
-
-If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
-
-```sh
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew
-fish_add_path (go env GOPATH)/bin
-```
-
-Add github-cli completions to fish:
-
-```sh
-gh completion -s fish > ~/.config/fish/completions/gh.fish
-```
-
-Finally, we'll install any plugins with fisher:
-
-```sh
-fisher install jethrokuan/z
-fisher install rbenv/fish-rbenv
-```
-
-I love the Fish shell, but sometimes there are issues. In the circumstances when fish doesn't work well, I've got some configs for zsh that make it about the same as my fish setup.
-
-- Install oh-my-zsh
-- Run `stow zsh`
-- Clone custom plugin repos to `~/.oh-my-zsh/custom/plugins/`:
-    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
-    - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
-    - [zsh-z](https://github.com/agkozak/zsh-z#for-oh-my-zsh-users)
-
-The zshrc file and OMZ will take care of most of the aliases and setting up Starship. Fortunately Starship uses the same config file regardless of which shell is running.
-
-Now if you need to switch to zsh, the experience should be pretty similar to what I get in fish.
 
 ### Install script
 
@@ -256,3 +227,47 @@ Download and install the Logitech app to sync mouse config/preferences.
 ## Updating
 
 As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked.
+
+## Fish shell
+
+I used fish for years but it's not POSIX compliant so I've switched back zsh to make it easier to copy/paste scripts from the internet without having to modify them. If you want fish, here's how I'd set it up:
+
+<details>
+<summary>Installing fish</summary>
+We'll install fish via homebrew, then install our config, then switch to fish. The starship config we set up earlier will apply to fish as well.
+
+```sh
+brew install fish
+stow fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
+```
+
+We'll install `fisher`, a plugin manager for the `fish` shell:
+
+```sh
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+```
+
+If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
+
+```sh
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew
+fish_add_path (go env GOPATH)/bin
+```
+
+Add github-cli completions to fish:
+
+```sh
+gh completion -s fish > ~/.config/fish/completions/gh.fish
+```
+
+Finally, we'll install any plugins with fisher:
+
+```sh
+fisher install jethrokuan/z
+fisher install rbenv/fish-rbenv
+```
+
+</details>
