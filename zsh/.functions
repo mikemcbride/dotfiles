@@ -36,11 +36,6 @@ function getip() {
   node ~/dotfiles/scripts/getIp.js
 }
 
-# open current repo online if it's a git repo
-function open_git_repo_online() {
-  node  ~/dotfiles/scripts/openGitRepo.js
-}
-
 # run node-prune in all directories within the current dir
 function prune() {
   sh ~/dotfiles/scripts/prune.sh
