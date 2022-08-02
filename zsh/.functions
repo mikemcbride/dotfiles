@@ -5,6 +5,11 @@ function clone() {
   node ~/dotfiles/scripts/clone.js $1 && cd $(pbpaste)
 }
 
+function f {
+    new_dir=$(find ~ ~/src ~/wwt/github/custom-apps -mindepth 1 -maxdepth 1 -type d | fzf)
+    cd $new_dir
+}
+
 function publish_current_branch() {
   git push --set-upstream origin $(git_current_branch):$(git_current_branch)
 }
