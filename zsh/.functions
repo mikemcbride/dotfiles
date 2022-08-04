@@ -2,7 +2,7 @@
 # clone will copy the new repo url,
 # we just need to paste it afterwards
 function clone() {
-  node ~/dotfiles/scripts/clone.js $1 && cd $(pbpaste)
+  node ~/dotfiles/scripts/clone.mjs $1 && cd $(pbpaste)
 }
 
 function f {
@@ -11,17 +11,11 @@ function f {
 }
 
 function publish_current_branch() {
-  git push --set-upstream origin $(git_current_branch):$(git_current_branch)
+    git push --set-upstream origin "$(git_current_branch)":"$(git_current_branch)"
 }
 
 function delete_local_merged_branches() {
-  git branch --merged | egrep -v "(^\*)" | xargs git branch -d
-}
-
-function delete_remote_merged_branches() {
-  git fetch origin
-  git remote prune origin
-  git branch -r --merged origin/master | awk -F'/' '/^ *origin/{if(!match($0, /(>|master)/)){print $2}}' | xargs git push origin --delete
+    git branch --merged "$(git_main_branch)" | grep -v "^*" | grep -v "$(git_main_branch)" | xargs git branch -d
 }
 
 # tree
@@ -32,18 +26,18 @@ function t() {
 # generate a bitly url and copy to clipboard
 function bitly() {
   printf '\n'
-  echo -n $(python ~/dotfiles/scripts/bitly.py $1) | tee >(pbcopy)
+  echo -n "$(python ~/dotfiles/scripts/bitly.py $1)" | tee >(pbcopy)
   printf " $(tput setaf 2)[copied to clipboard]\n\n"
 }
 
 # get current IP address
 function getip() {
-  node ~/dotfiles/scripts/getIp.js
+  node ~/dotfiles/scripts/getIp.mjs
 }
 
 # run node-prune in all directories within the current dir
 function prune() {
-  sh ~/dotfiles/scripts/prune.sh
+  node ~/dotfiles/scripts/prune.mjs $1
 }
 
 # kill process running on specified port
@@ -53,6 +47,6 @@ function killport() {
 
 # empty the trash
 function dump() {
-  node ~/dotfiles/scripts/emptyTrash.js
+  node ~/dotfiles/scripts/emptyTrash.mjs
 }
 
