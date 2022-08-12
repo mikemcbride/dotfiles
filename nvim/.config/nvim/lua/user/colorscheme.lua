@@ -1,6 +1,6 @@
 vim.cmd "colorscheme default"
 
--- local colorscheme = "gruvbox-material"
+-- local colorscheme = "gruvbox-flat"
 -- vim.g.gruvbox_material_better_performance = 1
 local colorscheme = "tokyonight"
 vim.g.tokyonight_italic_keywords = false
