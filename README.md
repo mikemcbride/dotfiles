@@ -96,7 +96,7 @@ stow zed
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
 
 ```sh
-go get github.com/tj/node-prune
+go install github.com/tj/node-prune@latest
 ```
 
 Now we've got some dependencies to install for those utility scripts to work. Let's do that now:
