@@ -45,6 +45,12 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- like tpope commentary but in lua
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
+    }
     use "ryanoasis/vim-devicons"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
