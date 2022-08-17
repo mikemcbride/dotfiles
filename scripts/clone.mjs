@@ -13,9 +13,8 @@ import clipboard from 'clipboardy'
 let cloneUrl = process.argv[2]
 
 // this allows us to pass in a string like 'org/repo', or a fully qualified url.
-let isWwt = process.argv.includes('--wwt') || process.argv[2].includes('github.wwt.com')
 if (!cloneUrl.startsWith('https://')) {
-  cloneUrl = `https://github.${isWwt ? 'wwt.' : ''}com/${cloneUrl}`
+  cloneUrl = `https://github.com/${cloneUrl}`
 }
 if (!cloneUrl.endsWith('.git')) {
   cloneUrl = `${cloneUrl}.git`
@@ -55,12 +54,6 @@ if (dirsAfter.length !== 1) {
 const newRepo = dirsAfter[0]
 
 process.chdir(newRepo)
-
-// if remote contains github.wwt.com, set the WWT git config user info
-if (isWwt) {
-    await execa('git', ['config', 'user.name', 'Mike McBride'])
-    await execa('git', ['config', 'user.email', 'mike.mcbride@wwt.com'])
-}
 
 spinner.stop()
 
