@@ -44,7 +44,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-    use "numToStr/Comment.nvim" -- like tpope commentary but in lua
+    use "tpope/vim-commentary"
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -68,7 +68,8 @@ return packer.startup(function(use)
     -- use "ThePrimeagen/vim-be-good"
 
     -- Colorschemes
-    use "sainnhe/gruvbox-material"
+    use "folke/tokyonight.nvim"
+    -- use "sainnhe/gruvbox-material"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
