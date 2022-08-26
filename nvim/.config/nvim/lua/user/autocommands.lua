@@ -14,3 +14,13 @@ autocmd('TextYankPost', {
     end,
 })
 
+-- run go fmt on save for go files
+local format_go = augroup('FormatGoOnSave', { clear = true })
+
+autocmd("BufWritePre", {
+    group = format_go,
+    pattern = '*.go',
+    callback = function()
+        vim.lsp.buf.formatting_sync()
+    end
+})
