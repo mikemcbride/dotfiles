@@ -68,8 +68,8 @@ return packer.startup(function(use)
     -- use "ThePrimeagen/vim-be-good"
 
     -- Colorschemes
-    use "folke/tokyonight.nvim"
-    -- use "sainnhe/gruvbox-material"
+    -- use "folke/tokyonight.nvim"
+    use "sainnhe/gruvbox-material"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
