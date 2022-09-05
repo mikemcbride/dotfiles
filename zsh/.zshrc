@@ -21,7 +21,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker vi-mode zsh-autosuggestions kubectl zsh-z zsh-syntax-highlighting)
+plugins=(git vi-mode zsh-autosuggestions zsh-z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

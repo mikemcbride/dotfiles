@@ -45,12 +45,6 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "tpope/vim-commentary"
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-    }
     use "ryanoasis/vim-devicons"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
@@ -97,7 +91,7 @@ return packer.startup(function(use)
     }
 
     -- Telescope
-    use "nvim-telescope/telescope.nvim"
+    use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
 
     -- Treesitter
     use {
