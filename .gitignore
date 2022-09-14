@@ -7,4 +7,6 @@ fish/completions
 fish/functions/__z*
 fish/functions/rbenv.fish
 
-nvim/*/packer_compiled.lua
+nvim/.config/nvim/plugin/packer_compiled.lua
+
+tmux-*.log

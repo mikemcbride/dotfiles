@@ -45,12 +45,14 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "tpope/vim-commentary"
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-    }
+    use "tpope/vim-surround"
+    use "tpope/vim-repeat"
+    -- use {
+    --     'kyazdani42/nvim-tree.lua',
+    --     requires = {
+    --         'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    --     },
+    -- }
     use "ryanoasis/vim-devicons"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
@@ -68,8 +70,7 @@ return packer.startup(function(use)
     -- use "ThePrimeagen/vim-be-good"
 
     -- Colorschemes
-    use "folke/tokyonight.nvim"
-    use "sainnhe/gruvbox-material"
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin

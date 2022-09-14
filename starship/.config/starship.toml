@@ -3,6 +3,7 @@ add_newline = false
 
 # $time\ was originally at the beginning, but dropping it for extra space
 # add/remove $line_break\ before $character\ to get prompt character on same line as prompt
+
 format = """\
   $directory\
   $git_branch\
