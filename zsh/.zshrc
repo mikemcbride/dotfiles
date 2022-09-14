@@ -1,6 +1,3 @@
-# enable ctrl-r for reverse search
-bindkey '^R' history-incremental-search-backward
-
 # set up history for reverse search
 HISTSIZE=10000
 SAVEHIST=10000
@@ -8,7 +5,22 @@ HISTFILE=~/.zsh_history
 
 # exports
 export KEYTIMEOUT=1 # reduce lag in keybindings
-export PATH="$PATH:~/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin"
+
+typeset -U path
+path=($path
+      $HOME/.local/bin
+      $HOME/.node/bin
+      /usr/local/bin
+      /usr/local/sbin
+      /usr/bin
+      /bin
+      /usr/sbin
+      /sbin
+      /opt/X11/bin
+      /usr/local/git/bin
+      /usr/local/mysql/bin
+      /opt/homebrew/sbin)
+export PATH
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -61,6 +73,13 @@ unset file
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-z/zsh-z.plugin.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# put keybindings at the bottom to prevent overwriting
+# enable ctrl-r for reverse search
+bindkey '^R' history-incremental-search-backward
+
+# bind ctrl-f to tmux-sessionizer
+bindkey -s '^F' "tmux-sessionizer\n"
 
 # eval starship last
 eval "$(starship init zsh)"

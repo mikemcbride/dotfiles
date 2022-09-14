@@ -5,8 +5,8 @@ function clone() {
   node ~/dotfiles/scripts/clone.mjs $1 && cd $(pbpaste)
 }
 
-function f {
-    new_dir=$(find ~ ~/projects -mindepth 1 -maxdepth 1 -type d | fzf)
+function dir-finder {
+    new_dir=$(find ~ ~/work ~/personal -mindepth 1 -maxdepth 1 -type d | fzf)
     cd $new_dir
 }
 

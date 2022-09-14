@@ -18,6 +18,10 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- greatest remap ever
+-- don't replace paste buffer when pasting over highlighted text
+keymap("x", "<leader>p", "\"_dP", opts)
+
 -- Normal --
 -- Better window navigation. Control + hjkl to move between splits
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -26,8 +30,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Toggle explore panel
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
--- keymap("n", "<leader>e", ":Ex<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":Ex<cr>", opts)
 
 -- Clear highlight search results
 -- keymap("n", "<leader>ch", ":nohl<cr>", opts)
