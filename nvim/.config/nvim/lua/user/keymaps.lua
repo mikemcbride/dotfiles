@@ -56,6 +56,13 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>w", ":Bdelete<cr>", opts) -- close current buffer. won't quit neovim if it's the only open buffer.
 keymap("n", "<leader>W", ":bufdo :Bdelete<cr>", opts) -- close all open buffers, but don't quit neovim.
 
+-- stole these next two from ThePrimeagen, that beautiful genius:
+-- tmux-sessionizer
+keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", opts)
+
+-- make the current file executable from within the file
+keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
+
 -- Insert --
 
 -- Visual --
