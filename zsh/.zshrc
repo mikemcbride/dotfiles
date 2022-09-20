@@ -81,5 +81,8 @@ bindkey '^R' history-incremental-search-backward
 # bind ctrl-f to tmux-sessionizer
 bindkey -s '^F' "tmux-sessionizer\n"
 
+# bind ctrl-k to tmux-session-killer
+bindkey -s '^K' "tmux-session-killer\n"
+
 # eval starship last
 eval "$(starship init zsh)"
