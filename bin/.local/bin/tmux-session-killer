@@ -10,11 +10,8 @@ current_session=$(tmux display-message -p '#S')
 total_sessions=$(tmux list-sessions | wc -l | xargs)
 
 if [[ $total_sessions == 1 ]]; then
-    echo "total sessions is 1"
     tmux kill-session -t $current_session
     exit 1
-else
-    echo "total sessions not 1, $total_sessions"
 fi
 
 selected=$(tmux list-sessions | awk '{print $1}' | sed 's/://g' | fzf)
