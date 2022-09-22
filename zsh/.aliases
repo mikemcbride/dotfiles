@@ -1,4 +1,3 @@
-alias k=clear
 alias ltr="ls -ltr"
 alias vim=nvim
 alias rm=trash
@@ -9,6 +8,7 @@ alias bbd="brew bundle dump --force"
 alias cat=bat
 alias sed=gsed
 alias n=fnm
+alias k=kubectl
 
 # Git
 alias gmm='git merge origin/"$(git_main_branch)"'
