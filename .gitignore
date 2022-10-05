@@ -9,4 +9,4 @@ fish/functions/rbenv.fish
 
 nvim/.config/nvim/plugin/packer_compiled.lua
 
-tmux-*.log
+*.log
