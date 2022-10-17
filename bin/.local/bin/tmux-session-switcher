@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    exit 0
+fi
+
+current_session=$(tmux display-message -p '#S')
+
+selected=$(tmux list-sessions | awk '{print $1}' | sed 's/://g' | fzf)
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+if [[ $selected != $current_session ]]; then
+    tmux switch-client -t $selected
+fi
