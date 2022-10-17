@@ -91,6 +91,7 @@ stow karabiner
 stow starship
 stow git
 stow zed
+stow bin
 ```
 
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
@@ -151,6 +152,7 @@ Got all that working? Great. Here's what we did:
 - cloned this repo into `~/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
+- set up tmux config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
   - [z](http://github.com/agkozak/zsh-z) - super fast way to jump around files/folders
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
@@ -161,17 +163,13 @@ Got all that working? Great. Here's what we did:
   - [ripgrep](https://github.com/BurntSushi/ripgrep) - grep but like a million times better
   - [bat](https://github.com/sharkdp/bat) - a `cat` clone with awesome features
   - [wget](https://www.gnu.org/software/wget/) - better than curl for downloading resources from a url
-- installed some services commonly used in development:
-  - docker
-  - rabbitmq
-  - mongo
 - installed a few desktop applications to make your life better:
-  - iTerm2
+  - Kitty terminal
   - [Raycast](https://raycast.com)
   - [Insomnia](https://insomnia.rest/)
   - Slack
   - [Kap](https://getkap.co/)
-  - Karabiner Elements
+  - Karabiner Elements (custom keymaps on macOS) and applied a Karabiner config
 
 ## Additional Setup
 
