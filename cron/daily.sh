@@ -7,7 +7,7 @@ main() {
 
 # update homebrew then upgrade any of our outdated apps
 update_homebrew_apps() {
-    brew update && brew outdated
+    brew update && brew upgrade
 }
 
 # do the thing
