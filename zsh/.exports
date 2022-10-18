@@ -24,3 +24,12 @@ export GOPRIVATE=github.com/nytimes
 
 # aws
 export AWS_PROFILE=lettercase-dev-tenant-dev-foundations
+
+# gum exports (github.com/charmbracelet/gum)
+export GUM_FILTER_INDICATOR_FOREGROUND="#7dcfff"
+export GUM_FILTER_TEXT_FOREGROUND="#a9b1d6"
+export GUM_FILTER_MATCH_FOREGROUND="#9ece6a"
+export GUM_FILTER_PROMPT_FOREGROUND="#bb9af7"
+export GUM_FILTER_PROMPT=" "
+export GUM_FILTER_INDICATOR="●"
+export GUM_FILTER_REVERSE="true"
