@@ -47,12 +47,12 @@ return packer.startup(function(use)
     use "tpope/vim-commentary"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     requires = {
-    --         'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    --     },
-    -- }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
+    }
     use "ryanoasis/vim-devicons"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"

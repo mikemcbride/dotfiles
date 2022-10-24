@@ -30,8 +30,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Toggle explore panel
--- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>e", ":Ex<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":Ex<cr>", opts)
 
 -- Clear highlight search results
 -- keymap("n", "<leader>ch", ":nohl<cr>", opts)
@@ -63,6 +63,8 @@ keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", opts)
 -- make the current file executable from within the file
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
 
+-- tmux-session-switcher
+keymap("n", "<C-g>", "<cmd>silent !tmux neww tmux-session-switcher<CR>", opts)
 -- Insert --
 
 -- Visual --
