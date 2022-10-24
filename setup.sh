@@ -8,7 +8,7 @@ rm -rf ~/.config
 
 brew tap Homebrew/bundle
 
-npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
+npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn vtop
 
 cd ~
 git clone https://github.com/mikemcbride/dotfiles.git

@@ -64,7 +64,7 @@ brew tap Homebrew/bundle
 Now we're going to install some global node modules that we'll use to accomplish various things:
 
 ```sh
-npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn
+npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn vtop
 ```
 
 Now that we've got all that installed, we'll set up the dotfiles:
