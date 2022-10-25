@@ -30,8 +30,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Toggle explore panel
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
--- keymap("n", "<leader>e", ":Ex<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":Ex<cr>", opts)
 
 -- Clear highlight search results
 -- keymap("n", "<leader>ch", ":nohl<cr>", opts)
