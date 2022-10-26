@@ -1,0 +1,10 @@
+#!/bin/bash
+export TZ=US/Pacific
+echo "Pacific    $(date +%T)"
+export TZ=US/Mountain
+echo "Mountain   $(date +%T)"
+export TZ=US/Central
+echo "Central    $(date +%T)"
+export TZ=US/Eastern
+echo "Eastern    $(date +%T)"
+unset TZ
