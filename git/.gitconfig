@@ -40,7 +40,11 @@
 
 # use separate file for user info
 [include]
-  path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
+[includeIf "gitdir:~/work"]
+    path = ~/.gitconfig.work
+[includeIf "gitdir:~/personal"]
+    path = ~/.gitconfig.personal
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red bold 52
@@ -50,9 +54,6 @@
 	helper = osxkeychain
 [remote "origin"]
 	prune = true
-[user]
-	name = Mike McBride
-	email = mike.mcbride@hey.com
 [pull]
 	rebase = false
 [init]
