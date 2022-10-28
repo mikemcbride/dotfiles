@@ -39,12 +39,14 @@
 	smudge = git-lfs smudge -- %f
 
 # use separate file for user info
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig.work
+[includeIf "gitdir:~/personal/"]
+    path = ~/.gitconfig.personal
+[includeIf "gitdir:~/dotfiles/"]
+    path = ~/.gitconfig.personal
 [include]
     path = ~/.gitconfig.local
-[includeIf "gitdir:~/work"]
-    path = ~/.gitconfig.work
-[includeIf "gitdir:~/personal"]
-    path = ~/.gitconfig.personal
 [color "diff-highlight"]
 	oldNormal = red
 	oldHighlight = red bold 52
