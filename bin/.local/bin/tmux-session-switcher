@@ -3,6 +3,7 @@
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    echo "No active sessions."
     exit 0
 fi
 
