@@ -2,9 +2,6 @@ vim.cmd "colorscheme default"
 
 vim.opt.background = "dark"
 
--- local colorscheme = "gruvbox-material"
--- vim.g.gruvbox_material_better_performance = 1
-
 -- override some default tokyonight themes
 require("tokyonight").setup({
   style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
