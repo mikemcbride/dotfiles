@@ -5,4 +5,5 @@ return function(use)
   use "fedepujol/move.nvim"
   use "nvim-treesitter/nvim-treesitter-context"
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "kyazdani42/nvim-web-devicons"
 end
