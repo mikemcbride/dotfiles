@@ -47,6 +47,7 @@ return packer.startup(function(use)
     use "tpope/vim-commentary"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
+    use "tpope/vim-sleuth"
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -61,13 +62,8 @@ return packer.startup(function(use)
     use "lewis6991/impatient.nvim"
     use "goolord/alpha-nvim"
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-    use "folke/which-key.nvim"
     use 'fedepujol/move.nvim'
     use 'gpanders/editorconfig.nvim'
-    -- use "ThePrimeagen/harpoon"
-
-    -- game to practice vim
-    -- use "ThePrimeagen/vim-be-good"
 
     -- Colorschemes
     use "folke/tokyonight.nvim"
@@ -88,14 +84,6 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
-    -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-    use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function()
-        require("trouble").setup {}
-      end
-    }
 
     -- Telescope
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }

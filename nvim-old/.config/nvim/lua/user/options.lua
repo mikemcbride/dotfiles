@@ -23,8 +23,8 @@ vim.opt.undofile = true -- enable persistent undo
 vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4 -- insert 2 spaces for a tab
+-- vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
+-- vim.opt.tabstop = 4 -- insert 2 spaces for a tab
 vim.opt.cursorline = false -- highlight the current line
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true -- set relative numbered lines
@@ -34,10 +34,3 @@ vim.opt.wrap = false -- display lines as one long line
 vim.wo.colorcolumn = "120" -- show a wrap guide at 120 characters (but we don't wrap)
 vim.opt.scrolloff = 8 -- start scrolling when you are this many lines from the bottom/top of the screen
 vim.opt.sidescrolloff = 8 -- start scrolling when you are this many columns from the left/right of the screen
-
-vim.opt.shortmess:append "c"
-
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]] -- format on save
