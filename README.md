@@ -196,7 +196,7 @@ sh ./setup.sh
 
 Got all that working? Great. Here's what we did:
 
-- set your shell to zsh and installed oh-my-zsh
+- set your shell to fish or zsh (depending what step you chose)
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
 - cloned this repo into `~/dotfiles` and set up your fish configs
@@ -238,12 +238,8 @@ sh ~/dotfiles/.macos
 
 - Sign in to 1Password and add the browser extension.
 - Download and install Arc and log in there
-- You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
+- Set up a new GitHub Personal Access Token to access GitHub from the command line.
 - Open any file in vim and run `:PackerInstall` to install all plugins
-
-### Shortcuts
-
-You can set keyboard shortcuts for switching to specific workspaces (desktops) in Mission Control. System Preferences > Keyboard > Shortcuts > Mission Control. I like to set them to Hyper + {workspace number}, so Hyper+1 takes me to desktop 1. I haven't figured out how to do this inside of the .macos script yet, so for now it's a manual change.
 
 ### Raycast
 
@@ -258,10 +254,6 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - Bartender (website)
 - Battery Indicator (App Store)
 - Any fonts you want installed (grab Fonts folder from iCloud)
-
-### Theme
-
-The setup script installs iTerm2, which I use as a terminal emulator. This repo has an `iterm/profiles.json` file that you can import to load a bunch of themes. Vim theme is already set up with the process above.
 
 ### Browser Extensions
 

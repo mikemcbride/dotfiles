@@ -1,41 +1,17 @@
--- this is where my overrides will go.
--- things like options not included in the default kickstart.nvim file,
--- as well as some keymaps.
+-- [[ Basic Keymaps ]]
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- ====================
--- OPTIONS
--- ====================
-vim.o.backup = false -- creates a backup file
-vim.o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.o.cmdheight = 1 -- set the height of the command line to 1 row
-vim.o.conceallevel = 0 -- so that `` is visible in markdown files
-vim.o.fileencoding = "utf-8" -- the encoding written to a file
-vim.o.mouse = "" -- never allow the mouse to be used in neovim
-vim.o.ruler = false -- disable the indent guide/ruler
-vim.o.pumheight = 10 -- pop up menu height
-vim.o.showmode = false -- we don't need to see things like -- INSERT -- anymore
-vim.o.showtabline = 2 -- always show tabs
-vim.o.smartindent = true -- make indenting smarter again
-vim.o.splitbelow = true -- force all horizontal splits to go below current window
-vim.o.splitright = true -- force all vertical splits to go to the right of current window
-vim.o.swapfile = false -- creates a swapfile
-vim.o.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
-vim.o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-vim.o.expandtab = true -- convert tabs to spaces
-vim.o.cursorline = false -- highlight the current line
-vim.o.number = true -- set numbered lines
-vim.o.relativenumber = true -- set relative numbered lines
-vim.o.numberwidth = 4 -- set number column width to 4
-vim.o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-vim.o.wrap = false -- display lines as one long line
-vim.wo.colorcolumn = "120" -- show a wrap guide at 120 characters (but we don't wrap)
-vim.o.scrolloff = 8 -- start scrolling when you are this many lines from the bottom/top of the screen
-vim.o.sidescrolloff = 8 -- start scrolling when you are this many columns from the left/right of the screen
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-
--- ====================
--- KEYMAPS
--- ====================
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Telescope
 vim.keymap.set('n', '<leader>f',  require('telescope.builtin').git_files, { desc = 'Search [F]iles' })
@@ -98,3 +74,44 @@ vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", { silent = true })
+
+
+--  This function gets run when an LSP connects to a particular buffer.
+local on_attach = function(_, bufnr)
+  -- We create a function that lets us more easily define mappings specific
+  -- for LSP related items. It sets the mode, buffer and description for us each time.
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+
+  -- See `:help K` for why this keymap
+  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+
+  -- Lesser used LSP functionality
+  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+  nmap('<leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, '[W]orkspace [L]ist Folders')
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
+end
