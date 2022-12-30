@@ -34,6 +34,9 @@ export GUM_FILTER_PROMPT=" "
 export GUM_FILTER_INDICATOR="ﰲ"
 export GUM_FILTER_REVERSE="true"
 export GUM_FILTER_HEIGHT="10"
+export GUM_CHOOSE_CURSOR_FOREGROUND="6"
+export GUM_CHOOSE_CURSOR=" "
+export GUM_CHOOSE_SELECTED_FOREGROUND="6"
 
 # fnm
 eval "$(fnm env --use-on-cd)"

@@ -1,26 +1,13 @@
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup('HighlightYank', {})
-
--- briefly highlight yanked text
-autocmd('TextYankPost', {
-    group = yank_group,
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = 'IncSearch',
-            timeout = 60,
-        })
-    end,
-})
-
--- run go fmt on save for go files
-local format_go = augroup('FormatGoOnSave', { clear = true })
-
-autocmd("BufWritePre", {
-    group = format_go,
-    pattern = '*.go',
-    callback = function()
-        vim.lsp.buf.formatting_sync()
-    end
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = 'IncSearch',
+      timeout = 60,
+    })
+  end,
+  group = highlight_group,
+  pattern = '*',
 })

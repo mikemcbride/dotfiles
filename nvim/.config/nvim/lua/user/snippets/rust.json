@@ -1,8 +1,0 @@
-{
-    "Print line macro": {
-        "prefix": "pln",
-        "body": [
-            "println!(\"$1\");"
-        ]
-    }
-}

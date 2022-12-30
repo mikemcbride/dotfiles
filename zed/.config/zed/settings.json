@@ -4,7 +4,7 @@
     "theme": "One Dark",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
-    "vim_mode": true,
+    "vim_mode": false,
     "tab_size": 2,
     "language_overrides": {
         "Markdown": {

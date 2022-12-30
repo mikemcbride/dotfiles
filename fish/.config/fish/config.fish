@@ -2,18 +2,6 @@ if status is-interactive
     # default greeting is 'Welcome to fish, the friendly interactive shell'
     set fish_greeting ''
 
-    # Electron Highlighter
-    # set -l foreground a8b5d1
-    # set -l selection c1ddff
-    # set -l comment 506686
-    # set -l red ff5874
-    # set -l orange ffbf7a
-    # set -l yellow fffa9e
-    # set -l green 6af699
-    # set -l purple c792ea
-    # set -l cyan 4ff2f8
-    # set -l pink ff2c83
-
     # TokyoNight Color Palette
     set -l foreground c0caf5
     set -l selection 364A82
@@ -25,18 +13,6 @@ if status is-interactive
     set -l purple 9d7cd8
     set -l cyan 7dcfff
     set -l pink bb9af7
-
-    # Gruvbox Material Color Palette
-    # set -l foreground d4be98
-    # set -l selection 424242
-    # set -l comment 777777
-    # set -l red ea6962
-    # set -l orange e78a4e
-    # set -l yellow d8a657
-    # set -l green a9b665
-    # set -l purple d3869b
-    # set -l cyan 89b482
-    # set -l pink f6a0b7
     
     # Syntax Highlighting Colors
     set -g fish_color_normal $foreground
@@ -72,6 +48,26 @@ if status is-interactive
     # Prefer US English and use UTF-8
     set -x LC_ALL 'en_US.UTF-8'
     set -x LANG en_US
+
+
+    # goprivate
+    set -x GOPRIVATE github.com/nytimes
+
+    # aws
+    set -x AWS_PROFILE lettercase-dev-tenant-dev-foundations
+
+    # gum exports (github.com/charmbracelet/gum)
+    set -x GUM_FILTER_INDICATOR_FOREGROUND 6
+    set -x GUM_FILTER_TEXT_FOREGROUND 7
+    set -x GUM_FILTER_MATCH_FOREGROUND 3
+    set -x GUM_FILTER_PROMPT_FOREGROUND 5
+    set -x GUM_FILTER_PROMPT " "
+    set -x GUM_FILTER_INDICATOR ﰲ
+    set -x GUM_FILTER_REVERSE true
+    set -x GUM_FILTER_HEIGHT 10
+    set -x GUM_CHOOSE_CURSOR_FOREGROUND 6
+    set -x GUM_CHOOSE_CURSOR " "
+    set -x GUM_CHOOSE_SELECTED_FOREGROUND 6
 
     starship init fish | source
 end

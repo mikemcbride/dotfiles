@@ -84,7 +84,6 @@ Now we're going to set up a bunch of symlinks to link things from this repo to t
 
 ```sh
 rm ~/.gitconfig
-stow zsh
 stow nvim
 stow bat
 stow karabiner
@@ -114,9 +113,57 @@ cd ~/dotfiles
 node ./scripts/setDefaultApplications.js
 ```
 
-Install oh-my-zsh and install some plugins (we already have them defined in our zshrc). We'll also make sure zsh is our default shell:
+### Choosing a shell
+
+I like the fish shell, but I realize zsh is far more popular. I've used and like both, but I generally prefer fish. I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer.
+
+<details>
+<summary>Installing Fish</summary>
+
+We've installed fish via homebrew already, so we'll install our config, then switch to fish.
 
 ```sh
+stow fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
+```
+
+We'll install `fisher`, a plugin manager for the fish shell:
+
+```sh
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+```
+
+If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
+
+```sh
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew
+fish_add_path (go env GOPATH)/bin
+fish_add_path $HOME/.local/bin
+```
+
+Add github-cli completions to fish:
+
+```sh
+gh completion -s fish > ~/.config/fish/completions/gh.fish
+```
+
+Finally, we'll install any plugins with fisher:
+
+```sh
+fisher install jethrokuan/z
+fisher install rbenv/fish-rbenv
+```
+</details>
+
+<details>
+<summary>Install zsh</summary>
+
+We'll install oh-my-zsh and install some plugins (we already have them defined in our zshrc).
+
+```sh
+stow zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -124,13 +171,16 @@ git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/pl
 gh completion -s zsh > /usr/local/share/zsh/site-functions/_gh
 ```
 
-Now we need to add the Homebrew version of zsh (we want to use this one so it's easier to upgrade) to our shells and switch to it:
+Add zsh to our shells and set it as our preferred shell:
 
 ```sh
 echo $(which zsh) | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 source ~/.zshrc
 ```
+
+Because my default shell right now is fish, you'll also need to modify the `.tmux.conf` file to set zsh as the default shell. It should be as simple as changing the lines at the bottom of the file to point to `/opt/homebrew/bin/zsh`.
+</details>
 
 ### Install script
 
@@ -146,7 +196,7 @@ sh ./setup.sh
 
 Got all that working? Great. Here's what we did:
 
-- set your shell to zsh and installed oh-my-zsh
+- set your shell to fish or zsh (depending what step you chose)
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
 - cloned this repo into `~/dotfiles` and set up your fish configs
@@ -188,12 +238,8 @@ sh ~/dotfiles/.macos
 
 - Sign in to 1Password and add the browser extension.
 - Download and install Arc and log in there
-- You'll need to set up a new GitHub Personal Access Token to access GitHub from the command line.
+- Set up a new GitHub Personal Access Token to access GitHub from the command line.
 - Open any file in vim and run `:PackerInstall` to install all plugins
-
-### Shortcuts
-
-You can set keyboard shortcuts for switching to specific workspaces (desktops) in Mission Control. System Preferences > Keyboard > Shortcuts > Mission Control. I like to set them to Hyper + {workspace number}, so Hyper+1 takes me to desktop 1. I haven't figured out how to do this inside of the .macos script yet, so for now it's a manual change.
 
 ### Raycast
 
@@ -209,10 +255,6 @@ Here are some apps that aren't available for download via Homebrew cask that you
 - Battery Indicator (App Store)
 - Any fonts you want installed (grab Fonts folder from iCloud)
 
-### Theme
-
-The setup script installs iTerm2, which I use as a terminal emulator. This repo has an `iterm/profiles.json` file that you can import to load a bunch of themes. Vim theme is already set up with the process above.
-
 ### Browser Extensions
 
 Reinstall browser extensions. 1Password, Vue and React dev tools, JSON formatter, etc.
@@ -224,48 +266,3 @@ Download and install the Logitech app to sync mouse config/preferences.
 ## Updating
 
 As you make changes to the files, you can push those changes so your configs will never be lost. If you are running this to keep multiple machines in sync, you can just pull this repo down on other machines after pushing changes. Since all the files are symlinked, you won't have to re-run any scripts unless you create new files that also need to be linked.
-
-## Fish shell
-
-I used fish for years but it's not POSIX compliant so I've switched back zsh to make it easier to copy/paste scripts from the internet without having to modify them. If you want fish, here's how I'd set it up:
-
-<details>
-<summary>Installing fish</summary>
-
-We'll install fish via homebrew, then install our config, then switch to fish. The starship config we set up earlier will apply to fish as well.
-
-```sh
-brew install fish
-stow fish
-echo $(which fish) | sudo tee -a /etc/shells
-chsh -s $(which fish)
-```
-
-We'll install `fisher`, a plugin manager for the `fish` shell:
-
-```sh
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-
-If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
-
-```sh
-fish_add_path /opt/homebrew/bin
-fish_add_path /opt/homebrew
-fish_add_path (go env GOPATH)/bin
-```
-
-Add github-cli completions to fish:
-
-```sh
-gh completion -s fish > ~/.config/fish/completions/gh.fish
-```
-
-Finally, we'll install any plugins with fisher:
-
-```sh
-fisher install jethrokuan/z
-fisher install rbenv/fish-rbenv
-```
-
-</details>
