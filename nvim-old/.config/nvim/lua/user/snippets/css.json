@@ -1,6 +1,0 @@
-{
-	"Vue Transition Styles": {
-		"prefix": "vtransition",
-		"body": ".${1:transition-name}-enter-active,\n.${1:transition-name}-leave-active {\n	${2:property}: ${3:value};\n}\n\n.${1:transition-name}-enter,\n.${1:transition-name}-leave-to {\n  ${5:property}: ${6:value};\n}"
-	}
-}
