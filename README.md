@@ -84,8 +84,6 @@ Now we're going to set up a bunch of symlinks to link things from this repo to t
 
 ```sh
 rm ~/.gitconfig
-stow zsh
-stow fish
 stow nvim
 stow bat
 stow karabiner
@@ -125,6 +123,7 @@ I like the fish shell, but I realize zsh is far more popular. I've used and like
 We've installed fish via homebrew already, so we'll install our config, then switch to fish.
 
 ```sh
+stow fish
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 ```
@@ -161,9 +160,10 @@ fisher install rbenv/fish-rbenv
 <details>
 <summary>Install zsh</summary>
 
-We'll also install oh-my-zsh and install some plugins (we already have them defined in our zshrc).
+We'll install oh-my-zsh and install some plugins (we already have them defined in our zshrc).
 
 ```sh
+stow zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -178,6 +178,8 @@ echo $(which zsh) | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 source ~/.zshrc
 ```
+
+Because my default shell right now is fish, you'll also need to modify the `.tmux.conf` file to set zsh as the default shell. It should be as simple as changing the lines at the bottom of the file to point to `/opt/homebrew/bin/zsh`.
 </details>
 
 ### Install script
