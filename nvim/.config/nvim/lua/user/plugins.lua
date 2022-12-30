@@ -1,119 +1,66 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
+return function(use)
+  -- Package manager
+  use 'wbthomason/packer.nvim'
+  
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+      {'j-hui/fidget.nvim'},
+      {'folke/neodev.nvim'},
+  
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+  
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
     }
-    print "Installing packer close and reopen Neovim..."
-    vim.cmd [[packadd packer.nvim]]
+  }
+
+
+  use { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
+  }
+
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
+
+  -- Git related plugins
+  use 'tpope/vim-fugitive'
+  use 'lewis6991/gitsigns.nvim'
+
+  use 'folke/tokyonight.nvim'
+  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+
+  -- Fuzzy Finder (files, lsp, etc)
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+
+  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+
+  use "akinsho/bufferline.nvim" -- buffers appear like tabs
+  use "moll/vim-bbye" -- close buffers
+  use "goolord/alpha-nvim" -- dashboard
+  use "fedepujol/move.nvim" -- move lines
+  use "nvim-treesitter/nvim-treesitter-context" -- sticky function headers
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "kyazdani42/nvim-web-devicons"
+  use "windwp/nvim-autopairs" -- automatically close matching brackets/parens/etc
 end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-    return
-end
-
--- Have packer use a popup window
-packer.init {
-    display = {
-        open_fn = function()
-            return require("packer.util").float { border = "rounded" }
-        end,
-    },
-}
-
--- Install your plugins here
-return packer.startup(function(use)
-    use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim" -- TJ created the lodash of nvim
-    use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-    use "tpope/vim-commentary"
-    use "tpope/vim-surround"
-    use "tpope/vim-repeat"
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-    }
-    use "ryanoasis/vim-devicons"
-    use "akinsho/bufferline.nvim"
-    use "moll/vim-bbye"
-    use "nvim-lualine/lualine.nvim"
-    use "ahmedkhalf/project.nvim"
-    use "lewis6991/impatient.nvim"
-    use "goolord/alpha-nvim"
-    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-    use "folke/which-key.nvim"
-    use 'fedepujol/move.nvim'
-    use 'gpanders/editorconfig.nvim'
-    -- use "ThePrimeagen/harpoon"
-
-    -- game to practice vim
-    -- use "ThePrimeagen/vim-be-good"
-
-    -- Colorschemes
-    use "folke/tokyonight.nvim"
-
-    -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-
-    -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-    -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
-    -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-    use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function()
-        require("trouble").setup {}
-      end
-    }
-
-    -- Telescope
-    use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
-
-    -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-    use 'nvim-treesitter/nvim-treesitter-context' -- pin method signatures to top of screen
-    use "JoosepAlviste/nvim-ts-context-commentstring"
-
-    -- Git
-    use "lewis6991/gitsigns.nvim"
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)

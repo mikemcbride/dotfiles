@@ -1,98 +1,117 @@
-local opts = { noremap = true, silent = true }
+-- [[ Basic Keymaps ]]
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-local term_opts = { silent = true }
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Telescope
+vim.keymap.set('n', '<leader>f',  require('telescope.builtin').git_files, { desc = 'Search [F]iles' })
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+-- Open explore panel
+vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
 
 -- greatest remap ever
 -- don't replace paste buffer when pasting over highlighted text
-keymap("x", "<leader>p", "\"_dP", opts)
-
--- Normal --
--- Better window navigation. Control + hjkl to move between splits
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
--- Toggle explore panel
--- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>e", ":Ex<cr>", opts)
-
--- Clear highlight search results
--- keymap("n", "<leader>ch", ":nohl<cr>", opts)
-
--- move lines
-keymap('n', '˙', ":MoveHChar(-1)<CR>", opts)  -- Alt-h
-keymap('n', '∆', ":MoveLine(1)<CR>", opts)    -- Alt-j
-keymap('n', '¬', ":MoveHChar(1)<CR>", opts)   -- Alt-l
-keymap('n', '˚', ":MoveLine(-1)<CR>", opts)   -- Alt-k
-
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +5<CR>", opts)
-keymap("n", "<C-Down>", ":resize -5<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -5<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
-
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Close buffers
-keymap("n", "<leader>w", ":Bdelete<cr>", opts) -- close current buffer. won't quit neovim if it's the only open buffer.
-keymap("n", "<leader>W", ":bufdo :Bdelete<cr>", opts) -- close all open buffers, but don't quit neovim.
+vim.keymap.set("x", "<leader>p", "\"_dP", { silent = true })
 
 -- stole these next two from ThePrimeagen, that beautiful genius:
 -- tmux-sessionizer
-keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", opts)
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { silent = true })
 
 -- make the current file executable from within the file
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- tmux-session-switcher
-keymap("n", "<C-g>", "<cmd>silent !tmux neww tmux-session-switcher<CR>", opts)
--- Insert --
+vim.keymap.set("n", "<C-g>", "<cmd>silent !tmux neww tmux-session-switcher<CR>", { silent = true })
+
+-- Normal --
+-- Better window navigation. Control + hjkl to move between splits
+vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
+
+-- Navigate buffers
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
+
+-- Close buffers
+vim.keymap.set("n", "<leader>w", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
+vim.keymap.set("n", "<leader>c", ":Bdelete<cr>", { silent = true }) -- for some reason I feel like I used to have this mapped to leader-c...?
+vim.keymap.set("n", "<leader>W", ":bufdo :Bdelete<cr>", { silent = true }) -- close all open buffers, but don't quit neovim.
+
+-- move lines
+-- ignore the weird symbols, it's a weird thing with macOS mapping option/alt + key to a symbol.
+vim.keymap.set('n', '˙', ":MoveHChar(-1)<CR>", { silent = true })  -- Alt-h
+vim.keymap.set('n', '∆', ":MoveLine(1)<CR>", { silent = true })    -- Alt-j
+vim.keymap.set('n', '¬', ":MoveHChar(1)<CR>", { silent = true })   -- Alt-l
+vim.keymap.set('n', '˚', ":MoveLine(-1)<CR>", { silent = true })   -- Alt-k
+
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", { silent = true })
+vim.keymap.set("v", ">", ">gv", { silent = true })
 
 -- Move text up and down
-keymap('v', '˙', ":MoveHBlock(-1)<CR>", opts) -- Alt-h
-keymap('v', '∆', ":MoveBlock(1)<CR>", opts)   -- Alt-j
-keymap('v', '˚', ":MoveBlock(-1)<CR>", opts)  -- Alt-k
-keymap('v', '¬', ":MoveHBlock(1)<CR>", opts)  -- Alt-l
+vim.keymap.set('v', '˙', ":MoveHBlock(-1)<CR>", { silent = true }) -- Alt-h
+vim.keymap.set('v', '∆', ":MoveBlock(1)<CR>", { silent = true })   -- Alt-j
+vim.keymap.set('v', '˚', ":MoveBlock(-1)<CR>", { silent = true })  -- Alt-k
+vim.keymap.set('v', '¬', ":MoveHBlock(1)<CR>", { silent = true })  -- Alt-l
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { silent = true })
+vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { silent = true })
+vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", { silent = true })
+vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", { silent = true })
 
--- Telescope
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
--- Trouble keymaps
-keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
-keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
-keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
-keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
-keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
+--  This function gets run when an LSP connects to a particular buffer.
+local on_attach = function(_, bufnr)
+  -- We create a function that lets us more easily define mappings specific
+  -- for LSP related items. It sets the mode, buffer and description for us each time.
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+
+  -- See `:help K` for why this keymap
+  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+
+  -- Lesser used LSP functionality
+  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+  nmap('<leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, '[W]orkspace [L]ist Folders')
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
+end
