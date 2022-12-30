@@ -16,7 +16,7 @@ if [[ $total_sessions == 1 ]]; then
     exit 1
 fi
 
-selected=$(tmux list-sessions -F \#S | gum filter --placeholder "Kill which session?" --height "$total_sessions")
+selected=$(tmux list-sessions -F \#S | fzf)
 
 if [[ -z $selected ]]; then
     exit 0
