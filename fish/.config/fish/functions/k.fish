@@ -1,3 +1,3 @@
 function k
-  clear
+  kubectl $argv
 end
