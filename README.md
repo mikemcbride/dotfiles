@@ -115,7 +115,30 @@ node ./scripts/setDefaultApplications.js
 
 ### Choosing a shell
 
-I like the fish shell, but I realize zsh is far more popular. I've used and like both, but I generally prefer fish. I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer.
+Everybody likes a "choose-your-own-adventure" story, right? Let's do that with our shell. I like the fish shell a lot, but zsh is far more popular and, often more importantly for my job, POSIX compliant (I run a lot of bash scripts...). I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer.
+
+<details>
+<summary>Install zsh</summary>
+
+We'll install oh-my-zsh and install some plugins (we already have them defined in our zshrc).
+
+```sh
+stow zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+gh completion -s zsh > /usr/local/share/zsh/site-functions/_gh
+```
+
+Add zsh to our shells and set it as our preferred shell:
+
+```sh
+echo $(which zsh) | sudo tee -a /etc/shells
+chsh -s $(which zsh)
+source ~/.zshrc
+```
+</details>
 
 <details>
 <summary>Installing Fish</summary>
@@ -155,31 +178,8 @@ Finally, we'll install any plugins with fisher:
 fisher install jethrokuan/z
 fisher install rbenv/fish-rbenv
 ```
-</details>
 
-<details>
-<summary>Install zsh</summary>
-
-We'll install oh-my-zsh and install some plugins (we already have them defined in our zshrc).
-
-```sh
-stow zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
-gh completion -s zsh > /usr/local/share/zsh/site-functions/_gh
-```
-
-Add zsh to our shells and set it as our preferred shell:
-
-```sh
-echo $(which zsh) | sudo tee -a /etc/shells
-chsh -s $(which zsh)
-source ~/.zshrc
-```
-
-Because my default shell right now is fish, you'll also need to modify the `.tmux.conf` file to set zsh as the default shell. It should be as simple as changing the lines at the bottom of the file to point to `/opt/homebrew/bin/zsh`.
+Because my default shell right now is zsh, you'll also need to modify the `.tmux.conf` file to set zsh as the default shell. It should be as simple as changing the lines at the bottom of the file to point to `/opt/homebrew/bin/fish`.
 </details>
 
 ### Install script

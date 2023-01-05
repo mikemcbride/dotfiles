@@ -10,5 +10,5 @@ fi
 current_session=$(tmux display-message -p '#S')
 total_sessions=$(tmux list-sessions | wc -l | xargs)
 
-SESSION=$(tmux list-sessions -F \#S | fzf)
+SESSION=$(tmux list-sessions -F \#S | gum filter --placeholder "Filter sessions..." --height "$total_sessions")
 tmux switch-client -t $SESSION || tmux attach -t $SESSION

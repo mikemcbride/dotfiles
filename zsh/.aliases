@@ -20,7 +20,7 @@ alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gconflicts="git diff --name-only --diff-filter=U"
 alias gpub="publish_current_branch"
-alias gcl="delete_local_merged_branches"
+alias gcl="delete_local_merged_branches && git-delete-squashed"
 alias gopen="gh repo view --web"
 alias gpr="gh pr create --web"
 

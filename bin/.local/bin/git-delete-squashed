@@ -6,7 +6,7 @@ git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch
 do
         mergeBase=$(git merge-base $default_branch $branch)
         if [[ $(git cherry $default_branch $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]]; then
-                if [[ $branch -ne $default_branch ]]; then
+                if [[ "$branch" != "$default_branch" ]]; then
                         git branch -D $branch
                 fi
         fi
