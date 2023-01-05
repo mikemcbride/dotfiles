@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~ ~/personal ~/work -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~ ~/personal ~/work -mindepth 1 -maxdepth 1 -type d | gum filter --placeholder "Filter directories...")
 fi
 
 if [[ -z $selected ]]; then

@@ -14,7 +14,11 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Telescope
-vim.keymap.set('n', '<leader>f',  require('telescope.builtin').git_files, { desc = 'Search [F]iles' })
+vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = '[S]earch [G]it Files' })
+
+-- Formatting
+vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
 
 -- Open explore panel
 vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
@@ -51,10 +55,10 @@ vim.keymap.set("n", "<leader>W", ":bufdo :Bdelete<cr>", { silent = true }) -- cl
 
 -- move lines
 -- ignore the weird symbols, it's a weird thing with macOS mapping option/alt + key to a symbol.
-vim.keymap.set('n', '˙', ":MoveHChar(-1)<CR>", { silent = true })  -- Alt-h
-vim.keymap.set('n', '∆', ":MoveLine(1)<CR>", { silent = true })    -- Alt-j
-vim.keymap.set('n', '¬', ":MoveHChar(1)<CR>", { silent = true })   -- Alt-l
-vim.keymap.set('n', '˚', ":MoveLine(-1)<CR>", { silent = true })   -- Alt-k
+vim.keymap.set('n', '˙', ":MoveHChar(-1)<CR>", { silent = true }) -- Alt-h
+vim.keymap.set('n', '∆', ":MoveLine(1)<CR>", { silent = true }) -- Alt-j
+vim.keymap.set('n', '¬', ":MoveHChar(1)<CR>", { silent = true }) -- Alt-l
+vim.keymap.set('n', '˚', ":MoveLine(-1)<CR>", { silent = true }) -- Alt-k
 
 
 -- Visual --
@@ -64,9 +68,9 @@ vim.keymap.set("v", ">", ">gv", { silent = true })
 
 -- Move text up and down
 vim.keymap.set('v', '˙', ":MoveHBlock(-1)<CR>", { silent = true }) -- Alt-h
-vim.keymap.set('v', '∆', ":MoveBlock(1)<CR>", { silent = true })   -- Alt-j
-vim.keymap.set('v', '˚', ":MoveBlock(-1)<CR>", { silent = true })  -- Alt-k
-vim.keymap.set('v', '¬', ":MoveHBlock(1)<CR>", { silent = true })  -- Alt-l
+vim.keymap.set('v', '∆', ":MoveBlock(1)<CR>", { silent = true }) -- Alt-j
+vim.keymap.set('v', '˚', ":MoveBlock(-1)<CR>", { silent = true }) -- Alt-k
+vim.keymap.set('v', '¬', ":MoveHBlock(1)<CR>", { silent = true }) -- Alt-l
 
 -- Visual Block --
 -- Move text up and down
