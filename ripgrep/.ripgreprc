@@ -1,0 +1,9 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# search hidden files by default (excluding the ones we're explicitly ignoring below)
+--hidden
+
+# Using glob patterns to include/exclude files or folders
+--glob=!{.git,node_modules}/*

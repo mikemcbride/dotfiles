@@ -91,6 +91,7 @@ stow starship
 stow git
 stow zed
 stow bin
+stow ripgrep
 ```
 
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
@@ -111,6 +112,20 @@ While we're in here, we probably want to set our file handling for common code f
 ```sh
 cd ~/dotfiles
 node ./scripts/setDefaultApplications.js
+```
+
+### Setup tmux plugins
+
+The `.tmux.conf` file uses plugins - we manage those with TPM (tmux plugin manager). TPM is a git repo that we clone to run everything, so we don't include it inside this repo. We need to do 2 things:
+
+1. Clone the `tpm` repo
+2. Symlink it inside our tmux folder
+
+```
+cd ~
+git clone https://github.com/tmux-plugins/tpm
+mkdir -p ~/dotfiles/tmux/plugins
+ln -s ~/tpm ~/dotfiles/tmux/plugins
 ```
 
 ### Choosing a shell
