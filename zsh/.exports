@@ -14,6 +14,9 @@ path+=('/opt/homebrew/bin')
 path+=('$(go env GOPATH)/bin')
 export PATH
 
+# ripgrep config
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 # fix ls colors
 # i have no idea what this does but it makes the colors for directories and symlinks look right.
 # e.g., blue for dirs and cyan for symlinks, instead of green/red respectively.
