@@ -22,7 +22,6 @@ require('user.options')
 
 require("lazy").setup('user.plugins')
 
-require('user.colorscheme')
 require('user.keymaps')
 require('user.autocommands')
 
