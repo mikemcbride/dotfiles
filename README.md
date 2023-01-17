@@ -254,7 +254,7 @@ sh ~/dotfiles/.macos
 - Sign in to 1Password and add the browser extension.
 - Download and install Arc and log in there
 - Set up a new GitHub Personal Access Token to access GitHub from the command line.
-- Open any file in vim and run `:PackerInstall` to install all plugins
+- Open any file in vim and run `:Lazy` to make `lazy.nvim` install all plugins
 
 ### Raycast
 
