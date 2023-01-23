@@ -78,6 +78,9 @@ vim.o.writebackup = false
 -- convert tabs to spaces
 vim.o.expandtab = true
 
+-- always use block cursor
+vim.o.guicursor = ""
+
 -- highlight the current line
 vim.o.cursorline = false
 

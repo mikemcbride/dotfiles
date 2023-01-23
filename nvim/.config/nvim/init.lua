@@ -19,9 +19,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('user.options')
-
-require("lazy").setup('user.plugins')
-
+require("lazy").setup({
+  spec = {
+    { "LazyVim/LazyVim" },
+    { import = 'user.plugins' },
+  }
+})
 require('user.keymaps')
 require('user.autocommands')
 
