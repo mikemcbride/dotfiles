@@ -25,6 +25,9 @@ export LSCOLORS="exgxfxdacxDaDaxbadacex"
 # goprivate
 export GOPRIVATE=github.com/nytimes
 
+# vault
+export VAULT_ADDR="https://vault-prd.dv.nyt.net"
+
 # aws
 export AWS_PROFILE=lettercase-dev-tenant-dev-foundations
 
