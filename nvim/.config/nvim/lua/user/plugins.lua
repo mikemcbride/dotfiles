@@ -1,21 +1,23 @@
 return {
   {
     'folke/tokyonight.nvim',
-    lazy = false, -- make sure we load this during startup
-    priority = 1000, -- make sure we load this before all the other start plugins
-    config = function()
-      require('tokyonight').setup({
-        style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        light_style = "day", -- The theme is used when the background is set to light
+    opts = {
+        style = "night",
         styles = {
           -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "transparent", -- style for sidebars, see below
-          floats = "transparent", -- style for floating windows
+          sidebars = "transparent",
+          floats = "transparent",
         }
-      })
-      vim.cmd([[colorscheme tokyonight-night]])
-    end
+    },
   },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight",
+    },
+  },
+
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
