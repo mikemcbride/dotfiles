@@ -9,9 +9,7 @@ lualine.setup {
   theme = "tokyonight",
   options = {
     icons_enabled = true,
-    theme = "auto",
-    icons_enabled = false,
-    theme = 'onedark',
+    theme = "tokyonight",
     component_separators = '|',
     section_separators = '',
     disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
