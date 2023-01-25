@@ -1,22 +1,5 @@
 return {
-  {
-    'folke/tokyonight.nvim',
-    opts = {
-        style = "night",
-        styles = {
-          -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "transparent",
-          floats = "transparent",
-        }
-    },
-  },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "tokyonight",
-    },
-  },
+  'folke/tokyonight.nvim',
 
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -77,7 +60,7 @@ return {
 
   "akinsho/bufferline.nvim", -- buffers appear like tabs
   "moll/vim-bbye", -- close buffers
-  "goolord/alpha-nvim", -- dashboard
+  "goolord/alpha-nvim",
   "ur4ltz/move.nvim", -- move lines
   "nvim-treesitter/nvim-treesitter-context", -- sticky function headers
   "JoosepAlviste/nvim-ts-context-commentstring",
