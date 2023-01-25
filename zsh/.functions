@@ -14,6 +14,12 @@ function publish_current_branch() {
     git push --set-upstream origin "$(git_current_branch)":"$(git_current_branch)"
 }
 
+function hst() {
+  local cmd
+  cmd=$(print -rNC1 -- ${(u)history} | fzf --read0 "$@") &&
+    print -rz -- $cmd
+}
+
 function delete_local_merged_branches() {
     git branch --merged "$(git_main_branch)" | grep -v "^*" | grep -v "$(git_main_branch)" | xargs git branch -d
 }
