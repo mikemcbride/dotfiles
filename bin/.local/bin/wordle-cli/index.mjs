@@ -8,6 +8,9 @@ const input = process.argv[2]
 
 let remainingGuesses = 6
 
+console.log(green('Welcome to wordle-cli!'))
+console.log('HOW TO PLAY')
+console.log('---------------')
 console.log(`For each guess:
       - lowercase letters for incorrect letters (gray tiles)
       - uppercase letters for correct guesses in the wrong spot (yellow tiles)
