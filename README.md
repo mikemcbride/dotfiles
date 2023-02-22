@@ -116,17 +116,20 @@ node ./scripts/setDefaultApplications.js
 
 ### Setup tmux plugins
 
-The `.tmux.conf` file uses plugins - we manage those with TPM (tmux plugin manager). TPM is a git repo that we clone to run everything, so we don't include it inside this repo. We need to do 2 things:
-
-1. Clone the `tpm` repo
-2. Symlink it inside our tmux folder
+The `.tmux.conf` file uses plugins - we manage those with TPM (tmux plugin manager). TPM is a git repo that we clone to run everything, so we don't include it inside this repo. First, we'll clone the repo into the desired folder:
 
 ```
-cd ~
-git clone https://github.com/tmux-plugins/tpm
-mkdir -p ~/dotfiles/tmux/plugins
-ln -s ~/tpm ~/dotfiles/tmux/plugins
+mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+Next create a tmux session, and source the tmux conf file:
+
+```sh
+tmux source-file ~/.tmux.conf
+```
+
+After that, press `prefix-I` to install TPM and all the plugins. Now TPM will be running with all plugins specified. This will ensure that tmux sessions are saved periodically and will persist across system restarts (thanks to tmux-resurrect and tmux-continuum).
 
 ### Choosing a shell
 

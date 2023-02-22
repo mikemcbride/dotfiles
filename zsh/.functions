@@ -16,8 +16,12 @@ function publish_current_branch() {
 
 function hst() {
   local cmd
-  cmd=$(print -rNC1 -- ${(u)history} | fzf --read0 "$@") &&
+  cmd=$(history | awk '{$1=""}1' | gum filter --reverse --height=100 | xargs echo -n) &&
     print -rz -- $cmd
+}
+
+function stocks() {
+    node ~/personal/nyt-stocks/index.js
 }
 
 function delete_local_merged_branches() {
