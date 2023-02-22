@@ -44,9 +44,8 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 
 -- Close buffers
-vim.keymap.set("n", "<leader>w", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
-vim.keymap.set("n", "<leader>c", ":Bdelete<cr>", { silent = true }) -- for some reason I feel like I used to have this mapped to leader-c...?
-vim.keymap.set("n", "<leader>W", ":bufdo :Bdelete<cr>", { silent = true }) -- close all open buffers, but don't quit neovim.
+vim.keymap.set("n", "<leader>bd", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
+vim.keymap.set("n", "<leader>bD", ":bufdo :Bdelete<cr>", { silent = true }) -- close all open buffers, but don't quit neovim.
 
 
 -- Visual --

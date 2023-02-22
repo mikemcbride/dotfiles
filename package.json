@@ -16,6 +16,7 @@
     "clipboardy": "^2.3.0",
     "empty-trash": "^3.0.0",
     "execa": "^5.1.1",
+    "inquirer": "^9.1.4",
     "internal-ip": "^7.0.0",
     "is-git-repository": "^2.0.0",
     "kleur": "^4.1.4",
