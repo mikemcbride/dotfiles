@@ -20,6 +20,11 @@ function hst() {
     print -rz -- $cmd
 }
 
+# reload kitty config without having to quit and reopen kitty
+function reload_kitty() {
+  kill -SIGUSR1 $(pgrep -a kitty)
+}
+
 function stocks() {
     node ~/personal/nyt-stocks/index.js
 }

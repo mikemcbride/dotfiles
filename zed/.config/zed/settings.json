@@ -1,7 +1,8 @@
 {
-    "buffer_font_family": "MonoLisa Nerd Font",
+    "buffer_font_family": "Berkeley Mono",
     "buffer_font_size": 15,
-    "theme": "staff/Tokyo Night",
+    // "theme": "staff/Tokyo Night",
+    "theme": "One Dark",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
     "vim_mode": true,
