@@ -15,8 +15,10 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc
 -- Formatting
 vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
 
--- Open explore panel
-vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
+-- Toggle explore panel, but do it as a sidebar
+vim.keymap.set('n', '<leader>e', ':Ex<cr>', { silent = true })
+-- vim.keymap.set('n', '<leader>e', ':Lex<Cr>:vertical resize 30<cr>', { silent = true })
+-- vim.keymap.set('n', '<leader>e', ':Telescope file_browser<cr>', { silent = true })
 
 -- greatest remap ever
 -- don't replace paste buffer when pasting over highlighted text
@@ -45,6 +47,7 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 
 -- Close buffers
 vim.keymap.set("n", "<leader>bd", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
+vim.keymap.set("n", "<leader>w", ":Bdelete<cr>", { silent = true }) -- same as above
 vim.keymap.set("n", "<leader>bD", ":bufdo :Bdelete<cr>", { silent = true }) -- close all open buffers, but don't quit neovim.
 
 
