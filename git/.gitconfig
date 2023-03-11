@@ -14,22 +14,11 @@
     ba = branch --all
     cmsg = commit -m
     unstage = reset --
+    undo = reset HEAD~ # undo the last commit. only works locally.
     branch-name = rev-parse --abbrev-ref HEAD
     publish = push -u origin $(git branch-name)
     pub = push -u origin $(git branch-name)
-    mm = merge master
-    f = fetch --all --prune
-    l = pull
-    d = diff
-    a = add
-    cm = checkout master
-    lm = "!git checkout master && git pull"
-    s = status
-    lg = log --graph --decorate --pretty=oneline --abbrev-commit --all
     conflicts = diff --name-only --diff-filter=U
-    # Delete any branches that have been merged into master
-    # See also: https://gist.github.com/robmiller/5133264
-    cleanup = !git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d
 [log]
     date = iso
 [filter "lfs"]
