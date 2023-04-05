@@ -97,7 +97,7 @@ vim.o.signcolumn = "yes"
 vim.o.wrap = true
 
 -- show a wrap guide at 120 characters
-vim.wo.colorcolumn = "120"
+-- vim.wo.colorcolumn = "120"
 
 -- start scrolling when you are this many lines from the bottom/top of the screen
 vim.o.scrolloff = 8
