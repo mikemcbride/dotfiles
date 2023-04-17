@@ -8,8 +8,8 @@
 [alias]
     g = git
     c = commit -am
-    co = checkout
-    bc = checkout -b
+    co = switch
+    bc = switch -c
     bx = branch -D
     ba = branch --all
     cmsg = commit -m

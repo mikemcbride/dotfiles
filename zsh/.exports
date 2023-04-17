@@ -29,7 +29,8 @@ export GOPRIVATE=github.com/nytimes
 export VAULT_ADDR="https://vault-prd.dv.nyt.net"
 
 # aws
-export AWS_PROFILE=lettercase-dev-tenant-dev-foundations
+# export AWS_PROFILE=lettercase-dev-tenant-dev-foundations
+export AWS_PROFILE=dynamodb-dev
 
 # gum exports (github.com/charmbracelet/gum)
 export GUM_FILTER_INDICATOR_FOREGROUND="6" # cyan
