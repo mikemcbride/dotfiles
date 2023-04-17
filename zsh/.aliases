@@ -13,9 +13,9 @@ alias k=kubectl
 # Git
 alias gmm='git merge origin/"$(git_main_branch)"'
 alias gbx="git branch -D"
-alias gbc="git checkout -b"
-alias glm='git checkout "$(git_main_branch)" && git pull'
-alias glmm='git checkout "$(git_main_branch)" && git pull && git checkout - && git merge "$(git_main_branch)"'
+alias gbc="git switch -c"
+alias glm='git switch "$(git_main_branch)" && git pull'
+alias glmm='git switch "$(git_main_branch)" && git pull && git switch - && git merge "$(git_main_branch)"'
 alias gs="git status"
 alias glg="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gconflicts="git diff --name-only --diff-filter=U"

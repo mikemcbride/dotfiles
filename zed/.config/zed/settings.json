@@ -1,7 +1,7 @@
 {
     "buffer_font_family": "Berkeley Mono",
     "buffer_font_size": 15,
-    "theme": "Gruvbox Dark Soft",
+    "theme": "One Dark",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
     "vim_mode": true,

@@ -66,4 +66,11 @@ return {
   "JoosepAlviste/nvim-ts-context-commentstring",
   "kyazdani42/nvim-web-devicons",
   "windwp/nvim-autopairs", -- automatically close matching brackets/parens/etc
+  -- {
+  --   "folke/noice.nvim",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --   }
+  -- },
+
 }
