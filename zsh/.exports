@@ -8,12 +8,6 @@ export MANPAGER="less -X"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
-# add stuff to PATH
-path+=('/opt/homebrew')
-path+=('/opt/homebrew/bin')
-path+=('$(go env GOPATH)/bin')
-export PATH
-
 # ripgrep config
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
