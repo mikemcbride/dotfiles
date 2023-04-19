@@ -24,6 +24,9 @@ unalias gco
 
 zstyle ':completion:*' menu select
 
+# add stuff to PATH
+local gopath_bin="$(go env GOPATH)/bin"
+
 typeset -U path
 path=($path
       $HOME/.local/bin
@@ -37,7 +40,11 @@ path=($path
       /opt/X11/bin
       /usr/local/git/bin
       /usr/local/mysql/bin
-      /opt/homebrew/sbin)
+      /opt/homebrew/sbin
+      /opt/homebrew
+      /opt/homebrew/bin
+      $gopath_bin
+  )
 export PATH
 
 # User configuration
