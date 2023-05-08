@@ -57,16 +57,17 @@ if status is-interactive
     set -x AWS_PROFILE lettercase-dev-tenant-dev-foundations
 
     # gum exports (github.com/charmbracelet/gum)
-    set -x GUM_FILTER_INDICATOR_FOREGROUND 6
-    set -x GUM_FILTER_TEXT_FOREGROUND 7
-    set -x GUM_FILTER_MATCH_FOREGROUND 3
-    set -x GUM_FILTER_PROMPT_FOREGROUND 5
+    set -x GUM_FILTER_INDICATOR_FOREGROUND "6" # cyan
+    set -x GUM_FILTER_TEXT_FOREGROUND "7" # gray
+    set -x GUM_FILTER_MATCH_FOREGROUND "3" # yellow
+    set -x GUM_FILTER_PROMPT_FOREGROUND "5" # purple
     set -x GUM_FILTER_PROMPT " "
-    set -x GUM_FILTER_INDICATOR ﰲ
-    set -x GUM_FILTER_REVERSE true
-    set -x GUM_CHOOSE_CURSOR_FOREGROUND 6
+    set -x GUM_FILTER_INDICATOR "ﰲ"
+    set -x GUM_FILTER_REVERSE "false"
+    set -x GUM_FILTER_HEIGHT "10"
+    set -x GUM_CHOOSE_CURSOR_FOREGROUND "6"
     set -x GUM_CHOOSE_CURSOR " "
-    set -x GUM_CHOOSE_SELECTED_FOREGROUND 6
+    set -x GUM_CHOOSE_SELECTED_FOREGROUND "6"
 
     starship init fish | source
 end

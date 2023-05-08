@@ -1,7 +1,10 @@
 {
+    "features": {
+        "copilot": false
+    },
     "buffer_font_family": "Berkeley Mono",
     "buffer_font_size": 15,
-    "theme": "One Dark",
+    "theme": "One Light",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
     "vim_mode": true,

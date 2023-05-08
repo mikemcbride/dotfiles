@@ -11,9 +11,6 @@ format = """\
   $git_status\
   $nodejs\
   $golang\
-  $python\
-  $ruby\
-  $rust\
   $line_break\
   $character\
 """
@@ -27,7 +24,7 @@ vicmd_symbol = "[](bold purple)"
 # only show current directory name
 # remove directory, and make it blue
 [directory]
-truncation_length = 1
+truncation_length = 2
 style = "bright-blue"
 format = "[$path ]($style)[$read_only]($read_only_style)"
 
@@ -59,15 +56,3 @@ symbol = " "
 [nodejs]
 style = "bright-green"
 symbol = " "
-
-[python]
-style = "yellow"
-symbol = " "
-
-[ruby]
-style = "red"
-symbol = " "
-
-[rust]
-style = "red"
-symbol = " "
