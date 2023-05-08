@@ -63,8 +63,8 @@ if status is-interactive
     set -x GUM_FILTER_PROMPT_FOREGROUND "5" # purple
     set -x GUM_FILTER_PROMPT " "
     set -x GUM_FILTER_INDICATOR "ﰲ"
-    set -x GUM_FILTER_REVERSE "false"
-    set -x GUM_FILTER_HEIGHT "10"
+    set -x GUM_FILTER_REVERSE "true"
+    set -x GUM_FILTER_HEIGHT "0"
     set -x GUM_CHOOSE_CURSOR_FOREGROUND "6"
     set -x GUM_CHOOSE_CURSOR " "
     set -x GUM_CHOOSE_SELECTED_FOREGROUND "6"
