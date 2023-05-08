@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ "${1}" == "" ]]; then
+	echo "must provide a process"
+	exit 1
+fi
+
+while :
+do
+	ps -o rss "${1}" | tail -1 | numfmt --to=si
+	sleep 1
+done

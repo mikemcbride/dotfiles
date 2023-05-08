@@ -24,7 +24,6 @@ export VAULT_ADDR="https://vault-prd.dv.nyt.net"
 
 # aws
 # export AWS_PROFILE=lettercase-dev-tenant-dev-foundations
-export AWS_PROFILE=dynamodb-dev
 
 # gum exports (github.com/charmbracelet/gum)
 export GUM_FILTER_INDICATOR_FOREGROUND="6" # cyan
@@ -33,8 +32,8 @@ export GUM_FILTER_MATCH_FOREGROUND="3" # yellow
 export GUM_FILTER_PROMPT_FOREGROUND="5" # purple
 export GUM_FILTER_PROMPT=" "
 export GUM_FILTER_INDICATOR="ﰲ"
-export GUM_FILTER_REVERSE="false"
-export GUM_FILTER_HEIGHT="10"
+export GUM_FILTER_REVERSE="true"
+export GUM_FILTER_HEIGHT="0"
 export GUM_CHOOSE_CURSOR_FOREGROUND="6"
 export GUM_CHOOSE_CURSOR=" "
 export GUM_CHOOSE_SELECTED_FOREGROUND="6"
