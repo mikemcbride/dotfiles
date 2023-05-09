@@ -39,6 +39,10 @@ if status is-interactive
     # neovim as default editor
     set -gx EDITOR nvim
 
+    # abbreviations
+    abbr --add dotdot --regex '^\.\.+$' --function multicd
+    abbr -a !! --position anywhere --function last_history_item
+
     # use vi mode on prompt
     fish_vi_key_bindings
 

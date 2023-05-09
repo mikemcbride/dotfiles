@@ -1,3 +1,3 @@
 function l
-  ls -la
+  exa -la
 end
