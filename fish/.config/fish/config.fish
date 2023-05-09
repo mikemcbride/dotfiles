@@ -54,6 +54,9 @@ if status is-interactive
     set -x LANG en_US
 
 
+    # ripgrep config
+    set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
+
     # goprivate
     set -x GOPRIVATE github.com/nytimes
 
