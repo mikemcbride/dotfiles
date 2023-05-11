@@ -7,6 +7,6 @@ fi
 
 while :
 do
-	ps -o rss "${1}" | tail -1 | numfmt --to=si
+	ps -o rss "${1}" | tail -1 | numfmt --to=si --format %.4f | tr -d " "
 	sleep 1
 done
