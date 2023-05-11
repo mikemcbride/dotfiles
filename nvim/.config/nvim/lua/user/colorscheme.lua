@@ -2,12 +2,10 @@ vim.opt.background = "dark"
 
 -- override some default tokyonight themes
 require("tokyonight").setup({
-  style = "night",     -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-  light_style = "day", -- The theme is used when the background is set to light
+  style = "night",
   styles = {
-    -- Background styles. Can be "dark", "transparent" or "normal"
-    sidebars = "transparent", -- style for sidebars, see below
-    floats = "transparent",   -- style for floating windows
+    sidebars = "transparent",
+    floats = "transparent",
   },
   on_highlights = function(hl, c)
     hl.Visual = {
