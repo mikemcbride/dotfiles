@@ -5,11 +5,26 @@ if not status_ok then
   return
 end
 
+local theme = "tokyonight"
+
+local custom_tokyonight_ok, custom_tokyonight = pcall(require, "lualine.themes.tokyonight")
+if custom_tokyonight_ok then
+  local tn_colors = require("tokyonight.colors").setup({ transform = true })
+  custom_tokyonight.command = {
+    a = { bg = tn_colors.orange, fg = tn_colors.black },
+    b = { bg = tn_colors.fg_gutter, fg = tn_colors.orange },
+  }
+  custom_tokyonight.insert = {
+    a = { bg = tn_colors.teal, fg = tn_colors.black },
+    b = { bg = tn_colors.fg_gutter, fg = tn_colors.teal },
+  }
+  theme = custom_tokyonight
+end
+
 lualine.setup {
-  theme = "tokyonight",
   options = {
     icons_enabled = true,
-    theme = "tokyonight",
+    theme = theme,
     component_separators = '|',
     section_separators = '',
     disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
