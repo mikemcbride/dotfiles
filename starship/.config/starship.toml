@@ -21,8 +21,7 @@ success_symbol = "[](bold purple)"
 error_symbol = "[](bold red)"
 vicmd_symbol = "[](bold purple)"
 
-# only show current directory name
-# remove directory, and make it blue
+# only show current and parent directory
 [directory]
 truncation_length = 2
 style = "bright-blue"

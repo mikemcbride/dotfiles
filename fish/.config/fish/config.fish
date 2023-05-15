@@ -58,11 +58,10 @@ if status is-interactive
     # ripgrep config
     set -x RIPGREP_CONFIG_PATH $HOME/.ripgreprc
 
-    # goprivate
-    set -x GOPRIVATE github.com/nytimes
-
-    # aws
-    set -x AWS_PROFILE lettercase-dev-tenant-dev-foundations
+    # if extras file exists, source it.
+    if test -e ~/.extras.fish
+        source ~/.extras.fish
+    end
 
     # gum exports (github.com/charmbracelet/gum)
     set -x GUM_FILTER_INDICATOR_FOREGROUND "6" # cyan
