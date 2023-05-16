@@ -28,14 +28,13 @@
     smudge = git-lfs smudge -- %f
 
 # use separate file for user info
-[includeIf "gitdir:~/work/"]
-    path = ~/.gitconfig.work
-[includeIf "gitdir:~/personal/"]
-    path = ~/.gitconfig.personal
-[includeIf "gitdir:~/dotfiles/"]
-    path = ~/.gitconfig.personal
+# .gitconfig.local includes default git user info, as well as other stuff.
+# if the repo is inside the ~/work directory, load the work git config,
+# which will overwrite the git user to be my work credentials
 [include]
     path = ~/.gitconfig.local
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig.work
 [color "diff-highlight"]
     oldNormal = red
     oldHighlight = red bold 52
