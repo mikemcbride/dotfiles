@@ -19,7 +19,24 @@ require("tokyonight").setup({
   end,
 })
 
-local colorscheme = "tokyonight-night"
+require("electron_highlighter").setup({
+  styles = {
+    sidebars = "transparent",
+    floats = "transparent",
+  },
+  on_highlights = function(hl, c)
+    hl.Visual = {
+      bg = c.orange,
+      fg = c.bg_dark,
+    }
+    hl.TelescopeSelection = {
+      fg = c.bg_dark,
+      bg = c.orange,
+    }
+  end,
+})
+
+local colorscheme = "electron_highlighter"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 
 if not status_ok then

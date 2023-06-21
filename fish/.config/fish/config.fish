@@ -3,17 +3,30 @@ if status is-interactive
     set fish_greeting ''
 
     # TokyoNight Color Palette
-    set -l foreground c0caf5
+    # set -l foreground c0caf5
+    # set -l selection 364A82
+    # set -l comment 565f89
+    # set -l red f7768e
+    # set -l orange ff9e64
+    # set -l yellow e0af68
+    # set -l green 9ece6a
+    # set -l blue 7aa2f7
+    # set -l purple 9d7cd8
+    # set -l cyan 73daca
+    # set -l pink bb9af7
+
+    # Electron Highlighter Color Palette
+    set -l foreground a8b5d1
     set -l selection 364A82
-    set -l comment 565f89
-    set -l red f7768e
+    set -l comment 506686
+    set -l red ff5874
     set -l orange ff9e64
-    set -l yellow e0af68 
-    set -l green 9ece6a
-    set -l blue 7aa2f7
-    set -l purple 9d7cd8
-    set -l cyan 73daca
-    set -l pink bb9af7
+    set -l yellow ffbf7a
+    set -l green 6af699
+    set -l blue 82aaff
+    set -l purple c792ea
+    set -l cyan 4ff2f8
+    set -l pink ff007c
 
     # Syntax Highlighting Colors
     set -g fish_color_normal $foreground
@@ -30,7 +43,7 @@ if status is-interactive
     set -g fish_color_operator $green
     set -g fish_color_escape $pink
     set -g fish_color_autosuggestion $comment
-    
+
     # Completion Pager Colors
     set -g fish_pager_color_progress $comment
     set -g fish_pager_color_prefix $cyan
@@ -63,6 +76,8 @@ if status is-interactive
         source ~/.extras.fish
     end
 
+    set -x TZ_LIST "US/Eastern;US/Mountain;US/Pacific"
+
     # gum exports (github.com/charmbracelet/gum)
     set -x GUM_FILTER_INDICATOR_FOREGROUND "6" # cyan
     set -x GUM_FILTER_TEXT_FOREGROUND "7" # gray
@@ -78,4 +93,3 @@ if status is-interactive
 
     starship init fish | source
 end
-

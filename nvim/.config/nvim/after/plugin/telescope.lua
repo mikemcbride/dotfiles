@@ -1,3 +1,4 @@
+local fb_actions = require "telescope".extensions.file_browser.actions
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
@@ -9,10 +10,27 @@ require('telescope').setup {
       },
     },
   },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      use_fd = true,
+      hidden = true,
+      hijack_netrw = true,
+      initial_mode = "normal",
+      mappings = {
+        ["n"] = {
+          ["-"] = fb_actions.goto_parent_dir
+        }
+      }
+    }
+  }
 }
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+
+-- Enable telescope file_browser
+pcall(require('telescope').load_extension, 'file_browser')
 
 -- [[ Telescope Specific Keymaps ]]
 -- See `:help telescope.builtin`

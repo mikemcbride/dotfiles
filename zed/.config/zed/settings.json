@@ -1,13 +1,16 @@
 {
+    "project_panel": {
+        "dock": "right"
+    },
     "features": {
         "copilot": false
     },
-    "buffer_font_family": "Berkeley Mono",
+    "buffer_font_family": "MonoLisa",
     "buffer_font_size": 15,
-    "theme": "One Light",
+    "theme": "One Dark",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
-    "vim_mode": true,
+    "vim_mode": false,
     "tab_size": 2,
     "language_overrides": {
         "Markdown": {

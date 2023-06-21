@@ -4,7 +4,6 @@ import { green } from 'kleur/colors'
 import inquirer from 'inquirer'
 
 const words = JSON.parse(await readFile(new URL('./word-data.json', import.meta.url)))
-const input = process.argv[2]
 
 let remainingGuesses = 6
 

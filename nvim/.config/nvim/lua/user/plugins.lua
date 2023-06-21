@@ -1,5 +1,9 @@
 return {
   'folke/tokyonight.nvim',
+  {
+    'electron-highlighter/nvim',
+    dev = true
+  },
 
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -56,6 +60,11 @@ return {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     cond = vim.fn.executable 'make' == 1
+  },
+
+  {
+      "nvim-telescope/telescope-file-browser.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
   "akinsho/bufferline.nvim", -- buffers appear like tabs
