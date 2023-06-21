@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+node ~/.local/bin/chapter-times-cli/index.mjs

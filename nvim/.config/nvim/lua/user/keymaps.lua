@@ -16,9 +16,8 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc
 vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
 
 -- Toggle explore panel, but do it as a sidebar
-vim.keymap.set('n', '<leader>e', ':Ex<cr>', { silent = true })
--- vim.keymap.set('n', '<leader>e', ':Lex<Cr>:vertical resize 30<cr>', { silent = true })
--- vim.keymap.set('n', '<leader>e', ':Telescope file_browser<cr>', { silent = true })
+-- vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
+vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true })
 
 -- greatest remap ever
 -- don't replace paste buffer when pasting over highlighted text
@@ -77,3 +76,5 @@ vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", { silent = true })
 vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", { silent = true })
+
+

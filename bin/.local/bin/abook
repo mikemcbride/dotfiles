@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+abook() {
+    local DIR=${1:-$(pwd)}
+    echo "$DIR"
+
+    # generating random name
+    local NAME=$(LC_ALL=C tr -dc A-Za-z0-9 </dev/urandom | head -c 8)
+    local FILENAME="${DIR}/${NAME}"
+
+    # generating book
+    ls -1 "${DIR}/"*.mp3 | awk  '{printf "file |%s|\n", $0}' | \
+        sed -e "s/|/\'/g" > "${FILENAME}.txt" \
+        && ffmpeg -f concat -safe 0 -i "${FILENAME}.txt" -c copy "${FILENAME}.mp3" \
+        && ffmpeg -i "${FILENAME}.mp3" "${FILENAME}.m4a" \
+        && mv "${FILENAME}.m4a" "${DIR}/$(basename "${DIR}").m4b"
+
+    # Cleanup
+    unlink "${FILENAME}.txt"
+    unlink "${FILENAME}.mp3"
+}
+
+abook "$1"

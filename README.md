@@ -1,10 +1,10 @@
 # dotfiles
 
-These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included. I would, however, highly recommend forking this repo and changing my user name to yours to avoid any issues. That will also allow you to add your own customizations and remove any of mine that you don't like.
+These are my dotfiles. It's here so that I don't lose any of my setups when switching to a new machine, but you are welcome to use any and all of the stuff included. I would, however, highly recommend forking this repo and changing my user name to yours to avoid any issues rather than just cloning it.
 
 ## Setup
 
-It's worth noting that this setup is for macOS only and assumes you're using bash or zsh to execute the scripts.
+It's worth noting that this setup is for macOS only and assumes you're using bash or zsh to execute the scripts. I have a goal to set this repo up to use git worktrees and have separate settings per OS, but for now it's macOS only since that's what I use for work.
 
 One other important thing to note is that the Homebrew install location is different for Apple Silicon macs vs Apple Intel macs:
 
@@ -12,13 +12,13 @@ One other important thing to note is that the Homebrew install location is diffe
 | --------------- | ------------ |
 | `/opt/homebrew` | `/usr/local` |
 
-You can set that prefix as an ENV variable if that would make things easier. For now, I'm going to assume Apple Silicon since they're phasing out the Intel macs, but just know that if you're using an Intel mac the Homebrew prefix is different so you'll need to tweak some of the scripts. I'll try to remember to make a note below.
+You can set that prefix as an ENV variable if that would make things easier. For now, I'm going to assume Apple Silicon since they're phasing out the Intel macs, but just know that if you're using an Intel mac the Homebrew prefix is different so you'll need to tweak some of the scripts.
 
 ### Prerequisites
 
-**Operating system**
+**OS Setup**
 
-We need git and some other stuff that the Apple command line tools provides:
+We need git and some other stuff that the Apple command line tools provides. We'll replace most of it with Homebrew alternatives since they're easier to update, but we need it to get started:
 
 ```shell
 xcode-select --install
@@ -32,13 +32,21 @@ sudo mkdir -p /usr/local/share/zsh/site-functions
 sudo chown -R $(whoami) /usr/local/{bin,lib,include,share}
 ```
 
-**1Password**
-
-It's pretty helpful to have 1Password set up before doing a lot of this stuff so you can log in easily. Totally optional, you can do it later if you want. But signing in to your Apple ID, GitHub, etc is easier than typing those long passwords manually.
-
 **Node.js**
 
-You need to have [Node.js](https://nodejs.org/en/download) installed. If you really are opposed to doing this you can install it with Homebrew. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+You need to have [Node.js](https://nodejs.org/en/download) installed. If you really are opposed to doing this you can install it with Homebrew, but I've had issues doing it that way in the past and prefer to manually install and manage versions using `fnm`. This setup assumes you are running the current LTS version or higher. Download and install it from the Node website before moving on.
+
+**Rust**
+
+There is a tmux plugin that requires Rust to compile it. Install Rust:
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+**1Password**
+
+I used to tell you to install 1Password here, but that's no longer really necessary because we install it with Homebrew in just a minute. You shouldn't need to sign in to your Apple ID before running this setup, and you should be able to clone the GitHub repo without signing in too.
 
 ### Scripts
 
@@ -47,18 +55,6 @@ We'll start in the home directory. If we have any existing configuration files, 
 ```sh
 cd ~
 rm -rf ~/.config
-```
-
-Next we'll install [Homebrew](http://brew.sh). If you already have it, run `brew update` instead of installing it:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-We'll use Homebrew Bundle to look at our Bundle file and install a bunch of stuff:
-
-```sh
-brew tap Homebrew/bundle
 ```
 
 Now we're going to install some global node modules that we'll use to accomplish various things:
@@ -74,9 +70,16 @@ cd ~
 git clone https://github.com/mikemcbride/dotfiles.git
 ```
 
-Now we're going to install all the Homebrew applications:
+Next we'll install [Homebrew](http://brew.sh). If you already have it, run `brew update` instead of installing it:
 
 ```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+We'll use Homebrew Bundle to look at our Bundle file and install a bunch of stuff:
+
+```sh
+brew tap Homebrew/bundle
 cd ~/dotfiles && brew bundle
 ```
 
@@ -84,14 +87,7 @@ Now we're going to set up a bunch of symlinks to link things from this repo to t
 
 ```sh
 rm ~/.gitconfig
-stow nvim
-stow bat
-stow karabiner
-stow starship
-stow git
-stow zed
-stow bin
-stow ripgrep
+stow {nvim,bat,karabiner,starship,git,zed,bin,ripgrep}
 ```
 
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
@@ -110,8 +106,7 @@ npm install
 While we're in here, we probably want to set our file handling for common code file extensions to all open in Zed instead of whatever the OS decides to use to open the files:
 
 ```sh
-cd ~/dotfiles
-node ./scripts/setDefaultApplications.js
+node ~/dotfiles/scripts/setDefaultApplications.js
 ```
 
 ### Setup tmux plugins
@@ -126,6 +121,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Next create a tmux session, and source the tmux conf file:
 
 ```sh
+tmux new-session
 tmux source-file ~/.tmux.conf
 ```
 
@@ -133,7 +129,7 @@ After that, press `prefix-I` to install TPM and all the plugins. Now TPM will be
 
 ### Choosing a shell
 
-Everybody likes a "choose-your-own-adventure" story, right? Let's do that with our shell. I like the fish shell a lot, but zsh is far more popular and, often more importantly for my job, POSIX compliant (I run a lot of bash scripts...). I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer.
+Everybody likes a "choose-your-own-adventure" story, right? Let's do that with our shell. I like the fish shell a lot, but zsh is far more popular and, often more importantly for my job, POSIX compliant (devops... I run a lot of bash scripts). I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer.
 
 <details>
 <summary>Install zsh</summary>
@@ -197,8 +193,9 @@ fisher install jethrokuan/z
 fisher install rbenv/fish-rbenv
 ```
 
-Because my default shell right now is zsh, you'll also need to modify the `.tmux.conf` file to set zsh as the default shell. It should be as simple as changing the lines at the bottom of the file to point to `/opt/homebrew/bin/fish`.
 </details>
+
+You'll want to look at the `.tmux.conf` file to set the default shell. There are some lines commented out at the bottom of the file. Two of the lines set zsh as the tmux shell, and two of them set fish as the shell. Comment/uncomment accordingly.
 
 ### Install script
 
@@ -233,6 +230,7 @@ Got all that working? Great. Here's what we did:
   - [wget](https://www.gnu.org/software/wget/) - better than curl for downloading resources from a url
 - installed a few desktop applications to make your life better:
   - Kitty terminal
+  - [1Password](https://1password.com)
   - [Raycast](https://raycast.com)
   - [Insomnia](https://insomnia.rest/)
   - Slack
@@ -257,7 +255,7 @@ sh ~/dotfiles/.macos
 - Sign in to 1Password and add the browser extension.
 - Download and install Arc and log in there
 - Set up a new GitHub Personal Access Token to access GitHub from the command line.
-- Open any file in vim and run `:Lazy` to make `lazy.nvim` install all plugins
+- Open any file in Neovim and run `:Lazy` to make `lazy.nvim` install all plugins
 
 ### Raycast
 
@@ -267,7 +265,6 @@ In this repo there's a `/raycast/[file].rayconfig` that you can import to bring 
 
 Here are some apps that aren't available for download via Homebrew cask that you'll currently need to download manually:
 
-- 1Password (App Store) if you didn't do it before
 - Pixelmator Pro (App Store)
 - Bartender (website)
 - Battery Indicator (App Store)
@@ -275,7 +272,7 @@ Here are some apps that aren't available for download via Homebrew cask that you
 
 ### Browser Extensions
 
-Reinstall browser extensions. 1Password, Vue and React dev tools, JSON formatter, etc.
+Reinstall browser extensions. Arc might remember these? Not 100% sure.
 
 ### Peripherals
 

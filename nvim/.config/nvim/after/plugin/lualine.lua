@@ -5,20 +5,20 @@ if not status_ok then
   return
 end
 
-local theme = "tokyonight"
+local theme = "electron_highlighter"
 
-local custom_tokyonight_ok, custom_tokyonight = pcall(require, "lualine.themes.tokyonight")
-if custom_tokyonight_ok then
-  local tn_colors = require("tokyonight.colors").setup({ transform = true })
-  custom_tokyonight.command = {
-    a = { bg = tn_colors.orange, fg = tn_colors.black },
-    b = { bg = tn_colors.fg_gutter, fg = tn_colors.orange },
+local custom_electron_highlighter_ok, custom_electron_highlighter = pcall(require, "lualine.themes.electron_highlighter")
+if custom_electron_highlighter_ok then
+  local eh_colors = require("electron_highlighter.colors").setup({ transform = true })
+  custom_electron_highlighter.command = {
+    a = { bg = eh_colors.orange, fg = eh_colors.black },
+    b = { bg = eh_colors.fg_gutter, fg = eh_colors.orange },
   }
-  custom_tokyonight.insert = {
-    a = { bg = tn_colors.teal, fg = tn_colors.black },
-    b = { bg = tn_colors.fg_gutter, fg = tn_colors.teal },
+  custom_electron_highlighter.insert = {
+    a = { bg = eh_colors.teal, fg = eh_colors.black },
+    b = { bg = eh_colors.fg_gutter, fg = eh_colors.teal },
   }
-  theme = custom_tokyonight
+  theme = custom_electron_highlighter
 end
 
 lualine.setup {
