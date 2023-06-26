@@ -1,5 +1,5 @@
 return {
-  'folke/tokyonight.nvim',
+  -- 'folke/tokyonight.nvim',
   {
     'electron-highlighter/nvim',
     dev = true
@@ -12,7 +12,7 @@ return {
       'neovim/nvim-lspconfig',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      'j-hui/fidget.nvim',
+      {'j-hui/fidget.nvim', tag = 'legacy'},
       'folke/neodev.nvim',
 
       -- Autocompletion

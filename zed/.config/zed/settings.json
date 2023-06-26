@@ -5,8 +5,8 @@
     "features": {
         "copilot": false
     },
-    "buffer_font_family": "MonoLisa",
-    "buffer_font_size": 15,
+    "buffer_font_family": "BerkeleyMono Nerd Font",
+    "buffer_font_size": 16,
     "theme": "One Dark",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
