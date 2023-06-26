@@ -17,9 +17,9 @@ if status is-interactive
 
     # Electron Highlighter Color Palette
     set -l foreground a8b5d1
-    set -l selection 364A82
+    set -l selection 364a82
     set -l comment 506686
-    set -l red ff5874
+    set -l red f7768e
     set -l orange ff9e64
     set -l yellow ffbf7a
     set -l green 6af699

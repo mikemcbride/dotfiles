@@ -16,7 +16,7 @@ if [[ $total_sessions == 1 ]]; then
     exit 1
 fi
 
-selected=$(tmux list-sessions | awk '{print $1}' | sed 's/://g' | gum filter)
+selected=$(tmux list-sessions | awk '{print $1}' | sed 's/://g' | gum filter --placeholder="Kill a session...")
 
 if [[ -z $selected ]]; then
     exit 0
