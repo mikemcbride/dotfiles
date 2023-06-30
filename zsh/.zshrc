@@ -74,5 +74,3 @@ bindkey -s '^K' "tmux-session-killer\n"
 
 # eval starship last
 eval "$(starship init zsh)"
-
-source /Users/mike/.config/broot/launcher/bash/br
