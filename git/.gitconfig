@@ -4,7 +4,7 @@
 [core]
     editor = /opt/homebrew/bin/nvim
     excludesfile = ~/.gitignore.global
-    pager = delta
+    pager = diff-so-fancy | less --tabs=2 -RFX
 [alias]
     g = git
     c = commit -am
@@ -26,17 +26,6 @@
     process = git-lfs filter-process
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
-[interactive]
-    diffFilter = delta --color-only
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-    syntax-theme = ansi
-    side-by-side = true
-[merge]
-    conflictstyle = diff3
-[diff]
-    colorMoved = default
 
 # use separate file for user info
 # .gitconfig.local includes default git user info, as well as other stuff.

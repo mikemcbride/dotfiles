@@ -31,7 +31,7 @@ if status is-interactive
     # Syntax Highlighting Colors
     set -g fish_color_normal $foreground
     set -g fish_color_command $green
-    set -g fish_color_keyword $pink
+    set -g fish_color_keyword $orange
     set -g fish_color_quote $yellow
     set -g fish_color_redirection $foreground
     set -g fish_color_end $orange
@@ -41,7 +41,7 @@ if status is-interactive
     set -g fish_color_selection --background=$selection
     set -g fish_color_search_match --background=$selection
     set -g fish_color_operator $green
-    set -g fish_color_escape $pink
+    set -g fish_color_escape $orange
     set -g fish_color_autosuggestion $comment
 
     # Completion Pager Colors
