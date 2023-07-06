@@ -29,10 +29,6 @@ require("electron_highlighter").setup({
       bg = c.orange,
       fg = c.bg_dark,
     }
-    hl.TelescopeSelection = {
-      fg = c.bg_dark,
-      bg = c.orange,
-    }
   end,
 })
 
