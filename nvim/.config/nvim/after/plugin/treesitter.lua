@@ -9,12 +9,8 @@ require('nvim-treesitter.configs').setup {
     'c',
     'css',
     'dockerfile',
-    'dot',
     'fish',
-    'gitignore',
     'go',
-    'gomod',
-    'gosum',
     'graphql',
     'help',
     'html',
@@ -22,13 +18,9 @@ require('nvim-treesitter.configs').setup {
     'javascript',
     'json',
     'lua',
-    'make',
-    'markdown',
-    'prisma',
     'python',
     'ruby',
     'rust',
-    'scss',
     'sql',
     'svelte',
     'terraform',
@@ -41,7 +33,10 @@ require('nvim-treesitter.configs').setup {
   },
 
 
-  highlight = { enable = true },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
   indent = { enable = true, disable = { "yaml", "python" } },
   autopairs = {
     enable = true,
