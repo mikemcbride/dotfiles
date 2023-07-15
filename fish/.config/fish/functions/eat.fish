@@ -13,5 +13,5 @@ function eat --argument dir
         rsync --archive --remove-source-files $f .
     end
 
-    rmdir $dir
+    rm $dir
 end

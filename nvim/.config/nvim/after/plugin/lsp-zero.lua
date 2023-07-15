@@ -48,4 +48,14 @@ lsp.ensure_installed({
 
 lsp.nvim_workspace()
 
-lsp.setup()
+lsp.setup({
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
+})

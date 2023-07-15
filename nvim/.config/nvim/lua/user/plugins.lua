@@ -1,9 +1,6 @@
 return {
   -- 'folke/tokyonight.nvim',
-  {
-    'electron-highlighter/nvim',
-    dev = true
-  },
+  'electron-highlighter/nvim',
 
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -29,6 +26,20 @@ return {
     }
   },
 
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    config = function(_, opts)
+      require("gopher").setup(opts)
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
+  },
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -75,11 +86,5 @@ return {
   "JoosepAlviste/nvim-ts-context-commentstring",
   "kyazdani42/nvim-web-devicons",
   "windwp/nvim-autopairs", -- automatically close matching brackets/parens/etc
-  -- {
-  --   "folke/noice.nvim",
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --   }
-  -- },
 
 }

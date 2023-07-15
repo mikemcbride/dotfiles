@@ -44,6 +44,7 @@ path=($path
       /opt/homebrew
       /opt/homebrew/bin
       $gopath_bin
+      $HOME/.krew/bin
   )
 export PATH
 

@@ -16,7 +16,7 @@ require('telescope').setup {
       use_fd = true,
       hidden = true,
       hijack_netrw = true,
-      -- initial_mode = "normal",
+      initial_mode = "normal",
       mappings = {
         ["n"] = {
           ["-"] = fb_actions.goto_parent_dir
