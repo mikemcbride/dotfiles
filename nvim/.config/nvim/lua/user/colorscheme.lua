@@ -9,12 +9,7 @@ vim.opt.background = "dark"
 --   },
 --   on_highlights = function(hl, c)
 --     hl.Visual = {
---       bg = c.orange,
---       fg = c.bg_dark,
---     }
---     hl.TelescopeSelection = {
---       fg = c.bg_dark,
---       bg = c.orange,
+--       bg = "#37435C",
 --     }
 --   end,
 -- })
@@ -26,8 +21,7 @@ require("electron_highlighter").setup({
   },
   on_highlights = function(hl, c)
     hl.Visual = {
-      bg = c.orange,
-      fg = c.bg_dark,
+      bg = c.bg_highlight,
     }
   end,
 })
