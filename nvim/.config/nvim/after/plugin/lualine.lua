@@ -6,7 +6,6 @@ if not status_ok then
 end
 
 local theme = "electron_highlighter"
-
 local custom_electron_highlighter_ok, custom_electron_highlighter = pcall(require, "lualine.themes.electron_highlighter")
 if custom_electron_highlighter_ok then
   local eh_colors = require("electron_highlighter.colors").setup({ transform = true })
