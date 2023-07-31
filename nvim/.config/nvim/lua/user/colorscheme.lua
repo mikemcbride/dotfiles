@@ -7,7 +7,7 @@ vim.opt.background = "dark"
 --     sidebars = "transparent",
 --     floats = "transparent",
 --   },
---   on_highlights = function(hl, c)
+--   on_highlights = function(hl)
 --     hl.Visual = {
 --       bg = "#37435C",
 --     }
@@ -26,11 +26,4 @@ require("electron_highlighter").setup({
   end,
 })
 
-local colorscheme = "electron_highlighter"
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-
-if not status_ok then
-  vim.cmd "colorscheme default"
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
-end
+vim.cmd.colorscheme "electron_highlighter"

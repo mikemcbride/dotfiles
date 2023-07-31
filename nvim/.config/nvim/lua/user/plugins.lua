@@ -1,7 +1,11 @@
 return {
-  -- 'folke/tokyonight.nvim',
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
   'electron-highlighter/nvim',
-
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {

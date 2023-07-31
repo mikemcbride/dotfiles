@@ -12,7 +12,6 @@ require('nvim-treesitter.configs').setup {
     'fish',
     'go',
     'graphql',
-    'help',
     'html',
     'java',
     'javascript',
