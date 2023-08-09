@@ -10,7 +10,7 @@
     "theme": "One Light",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
-    "vim_mode": false,
+    "vim_mode": true,
     "tab_size": 2,
     "language_overrides": {
         "Markdown": {
