@@ -47,7 +47,6 @@ lsp.ensure_installed({
 })
 
 lsp.nvim_workspace()
-
 lsp.setup({
   settings = {
     gopls = {
@@ -58,4 +57,12 @@ lsp.setup({
       },
     },
   },
+})
+
+local cmp = require('cmp')
+
+cmp.setup({
+  mapping = {
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+  }
 })
