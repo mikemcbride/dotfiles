@@ -1,0 +1,41 @@
+{
+	"console.log": {
+		"prefix": "log",
+		"body": "console.log($1)",
+		"description": "Log output to console"
+	},
+	"CommonJS Require": {
+		"prefix": "req",
+		"body": "const ${1:module} = require('${1:module}')"
+	},
+	"module.exports function": {
+		"prefix": "mef",
+		"body": "module.exports = function ($1) {\n  $2\n}"
+	},
+	"Arrow Function": {
+		"prefix": "af",
+		"body": "(${1}) => {\n  $2\n}"
+	},
+	"Arrow Function (one param)": {
+		"prefix": "afo",
+		"body": "${1:it} => {\n  $2\n}"
+	},
+	"error": {
+		"prefix": "err",
+		"body": "console.error(${1:err})"
+	},
+	"import": {
+		"prefix": "import",
+		"body": "import $1 from '$2'"
+    },
+    "React component": {
+        "prefix": "rcomp",
+        "body": [
+            "const $1 = ($2) => (",
+            "\t$3",
+            ")",
+            "",
+            "export default $1"
+        ]
+    }
+}

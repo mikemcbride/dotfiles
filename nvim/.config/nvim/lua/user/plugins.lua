@@ -1,11 +1,12 @@
 return {
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
-  'electron-highlighter/nvim',
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  { 'mikemcbride/gruvbox-material.nvim', priority = 1000 },
+  { 'electron-highlighter/nvim', priority = 1000 },
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {

@@ -5,15 +5,20 @@ add_newline = false
 # add/remove $line_break\ before $character\ to get prompt character on same line as prompt
 
 format = """\
-  $time\
   $directory\
   $git_branch\
   $git_status\
   $nodejs\
   $golang\
+  $fill\
+  $kubernetes\
+  $time\
   $line_break\
   $character\
 """
+
+[fill]
+symbol = ' '
 
 # replace the prompt character
 [character]
@@ -35,7 +40,7 @@ format = "[$path ]($style)[$read_only]($read_only_style)"
 # show the time in the prompt
 [time]
 disabled = false
-style = "bright-white dimmed"
+style = "bright-black"
 time_format = "[%T] "
 format = "[$time]($style)"
 
