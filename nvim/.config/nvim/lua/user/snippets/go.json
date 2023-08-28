@@ -1,0 +1,30 @@
+{
+    "Declare Package": {
+        "prefix": "pkg",
+        "body": "package ${1:main}"
+    },
+    "Import Packages": {
+        "prefix": "imp",
+        "body": [
+            "import (",
+            "\t\"${1:name}\"${2}",
+            ")${3}"
+        ]
+    },
+    "Declare Function": {
+        "prefix": "func",
+        "body": [
+            "func ${1:main}($2) {",
+            "\t${3}",
+            "}"
+        ]
+    },
+    "Declare Struct": {
+        "prefix": "str",
+        "body": [
+            "type ${1} struct {",
+            "\t${2}",
+            "}"
+        ]
+    },
+}

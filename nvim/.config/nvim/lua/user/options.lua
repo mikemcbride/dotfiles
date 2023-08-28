@@ -75,6 +75,10 @@ vim.o.timeoutlen = 500
 -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.o.writebackup = false
 
+-- 4 space tabs
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 -- convert tabs to spaces
 vim.o.expandtab = true
 

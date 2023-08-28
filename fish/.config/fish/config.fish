@@ -2,31 +2,59 @@ if status is-interactive
     # default greeting is 'Welcome to fish, the friendly interactive shell'
     set fish_greeting ''
 
-    # TokyoNight Color Palette
-    # set -l foreground c0caf5
-    # set -l selection 364A82
-    # set -l comment 565f89
-    # set -l red f7768e
-    # set -l orange ff9e64
-    # set -l yellow e0af68
-    # set -l green 9ece6a
-    # set -l blue 7aa2f7
-    # set -l purple 9d7cd8
-    # set -l cyan 73daca
-    # set -l pink bb9af7
+    # colorscheme can be one of: gruvbox | tokyonight | electronhighlighter
+    # this will set themes for tmux, fish, and vim.
+    # ideally I'd like this to set the Kitty theme too, but haven't figured that out yet.
+    # first, set it locally so we can use it here.
+    set -l theme "tokyonight"
 
-    # Electron Highlighter Color Palette
-    set -l foreground a8b5d1
-    set -l selection 364a82
-    set -l comment 506686
-    set -l red f7768e
-    set -l orange ff9e64
-    set -l yellow ffbf7a
-    set -l green 6af699
-    set -l blue 82aaff
-    set -l purple c792ea
-    set -l cyan 4ff2f8
-    set -l pink ff007c
+    # now export it so other programs can use it
+    set -x CURRENT_THEME $theme
+
+    if  test "$theme" = "tokyonight"
+        # TokyoNight Color Palette
+        set foreground c0caf5
+        set selection 364A82
+        set comment 565f89
+        set red f7768e
+        set orange ff9e64
+        set yellow e0af68
+        set green 9ece6a
+        set blue 7aa2f7
+        set purple 9d7cd8
+        set cyan 73daca
+        set pink bb9af7
+    end
+
+    if test "$theme" = "gruvbox"
+        # Gruvbox Material Color Palette
+        set foreground d4be98
+        set selection 665c54
+        set comment 928374
+        set red ea6962
+        set orange e78a4e
+        set yellow e78a4e
+        set green a9b665
+        set blue 7daea3
+        set purple d3869b
+        set cyan 89b482
+        set pink c14a4a
+    end
+
+    if test "$theme" = "electronhighlighter"
+        # Electron Highlighter Color Palette
+        set foreground a8b5d1
+        set selection 364a82
+        set comment 506686
+        set red f7768e
+        set orange ff9e64
+        set yellow ffbf7a
+        set green 6af699
+        set blue 82aaff
+        set purple c792ea
+        set cyan 4ff2f8
+        set pink ff007c
+    end
 
     # Syntax Highlighting Colors
     set -g fish_color_normal $foreground

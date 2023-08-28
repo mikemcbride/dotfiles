@@ -24,7 +24,7 @@ require("lazy").setup('user.plugins', {
       -- directory where you store your local plugin projects
       path = "~/personal/nvim-plugins",
       ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
-      patterns = {"electron-highlighter"}, -- For example {"folke"}
+      patterns = {"electron-highlighter", "mikemcbride"}, -- For example {"folke"}
       fallback = true, -- Fallback to git when local plugin doesn't exist
     }
 })
