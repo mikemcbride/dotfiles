@@ -6,7 +6,8 @@ if status is-interactive
     # this will set themes for tmux, fish, and vim.
     # ideally I'd like this to set the Kitty theme too, but haven't figured that out yet.
     # first, set it locally so we can use it here.
-    set -l theme "tokyonight"
+    # set -l theme "electronhighlighter"
+    set -l theme "gruvbox"
 
     # now export it so other programs can use it
     set -x CURRENT_THEME $theme
@@ -57,14 +58,16 @@ if status is-interactive
     end
 
     # Syntax Highlighting Colors
+    # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
     set -g fish_color_normal $foreground
     set -g fish_color_command $green
     set -g fish_color_keyword $orange
     set -g fish_color_quote $yellow
-    set -g fish_color_redirection $foreground
+    set -g fish_color_redirection $purple
     set -g fish_color_end $orange
     set -g fish_color_error $red
     set -g fish_color_param $foreground
+    set -g fish_color_option $cyan
     set -g fish_color_comment $comment
     set -g fish_color_selection --background=$selection
     set -g fish_color_search_match --background=$selection
@@ -84,6 +87,9 @@ if status is-interactive
     # abbreviations
     abbr --add dotdot --regex '^\.\.+$' --function multicd
     abbr -a !! --position anywhere --function last_history_item
+
+    # alias
+    alias unset 'set --erase'
 
     # use vi mode on prompt
     fish_vi_key_bindings

@@ -26,7 +26,9 @@
     process = git-lfs filter-process
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
-
+# prefer ssh to https
+[url "ssh://git@github.com/"]
+        insteadOf = https://github.com/
 # use separate file for user info
 # .gitconfig.local includes default git user info, as well as other stuff.
 # if the repo is inside the ~/work directory, load the work git config,
@@ -49,8 +51,6 @@
 [init]
     defaultBranch = main
 [credential "https://github.com"]
-    helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-    helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
