@@ -38,6 +38,7 @@ then
 elseif (theme == "electronhighlighter")
 then
   require("electron_highlighter").setup({
+    style = "night",
     styles = {
       sidebars = "transparent",
       floats = "transparent",
