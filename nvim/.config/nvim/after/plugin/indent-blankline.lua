@@ -6,6 +6,6 @@ if not status_ok then
 end
 
 indent_blankline.setup {
-  char = '',
   show_trailing_blankline_indent = false,
+  show_end_of_line = false,
 }
