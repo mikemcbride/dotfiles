@@ -6,42 +6,18 @@ if not status_ok then
 end
 
 local theme = "auto"
-
--- if theme is tokyonight or electronhighlighter then we'll set some custom colors.
--- otherwise just use "auto" and let it be good enough
-local terminal_theme = vim.env.CURRENT_THEME
-if (terminal_theme == "tokyonight")
-then
-  theme = "tokyonight"
-  local custom_tokyonight_ok, custom_tokyonight = pcall(require, "lualine.themes.tokyonight")
-  if custom_tokyonight_ok then
-    local eh_colors = require("tokyonight.colors").setup({ transform = true })
-    custom_tokyonight.command = {
-      a = { bg = eh_colors.orange, fg = eh_colors.black },
-      b = { bg = eh_colors.fg_gutter, fg = eh_colors.orange },
-    }
-    custom_tokyonight.insert = {
-      a = { bg = eh_colors.teal, fg = eh_colors.black },
-      b = { bg = eh_colors.fg_gutter, fg = eh_colors.teal },
-    }
-    theme = custom_tokyonight
-  end
-elseif (terminal_theme == "electronhighlighter")
-then
-  theme = "electron_highlighter"
-  local custom_electron_highlighter_ok, custom_electron_highlighter = pcall(require, "lualine.themes.electron_highlighter")
-  if custom_electron_highlighter_ok then
-    local eh_colors = require("electron_highlighter.colors").setup({ transform = true })
-    custom_electron_highlighter.command = {
-      a = { bg = eh_colors.orange, fg = eh_colors.black },
-      b = { bg = eh_colors.fg_gutter, fg = eh_colors.orange },
-    }
-    custom_electron_highlighter.insert = {
-      a = { bg = eh_colors.teal, fg = eh_colors.black },
-      b = { bg = eh_colors.fg_gutter, fg = eh_colors.teal },
-    }
-    theme = custom_electron_highlighter
-  end
+local custom_electron_highlighter_ok, custom_electron_highlighter = pcall(require, "lualine.themes.electron_highlighter")
+if custom_electron_highlighter_ok then
+  local eh_colors = require("electron_highlighter.colors").setup({ transform = true })
+  custom_electron_highlighter.command = {
+    a = { bg = eh_colors.orange, fg = eh_colors.black },
+    b = { bg = eh_colors.fg_gutter, fg = eh_colors.orange },
+  }
+  custom_electron_highlighter.insert = {
+    a = { bg = eh_colors.teal, fg = eh_colors.black },
+    b = { bg = eh_colors.fg_gutter, fg = eh_colors.teal },
+  }
+  theme = custom_electron_highlighter
 end
 
 lualine.setup {
