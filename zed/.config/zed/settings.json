@@ -5,13 +5,14 @@
     "features": {
         "copilot": false
     },
-    "buffer_font_family": "BerkeleyMono Nerd Font",
+    "buffer_font_family": "MonoLisa",
     "buffer_font_size": 16,
-    "theme": "One Light",
+    "theme": "Atelier Cave Light",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
     "vim_mode": true,
     "tab_size": 2,
+    "relative_line_numbers": true,
     "language_overrides": {
         "Markdown": {
             "soft_wrap": "preferred_line_length"

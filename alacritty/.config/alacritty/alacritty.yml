@@ -1,0 +1,36 @@
+window:
+  padding:
+    x: 8
+    y: 0
+font:
+  normal:
+    family: MonoLisa Nerd Font
+  bold:
+    family: MonoLisa Nerd Font
+  size: 16
+colors:
+  primary:
+    background: '#1a212c'
+    foreground: '#a8b5d1'
+  cursor:
+    cursor: '#34febb'
+    text: '#141820'
+  normal:
+    red: '#ff5874'
+    yellow: '#fffa9e'
+    green: '#6af699'
+    cyan: '#4ff2f8'
+    blue: '#82aaff'
+    magenta: '#c792ea'
+    black: '#141820'
+    gray: '#99a3b8'
+    white: '#a8b5d1'
+  bright:
+    red: '#ff5874'
+    yellow: '#fffa9e'
+    green: '#6af699'
+    cyan: '#4ff2f8'
+    blue: '#82aaff'
+    magenta: '#c792ea'
+    black: '#506686'
+    white: '#a8b5d1'

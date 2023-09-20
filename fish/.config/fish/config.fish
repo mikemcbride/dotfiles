@@ -2,30 +2,15 @@ if status is-interactive
     # default greeting is 'Welcome to fish, the friendly interactive shell'
     set fish_greeting ''
 
-    # colorscheme can be one of: gruvbox | tokyonight | electronhighlighter
+    # colorscheme can be one of: gruvbox | electronhighlighter
     # this will set themes for tmux, fish, and vim.
     # ideally I'd like this to set the Kitty theme too, but haven't figured that out yet.
     # first, set it locally so we can use it here.
-    # set -l theme "electronhighlighter"
-    set -l theme "gruvbox"
+    set -l theme "electronhighlighter"
+    # set -l theme "gruvbox"
 
     # now export it so other programs can use it
     set -x CURRENT_THEME $theme
-
-    if  test "$theme" = "tokyonight"
-        # TokyoNight Color Palette
-        set foreground c0caf5
-        set selection 364A82
-        set comment 565f89
-        set red f7768e
-        set orange ff9e64
-        set yellow e0af68
-        set green 9ece6a
-        set blue 7aa2f7
-        set purple 9d7cd8
-        set cyan 73daca
-        set pink bb9af7
-    end
 
     if test "$theme" = "gruvbox"
         # Gruvbox Material Color Palette
@@ -67,7 +52,7 @@ if status is-interactive
     set -g fish_color_end $orange
     set -g fish_color_error $red
     set -g fish_color_param $foreground
-    set -g fish_color_option $cyan
+    set -g fish_color_option $yellow
     set -g fish_color_comment $comment
     set -g fish_color_selection --background=$selection
     set -g fish_color_search_match --background=$selection
@@ -125,5 +110,6 @@ if status is-interactive
     set -x GUM_CHOOSE_CURSOR " "
     set -x GUM_CHOOSE_SELECTED_FOREGROUND "6"
 
+    direnv hook fish | source
     starship init fish | source
 end
