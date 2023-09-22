@@ -5,13 +5,12 @@ add_newline = false
 # add/remove $line_break\ before $character\ to get prompt character on same line as prompt
 
 format = """\
-  $time\
   $directory\
   $git_branch\
   $git_status\
   $golang\
-  $nodejs\
   $line_break\
+  $time\
   $character\
 """
 
@@ -43,8 +42,9 @@ format = "[$time]($style) "
 
 [git_branch]
 style = "purple"
-symbol = "git:"
-# symbol = " "
+# symbol = "git"
+symbol = ""
+format = '[$symbol:$branch]($style) '
 
 [git_status]
 style = "bright-yellow"
