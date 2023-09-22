@@ -44,6 +44,9 @@ lsp.ensure_installed({
   'gopls',
   'tsserver',
   'tailwindcss',
+  'terraformls',
+  'yamlls',
+  'bashls',
 })
 
 lsp.nvim_workspace()
