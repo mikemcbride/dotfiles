@@ -44,7 +44,7 @@ format = "[$time]($style) "
 style = "purple"
 # symbol = "git"
 symbol = ""
-format = '[$symbol:$branch]($style) '
+format = '[$symbol $branch]($style) '
 
 [git_status]
 style = "bright-yellow"
