@@ -35,8 +35,8 @@ format = "[$path ]($style)[$read_only]($read_only_style)"
 # show the time in the prompt
 [time]
 disabled = false
-# style = "bright-black dimmed" # use with all other themes
-style = "#506686" # use with electron-highlighter theme
+style = "bright-black" # use with all other themes
+# style = "#506686" # use with electron-highlighter theme
 time_format = "[%T]"
 format = "[$time]($style) "
 

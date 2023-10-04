@@ -8,25 +8,21 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Telescope
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = '[S]earch [G]it Files' })
-
 -- Formatting
 vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
 
--- Toggle explore panel, but do it as a sidebar
+-- Toggle explore panel
+-- using telescope file browser instead - see keymap in telescope.lua
 -- vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
-vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true })
 
+-- stole these next three from ThePrimeagen, that beautiful genius:
 -- greatest remap ever
 -- don't replace paste buffer when pasting over highlighted text
 vim.keymap.set("x", "<leader>p", "\"_dP", { silent = true })
 
--- stole these next two from ThePrimeagen, that beautiful genius:
 -- tmux-sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { silent = true })
- 
+
 -- make the current file executable from within the file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -45,9 +41,8 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 
 -- Close buffers
-vim.keymap.set("n", "<leader>bd", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
-vim.keymap.set("n", "<leader>w", ":Bdelete<cr>", { silent = true }) -- same as above
-vim.keymap.set("n", "<leader>bD", ":bufdo :Bdelete<cr>", { silent = true }) -- close all open buffers, but don't quit neovim.
+vim.keymap.set("n", "<leader>w", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
+vim.keymap.set("n", "<leader>W", ":Bdelete!<cr>", { silent = true }) -- close current buffer, even if it has unsaved changes
 
 
 -- Visual --

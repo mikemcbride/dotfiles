@@ -27,4 +27,12 @@
             "}"
         ]
     },
+    "Error Handling": {
+        "prefix": "ge",
+        "body": [
+            "if ${1:err} != nil {",
+            "\t${2:return err}",
+            "}"
+        ]
+    }
 }
