@@ -2,18 +2,44 @@ if status is-interactive
     # default greeting is 'Welcome to fish, the friendly interactive shell'
     set fish_greeting ''
 
-    # Electron Highlighter Color Palette
-    set foreground a8b5d1
-    set selection 364a82
-    set comment 506686
-    set red f7768e
-    set orange ff9e64
-    set yellow ffbf7a
-    set green 6af699
-    set blue 82aaff
-    set purple c792ea
-    set cyan 4ff2f8
-    set pink ff007c
+
+    # colorscheme can be one of: gruvbox | electronhighlighter
+    # this will set themes for tmux, fish, and vim.
+    # ideally I'd like this to set the Kitty theme too, but haven't figured that out yet.
+    # first, set it locally so we can use it here.
+    set -l theme "electronhighlighter"
+    # set -l theme "gruvbox"
+
+    # now export it so other programs can use it
+    set -x CURRENT_THEME $theme
+
+    if test "$theme" = "gruvbox"
+        # Gruvbox Material Color Palette
+        set foreground d4be98
+        set selection 665c54
+        set comment 928374
+        set red ea6962
+        set orange e78a4e
+        set yellow e78a4e
+        set green a9b665
+        set blue 7daea3
+        set purple d3869b
+        set cyan 89b482
+    end
+
+    if test "$theme" = "electronhighlighter"
+        # Electron Highlighter Color Palette
+        set foreground a8b5d1
+        set selection 364a82
+        set comment 506686
+        set red f7768e
+        set orange ff9e64
+        set yellow ffbf7a
+        set green 6af699
+        set blue 82aaff
+        set purple c792ea
+        set cyan 4ff2f8
+    end
 
     # Syntax Highlighting Colors
     # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
@@ -75,12 +101,12 @@ if status is-interactive
     set -x GUM_FILTER_TEXT_FOREGROUND "7" # gray
     set -x GUM_FILTER_MATCH_FOREGROUND "3" # yellow
     set -x GUM_FILTER_PROMPT_FOREGROUND "5" # purple
-    set -x GUM_FILTER_PROMPT " "
-    set -x GUM_FILTER_INDICATOR "ﰲ"
+    set -x GUM_FILTER_PROMPT "❯ "
+    set -x GUM_FILTER_INDICATOR "→"
     set -x GUM_FILTER_REVERSE "true"
     set -x GUM_FILTER_HEIGHT "0"
     set -x GUM_CHOOSE_CURSOR_FOREGROUND "6"
-    set -x GUM_CHOOSE_CURSOR " "
+    set -x GUM_CHOOSE_CURSOR "→ "
     set -x GUM_CHOOSE_SELECTED_FOREGROUND "6"
 
     direnv hook fish | source

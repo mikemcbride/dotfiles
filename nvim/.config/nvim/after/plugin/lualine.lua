@@ -6,18 +6,15 @@ if not status_ok then
 end
 
 local theme = "auto"
-local custom_electron_highlighter_ok, custom_electron_highlighter = pcall(require, "lualine.themes.electron_highlighter")
-if custom_electron_highlighter_ok then
-  local eh_colors = require("electron_highlighter.colors").setup({ transform = true })
-  custom_electron_highlighter.command = {
-    a = { bg = eh_colors.orange, fg = eh_colors.black },
-    b = { bg = eh_colors.fg_gutter, fg = eh_colors.orange },
-  }
-  custom_electron_highlighter.insert = {
-    a = { bg = eh_colors.teal, fg = eh_colors.black },
-    b = { bg = eh_colors.fg_gutter, fg = eh_colors.teal },
-  }
-  theme = custom_electron_highlighter
+-- if theme is electronhighlighter or gruvbox then we'll set some custom colors.
+-- otherwise just use "auto" and let it be good enough
+local terminal_theme = vim.env.CURRENT_THEME
+if (terminal_theme == "electronhighlighter")
+then
+  theme = "electron_highlighter"
+elseif (terminal_theme == "gruvbox")
+then
+  theme = "gruvbox_material"
 end
 
 lualine.setup {

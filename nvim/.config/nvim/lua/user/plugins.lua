@@ -1,4 +1,5 @@
 return {
+  { 'mikemcbride/gruvbox-material.nvim', priority = 1000 },
   { 'electron-highlighter/nvim', priority = 1000 },
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -53,7 +54,7 @@ return {
   'lewis6991/gitsigns.nvim',
 
   'nvim-lualine/lualine.nvim',
-  'lukas-reineke/indent-blankline.nvim',
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   'numToStr/Comment.nvim',
   'tpope/vim-sleuth',
 

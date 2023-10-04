@@ -147,7 +147,7 @@ local section_mru = {
 		{
 			type = "group",
 			val = function()
-				return { mru(0, cdir) }
+				return { mru(0, cdir, 10) }
 			end,
 			opts = { shrink_margin = false },
 		},
