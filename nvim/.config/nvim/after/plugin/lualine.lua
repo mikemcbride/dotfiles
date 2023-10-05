@@ -15,6 +15,9 @@ then
 elseif (terminal_theme == "gruvbox")
 then
   theme = "gruvbox_material"
+elseif (terminal_theme == "eighties")
+then
+  theme = "eighties"
 end
 
 lualine.setup {

@@ -47,7 +47,7 @@ symbol = ""
 format = '[$symbol $branch]($style) '
 
 [git_status]
-style = "bright-yellow"
+style = "yellow"
 deleted = "×"
 
 # remove bold styling from language prompts
