@@ -1,5 +1,6 @@
 return {
   { 'mikemcbride/gruvbox-material.nvim', priority = 1000 },
+  { 'mikemcbride/eighties.nvim', priority = 1000 },
   { 'electron-highlighter/nvim', priority = 1000 },
   {
     'VonHeikemen/lsp-zero.nvim',

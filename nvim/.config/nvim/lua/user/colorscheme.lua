@@ -19,6 +19,20 @@ then
     },
   })
   vim.cmd.colorscheme "gruvbox_material"
+elseif (theme == "eighties")
+then
+  require("eighties").setup({
+    transparent_mode = true,
+    bold = false,
+    inverse = false,
+    italic = {
+      strings = false,
+      comments = false,
+      operators = false,
+      folds = false,
+    },
+  })
+  vim.cmd.colorscheme "eighties"
 elseif (theme == "electronhighlighter")
 then
   require("electron_highlighter").setup({
