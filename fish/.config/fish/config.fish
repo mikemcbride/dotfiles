@@ -7,8 +7,8 @@ if status is-interactive
     # this will set themes for tmux, fish, and vim.
     # ideally I'd like this to set the Kitty theme too, but haven't figured that out yet.
     # first, set it locally so we can use it here.
-    # set -l theme "electronhighlighter"
-    set -l theme "gruvbox"
+    set -l theme "electronhighlighter"
+    # set -l theme "gruvbox"
     # set -l theme "eighties"
 
     # now export it so other programs can use it
