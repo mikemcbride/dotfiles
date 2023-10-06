@@ -1,6 +1,8 @@
 return {
-  { 'mikemcbride/gruvbox-material.nvim', priority = 1000 },
-  { 'mikemcbride/eighties.nvim', priority = 1000 },
+  -- spending too much time tinkering with this.
+  -- I really like these other color schemes, but for now I'm just sticking with EH.
+  -- { 'mikemcbride/gruvbox-material.nvim', priority = 1000 },
+  -- { 'mikemcbride/eighties.nvim', priority = 1000 },
   { 'electron-highlighter/nvim', priority = 1000 },
   {
     'VonHeikemen/lsp-zero.nvim',
