@@ -50,23 +50,20 @@ I used to tell you to install 1Password here, but that's no longer really necess
 
 ### Scripts
 
-We'll start in the home directory. If we have any existing configuration files, we need to kill those. Ideally we don't have a `~/.config` directory, but if so... you probably need to delete it. Store your existing configs somewhere else for the time being and re-apply afterwards.
-
-```sh
-cd ~
-rm -rf ~/.config
-```
-
-Now we're going to install some global node modules that we'll use to accomplish various things:
+We'll start in the home directory. We're going to install some global node modules that we'll use to accomplish various things:
 
 ```sh
 npm i -g empty-trash-cli fkill-cli np trash-cli convert-color-cli yarn vtop
 ```
 
+> *NOTE*
+> I used to install my dotfiles in my home directory, but I prefer to keep all my personal GitHub repos under the `~/personal` directory and all my work-related repos under `~/work`. This caused some hacks when dealing with my dotfiles because I always had to treat this repo differently. Luckily, you can pass a `target` flag to `stow` and override the default behavior.
+
 Now that we've got all that installed, we'll set up the dotfiles:
 
 ```sh
-cd ~
+mkdir -p ~/personal
+cd ~/personal
 git clone https://github.com/mikemcbride/dotfiles.git
 ```
 
@@ -80,14 +77,14 @@ We'll use Homebrew Bundle to look at our Bundle file and install a bunch of stuf
 
 ```sh
 brew tap Homebrew/bundle
-cd ~/dotfiles && brew bundle
+cd ~/personal/dotfiles && brew bundle
 ```
 
 Now we're going to set up a bunch of symlinks to link things from this repo to the user directory:
 
 ```sh
 rm ~/.gitconfig
-stow {nvim,bat,karabiner,starship,git,zed,bin,ripgrep}
+stow -t ~ {nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl}
 ```
 
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
@@ -99,19 +96,19 @@ go install github.com/tj/node-prune@latest
 Now we've got some dependencies to install for those utility scripts to work. Let's do that now:
 
 ```sh
-cd ~/dotfiles
+cd ~/personal/dotfiles
 npm install
 ```
 
 While we're in here, we probably want to set our file handling for common code file extensions to all open in Zed instead of whatever the OS decides to use to open the files:
 
 ```sh
-node ~/dotfiles/scripts/setDefaultApplications.js
+node ~/personal/dotfiles/scripts/setDefaultApplications.js
 ```
 
 ### Setup tmux plugins
 
-The `.tmux.conf` file uses plugins - we manage those with TPM (tmux plugin manager). TPM is a git repo that we clone to run everything, so we don't include it inside this repo. First, we'll clone the repo into the desired folder:
+The `.tmux.conf` file uses plugins - we manage those with TPM (tmux plugin manager). TPM is a git repo that we clone to run everything, so we don't include it inside this repo (yeah it could be a git submodule probably, but those are tedious and I'm lazy). First, we'll clone the repo into the desired folder:
 
 ```
 mkdir -p ~/.tmux/plugins
@@ -129,7 +126,7 @@ After that, press `prefix-I` to install TPM and all the plugins. Now TPM will be
 
 ### Choosing a shell
 
-Everybody likes a "choose-your-own-adventure" story, right? Let's do that with our shell. I like the fish shell a lot, but zsh is far more popular and, often more importantly for my job, POSIX compliant (devops... I run a lot of bash scripts). I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer.
+Everybody likes a "choose-your-own-adventure" story, right? Let's do that with our shell. I like the fish shell a lot, but zsh is far more popular and, often more importantly for my job, POSIX compliant (I run a lot of bash scripts). I have a setup for both shells that works pretty much the same. Just follow instructions below for whichever shell you prefer. In the `stow` command above we already set up both zsh and fish config files, so there's only a little setup left to do.
 
 <details>
 <summary>Install zsh</summary>
@@ -137,7 +134,6 @@ Everybody likes a "choose-your-own-adventure" story, right? Let's do that with o
 We'll install oh-my-zsh and install some plugins (we already have them defined in our zshrc).
 
 ```sh
-stow zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -160,7 +156,6 @@ source ~/.zshrc
 We've installed fish via homebrew already, so we'll install our config, then switch to fish.
 
 ```sh
-stow fish
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 ```
@@ -171,7 +166,7 @@ We'll install `fisher`, a plugin manager for the fish shell:
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go get` will be available to us as well (for starters, `node-prune`).
+If we're on an Apple Silicon Mac, we need to add a couple of directories to our `$PATH` so we can execute binaries installed via Homebrew. We'll also add our Go binaries path so anything we install with `go install` will be available to us as well (for starters, `node-prune`).
 
 ```sh
 fish_add_path /opt/homebrew/bin
@@ -195,7 +190,7 @@ fisher install rbenv/fish-rbenv
 
 </details>
 
-You'll want to look at the `.tmux.conf` file to set the default shell. There are some lines commented out at the bottom of the file. Two of the lines set zsh as the tmux shell, and two of them set fish as the shell. Comment/uncomment accordingly.
+:warning: You'll want to look at the `.tmux.conf` file to set the default shell. There are some lines commented out at the very bottom of the file. Two of the lines set zsh as the tmux shell, and two of them set fish as the shell. Comment/uncomment accordingly.
 
 ### Install script
 
