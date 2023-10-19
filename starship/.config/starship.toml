@@ -9,6 +9,7 @@ format = """\
   $git_branch\
   $git_status\
   $golang\
+  $nodejs\
   $line_break\
   $time\
   $character\

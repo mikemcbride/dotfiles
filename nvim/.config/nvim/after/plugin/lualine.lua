@@ -6,15 +6,12 @@ if not status_ok then
 end
 
 local theme = "auto"
--- if theme is electronhighlighter or gruvbox then we'll set some custom colors.
+-- if theme is electronhighlighter or eighties then we'll set some custom colors.
 -- otherwise just use "auto" and let it be good enough
 local terminal_theme = vim.env.CURRENT_THEME
 if (terminal_theme == "electronhighlighter")
 then
   theme = "electron_highlighter"
-elseif (terminal_theme == "gruvbox")
-then
-  theme = "gruvbox_material"
 elseif (terminal_theme == "eighties")
 then
   theme = "eighties"
