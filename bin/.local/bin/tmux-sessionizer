@@ -5,7 +5,7 @@ if [[ $# -eq 1 ]]; then
 else
     # find all directories in ~ up to 3 levels deep that have a .git folder
     # we'll use this to filter projects
-    selected=$(find ~ -mindepth 1 -maxdepth 3 -type d -and -name .git -prune | awk '{split($0, a, "/.git");print a[1]}' | gum filter --placeholder "Filter directories...")
+    selected=$(find ~/dotfiles ~/work ~/personal ~/two-beards ~/electron-highlighter -mindepth 1 -maxdepth 2 -type d -and -name .git -prune | awk '{split($0, a, "/.git");print a[1]}' | gum filter --placeholder "Filter directories...")
 
     # old approach below. this used a single-depth find command in multiple target directories.
     # selected=$(find ~ ~/personal ~/work ~/electron-highlighter -mindepth 1 -maxdepth 1 -type d | gum filter --placeholder "Filter directories...")
@@ -18,8 +18,10 @@ fi
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
+if [[ -z $TMUX ]]; then
+    # not in tmux. start a new session with the selected name.
+    # if a session already exists with that name, attach to it
+    tmux new-session -A -s $selected_name -c $selected
     exit 0
 fi
 
