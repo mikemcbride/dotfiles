@@ -13,8 +13,8 @@
   "homepage": "https://github.com/mikemcbride/dotfiles#readme",
   "dependencies": {
     "boxen": "^5.1.2",
-    "clipboardy": "^2.3.0",
-    "empty-trash": "^3.0.0",
+    "clipboardy": "^3.0.0",
+    "empty-trash": "^4.0.0",
     "execa": "^5.1.1",
     "inquirer": "^9.1.4",
     "internal-ip": "^7.0.0",
