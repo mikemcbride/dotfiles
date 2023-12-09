@@ -1,0 +1,67 @@
+# FONTS
+
+font-family = MonoLisa
+font-size = 16
+
+# font is a little too thin without this
+font-thicken = true
+
+# disable some font features
+# generally I don't really prefer any ligatures,
+# I find it distracting when characters shift around
+font-feature = "-calt"
+font-feature = "-liga"
+font-feature = "-dlig"
+
+
+# WINDOW
+
+window-padding-x = 6
+window-height = 60
+window-width = 120
+
+background-opacity = 0.97
+
+
+# COLORS
+
+background = #141820
+foreground = #a8b5d1
+selection-background = #283457
+selection-foreground = #a8b5d1
+
+palette = 0=#15161e
+palette = 1=#f7768e
+palette = 2=#34febb
+palette = 3=#ffbf7a
+palette = 4=#82aaff
+palette = 5=#c792ea
+palette = 6=#4ff2f8
+palette = 7=#99a3b8
+palette = 8=#506686
+palette = 9=#f7768e
+palette = 10=#34febb
+palette = 11=#ffbf7a
+palette = 12=#82aaff
+palette = 13=#c792ea
+palette = 14=#4ff2f8
+palette = 15=#a8b5d1
+palette = 16=#ffbf7a
+palette = 17=#ff5874
+
+
+# CURSOR
+
+cursor-color = #a8b5d1
+cursor-text = #1a1b26
+cursor-style = block
+cursor-style-blink = false
+
+
+# OTHER
+
+confirm-close-surface = false
+mouse-hide-while-typing = true
+shell-integration = none
+clipboard-read = "allow"
+
