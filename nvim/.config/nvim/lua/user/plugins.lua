@@ -1,5 +1,6 @@
 return {
-  -- { 'mikemcbride/eighties.nvim', priority = 1000 },
+  -- { "mikemcbride/eighties.nvim", priority = 1000 },
+  -- { "mikemcbride/gruvbox-material.nvim", priority = 1000, as = "gruvbox_material" },
   { 'electron-highlighter/nvim', priority = 1000 },
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -26,8 +27,8 @@ return {
   },
 
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    "stevearc/conform.nvim",
+    opts = {},
   },
   {
     "olexsmir/gopher.nvim",
@@ -72,10 +73,10 @@ return {
     cond = vim.fn.executable 'make' == 1
   },
 
-  {
-      "nvim-telescope/telescope-file-browser.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  },
+  -- {
+  --     "nvim-telescope/telescope-file-browser.nvim",
+  --     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  -- },
 
   "akinsho/bufferline.nvim", -- buffers appear like tabs
   "moll/vim-bbye", -- close buffers

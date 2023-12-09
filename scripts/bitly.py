@@ -14,67 +14,71 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import urllib.request, urllib.parse, urllib.error
-import string
-import sys
+    import urllib.request, urllib.parse, urllib.error
+    import string
+    import sys
+
 try:
-   import simplejson
+    import simplejson
 except ImportError:
-   import json as simplejson
+    import json as simplejson
 
 # Register an account at bit.ly and then copy your username and key from here:
 # http://bit.ly/a/account
 
-API_USERNAME = 'o_6q7pqflmfh'
-API_KEY = 'R_10a4fe77d42583dbd9b238f6a9c1e7cc'
+API_USERNAME = "o_6q7pqflmfh"
+API_KEY = "R_10a4fe77d42583dbd9b238f6a9c1e7cc"
 
 BITLY_BASE_URL = "http://api.bit.ly/"
 BITLY_API_VERSION = "2.0.1"
 
 VERBS_PARAM = {
-         'shorten':'longUrl',
-         'expand':'shortUrl',
-         'info':'shortUrl',
-         'stats':'shortUrl',
-         'errors':'',
+    "shorten": "longUrl",
+    "expand": "shortUrl",
+    "info": "shortUrl",
+    "stats": "shortUrl",
+    "errors": "",
 }
 
-class BitlyError(Exception):
-  '''Base class for bitly errors'''
 
-  @property
-  def message(self):
-    '''Returns the first argument used to construct this error.'''
-    return self.args[0]
+class BitlyError(Exception):
+    """Base class for bitly errors"""
+
+    @property
+    def message(self):
+        """Returns the first argument used to construct this error."""
+        return self.args[0]
+
 
 class Api(object):
-    """ API class for bit.ly """
+    """API class for bit.ly"""
+
     def __init__(self, login, apikey):
         self.login = login
         self.apikey = apikey
         self._urllib = urllib
 
-    def shorten(self,longURLs,params={}):
+    def shorten(self, longURLs, params={}):
         """
-            Takes either:
-            A long URL string and returns shortened URL string
-            Or a list of long URL strings and returns a list of shortened URL strings.
+        Takes either:
+        A long URL string and returns shortened URL string
+        Or a list of long URL strings and returns a list of shortened URL strings.
         """
         want_result_list = True
         if not isinstance(longURLs, list):
             longURLs = [longURLs]
             want_result_list = False
 
-        for index,url in enumerate(longURLs):
-            if not '://' in url:
+        for index, url in enumerate(longURLs):
+            if not "://" in url:
                 longURLs[index] = "http://" + url
 
-        request = self._getURL("shorten",longURLs,params)
+        request = self._getURL("shorten", longURLs, params)
         result = self._fetchUrl(request)
         json = simplejson.loads(result)
         self._CheckForError(json)
 
-        results = json['results']
+        results = json["results"]
         res = [self._extract_short_url(results[url]) for url in longURLs]
 
         if want_result_list:
@@ -82,66 +86,66 @@ class Api(object):
         else:
             return res[0]
 
-    def _extract_short_url(self,item):
-        if item['shortKeywordUrl'] == "":
-            return item['shortUrl']
+    def _extract_short_url(self, item):
+        if item["shortKeywordUrl"] == "":
+            return item["shortUrl"]
         else:
-            return item['shortKeywordUrl']
+            return item["shortKeywordUrl"]
 
-    def expand(self,shortURL,params={}):
-        """ Given a bit.ly url or hash, return long source url """
-        request = self._getURL("expand",shortURL,params)
+    def expand(self, shortURL, params={}):
+        """Given a bit.ly url or hash, return long source url"""
+        request = self._getURL("expand", shortURL, params)
         result = self._fetchUrl(request)
         json = simplejson.loads(result)
         self._CheckForError(json)
-        return json['results'][string.split(shortURL, '/')[-1]]['longUrl']
+        return json["results"][string.split(shortURL, "/")[-1]]["longUrl"]
 
-    def info(self,shortURL,params={}):
+    def info(self, shortURL, params={}):
         """
         Given a bit.ly url or hash,
         return information about that page,
         such as the long source url
         """
-        request = self._getURL("info",shortURL,params)
+        request = self._getURL("info", shortURL, params)
         result = self._fetchUrl(request)
         json = simplejson.loads(result)
         self._CheckForError(json)
-        return json['results'][string.split(shortURL, '/')[-1]]
+        return json["results"][string.split(shortURL, "/")[-1]]
 
-    def stats(self,shortURL,params={}):
-        """ Given a bit.ly url or hash, return traffic and referrer data.  """
-        request = self._getURL("stats",shortURL,params)
+    def stats(self, shortURL, params={}):
+        """Given a bit.ly url or hash, return traffic and referrer data."""
+        request = self._getURL("stats", shortURL, params)
         result = self._fetchUrl(request)
         json = simplejson.loads(result)
         self._CheckForError(json)
-        return Stats.NewFromJsonDict(json['results'])
+        return Stats.NewFromJsonDict(json["results"])
 
-    def errors(self,params={}):
-        """ Get a list of bit.ly API error codes. """
-        request = self._getURL("errors","",params)
+    def errors(self, params={}):
+        """Get a list of bit.ly API error codes."""
+        request = self._getURL("errors", "", params)
         result = self._fetchUrl(request)
         json = simplejson.loads(result)
         self._CheckForError(json)
-        return json['results']
+        return json["results"]
 
     def setUrllib(self, urllib):
-        '''Override the default urllib implementation.
+        """Override the default urllib implementation.
 
         Args:
           urllib: an instance that supports the same API as the urllib module
-        '''
+        """
         self._urllib = urllib
 
-    def _getURL(self,verb,paramVal,more_params={}):
+    def _getURL(self, verb, paramVal, more_params={}):
         if not isinstance(paramVal, list):
             paramVal = [paramVal]
 
         params = {
-                  'version':BITLY_API_VERSION,
-                  'format':'json',
-                  'login':self.login,
-                  'apiKey':self.apikey,
-            }
+            "version": BITLY_API_VERSION,
+            "format": "json",
+            "login": self.login,
+            "apiKey": self.apikey,
+        }
 
         params.update(more_params)
         params = list(params.items())
@@ -149,20 +153,20 @@ class Api(object):
         verbParam = VERBS_PARAM[verb]
         if verbParam:
             for val in paramVal:
-                params.append(( verbParam,val ))
+                params.append((verbParam, val))
 
         encoded_params = urllib.parse.urlencode(params)
-        return "%s%s?%s" % (BITLY_BASE_URL,verb,encoded_params)
+        return "%s%s?%s" % (BITLY_BASE_URL, verb, encoded_params)
 
-    def _fetchUrl(self,url):
-        '''Fetch a URL
+    def _fetchUrl(self, url):
+        """Fetch a URL
 
         Args:
           url: The URL to retrieve
 
         Returns:
           A string containing the body of the response.
-        '''
+        """
 
         # Open and return the URL
         url_data = self._urllib.request.urlopen(url).read()
@@ -178,48 +182,56 @@ class Api(object):
         """
         # bitly errors are relatively unlikely, so it is faster
         # to check first, rather than try and catch the exception
-        if 'ERROR' in data or data['statusCode'] == 'ERROR':
-            raise BitlyError(data['errorMessage'])
-        for key in data['results']:
-            if type(data['results']) is dict and type(data['results'][key]) is dict:
-                if 'statusCode' in data['results'][key] and data['results'][key]['statusCode'] == 'ERROR':
-                    raise BitlyError(data['results'][key]['errorMessage'])
+        if "ERROR" in data or data["statusCode"] == "ERROR":
+            raise BitlyError(data["errorMessage"])
+        for key in data["results"]:
+            if type(data["results"]) is dict and type(data["results"][key]) is dict:
+                if (
+                    "statusCode" in data["results"][key]
+                    and data["results"][key]["statusCode"] == "ERROR"
+                ):
+                    raise BitlyError(data["results"][key]["errorMessage"])
+
 
 class Stats(object):
-    '''A class representing the Statistics returned by the bitly api.
+    """A class representing the Statistics returned by the bitly api.
 
     The Stats structure exposes the following properties:
     status.user_clicks # read only
     status.clicks # read only
-    '''
+    """
 
-    def __init__(self,user_clicks=None,total_clicks=None):
+    def __init__(self, user_clicks=None, total_clicks=None):
         self.user_clicks = user_clicks
         self.total_clicks = total_clicks
 
     @staticmethod
     def NewFromJsonDict(data):
-        '''Create a new instance based on a JSON dict.
+        """Create a new instance based on a JSON dict.
 
         Args:
           data: A JSON dict, as converted from the JSON in the bitly API
         Returns:
           A bitly.Stats instance
-        '''
-        return Stats(user_clicks=data.get('userClicks', None),
-                      total_clicks=data.get('clicks', None))
+        """
+        return Stats(
+            user_clicks=data.get("userClicks", None),
+            total_clicks=data.get("clicks", None),
+        )
+
 
 def main(argv):
     if len(sys.argv) < 2:
         print("Usage: bitly.py '[url]'")
         return 1
     if not API_USERNAME or not API_KEY:
-        print('API_USERNAME and API_KEY must be set.')
+        print("API_USERNAME and API_KEY must be set.")
         return 1
 
     shortUrl = Api(login=API_USERNAME, apikey=API_KEY).shorten(sys.argv[1])
     print(shortUrl)
     return 0
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sys.exit(main(sys.argv))
