@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
 
 -- Toggle explore panel
 -- using telescope file browser instead - see keymap in telescope.lua
--- vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
+vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
 
 -- stole these next three from ThePrimeagen, that beautiful genius:
 -- greatest remap ever

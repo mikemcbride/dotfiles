@@ -47,6 +47,7 @@ lsp.ensure_installed({
   'terraformls',
   'yamlls',
   'bashls',
+  'pyright',
 })
 
 lsp.nvim_workspace()

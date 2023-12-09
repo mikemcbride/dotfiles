@@ -3,28 +3,38 @@ vim.opt.background = "dark"
 -- so that we have something set if we don't match on environment variable
 vim.cmd.colorscheme "default"
 
--- local theme = vim.env.CURRENT_THEME
+local theme = vim.env.CURRENT_THEME
 
--- if (theme == "eighties")
--- then
--- -- main color palette
--- ---@class EightiesPalette
---   local Eighties = {}
---   Eighties.palette = {}
---   require("eighties").setup({
---     transparent_mode = true,
---     bold = false,
---     inverse = false,
---     italic = {
---       strings = false,
---       comments = false,
---       operators = false,
---       folds = false,
---     },
---   })
---   vim.cmd.colorscheme "eighties"
--- elseif (theme == "electronhighlighter")
--- then
+if (theme == "eighties")
+then
+  require("eighties").setup({
+    transparent_mode = true,
+    bold = false,
+    inverse = false,
+    italic = {
+      strings = false,
+      comments = false,
+      operators = false,
+      folds = false,
+    },
+  })
+  vim.cmd.colorscheme "eighties"
+elseif (theme == "gruvbox")
+then
+  require("gruvbox_material").setup({
+    transparent_mode = true,
+    bold = false,
+    inverse = false,
+    italic = {
+      strings = false,
+      comments = false,
+      operators = false,
+      folds = false,
+    },
+  })
+  vim.cmd.colorscheme "gruvbox_material"
+elseif (theme == "electronhighlighter")
+then
   require("electron_highlighter").setup({
     style = "night",
     transparent = true,
@@ -62,4 +72,4 @@ vim.cmd.colorscheme "default"
 
   })
   vim.cmd.colorscheme "electron_highlighter"
--- end
+end
