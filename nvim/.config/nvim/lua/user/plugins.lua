@@ -73,10 +73,10 @@ return {
     cond = vim.fn.executable 'make' == 1
   },
 
-  -- {
-  --     "nvim-telescope/telescope-file-browser.nvim",
-  --     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-  -- },
+  {
+      "nvim-telescope/telescope-file-browser.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
 
   "akinsho/bufferline.nvim", -- buffers appear like tabs
   "moll/vim-bbye", -- close buffers
