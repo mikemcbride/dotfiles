@@ -26,10 +26,7 @@ return {
     }
   },
 
-  {
-    "stevearc/conform.nvim",
-    opts = {},
-  },
+  "nvimtools/none-ls.nvim",
   {
     "olexsmir/gopher.nvim",
     ft = "go",
