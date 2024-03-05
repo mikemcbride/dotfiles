@@ -209,7 +209,7 @@ Got all that working? Great. Here's what we did:
 - set your shell to fish or zsh (depending what step you chose)
 - installed [Homebrew](http://brew.sh)
 - installed [Homebrew Bundle](https://github.com/Homebrew/homebrew-bundle) to make it easier to bulk install apps
-- cloned this repo into `~/dotfiles` and set up your fish configs
+- cloned this repo into `~/personal/dotfiles` and set up your fish configs
 - installed [starship](https://starship.rs) for managing our terminal prompt and set up a config for that
 - set up Neovim config
 - set up tmux config

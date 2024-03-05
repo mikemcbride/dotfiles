@@ -75,7 +75,7 @@ function promptQuestion() {
     inquirer.prompt(questions[questionIndex]).then(answer => {
         remainingGuesses--;
         getBestGuess(answer.guess)
-        if (availableWords.length  <= 1 || remainingGuesses === 0) {
+        if (availableWords.length <= 1 || remainingGuesses === 0) {
             return
         } else {
             console.log('---------------------------------')
@@ -85,10 +85,26 @@ function promptQuestion() {
 }
 
 function getBestGuess(data) {
+    parseWord(data)
+    // filter out words that have letters we know aren't possible
+    availableWords = getRemainingAvailableWords()
+    console.log('Number of possible words remaining:', availableWords.length)
+    if (availableWords.length === 1) {
+        console.log('The word is:', green(availableWords[0]))
+    } else {
+        console.log('My next guess would be:', green(availableWords[0]))
+        console.log('Some other good choices:', green(availableWords.slice(1, Math.min(availableWords.length, 11)).join(', ')))
+    }
+}
+
+// TODO: refactor this to be able to test words without altering the global state
+// I'd like to be able to re-use this function to test each word in the list to find the best guess.
+function parseWord(data) {
     let letters = data.split('')
     let nextLetterCorrectPlace = false
     let idx = 0
     for (let letter of letters) {
+        //  we use _ to denote correct letters in the correct place, so we need to skip over it
         if (nextLetterCorrectPlace === true) {
             nextLetterCorrectPlace = false
             // avoid pushing it in multiple times
@@ -125,8 +141,11 @@ function getBestGuess(data) {
             idx++
         }
     }
+}
+
+function getRemainingAvailableWords() {
     // filter out words that have letters we know aren't possible
-    availableWords = availableWords.filter(word => {
+    return availableWords.filter(word => {
         // if the word doesn't have a correct placement letter where we know one exists, it can't be right.
         if (!correctPlacement.every(pair => {
             const [l, i] = pair.split(':')
@@ -158,13 +177,14 @@ function getBestGuess(data) {
         }
         return true
     })
-    console.log('Number of possible words remaining:', availableWords.length)
-    if (availableWords.length === 1) {
-        console.log('The word is:', green(availableWords[0]))
-    } else {
-        console.log('My next guess would be:', green(availableWords[0]))
-        console.log('Some other good choices:', green(availableWords.slice(1, Math.min(availableWords.length, 11)).join(', ')))
-    }
+}
+
+// TODO: implement this to provide better sorting for word guesses
+// the ideal next guess is the word that eliminates the most possible other words.
+// the fastest way to do this is to check all remaining unknown letters in each word,
+// then count how many words would be removed if these unknowns are incorrect.
+function getOptimalSortOrder(words) {
+
 }
 
 function countLettersInWord(word, letter) {

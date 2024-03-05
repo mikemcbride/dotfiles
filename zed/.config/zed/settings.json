@@ -7,7 +7,7 @@
     },
     "buffer_font_family": "MonoLisa",
     "buffer_font_size": 16,
-    "theme": "Atelier Cave Light",
+    "theme": "One Light",
     "format_on_save": "off",
     "soft_wrap": "editor_width",
     "vim_mode": true,

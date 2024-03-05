@@ -10,5 +10,5 @@ For daily jobs, add this entry:
 
 ## Cron scripts
 
-All executable files live in `~/dotfiles/bin/.local/bin/` and are symlinked to a `~/.local/bin` directory which resides in my `$PATH`. It's best to follow the convention of naming files `cron-{interval}` to make it easy.
+All executable files live in `~/personal/dotfiles/bin/.local/bin/` and are symlinked to a `~/.local/bin` directory which resides in my `$PATH`. It's best to follow the convention of naming files `cron-{interval}` to make it easy.
 
