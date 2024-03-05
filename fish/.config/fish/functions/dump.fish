@@ -1,3 +1,3 @@
 function dump
-  node ~/dotfiles/scripts/emptyTrash.mjs
+  node ~/personal/dotfiles/scripts/emptyTrash.mjs
 end

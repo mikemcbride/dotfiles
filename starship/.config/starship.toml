@@ -10,6 +10,7 @@ format = """\
   $git_status\
   $golang\
   $nodejs\
+  $rust\
   $line_break\
   $time\
   $character\
@@ -61,6 +62,11 @@ format = '[$symbol$version]($style) '
 style = "bright-green"
 symbol = " "
 format = '[$symbol$version]($style) '
+
+[rust]
+style = "red"
+symbol = " "
+format = '[$symbol$version]($style)'
 
 [kubernetes]
 disabled = false

@@ -2,7 +2,7 @@
 # clone will copy the new repo url,
 # we just need to paste it afterwards
 function clone() {
-  node ~/dotfiles/scripts/clone.mjs $1 && cd $(pbpaste)
+  node ~/personal/dotfiles/scripts/clone.mjs $1 && cd $(pbpaste)
 }
 
 function dir-finder {

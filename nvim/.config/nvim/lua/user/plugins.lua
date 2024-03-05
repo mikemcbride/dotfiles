@@ -1,7 +1,5 @@
 return {
-  -- { "mikemcbride/eighties.nvim", priority = 1000 },
-  -- { "mikemcbride/gruvbox-material.nvim", priority = 1000, as = "gruvbox_material" },
-  { 'electron-highlighter/nvim', priority = 1000 },
+  { 'electron-highlighter/nvim', priority = 1000, name = "electron_highlighter" },
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
@@ -9,7 +7,7 @@ return {
       'neovim/nvim-lspconfig',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      {'j-hui/fidget.nvim', tag = 'legacy'},
+      { 'j-hui/fidget.nvim', tag = 'legacy' },
       'folke/neodev.nvim',
 
       -- Autocompletion
@@ -25,7 +23,7 @@ return {
       'rafamadriz/friendly-snippets',
     }
   },
-
+  "zbirenbaum/copilot.lua",
   "nvimtools/none-ls.nvim",
   {
     "olexsmir/gopher.nvim",
@@ -52,7 +50,7 @@ return {
   'lewis6991/gitsigns.nvim',
 
   'nvim-lualine/lualine.nvim',
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",   opts = {} },
   'numToStr/Comment.nvim',
   'tpope/vim-sleuth',
 
@@ -71,14 +69,14 @@ return {
   },
 
   {
-      "nvim-telescope/telescope-file-browser.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
-  "akinsho/bufferline.nvim", -- buffers appear like tabs
-  "moll/vim-bbye", -- close buffers
+  "akinsho/bufferline.nvim",                 -- buffers appear like tabs
+  "moll/vim-bbye",                           -- close buffers
   "goolord/alpha-nvim",
-  "ur4ltz/move.nvim", -- move lines
+  "ur4ltz/move.nvim",                        -- move lines
   "nvim-treesitter/nvim-treesitter-context", -- sticky function headers
   "JoosepAlviste/nvim-ts-context-commentstring",
   "kyazdani42/nvim-web-devicons",

@@ -34,11 +34,6 @@ require('nvim-treesitter.configs').setup {
   autopairs = {
     enable = true,
   },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
-
   incremental_selection = {
     enable = true,
     keymaps = {
