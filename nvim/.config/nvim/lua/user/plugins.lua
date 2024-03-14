@@ -73,10 +73,14 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
+  -- move lines
+  {
+    "fedepujol/move.nvim",
+    opts = {}
+  },
   "akinsho/bufferline.nvim",                 -- buffers appear like tabs
   "moll/vim-bbye",                           -- close buffers
   "goolord/alpha-nvim",
-  "ur4ltz/move.nvim",                        -- move lines
   "nvim-treesitter/nvim-treesitter-context", -- sticky function headers
   "JoosepAlviste/nvim-ts-context-commentstring",
   "kyazdani42/nvim-web-devicons",
