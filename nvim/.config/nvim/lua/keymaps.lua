@@ -11,6 +11,12 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Formatting
 vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
 
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
 -- Toggle explore panel
 -- using telescope file browser instead - see keymap in telescope.lua
 -- vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
@@ -41,8 +47,7 @@ vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 
 -- Close buffers
-vim.keymap.set("n", "<leader>w", ":Bdelete<cr>", { silent = true }) -- close current buffer. won't quit neovim if it's the only open buffer.
-vim.keymap.set("n", "<leader>W", ":Bdelete!<cr>", { silent = true }) -- close current buffer, even if it has unsaved changes
+vim.keymap.set("n", "<leader>w", ":bd<cr>", { silent = true })
 
 
 -- Visual --
@@ -51,25 +56,11 @@ vim.keymap.set("v", "<", "<gv", { silent = true })
 vim.keymap.set("v", ">", ">gv", { silent = true })
 
 
--- [[ Move Lines plugin ]] --
--- ignore the weird symbols, it's a weird thing with macOS mapping option/alt + key to a symbol.
-
--- normal mode
-vim.keymap.set('n', '˙', ":MoveHChar(-1)<CR>", { silent = true }) -- Alt-h
-vim.keymap.set('n', '∆', ":MoveLine(1)<CR>", { silent = true }) -- Alt-j
-vim.keymap.set('n', '¬', ":MoveHChar(1)<CR>", { silent = true }) -- Alt-l
-vim.keymap.set('n', '˚', ":MoveLine(-1)<CR>", { silent = true }) -- Alt-k
-
+-- Move Lines
 -- visual mode
-vim.keymap.set('v', '˙', ":MoveHBlock(-1)<CR>", { silent = true }) -- Alt-h
-vim.keymap.set('v', '∆', ":MoveBlock(1)<CR>", { silent = true }) -- Alt-j
-vim.keymap.set('v', '˚', ":MoveBlock(-1)<CR>", { silent = true }) -- Alt-k
-vim.keymap.set('v', '¬', ":MoveHBlock(1)<CR>", { silent = true }) -- Alt-l
-
--- visual block mode
-vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { silent = true })
-vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { silent = true })
-vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", { silent = true })
-vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", { silent = true })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('v', 'K', ":move '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("x", "J", ":move '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("x", "K", ":move '<-2<CR>gv=gv", { silent = true })
 
 

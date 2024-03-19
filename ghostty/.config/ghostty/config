@@ -1,7 +1,6 @@
 # FONTS
 
-# font-family = MonoLisa
-font-family = JetBrains Mono
+font-family = MonoLisa Custom
 font-size = 16
 
 # font is a little too thin without this
