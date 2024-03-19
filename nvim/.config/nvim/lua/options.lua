@@ -54,8 +54,8 @@ vim.o.pumheight = 10
 -- we don't need to see things like -- INSERT -- anymore
 vim.o.showmode = false
 
--- always show tabs
-vim.o.showtabline = 2
+-- never show tabs
+vim.o.showtabline = 0
 
 -- make indenting smarter again
 vim.o.smartindent = true

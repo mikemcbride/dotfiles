@@ -1,3 +1,6 @@
+-- TODO: going to redo LSP from scratch instead of using lsp-zero.
+-- as part of that, we'll move it to the lazy plugins folder.
+-- for now, I'm not ready to lose LSP so it stays here.
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
