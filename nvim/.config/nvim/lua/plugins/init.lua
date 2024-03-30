@@ -32,4 +32,8 @@ return {
   },
   'tpope/vim-sleuth',
   "kyazdani42/nvim-web-devicons",
+  {
+    "laytan/cloak.nvim",
+    config = true
+  },
 }

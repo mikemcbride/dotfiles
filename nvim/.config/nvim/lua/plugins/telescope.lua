@@ -11,6 +11,9 @@ return {
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
         defaults = {
+          file_ignore_patterns = {
+            "node_modules"
+          },
           mappings = {
             i = {
               ['<C-u>'] = false,
@@ -19,6 +22,10 @@ return {
           },
         },
         pickers = {
+          find_files = {
+            -- I want to be able to search all files, including hidden and gitignored ones.
+            find_command = { 'rg', '--no-ignore', '--files', '--hidden' }
+          },
           buffers = {
             show_all_buffers = true,
             sort_lastused = true,
@@ -38,8 +45,8 @@ return {
         extensions = {
           file_browser = {
             theme = "ivy",
-            -- use_fd = true,
-            hidden = true,
+            hidden = true, -- show hidden files (dotfiles) in the file browser
+            no_ignore = true, -- show ignored files in the browser
             hijack_netrw = true,
             initial_mode = "normal",
             mappings = {
@@ -68,13 +75,15 @@ return {
         })
       end, { desc = '[/] Fuzzily search in current buffer]' })
 
-      vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true })
+      vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true }) -- todo: might be nice to remove another plugin and just use netrw
       vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
       vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = '[S]earch [G]it Files' })
       vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+      vim.keymap.set('n', '<leader>sr', require('telescope.builtin').oldfiles, { desc = '[S]earch [R]ecently opened files' })
       vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<C-t>', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
+      vim.keymap.set('n', '<C-p>', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
       vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
     end
   },

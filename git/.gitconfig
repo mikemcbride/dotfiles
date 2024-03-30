@@ -54,6 +54,3 @@
     helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
     helper = !/opt/homebrew/bin/gh auth git-credential
-[maintenance]
-	repo = /Users/mike/work/nebula-backstage-plugins
-	repo = /Users/mike/work/dv-df-template

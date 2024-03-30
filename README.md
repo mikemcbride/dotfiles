@@ -84,7 +84,7 @@ Now we're going to set up a bunch of symlinks to link things from this repo to t
 
 ```sh
 rm ~/.gitconfig
-stow -t ~ {ghostty,kitty,nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl}
+stow -t ~ {ghostty,nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl}
 ```
 
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
@@ -224,7 +224,6 @@ Got all that working? Great. Here's what we did:
   - [bat](https://github.com/sharkdp/bat) - a `cat` clone with awesome features
   - [wget](https://www.gnu.org/software/wget/) - better than curl for downloading resources from a url
 - installed a few desktop applications to make your life better:
-  - Kitty terminal
   - [1Password](https://1password.com)
   - [Raycast](https://raycast.com)
   - [Insomnia](https://insomnia.rest/)
