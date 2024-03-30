@@ -76,6 +76,7 @@ cmp.setup({
     { name = "luasnip",  group_index = 2 },
   },
   mapping = {
+    ["<C-y>"] = {}, -- disable the default mapping for control-y, we use that for copilot
     ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
     ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
     ["<CR>"] = cmp.mapping(
