@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 -- Toggle explore panel
 -- using telescope file browser instead - see keymap in telescope.lua
 -- vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
+vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
 
 -- stole these next three from ThePrimeagen, that beautiful genius:
 -- greatest remap ever
