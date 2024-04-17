@@ -1,7 +1,4 @@
 {
-    "project_panel": {
-        "dock": "right"
-    },
     "features": {
         "copilot": false
     },
