@@ -3,13 +3,14 @@ if status is-interactive
     set fish_greeting ''
 
 
-    # colorscheme can be one of: eighties | electronhighlighter | gruvbox
+    # colorscheme can be one of: eighties | electronhighlighter | gruvbox | catppuccin-mocha | early-riser
     # this will set themes for tmux, fish, and vim.
-    # ideally I'd like this to set the Kitty theme too, but haven't figured that out yet.
     # first, set it locally so we can use it here.
     # set -l theme "eighties"
     # set -l theme "gruvbox"
-    set -l theme "electronhighlighter"
+    set -l theme "catppuccin-mocha"
+    # set -l theme "early-riser"
+    # set -l theme "electronhighlighter"
 
     # now export it so other programs can use it
     set -x CURRENT_THEME $theme
@@ -41,6 +42,32 @@ if status is-interactive
         set blue 82aaff
         set purple c792ea
         set cyan 4ff2f8
+    end
+
+    if test "$theme" = "catppuccin-mocha"
+        set foreground cdd6f4
+        set selection 45475a
+        set comment 6c7086
+        set red f38ba8
+        set orange fab387
+        set yellow f9e2af
+        set green a6e3a1
+        set blue 89b4fa
+        set purple cba6f7
+        set cyan 89dceb
+    end
+
+    if test "$theme" = "early-riser"
+        set foreground 424c57
+        set selection cedcf9
+        set comment 8b99a7
+        set red ef4444
+        set orange ea580c
+        set yellow f59e0b
+        set green 10b981
+        set blue 2563eb
+        set purple 7c3aed
+        set cyan 06b6d4
     end
 
     if test "$theme" = "eighties"

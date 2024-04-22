@@ -33,9 +33,6 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { si
 -- make the current file executable from within the file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- tmux-session-switcher
-vim.keymap.set("n", "<C-g>", "<cmd>silent !tmux neww tmux-session-switcher<CR>", { silent = true })
-
 -- Normal --
 -- Better window navigation. Control + hjkl to move between splits
 vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
