@@ -1,10 +1,10 @@
 # FONTS
 
-font-family = MonoLisa Custom
-# font-family = JetBrains Mono
+# font-family = MonoLisa Custom
+font-family = JetBrains Mono
 font-size = 16
 
-# font is a little too thin without this
+# font is a little too thin without this, at least on mac retina displays
 font-thicken = true
 
 # disable some font features
@@ -21,87 +21,118 @@ window-padding-x = 6
 window-height = 60
 window-width = 120
 
-background-opacity = 0.97
+background-opacity = 0.95
 
 
 # COLORS
 
-# electronhighlighter
-background = #141820
-foreground = #a8b5d1
-selection-background = #283457
-selection-foreground = #a8b5d1
+# electron highlighter
+# background = #141820
+# foreground = #a8b5d1
+# selection-background = #283457
+# selection-foreground = #a8b5d1
+# cursor-color = #a8b5d1
+# cursor-text = #1a1b26
+#
+# # black
+# palette = 0=#15161e
+# palette = 8=#506686
+# # red
+# palette = 1=#f7768e
+# palette = 9=#f7768e
+# # green
+# palette = 2=#34febb
+# palette = 10=#34febb
+# # yellow
+# palette = 3=#ffbf7a
+# palette = 11=#ffbf7a
+# # blue
+# palette = 4=#82aaff
+# palette = 12=#82aaff
+# # purple
+# palette = 5=#c792ea
+# palette = 13=#c792ea
+# # aqua
+# palette = 6=#4ff2f8
+# palette = 14=#4ff2f8
+# # white
+# palette = 7=#99a3b8
+# palette = 15=#a8b5d1
+# # extra
+# palette = 16=#ffbf7a
+# palette = 17=#ff5874
+
+# catppuccin mocha (dark)
+background = #11111b
+foreground = #cdd6f4
+selection-background = #313244
+selection-foreground = #cdd6f4
 cursor-color = #a8b5d1
-cursor-text = #1a1b26
+cursor-text = #181825
 
-palette = 0=#15161e
-palette = 1=#f7768e
-palette = 2=#34febb
-palette = 3=#ffbf7a
-palette = 4=#82aaff
-palette = 5=#c792ea
-palette = 6=#4ff2f8
-palette = 7=#99a3b8
-palette = 8=#506686
-palette = 9=#f7768e
-palette = 10=#34febb
-palette = 11=#ffbf7a
-palette = 12=#82aaff
-palette = 13=#c792ea
-palette = 14=#4ff2f8
-palette = 15=#a8b5d1
-palette = 16=#ffbf7a
-palette = 17=#ff5874
+# black
+palette = 0=#181825
+palette = 8=#585b70
+# red
+palette = 1=#f38ba8
+palette = 9=#f38ba8
+# green
+palette = 2=#a6e3a1
+palette = 10=#a6e3a1
+# yellow
+palette = 3=#fab387
+palette = 11=#fab387
+# blue
+palette = 4=#89b4fa
+palette = 12=#89b4fa
+# purple
+palette = 5=#cba6f7
+palette = 13=#cba6f7
+# aqua
+palette = 6=#89dceb
+palette = 14=#89dceb
+# white
+palette = 7=#9399b2
+palette = 15=#cdd6f4
+# extra
+palette = 16=#fab387
+palette = 17=#f38ba8
 
-# gruvbox-material
-# background = #1d2021
-# foreground = #d4be98
-# selection-background = #d4be98
-# selection-foreground = #1d2021
-# cursor-color = #a89984
-# cursor-text = #1d2021
+# early riser (light)
+# background = #f7fafc
+# foreground = #424c57
+# selection-background = #cedcf9
+# selection-foreground = #424c57
+# cursor-color = #2563eb
+# cursor-text = #f7fafc
 #
-# palette = 0=#665c54
-# palette = 1=#ea6962
-# palette = 2=#a9b665
-# palette = 3=#e78a4e
-# palette = 4=#7daea3
-# palette = 5=#d3869b
-# palette = 6=#89b482
-# palette = 7=#d4be98
-# palette = 8=#928374
-# palette = 9=#ea6962
-# palette = 10=#a9b665
-# palette = 11=#d8a657
-# palette = 12=#7daea3
-# palette = 13=#d3869b
-# palette = 14=#89b482
-# palette = 15=#d4be98
-
-# eighties
-# background = #1d2021
-# foreground = #d4be98
-# selection-background = #d4be98
-# selection-foreground = #1d2021
-# cursor-color = #a89984
-# cursor-text = #1d2021
-#
-# palette = 0=#665c54
-# palette = 1=#ed6e6a
-# palette = 2=#a4bd76
-# palette = 3=#e5b35c
-# palette = 4=#7aaeb5
-# palette = 5=#d18cab
-# palette = 6=#7dbc9b
-# palette = 7=#d4be98
-# palette = 8=#928374
-# palette = 9=#ed6e6a
-# palette = 10=#a4bd76
-# palette = 11=#ed9259
-# palette = 12=#7aaeb5
-# palette = 13=#d18cab
-# palette = 14=#7dbc9b
-# palette = 15=#d4be98
+# # black
+# palette = 0=#424c57
+# palette = 8=#a8b3bd
+# # red
+# palette = 1=#ef4444
+# palette = 9=#e11d48
+# # green
+# palette = 2=#10b981
+# palette = 10=#10b981
+# # yellow
+# palette = 3=#ea580c
+# palette = 11=#f59e0b
+# # blue
+# palette = 4=#2563eb
+# palette = 12=#2563eb
+# # purple
+# palette = 5=#7c3aed
+# palette = 13=#7c3aed
+# # aqua
+# palette = 6=#06b6d4
+# palette = 14=#06b6d4
+# # white
+# palette = 7=#a8b3bd
+# palette = 15=#424c57
+# # extra
+# palette = 16=#ea580c
+# palette = 17=#e11d48
 
 # CURSOR
 
