@@ -1,58 +1,41 @@
 return {
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
+        "neanias/everforest-nvim",
+        version = false,
+        lazy = false,
         priority = 1000,
         opts = {
-            transparent_background = true,
-            integration = {
-                telescope = true,
-                mason = true,
-            },
-            color_overrides = {
-                latte = {
-                    base = "#f7fafc",
-                    mantle = "#f1f5f9",
-                    crust = "#e7ebef",
-                    text = "#424c57",
-                    red = "#ef4444",
-                    green = "#10b981",
-                    yellow = "#ea580c",
-                    blue = "#2563eb",
-                    pink = "#e11d48",
-                    teal = "#06b6d4",
-                    mauve = "#7c3aed",
-                }
-            },
-            custom_highlights = function(colours)
-                local float_bg = colours.base
-                local fg = colours.text
-                local telescope_results = colours.base
-                local telescope_prompt = colours.surface0
-                local remaps = {
-                    NormalFloat = { bg = float_bg },
-                    TelescopeBorder = { fg = telescope_results, bg = telescope_results },
-                    TelescopePromptBorder = { fg = telescope_prompt, bg = telescope_prompt },
-                    TelescopePromptCounter = { fg = fg },
-                    TelescopePromptNormal = { fg = fg, bg = telescope_prompt },
-                    TelescopePromptPrefix = { fg = colours.teal, bg = telescope_prompt },
-                    TelescopePromptTitle = { fg = telescope_prompt, bg = colours.teal },
-                    TelescopePreviewTitle = { fg = telescope_prompt, bg = colours.red },
-                    TelescopeResultsTitle = { fg = telescope_results, bg = telescope_results },
-                    TelescopeMatching = { fg = colours.teal },
-                    TelescopeNormal = { bg = telescope_results },
-                    TelescopeSelection = { bg = telescope_prompt },
-                }
-                return remaps
-            end,
+            background = "hard",
+            transparent_background_level = 1,
         },
         config = function(_, opts)
-            require("catppuccin").setup(opts)
-            vim.cmd.colorscheme "catppuccin"
+            require("everforest").setup(opts)
+            vim.cmd.colorscheme "everforest"
+        end,
+    },
+    {
+        'mikemcbride/gruvbox-material.nvim',
+        name = "gruvbox_material",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent_mode = true,
+            contrast = "hard",
+            italic = {
+                strings = false,
+                comments = false,
+                operators = false,
+                folds = false,
+            }
+        },
+        config = function(_, opts)
+            require("gruvbox_material").setup(opts)
+            -- vim.cmd.colorscheme "gruvbox_material"
         end
     },
     -- {
     --     'electron-highlighter/nvim',
+    --     lazy = false,
     --     priority = 1000,
     --     name = "electron_highlighter",
     --     opts = {

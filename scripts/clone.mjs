@@ -4,7 +4,6 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import execa from 'execa'
 import ora from 'ora'
 import { green, red } from 'kleur/colors'
 import simpleGit from 'simple-git'

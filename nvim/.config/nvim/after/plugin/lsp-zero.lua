@@ -1,6 +1,3 @@
--- TODO: going to redo LSP from scratch instead of using lsp-zero.
--- as part of that, we'll move it to the lazy plugins folder.
--- for now, I'm not ready to lose LSP so it stays here.
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
@@ -69,21 +66,7 @@ lsp.setup({
 local cmp = require('cmp')
 
 cmp.setup({
-  sources = {
-    -- Other Sources
-    { name = "nvim_lsp", group_index = 2 },
-    { name = "path",     group_index = 2 },
-    { name = "luasnip",  group_index = 2 },
-  },
   mapping = {
-    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-    ["<CR>"] = cmp.mapping(
-      cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = true,
-      },
-      { "i", "c" }
-    ),
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
   }
 })

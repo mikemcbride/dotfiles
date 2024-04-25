@@ -3,7 +3,7 @@ return {
     opts = {
         options = {
             icons_enabled = true,
-            theme = "catppuccin",
+            theme = "everforest",
             component_separators = '|',
             section_separators = '',
             disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
