@@ -2,6 +2,7 @@
 
 # font-family = MonoLisa Custom
 font-family = JetBrains Mono
+# font-family = Berkeley Mono
 font-size = 16
 
 # font is a little too thin without this, at least on mac retina displays
@@ -62,77 +63,72 @@ background-opacity = 0.95
 # palette = 16=#ffbf7a
 # palette = 17=#ff5874
 
-# catppuccin mocha (dark)
-background = #11111b
-foreground = #cdd6f4
-selection-background = #313244
-selection-foreground = #cdd6f4
-cursor-color = #a8b5d1
-cursor-text = #181825
-
-# black
-palette = 0=#181825
-palette = 8=#585b70
-# red
-palette = 1=#f38ba8
-palette = 9=#f38ba8
-# green
-palette = 2=#a6e3a1
-palette = 10=#a6e3a1
-# yellow
-palette = 3=#fab387
-palette = 11=#fab387
-# blue
-palette = 4=#89b4fa
-palette = 12=#89b4fa
-# purple
-palette = 5=#cba6f7
-palette = 13=#cba6f7
-# aqua
-palette = 6=#89dceb
-palette = 14=#89dceb
-# white
-palette = 7=#9399b2
-palette = 15=#cdd6f4
-# extra
-palette = 16=#fab387
-palette = 17=#f38ba8
-
-# early riser (light)
-# background = #f7fafc
-# foreground = #424c57
-# selection-background = #cedcf9
-# selection-foreground = #424c57
-# cursor-color = #2563eb
-# cursor-text = #f7fafc
+# gruvbox-material
+# background = #1d2021
+# foreground = #d4be98
+# selection-background = #d4be98
+# selection-foreground = #1d2021
+# cursor-color = #a89984
+# cursor-text = #1d2021
 #
 # # black
-# palette = 0=#424c57
-# palette = 8=#a8b3bd
+# palette = 0=#1d2021
+# palette = 8=#928374
 # # red
-# palette = 1=#ef4444
-# palette = 9=#e11d48
+# palette = 1=#ea6962
+# palette = 9=#ea6962
 # # green
-# palette = 2=#10b981
-# palette = 10=#10b981
+# palette = 2=#a9b665
+# palette = 10=#a9b665
 # # yellow
-# palette = 3=#ea580c
-# palette = 11=#f59e0b
+# palette = 3=#e78a4e
+# palette = 11=#d8a657
 # # blue
-# palette = 4=#2563eb
-# palette = 12=#2563eb
+# palette = 4=#7daea3
+# palette = 12=#7daea3
 # # purple
-# palette = 5=#7c3aed
-# palette = 13=#7c3aed
+# palette = 5=#d3869b
+# palette = 13=#d3869b
 # # aqua
-# palette = 6=#06b6d4
-# palette = 14=#06b6d4
+# palette = 6=#89b482
+# palette = 14=#89b482
 # # white
-# palette = 7=#a8b3bd
-# palette = 15=#424c57
-# # extra
-# palette = 16=#ea580c
-# palette = 17=#e11d48
+# palette = 7=#d4be98
+# palette = 15=#a89984
+
+# # everforest
+background = #272e33
+foreground = #d3c6aa
+selection-background = #d3c6aa
+selection-foreground = #272e33
+cursor-color = #a6b0a0
+cursor-text = #272e33
+
+# black
+palette = 0=#272e33
+palette = 8=#7a8478
+# red
+palette = 1=#e67e80
+palette = 9=#e67e80
+# green
+palette = 2=#a7c080
+palette = 10=#a7c080
+# yellow
+palette = 3=#dbbc7f
+palette = 11=#dbbc7f
+# blue
+palette = 4=#7fbbb3
+palette = 12=#7fbbb3
+# purple
+palette = 5=#d699b6
+palette = 13=#d699b6
+# aqua
+palette = 6=#83c092
+palette = 14=#83c092
+# white
+palette = 7=#d3c6aa
+palette = 15=#a6b0a0
+
 
 # CURSOR
 

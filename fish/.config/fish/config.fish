@@ -1,22 +1,17 @@
 if status is-interactive
     # default greeting is 'Welcome to fish, the friendly interactive shell'
+    # to disable, set to empty string
     set fish_greeting ''
 
-
-    # colorscheme can be one of: eighties | electronhighlighter | gruvbox | catppuccin-mocha | early-riser
-    # this will set themes for tmux, fish, and vim.
-    # first, set it locally so we can use it here.
-    # set -l theme "eighties"
+    # set the theme
     # set -l theme "gruvbox"
-    set -l theme "catppuccin-mocha"
-    # set -l theme "early-riser"
+    set -l theme "everforest"
     # set -l theme "electronhighlighter"
 
     # now export it so other programs can use it
     set -x CURRENT_THEME $theme
 
     if test "$theme" = "gruvbox"
-        # Gruvbox Material Color Palette
         set foreground d4be98
         set selection 665c54
         set comment 928374
@@ -27,11 +22,22 @@ if status is-interactive
         set blue 7daea3
         set purple d3869b
         set cyan 89b482
-        set pink c14a4a
+    end
+
+    if test "$theme" = "everforest"
+        set foreground d3c6aa
+        set selection 7a8478
+        set comment 9da9a0
+        set red e67e80
+        set orange e69875
+        set yellow dbbc7f
+        set green a7c080
+        set blue 7fbbb3
+        set purple d699b6
+        set cyan 83c092
     end
 
     if test "$theme" = "electronhighlighter"
-        # Electron Highlighter Color Palette
         set foreground a8b5d1
         set selection 364a82
         set comment 506686
@@ -42,45 +48,6 @@ if status is-interactive
         set blue 82aaff
         set purple c792ea
         set cyan 4ff2f8
-    end
-
-    if test "$theme" = "catppuccin-mocha"
-        set foreground cdd6f4
-        set selection 45475a
-        set comment 6c7086
-        set red f38ba8
-        set orange fab387
-        set yellow f9e2af
-        set green a6e3a1
-        set blue 89b4fa
-        set purple cba6f7
-        set cyan 89dceb
-    end
-
-    if test "$theme" = "early-riser"
-        set foreground 424c57
-        set selection cedcf9
-        set comment 8b99a7
-        set red ef4444
-        set orange ea580c
-        set yellow f59e0b
-        set green 10b981
-        set blue 2563eb
-        set purple 7c3aed
-        set cyan 06b6d4
-    end
-
-    if test "$theme" = "eighties"
-        set foreground d4be98
-        set selection 665c54
-        set comment 504945
-        set red ed6e6a
-        set orange ed9259
-        set yellow e5b35c
-        set green a4bd76
-        set cyan 7dbc9b
-        set blue 7aaeb5
-        set purple d18cab
     end
 
     # Syntax Highlighting Colors
@@ -97,9 +64,10 @@ if status is-interactive
     set -g fish_color_comment $comment
     set -g fish_color_selection --background=$selection
     set -g fish_color_search_match --background=$selection
-    set -g fish_color_operator $green
+    set -g fish_color_operator $cyan
     set -g fish_color_escape $orange
     set -g fish_color_autosuggestion $comment
+    set -g fish_color_valid_path $foreground
 
     # Completion Pager Colors
     set -g fish_pager_color_progress $comment
