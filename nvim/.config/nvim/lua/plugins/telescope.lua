@@ -5,7 +5,7 @@ return {
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      -- local fb_actions = require("telescope").extensions.file_browser.actions
+      local fb_actions = require("telescope").extensions.file_browser.actions
       local actions = require('telescope.actions')
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
@@ -43,18 +43,18 @@ return {
           }
         },
         extensions = {
-          -- file_browser = {
-          --   theme = "ivy",
-          --   hidden = true, -- show hidden files (dotfiles) in the file browser
-          --   no_ignore = true, -- show ignored files in the browser
-          --   hijack_netrw = true,
-          --   initial_mode = "normal",
-          --   mappings = {
-          --     ["n"] = {
-          --       ["-"] = fb_actions.goto_parent_dir
-          --     }
-          --   }
-          -- }
+          file_browser = {
+            theme = "ivy",
+            hidden = true, -- show hidden files (dotfiles) in the file browser
+            no_ignore = true, -- show ignored files in the browser
+            hijack_netrw = true,
+            initial_mode = "normal",
+            mappings = {
+              ["n"] = {
+                ["-"] = fb_actions.goto_parent_dir
+              }
+            }
+          }
         }
       }
 
@@ -75,7 +75,7 @@ return {
         })
       end, { desc = '[/] Fuzzily search in current buffer]' })
 
-      -- vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true }) -- todo: might be nice to remove another plugin and just use netrw
+      vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true })
       vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
       vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = '[S]earch [G]it Files' })
@@ -91,5 +91,9 @@ return {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     cond = vim.fn.executable 'make' == 1
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 }

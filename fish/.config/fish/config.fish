@@ -5,8 +5,8 @@ if status is-interactive
 
     # set the theme
     # set -l theme "gruvbox"
-    set -l theme "everforest"
-    # set -l theme "electronhighlighter"
+    # set -l theme "everforest"
+    set -l theme "electronhighlighter"
 
     # now export it so other programs can use it
     set -x CURRENT_THEME $theme
