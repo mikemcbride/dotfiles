@@ -1,11 +1,7 @@
 # vim as default
 export EDITOR="vim"
 
-# set colorscheme for a bunch of stuff
-# values can be:
-# gruvbox
-# electronhighlighter
-export CURRENT_THEME="gruvbox"
+export CURRENT_THEME="electronhighlighter"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"

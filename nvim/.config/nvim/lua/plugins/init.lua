@@ -37,13 +37,14 @@ return {
     config = true
   },
   {
-    'stevearc/oil.nvim',
-    opts = {
-      default_file_explorer = true,
-      view_options = {
-        show_hidden = true,
-      }
-    },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "echasnovski/mini.pairs",
+    version = false,
+    event = "InsertEnter",
+    config = true,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   }
 }

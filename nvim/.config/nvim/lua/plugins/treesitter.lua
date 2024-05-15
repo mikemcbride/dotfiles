@@ -14,7 +14,6 @@ return {
         ensure_installed = {
           'bash',
           'css',
-          'dockerfile',
           'fish',
           'go',
           'html',

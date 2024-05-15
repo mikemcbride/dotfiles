@@ -100,6 +100,9 @@ vim.o.signcolumn = "yes"
 -- wrap text
 vim.o.wrap = true
 
+-- cursor always a block
+vim.o.guicursor = "n-c:block-CursorNormal,v:block-CursorVisual,i:block-CursorInsert"
+
 -- show a wrap guide at 120 characters
 -- vim.wo.colorcolumn = "120"
 
