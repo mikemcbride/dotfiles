@@ -5,7 +5,6 @@ return {
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      local fb_actions = require("telescope").extensions.file_browser.actions
       local actions = require('telescope.actions')
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
@@ -41,32 +40,17 @@ return {
               }
             }
           }
-        },
-        extensions = {
-          file_browser = {
-            theme = "ivy",
-            hidden = true, -- show hidden files (dotfiles) in the file browser
-            no_ignore = true, -- show ignored files in the browser
-            hijack_netrw = true,
-            initial_mode = "normal",
-            mappings = {
-              ["n"] = {
-                ["-"] = fb_actions.goto_parent_dir
-              }
-            }
-          }
         }
       }
 
       -- Enable telescope fzf native, if installed
       pcall(require('telescope').load_extension, 'fzf')
 
-      -- Enable telescope file_browser
-      pcall(require('telescope').load_extension, 'file_browser')
+      -- Enable telescope_mru
+      pcall(require('telescope').load_extension, 'mru_files')
 
       -- [[ Telescope Specific Keymaps ]]
       -- See `:help telescope.builtin`
-      vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
       vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>/', function()
         require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -75,12 +59,12 @@ return {
         })
       end, { desc = '[/] Fuzzily search in current buffer]' })
 
-      vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true })
       vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
       vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = '[S]earch [G]it Files' })
       vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>sr', require('telescope.builtin').oldfiles, { desc = '[S]earch [R]ecently opened files' })
+      vim.keymap.set('n', '<leader>r', "<cmd>Telescope mru_files<CR>", { desc = 'Search [R]ecent Files' })
+      vim.keymap.set('n', '<leader>sr', "<cmd>Telescope mru_files<CR>", { desc = '[S]earch [R]ecent Files' })
       vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<C-t>', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
       vim.keymap.set('n', '<C-p>', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
@@ -93,7 +77,7 @@ return {
     cond = vim.fn.executable 'make' == 1
   },
   {
-    "nvim-telescope/telescope-file-browser.nvim",
+    "mikemcbride/telescope-mru.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 }

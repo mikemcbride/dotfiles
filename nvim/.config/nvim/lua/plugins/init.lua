@@ -1,10 +1,21 @@
--- just a note for plugins so I don't forget:
--- anything that requires a .setup() function, you need to pass either opts = {} or config = true
--- if you don't plan on passing any other options. This will ensure setup is called. Otherwise it won't call setup.
--- for an example, see Comment.nvim
 return {
   "nvimtools/none-ls.nvim",
   'tpope/vim-fugitive',
+  'tpope/vim-sleuth',
+  "kyazdani42/nvim-web-devicons",
+  {
+    'numToStr/Comment.nvim',
+    config = true
+  },
+  {
+    "laytan/cloak.nvim",
+    config = true
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
   {
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -27,24 +38,18 @@ return {
     }
   },
   {
-    'numToStr/Comment.nvim',
-    opts = {}
-  },
-  'tpope/vim-sleuth',
-  "kyazdani42/nvim-web-devicons",
-  {
-    "laytan/cloak.nvim",
-    config = true
-  },
-  {
-    "echasnovski/mini.pairs",
-    version = false,
-    event = "InsertEnter",
-    config = true,
-  },
-  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
-  }
+  },
+  {
+    'stevearc/oil.nvim',
+    opts = {
+      default_file_explorer = true,
+      view_options = {
+        show_hidden = true,
+      }
+    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 }

@@ -63,6 +63,7 @@ lsp.setup({
   },
 })
 
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
 
 cmp.setup({
@@ -70,3 +71,9 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({select = false}),
   }
 })
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
+
