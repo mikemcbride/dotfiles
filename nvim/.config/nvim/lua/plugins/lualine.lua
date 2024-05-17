@@ -3,9 +3,9 @@ return {
     opts = {
         options = {
             icons_enabled = true,
-            -- theme = "electron_highlighter",
+            theme = "electron_highlighter",
             -- theme = "everforest",
-            theme = "gruvbox_material",
+            -- theme = "gruvbox_material",
             component_separators = '|',
             section_separators = '',
             disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
