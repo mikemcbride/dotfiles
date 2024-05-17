@@ -27,40 +27,40 @@ background-opacity = 0.95
 # COLORS
 
 # electron highlighter
-# background = #141820
-# foreground = #a8b5d1
-# selection-background = #283457
-# selection-foreground = #a8b5d1
-# cursor-color = #a8b5d1
-# cursor-text = #1a1b26
-#
-# # black
-# palette = 0=#15161e
-# palette = 8=#506686
-# # red
-# palette = 1=#f7768e
-# palette = 9=#f7768e
-# # green
-# palette = 2=#34febb
-# palette = 10=#34febb
-# # yellow
-# palette = 3=#ffbf7a
-# palette = 11=#ffbf7a
-# # blue
-# palette = 4=#82aaff
-# palette = 12=#82aaff
-# # purple
-# palette = 5=#c792ea
-# palette = 13=#c792ea
-# # aqua
-# palette = 6=#4ff2f8
-# palette = 14=#4ff2f8
-# # white
-# palette = 7=#99a3b8
-# palette = 15=#a8b5d1
-# # extra
-# palette = 16=#ffbf7a
-# palette = 17=#ff5874
+background = #141820
+foreground = #a8b5d1
+selection-background = #283457
+selection-foreground = #a8b5d1
+cursor-color = #a8b5d1
+cursor-text = #1a1b26
+
+# black
+palette = 0=#15161e
+palette = 8=#506686
+# red
+palette = 1=#f7768e
+palette = 9=#f7768e
+# green
+palette = 2=#34febb
+palette = 10=#34febb
+# yellow
+palette = 3=#ffbf7a
+palette = 11=#ffbf7a
+# blue
+palette = 4=#82aaff
+palette = 12=#82aaff
+# purple
+palette = 5=#c792ea
+palette = 13=#c792ea
+# aqua
+palette = 6=#4ff2f8
+palette = 14=#4ff2f8
+# white
+palette = 7=#99a3b8
+palette = 15=#a8b5d1
+# extra
+palette = 16=#ffbf7a
+palette = 17=#ff5874
 
 # # everforest
 # background = #272e33
@@ -96,29 +96,29 @@ background-opacity = 0.95
 # palette = 15=#a6b0a0
 
 # gruvbox-material
-background = #1d2021
-foreground = #d4be98
-selection-background = #d4be98
-selection-foreground = #1d2021
-cursor-color = #a89984
-cursor-text = #1d2021
-
-palette = 0=#665c54
-palette = 1=#ea6962
-palette = 2=#a9b665
-palette = 3=#e78a4e
-palette = 4=#7daea3
-palette = 5=#d3869b
-palette = 6=#89b482
-palette = 7=#d4be98
-palette = 8=#928374
-palette = 9=#ea6962
-palette = 10=#a9b665
-palette = 11=#d8a657
-palette = 12=#7daea3
-palette = 13=#d3869b
-palette = 14=#89b482
-palette = 15=#d4be98
+# background = #1d2021
+# foreground = #d4be98
+# selection-background = #d4be98
+# selection-foreground = #1d2021
+# cursor-color = #a89984
+# cursor-text = #1d2021
+#
+# palette = 0=#665c54
+# palette = 1=#ea6962
+# palette = 2=#a9b665
+# palette = 3=#e78a4e
+# palette = 4=#7daea3
+# palette = 5=#d3869b
+# palette = 6=#89b482
+# palette = 7=#d4be98
+# palette = 8=#928374
+# palette = 9=#ea6962
+# palette = 10=#a9b665
+# palette = 11=#d8a657
+# palette = 12=#7daea3
+# palette = 13=#d3869b
+# palette = 14=#89b482
+# palette = 15=#d4be98
 
 # CURSOR
 

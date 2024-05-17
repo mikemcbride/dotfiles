@@ -9,7 +9,7 @@ return {
         },
         config = function(_, opts)
             require("gruvbox_material").setup(opts)
-            vim.cmd.colorscheme "gruvbox_material"
+            -- vim.cmd.colorscheme "gruvbox_material"
         end
     },
     {
@@ -80,7 +80,7 @@ return {
         },
         config = function(_, opts)
             require("electron_highlighter").setup(opts)
-            -- vim.cmd.colorscheme "electron_highlighter"
+            vim.cmd.colorscheme "electron_highlighter"
         end
     }
 }
