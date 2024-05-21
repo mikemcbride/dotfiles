@@ -1,5 +1,4 @@
 return {
-  -- TODO: manual LSP. We don't need all of this.
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
