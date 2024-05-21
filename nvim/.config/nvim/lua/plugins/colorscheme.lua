@@ -1,37 +1,37 @@
 return {
-    {
-        "mikemcbride/gruvbox-material.nvim",
-        priority = 1000,
-        as = "gruvbox_material",
-        opts = {
-            transparent_mode = true,
-            contrast = "soft",
-        },
-        config = function(_, opts)
-            require("gruvbox_material").setup(opts)
-            -- vim.cmd.colorscheme "gruvbox_material"
-        end
-    },
-    {
-        "neanias/everforest-nvim",
-        version = false,
-        lazy = false,
-        priority = 1000,
-        opts = {
-            background = "hard",
-            transparent_background_level = 1,
-            on_highlights = function(hl, c)
-                -- cursors change color based on mode
-                hl.CursorNormal = { bg = c.fg, fg = c.fg }
-                hl.CursorVisual = { bg = c.purple, fg = c.purple }
-                hl.CursorInsert = { bg = c.aqua, fg = c.aqua }
-            end,
-        },
-        config = function(_, opts)
-            require("everforest").setup(opts)
-            -- vim.cmd.colorscheme "everforest"
-        end,
-    },
+    -- {
+    --     "mikemcbride/gruvbox-material.nvim",
+    --     priority = 1000,
+    --     as = "gruvbox_material",
+    --     opts = {
+    --         transparent_mode = true,
+    --         contrast = "soft",
+    --     },
+    --     config = function(_, opts)
+    --         require("gruvbox_material").setup(opts)
+    --         -- vim.cmd.colorscheme "gruvbox_material"
+    --     end
+    -- },
+    -- {
+    --     "neanias/everforest-nvim",
+    --     version = false,
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --         background = "hard",
+    --         transparent_background_level = 1,
+    --         on_highlights = function(hl, c)
+    --             -- cursors change color based on mode
+    --             hl.CursorNormal = { bg = c.fg, fg = c.fg }
+    --             hl.CursorVisual = { bg = c.purple, fg = c.purple }
+    --             hl.CursorInsert = { bg = c.aqua, fg = c.aqua }
+    --         end,
+    --     },
+    --     config = function(_, opts)
+    --         require("everforest").setup(opts)
+    --         -- vim.cmd.colorscheme "everforest"
+    --     end,
+    -- },
     {
         'electron-highlighter/nvim',
         lazy = false,

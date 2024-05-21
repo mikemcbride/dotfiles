@@ -12,11 +12,9 @@ npm-debug.log*
 # Ruby
 .ruby-version
 
-
 # Browserify
 bundle.js
 .bundle.js
-
 
 # Text editors
 *.sublime-project
@@ -24,12 +22,9 @@ bundle.js
 *.swo
 *.swp
 *.vi
-.vscode
-
 
 # Override bad GitHub for Mac default
 !Icon
-
 
 # Always ignore
 .DS_Store

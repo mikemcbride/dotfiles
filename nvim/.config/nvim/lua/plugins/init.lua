@@ -1,12 +1,13 @@
 return {
-  "nvimtools/none-ls.nvim",
+  -- TODO: unsure whether LSP is actually using this or not.
+  -- Commenting it out for now, but if I notice things are broken,
+  -- this probably needs to get added back
+  -- "nvimtools/none-ls.nvim",
   'tpope/vim-fugitive',
   'tpope/vim-sleuth',
+  -- TODO: do we need these icons?
+  -- I _think_ they are being used in Telescope file search?
   "kyazdani42/nvim-web-devicons",
-  {
-    'numToStr/Comment.nvim',
-    config = true
-  },
   {
     "laytan/cloak.nvim",
     config = true
@@ -36,20 +37,5 @@ return {
         enabled = false
       }
     }
-  },
-  {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
-  {
-    'stevearc/oil.nvim',
-    opts = {
-      default_file_explorer = true,
-      view_options = {
-        show_hidden = true,
-      }
-    },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }
