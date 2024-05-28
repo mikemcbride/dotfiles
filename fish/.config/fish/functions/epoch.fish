@@ -1,4 +1,4 @@
 function epoch
-  date +%s $argv
+   date -r $argv
 end
 
