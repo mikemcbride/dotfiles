@@ -33,6 +33,9 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { si
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Normal --
+-- clear search highlighting
+vim.keymap.set("n", "<leader>ch", ":noh<CR>", { silent = true })
+
 -- Better window navigation. Control + hjkl to move between splits
 vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })

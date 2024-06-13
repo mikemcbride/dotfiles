@@ -2,7 +2,7 @@
 -- See `:help vim.o`
 
 -- Set highlight on search
-vim.o.hlsearch = false
+-- vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
