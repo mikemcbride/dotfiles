@@ -3,7 +3,11 @@ function lights
   # The command can be "on", "off", or "toggle".
   # There are other commands such as brightness and temperature, but I don't need those.
   # If the command is not one of the three that I use, print the help statement instead.
-  set -l cmd $argv[1]
+  if test -z $argv[1]
+    set -f cmd "toggle"
+  else
+    set -f cmd $argv[1]
+  end
   if test $cmd != "on" -a $cmd != "off" -a $cmd != "toggle"
     echo "Usage: lights [on|off|toggle]"
     litra --help
