@@ -18,8 +18,7 @@ vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Toggle explore panel
-vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
--- vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory", silent = true })
+-- vim.keymap.set('n', '<leader>e', ':Ex<Cr>', { silent = true })
 
 -- stole these next three from ThePrimeagen, that beautiful genius:
 -- greatest remap ever

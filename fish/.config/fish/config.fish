@@ -7,6 +7,7 @@ if status is-interactive
     # set -l theme "gruvbox"
     # set -l theme "everforest"
     set -l theme "electronhighlighter"
+    #set -l theme "latte"
 
     # now export it so other programs can use it
     set -x CURRENT_THEME $theme
@@ -49,7 +50,31 @@ if status is-interactive
         set purple c792ea
         set cyan 4ff2f8
     end
+    if test "$theme" = "mocha"
+        set foreground cdd6f4
+        set selection 45475a
+        set comment 6c7086
+        set red f38ba8
+        set orange fab387
+        set yellow f9e2af
+        set green a6e3a1
+        set blue 89b4fa
+        set purple cba6f7
+        set cyan 89dceb
+    end
 
+    if test "$theme" = "latte"
+        set foreground 4c4f69
+        set selection dce0e8
+        set comment 9ca0b0
+        set red e64553
+        set orange fe640b
+        set yellow df8e1d
+        set green 40a02b
+        set blue 1e66f5
+        set purple 7287fd
+        set cyan 04a5e5
+    end
     # Syntax Highlighting Colors
     # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
     set -g fish_color_normal $foreground

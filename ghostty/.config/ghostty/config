@@ -18,8 +18,8 @@ font-feature = "-dlig"
 # WINDOW
 
 window-padding-x = 6
-window-height = 60
-window-width = 120
+window-height = 50
+window-width = 140
 
 background-opacity = 0.95
 
@@ -119,6 +119,43 @@ palette = 17=#ff5874
 # palette = 13=#d3869b
 # palette = 14=#89b482
 # palette = 15=#d4be98
+
+
+# catppuccin-latte
+# background = #eff1f5
+# foreground = #4c4f69
+# selection-background = #dce0e8
+# selection-foreground = #4c4f69
+# cursor-color = #7287fd
+# cursor-text = #eff1f5
+#
+# # black
+# palette = 0=#4c4f69
+# palette = 8=#7c7f93
+# # red
+# palette = 1=#e64553
+# palette = 9=#dd7878
+# # green
+# palette = 2=#40a02b
+# palette = 10=#40a02b
+# # yellow
+# palette = 3=#fe640b
+# palette = 11=#df8e1d
+# # blue
+# palette = 4=#1e66f5
+# palette = 12=#1e66f5
+# # purple
+# palette = 5=#8839ef
+# palette = 13=#7287fd
+# # aqua
+# palette = 6=#04a5e5
+# palette = 14=#04a5e5
+# # white
+# palette = 7=#ccd0da
+# palette = 15=#9ca0b0
+# # extra
+# palette = 16=#ea580c
+# palette = 17=#e11d48
 
 # CURSOR
 
