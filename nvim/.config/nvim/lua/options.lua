@@ -22,7 +22,8 @@ vim.o.updatetime = 250
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.opt.background = "dark"
+vim.opt.background = "light"
+-- vim.opt.background = "dark"
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

@@ -3,6 +3,7 @@ return {
     opts = {
         options = {
             icons_enabled = true,
+            -- theme = "catppuccin",
             theme = "electron_highlighter",
             -- theme = "everforest",
             -- theme = "gruvbox_material",

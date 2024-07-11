@@ -5,6 +5,7 @@ return {
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
+      local fb_actions = require("telescope").extensions.file_browser.actions
       local actions = require('telescope.actions')
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
@@ -40,17 +41,35 @@ return {
               }
             }
           }
+        },
+        extensions = {
+          file_browser = {
+            theme = "ivy",
+            hidden = true, -- show hidden files (dotfiles) in the file browser
+            no_ignore = true, -- show ignored files in the browser
+            hijack_netrw = true,
+            initial_mode = "normal",
+            mappings = {
+              ["n"] = {
+                ["-"] = fb_actions.goto_parent_dir
+              }
+            }
+          }
         }
       }
 
       -- Enable telescope fzf native, if installed
       pcall(require('telescope').load_extension, 'fzf')
 
+      -- Enable telescope file browser
+      pcall(require('telescope').load_extension, 'file_browser')
+
       -- Enable telescope_mru
       pcall(require('telescope').load_extension, 'mru_files')
 
       -- [[ Telescope Specific Keymaps ]]
       -- See `:help telescope.builtin`
+      vim.keymap.set('n', '<leader>e', ':Telescope file_browser path=%:p:h<cr>', { silent = true })
       vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>/', function()
         require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -75,6 +94,10 @@ return {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     cond = vim.fn.executable 'make' == 1
+  },
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
   },
   {
     "mikemcbride/telescope-mru.nvim",
