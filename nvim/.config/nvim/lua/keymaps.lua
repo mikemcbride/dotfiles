@@ -27,6 +27,8 @@ vim.keymap.set("x", "<leader>p", "\"_dP", { silent = true })
 
 -- tmux-sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { silent = true })
+-- tmux-sessionx
+vim.keymap.set("n", "<C-g>", "<cmd>silent !~/.tmux/plugins/tmux-sessionx/scripts/sessionx.sh<CR>", { silent = true })
 
 -- make the current file executable from within the file
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

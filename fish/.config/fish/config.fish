@@ -146,4 +146,6 @@ if status is-interactive
 
     direnv hook fish | source
     starship init fish | source
+    zoxide init fish | source
 end
+/Users/mike/.local/bin/mise activate fish | source
