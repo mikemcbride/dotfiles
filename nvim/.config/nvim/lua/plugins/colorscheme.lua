@@ -1,21 +1,5 @@
 return {
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        opts = {
-            transparent_background = true,
-            integration = {
-                telescope = true,
-                mason = true,
-            },
-        },
-        config = function(_, opts)
-            require("catppuccin").setup(opts)
-            -- vim.cmd.colorscheme "catppuccin"
-        end
-    },
-    {
         'electron-highlighter/nvim',
         lazy = false,
         priority = 1000,
