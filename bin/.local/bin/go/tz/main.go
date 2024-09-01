@@ -12,6 +12,7 @@ func main() {
 	loc, _ := time.LoadLocation("America/New_York")
 	fmt.Printf("Eastern:  %s\n", now.In(loc).Format(time.Kitchen))
 	peeps = append(peeps, "Grizz:  "+now.In(loc).Format(time.Kitchen))
+	peeps = append(peeps, "Max:    "+now.In(loc).Format(time.Kitchen))
 	peeps = append(peeps, "Danny:  "+now.In(loc).Format(time.Kitchen))
 
 	loc, _ = time.LoadLocation("America/Chicago")
