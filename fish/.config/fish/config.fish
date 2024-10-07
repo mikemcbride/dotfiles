@@ -4,39 +4,7 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    # set -l theme "gruvbox"
-    # set -l theme "everforest"
-    set -l theme "electronhighlighter"
-    #set -l theme "latte"
-
-    # now export it so other programs can use it
-    set -x CURRENT_THEME $theme
-
-    if test "$theme" = "gruvbox"
-        set foreground d4be98
-        set selection 665c54
-        set comment 928374
-        set red ea6962
-        set orange e78a4e
-        set yellow e78a4e
-        set green a9b665
-        set blue 7daea3
-        set purple d3869b
-        set cyan 89b482
-    end
-
-    if test "$theme" = "everforest"
-        set foreground d3c6aa
-        set selection 7a8478
-        set comment 9da9a0
-        set red e67e80
-        set orange e69875
-        set yellow dbbc7f
-        set green a7c080
-        set blue 7fbbb3
-        set purple d699b6
-        set cyan 83c092
-    end
+    set -l theme "catppuccin"
 
     if test "$theme" = "electronhighlighter"
         set foreground a8b5d1
@@ -50,31 +18,19 @@ if status is-interactive
         set purple c792ea
         set cyan 4ff2f8
     end
-    if test "$theme" = "mocha"
-        set foreground cdd6f4
+    if test "$theme" = "catppuccin"
+        set foreground cad3f5
         set selection 45475a
-        set comment 6c7086
-        set red f38ba8
-        set orange fab387
-        set yellow f9e2af
-        set green a6e3a1
-        set blue 89b4fa
-        set purple cba6f7
-        set cyan 89dceb
+        set comment 6e738d
+        set red ee99a0
+        set orange f0c6c6
+        set yellow f4dbd6
+        set green 8bd5ca
+        set blue 8aadf4
+        set purple b7bdf8
+        set cyan 91d7e3
     end
 
-    if test "$theme" = "latte"
-        set foreground 4c4f69
-        set selection dce0e8
-        set comment 9ca0b0
-        set red e64553
-        set orange fe640b
-        set yellow df8e1d
-        set green 40a02b
-        set blue 1e66f5
-        set purple 7287fd
-        set cyan 04a5e5
-    end
     # Syntax Highlighting Colors
     # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
     set -g fish_color_normal $foreground
@@ -147,5 +103,6 @@ if status is-interactive
     direnv hook fish | source
     starship init fish | source
     zoxide init fish | source
+    thefuck --alias | source
+    /Users/mike/.local/bin/mise activate fish | source
 end
-/Users/mike/.local/bin/mise activate fish | source

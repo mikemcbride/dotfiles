@@ -1,5 +1,22 @@
 return {
     {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {
+            flavour = "macchiato",
+            transparent_background = true,
+            integration = {
+                telescope = true,
+                mason = true,
+            },
+        },
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
+            vim.cmd.colorscheme "catppuccin"
+        end
+    },
+    {
         'electron-highlighter/nvim',
         lazy = false,
         priority = 1000,
@@ -45,8 +62,8 @@ return {
             end,
         },
         config = function(_, opts)
-            require("electron_highlighter").setup(opts)
-            vim.cmd.colorscheme "electron_highlighter"
+            -- require("electron_highlighter").setup(opts)
+            -- vim.cmd.colorscheme "electron_highlighter"
         end
     }
 }

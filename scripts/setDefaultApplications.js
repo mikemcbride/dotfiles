@@ -15,6 +15,7 @@ const execa = require('execa');
         'tsx',
         'vue',
         'md',
+        'markdown',
         'json',
         'css',
         'sass',
@@ -27,13 +28,13 @@ const execa = require('execa');
         'xml',
         'sh',
         'styl',
-        'markdown',
         'py',
         'rs',
         'go',
         'toml',
         'yml',
-        'yaml'
+        'yaml',
+        'tf',
     ]
     const promises = extensions.map(ext => {
         return execa('duti', ['-s', appId, ext, 'all'])
