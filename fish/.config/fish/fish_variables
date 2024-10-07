@@ -54,5 +54,5 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/mike/\x2ekrew/bin\x1e/Users/mike/\x2elocal/bin\x1e/Users/mike/go/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/Users/mike/\x2ecargo/bin\x1e/Users/mike\x1e/Users/mike/\x2eyarn/bin
+SETUVAR fish_user_paths:/opt/homebrew/opt/postgresql\x4015/bin\x1e/Users/mike/\x2ekrew/bin\x1e/Users/mike/\x2elocal/bin\x1e/Users/mike/go/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/Users/mike/\x2ecargo/bin\x1e/Users/mike\x1e/Users/mike/\x2eyarn/bin
 SETUVAR fisher_dependency_count:rbenv\x1e\x1ez

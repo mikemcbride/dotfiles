@@ -1,6 +1,4 @@
 # FONTS
-
-# font-family = MonoLisa
 font-family = JetBrains Mono
 font-size = 16
 
@@ -14,157 +12,63 @@ font-feature = "-calt"
 font-feature = "-liga"
 font-feature = "-dlig"
 
-
 # WINDOW
-
 window-padding-x = 6
 window-height = 50
 window-width = 140
 
-background-opacity = 0.95
-
-
 # COLORS
+theme = catppuccin-macchiato
+cursor-color = #b7bdf8
+# overwrite purple
+palette = 5=#c6a0f6
+palette = 13=#c6a0f6
+# overwrite green 
+palette = 2=#8bd5ca
+palette = 10=#8bd5ca
 
-# electron highlighter
-background = #141820
-foreground = #a8b5d1
-selection-background = #283457
-selection-foreground = #a8b5d1
-cursor-color = #a8b5d1
-cursor-text = #1a1b26
-
-# black
-palette = 0=#15161e
-palette = 8=#506686
-# red
-palette = 1=#f7768e
-palette = 9=#f7768e
-# green
-palette = 2=#34febb
-palette = 10=#34febb
-# yellow
-palette = 3=#ffbf7a
-palette = 11=#ffbf7a
-# blue
-palette = 4=#82aaff
-palette = 12=#82aaff
-# purple
-palette = 5=#c792ea
-palette = 13=#c792ea
-# aqua
-palette = 6=#4ff2f8
-palette = 14=#4ff2f8
-# white
-palette = 7=#7c8eac
-palette = 15=#c5cee0
-# extra
-palette = 16=#ffbf7a
-palette = 17=#ff5874
-
-# # everforest
-# background = #272e33
-# foreground = #d3c6aa
-# selection-background = #d3c6aa
-# selection-foreground = #272e33
-# cursor-color = #a6b0a0
-# cursor-text = #272e33
+# # electron highlighter
+# background = #212836
+# foreground = #a8b5d1
+# selection-background = #283457
+# selection-foreground = #a8b5d1
+# cursor-color = #a8b5d1
+# cursor-text = #1a1b26
 #
 # # black
-# palette = 0=#272e33
-# palette = 8=#7a8478
+# palette = 0=#15161e
+# palette = 8=#506686
 # # red
-# palette = 1=#e67e80
-# palette = 9=#e67e80
+# palette = 1=#f7768e
+# palette = 9=#f7768e
 # # green
-# palette = 2=#a7c080
-# palette = 10=#a7c080
+# palette = 2=#34febb
+# palette = 10=#34febb
 # # yellow
-# palette = 3=#dbbc7f
-# palette = 11=#dbbc7f
+# palette = 3=#ffbf7a
+# palette = 11=#ffbf7a
 # # blue
-# palette = 4=#7fbbb3
-# palette = 12=#7fbbb3
+# palette = 4=#82aaff
+# palette = 12=#82aaff
 # # purple
-# palette = 5=#d699b6
-# palette = 13=#d699b6
+# palette = 5=#c792ea
+# palette = 13=#c792ea
 # # aqua
-# palette = 6=#83c092
-# palette = 14=#83c092
+# palette = 6=#4ff2f8
+# palette = 14=#4ff2f8
 # # white
-# palette = 7=#d3c6aa
-# palette = 15=#a6b0a0
-
-# gruvbox-material
-# background = #1d2021
-# foreground = #d4be98
-# selection-background = #d4be98
-# selection-foreground = #1d2021
-# cursor-color = #a89984
-# cursor-text = #1d2021
-#
-# palette = 0=#665c54
-# palette = 1=#ea6962
-# palette = 2=#a9b665
-# palette = 3=#e78a4e
-# palette = 4=#7daea3
-# palette = 5=#d3869b
-# palette = 6=#89b482
-# palette = 7=#d4be98
-# palette = 8=#928374
-# palette = 9=#ea6962
-# palette = 10=#a9b665
-# palette = 11=#d8a657
-# palette = 12=#7daea3
-# palette = 13=#d3869b
-# palette = 14=#89b482
-# palette = 15=#d4be98
-
-
-# catppuccin-latte
-# background = #eff1f5
-# foreground = #4c4f69
-# selection-background = #dce0e8
-# selection-foreground = #4c4f69
-# cursor-color = #7287fd
-# cursor-text = #eff1f5
-#
-# # black
-# palette = 0=#4c4f69
-# palette = 8=#7c7f93
-# # red
-# palette = 1=#e64553
-# palette = 9=#dd7878
-# # green
-# palette = 2=#40a02b
-# palette = 10=#40a02b
-# # yellow
-# palette = 3=#fe640b
-# palette = 11=#df8e1d
-# # blue
-# palette = 4=#1e66f5
-# palette = 12=#1e66f5
-# # purple
-# palette = 5=#8839ef
-# palette = 13=#7287fd
-# # aqua
-# palette = 6=#04a5e5
-# palette = 14=#04a5e5
-# # white
-# palette = 7=#ccd0da
-# palette = 15=#9ca0b0
+# palette = 7=#7c8eac
+# palette = 15=#c5cee0
 # # extra
-# palette = 16=#ea580c
-# palette = 17=#e11d48
+# palette = 16=#ffbf7a
+# palette = 17=#ff5874
 
 # CURSOR
-
 cursor-style = block
 cursor-style-blink = false
 
 
 # OTHER
-
 confirm-close-surface = false
 mouse-hide-while-typing = true
 shell-integration = none
