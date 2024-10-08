@@ -46,7 +46,7 @@ return {
     opts = {
         options = {
             icons_enabled = true,
-            theme = catppuccin_theme,
+            theme = "electron_highlighter",
             component_separators = '|',
             section_separators = '',
             disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
