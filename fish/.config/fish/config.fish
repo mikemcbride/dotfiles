@@ -4,7 +4,7 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    set -l theme "catppuccin"
+    set -l theme "electronhighlighter"
 
     if test "$theme" = "electronhighlighter"
         set foreground a8b5d1

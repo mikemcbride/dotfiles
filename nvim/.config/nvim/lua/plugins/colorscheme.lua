@@ -12,8 +12,8 @@ return {
             },
         },
         config = function(_, opts)
-            require("catppuccin").setup(opts)
-            vim.cmd.colorscheme "catppuccin"
+            -- require("catppuccin").setup(opts)
+            -- vim.cmd.colorscheme "catppuccin"
         end
     },
     {
@@ -22,7 +22,6 @@ return {
         priority = 1000,
         name = "electron_highlighter",
         opts = {
-            style = "night",
             transparent = true,
             on_highlights = function(hl, c)
                 local float_bg             = "#1b212c"
@@ -62,8 +61,8 @@ return {
             end,
         },
         config = function(_, opts)
-            -- require("electron_highlighter").setup(opts)
-            -- vim.cmd.colorscheme "electron_highlighter"
+            require("electron_highlighter").setup(opts)
+            vim.cmd.colorscheme "electron_highlighter"
         end
     }
 }
