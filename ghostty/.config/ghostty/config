@@ -18,14 +18,19 @@ window-height = 50
 window-width = 140
 
 # COLORS
+
+# theme = tokyonight-storm
+# palette = 8=#506686
+
+# macchiato
 # theme = catppuccin-macchiato
 # cursor-color = #b7bdf8
 # # overwrite purple
 # palette = 5=#c6a0f6
 # palette = 13=#c6a0f6
-# # overwrite green 
-# palette = 2=#8bd5ca
-# palette = 10=#8bd5ca
+
+# latte
+# theme = catppuccin-latte
 
 # electron highlighter
 background = #24283b
@@ -71,6 +76,8 @@ cursor-style-blink = false
 # OTHER
 confirm-close-surface = false
 mouse-hide-while-typing = true
-shell-integration = none
+shell-integration = fish
+shell-integration-features = "cursor,title"
 clipboard-read = "allow"
+macos-titlebar-style = "tabs"
 
