@@ -5,6 +5,11 @@ if status is-interactive
 
     # set the theme
     set -l theme "electronhighlighter"
+    #set -l theme "catppuccin"
+    #set -l theme "tokyonight"
+
+    # now export it so other programs can use it
+    set -x CURRENT_THEME $theme
 
     if test "$theme" = "electronhighlighter"
         set foreground a8b5d1
@@ -17,6 +22,19 @@ if status is-interactive
         set blue 82aaff
         set purple c792ea
         set cyan 4ff2f8
+    end
+    if  test "$theme" = "tokyonight"
+        set foreground c0caf5
+        set selection 364A82
+        set comment 565f89
+        set red f7768e
+        set orange ff9e64
+        set yellow e0af68
+        set green 9ece6a
+        set blue 7aa2f7
+        set purple 9d7cd8
+        set cyan 73daca
+        set pink bb9af7
     end
     if test "$theme" = "catppuccin"
         set foreground cad3f5

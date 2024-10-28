@@ -10,22 +10,57 @@ return {
                 telescope = true,
                 mason = true,
             },
+            custom_highlights = function(colors)
+                return {
+                    -- cursors change color based on mode
+                    CursorNormal = { bg = colors.text, fg = colors.text },
+                    CursorVisual = { bg = colors.mauve, fg = colors.mauve },
+                    CursorInsert = { bg = colors.teal, fg = colors.teal }
+                }
+            end
         },
         config = function(_, opts)
-            -- require("catppuccin").setup(opts)
+            require("catppuccin").setup(opts)
             -- vim.cmd.colorscheme "catppuccin"
         end
     },
     {
-        'electron-highlighter/nvim',
+        'folke/tokyonight.nvim',
         lazy = false,
         priority = 1000,
-        name = "electron_highlighter",
         opts = {
+            style = "storm",
+            transparent = true,
+            styles = {
+                keywords = { italic = false },
+                functions = {},
+            },
+            on_colors = function(colors)
+                colors.bg_visual = "#404f77"
+                colors.bg_highlight = colors.bg_visual
+            end,
+            on_highlights = function(hl, c)
+                -- cursors change color based on mode
+                hl.CursorNormal            = { bg = c.fg_dark, fg = c.fg_dark }
+                hl.CursorVisual            = { bg = c.magenta, fg = c.magenta }
+                hl.CursorInsert            = { bg = c.green, fg = c.green }
+            end,
+        },
+        config = function(_, opts)
+            require("tokyonight").setup(opts)
+            -- vim.cmd.colorscheme "tokyonight"
+        end
+    },
+    {
+        'electron-highlighter/nvim',
+        name = "electron_highlighter",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            style = "default",
             transparent = true,
             on_highlights = function(hl, c)
-                local float_bg             = "#1b212c"
-                hl.Visual                  = { bg = c.bg_highlight }
+                local float_bg             = "#1f2335"
                 hl.FloatBorder             = { bg = float_bg, fg = c.cyan }
                 hl.NormalFloat             = { bg = float_bg }
 
@@ -39,7 +74,6 @@ return {
                 hl.TelescopeBorder         = { bg = float_bg, fg = c.orange }
                 hl.TelescopeMatching       = { fg = c.orange }
                 hl.TelescopeMultiSelection = { fg = c.fg_dark }
-                --
                 hl.TelescopePreview        = { link = "NormalFloat" }
                 hl.TelescopePreviewBorder  = { link = "TelescopeBorder" }
                 hl.TelescopePreviewLine    = { link = "NormalFloat" }
@@ -56,7 +90,7 @@ return {
                 hl.TelescopeResultsNormal  = { link = "NormalFloat" }
                 hl.TelescopeResultsTitle   = { link = "TelescopeBorder" }
 
-                hl.TelescopeSelection      = { bg = c.bg_highlight }
+                hl.TelescopeSelection      = { bg = c.bg_highlight, fg = c.orange }
                 hl.TelescopeSelectionCaret = { fg = c.fg_dark }
             end,
         },
@@ -64,5 +98,5 @@ return {
             require("electron_highlighter").setup(opts)
             vim.cmd.colorscheme "electron_highlighter"
         end
-    }
+    },
 }
