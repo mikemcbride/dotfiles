@@ -4,32 +4,16 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    set -l theme "electronhighlighter"
-
-    if test "$theme" = "electronhighlighter"
-        set foreground a8b5d1
-        set selection 364a82
-        set comment 506686
-        set red f7768e
-        set orange ff9e64
-        set yellow ffbf7a
-        set green 34febb
-        set blue 82aaff
-        set purple c792ea
-        set cyan 4ff2f8
-    end
-    if test "$theme" = "catppuccin"
-        set foreground cad3f5
-        set selection 45475a
-        set comment 6e738d
-        set red ee99a0
-        set orange f0c6c6
-        set yellow f4dbd6
-        set green 8bd5ca
-        set blue 8aadf4
-        set purple b7bdf8
-        set cyan 91d7e3
-    end
+    set foreground a8b5d1
+    set selection 364a82
+    set comment 506686
+    set red f7768e
+    set orange ff9e64
+    set yellow ffbf7a
+    set green 34febb
+    set blue 82aaff
+    set purple c792ea
+    set cyan 4ff2f8
 
     # Syntax Highlighting Colors
     # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
