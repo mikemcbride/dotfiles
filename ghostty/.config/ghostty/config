@@ -19,19 +19,6 @@ window-width = 140
 
 # COLORS
 
-# theme = tokyonight-storm
-# palette = 8=#506686
-
-# macchiato
-# theme = catppuccin-macchiato
-# cursor-color = #b7bdf8
-# # overwrite purple
-# palette = 5=#c6a0f6
-# palette = 13=#c6a0f6
-
-# latte
-# theme = catppuccin-latte
-
 # electron highlighter
 background = #24283b
 foreground = #a8b5d1
