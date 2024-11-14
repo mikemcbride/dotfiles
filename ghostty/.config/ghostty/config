@@ -19,74 +19,76 @@ window-width = 140
 
 # COLORS
 
-# electron highlighter
-# background = #24283b
-# foreground = #a8b5d1
-# selection-background = #283457
-# selection-foreground = #a8b5d1
-# cursor-color = #a8b5d1
-# cursor-text = #1a1b26
-#
-# # black
-# palette = 0=#15161e
-# palette = 8=#506686
-# # red
-# palette = 1=#f7768e
-# palette = 9=#f7768e
-# # green
-# palette = 2=#34febb
-# palette = 10=#34febb
-# # yellow
-# palette = 3=#ffbf7a
-# palette = 11=#ffbf7a
-# # blue
-# palette = 4=#82aaff
-# palette = 12=#82aaff
-# # purple
-# palette = 5=#c792ea
-# palette = 13=#c792ea
-# # aqua
-# palette = 6=#4ff2f8
-# palette = 14=#4ff2f8
-# # white
-# palette = 7=#7c8eac
-# palette = 15=#c5cee0
-# # extra
-# palette = 16=#ffbf7a
-# palette = 17=#ff5874
+# theme = tokyonight-storm
 
-# everforest
-background = #272e33
-foreground = #d3c6aa
-selection-background = #d3c6aa
-selection-foreground = #272e33
-cursor-color = #a6b0a0
-cursor-text = #272e33
+# electron highlighter
+background = #24283b
+foreground = #a8b5d1
+selection-background = #283457
+selection-foreground = #a8b5d1
+cursor-color = #a8b5d1
+cursor-text = #1a1b26
 
 # black
-palette = 0=#272e33
-palette = 8=#7a8478
+palette = 0=#15161e
+palette = 8=#506686
 # red
-palette = 1=#e67e80
-palette = 9=#e67e80
+palette = 1=#f7768e
+palette = 9=#f7768e
 # green
-palette = 2=#a7c080
-palette = 10=#a7c080
+palette = 2=#34febb
+palette = 10=#34febb
 # yellow
-palette = 3=#dbbc7f
-palette = 11=#dbbc7f
+palette = 3=#ffbf7a
+palette = 11=#ffbf7a
 # blue
-palette = 4=#7fbbb3
-palette = 12=#7fbbb3
+palette = 4=#82aaff
+palette = 12=#82aaff
 # purple
-palette = 5=#d699b6
-palette = 13=#d699b6
+palette = 5=#c792ea
+palette = 13=#c792ea
 # aqua
-palette = 6=#83c092
-palette = 14=#83c092
+palette = 6=#4ff2f8
+palette = 14=#4ff2f8
 # white
-palette = 7=#d3c6aa
-palette = 15=#a6b0a0
+palette = 7=#7c8eac
+palette = 15=#c5cee0
+# extra
+palette = 16=#ffbf7a
+palette = 17=#ff5874
+
+# everforest
+# background = #272e33
+# foreground = #d3c6aa
+# selection-background = #d3c6aa
+# selection-foreground = #272e33
+# cursor-color = #a6b0a0
+# cursor-text = #272e33
+#
+# # black
+# palette = 0=#272e33
+# palette = 8=#7a8478
+# # red
+# palette = 1=#e67e80
+# palette = 9=#e67e80
+# # green
+# palette = 2=#a7c080
+# palette = 10=#a7c080
+# # yellow
+# palette = 3=#dbbc7f
+# palette = 11=#dbbc7f
+# # blue
+# palette = 4=#7fbbb3
+# palette = 12=#7fbbb3
+# # purple
+# palette = 5=#d699b6
+# palette = 13=#d699b6
+# # aqua
+# palette = 6=#83c092
+# palette = 14=#83c092
+# # white
+# palette = 7=#d3c6aa
+# palette = 15=#a6b0a0
 
 # CURSOR
 cursor-style = block
