@@ -24,7 +24,7 @@ vicmd_symbol = "[❮](bold purple)"
 # only show current and parent directory
 [directory]
 truncation_length = 2
-style = "bright-blue"
+style = "blue"
 format = "[$path ]($style)[$read_only]($read_only_style)"
 
 [line_break]
@@ -33,12 +33,14 @@ format = "[$path ]($style)[$read_only]($read_only_style)"
 # show the time in the prompt
 [time]
 disabled = false
-style = "bright-black"
+# style = "bright-black" # use with all other themes
+style = "#b7bdf8 dimmed"
 time_format = "[%T]"
 format = "[$time]($style) "
 
 [git_branch]
 style = "purple"
+# symbol = "git"
 symbol = ""
 format = '[$symbol $branch]($style) '
 
