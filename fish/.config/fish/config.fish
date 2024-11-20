@@ -4,24 +4,12 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    #set -l theme "everforest"
     #set -l theme "tokyonight"
-    set -l theme "electron_highlighter"
+    set -l theme "catppuccin"
+    #set -l theme "electron_highlighter"
 
     set -x CURRENT_THEME "$theme"
 
-    if test "$theme" = "everforest"
-        set foreground d3c6aa
-        set selection 7a8478
-        set comment 9da9a0
-        set red e67e80
-        set orange e69875
-        set yellow dbbc7f
-        set green a7c080
-        set blue 7fbbb3
-        set purple d699b6
-        set cyan 83c092
-    end
     if test "$theme" = "electron_highlighter"
         set foreground a8b5d1
         set selection 364a82
@@ -46,6 +34,18 @@ if status is-interactive
         set purple 9d7cd8
         set cyan 73daca
         set pink bb9af7
+    end
+    if test "$theme" = "catppuccin"
+        set foreground cad3f5
+        set selection 45475a
+        set comment 6e738d
+        set red ee99a0
+        set orange f0c6c6
+        set yellow f4dbd6
+        set green 8bd5ca
+        set blue 8aadf4
+        set purple b7bdf8
+        set cyan 91d7e3
     end
 
     # Syntax Highlighting Colors

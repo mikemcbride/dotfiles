@@ -1,9 +1,57 @@
+local C = require("catppuccin.palettes").get_palette("macchiato")
+local catppuccin_theme = {}
+local transparent_bg = "NONE"
+
+catppuccin_theme.normal = {
+    a = { bg = C.blue, fg = C.mantle, gui = "bold" },
+    b = { bg = C.surface0, fg = C.blue },
+    c = { bg = transparent_bg, fg = C.text },
+}
+
+catppuccin_theme.insert = {
+    a = { bg = C.teal, fg = C.base, gui = "bold" },
+    b = { bg = C.surface0, fg = C.teal },
+}
+
+catppuccin_theme.terminal = {
+    a = { bg = C.teal, fg = C.base, gui = "bold" },
+    b = { bg = C.surface0, fg = C.teal },
+}
+
+catppuccin_theme.command = {
+    a = { bg = C.flamingo, fg = C.base, gui = "bold" },
+    b = { bg = C.surface0, fg = C.flamingo },
+}
+
+catppuccin_theme.visual = {
+    a = { bg = C.mauve, fg = C.base, gui = "bold" },
+    b = { bg = C.surface0, fg = C.mauve },
+}
+
+catppuccin_theme.replace = {
+    a = { bg = C.maroon, fg = C.base, gui = "bold" },
+    b = { bg = C.surface0, fg = C.maroon },
+}
+
+catppuccin_theme.inactive = {
+    a = { bg = transparent_bg, fg = C.blue },
+    b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
+    c = { bg = transparent_bg, fg = C.overlay0 },
+}
+
+local _theme
+if os.getenv("CURRENT_THEME") == "catppuccin" then
+    _theme = catppuccin_theme
+else
+    _theme = os.getenv("CURRENT_THEME")
+end
+
 return {
     'nvim-lualine/lualine.nvim',
     opts = {
         options = {
             icons_enabled = true,
-            theme = os.getenv("CURRENT_THEME"),
+            theme = _theme,
             component_separators = '|',
             section_separators = '',
             disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
