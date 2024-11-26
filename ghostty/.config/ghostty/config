@@ -22,11 +22,15 @@ window-width = 140
 # theme = tokyonight-storm
 # palette = 8=#506686
 
-theme = catppuccin-macchiato
-cursor-color = #b7bdf8
-# overwrite purple
-palette = 5=#c6a0f6
-palette = 13=#c6a0f6
+# theme = catppuccin-macchiato
+# cursor-color = #b7bdf8
+# # overwrite purple
+# palette = 5=#c6a0f6
+# palette = 13=#c6a0f6
+# # overwrite yellow
+# palette = 3=#f0c6c6
+# palette = 11=#f0c6c6
+
 
 # electron highlighter
 # background = #24283b
@@ -64,6 +68,31 @@ palette = 13=#c6a0f6
 # palette = 16=#ffbf7a
 # palette = 17=#ff5874
 
+# gruvbox-material
+background = #282828
+foreground = #d4be98
+selection-background = #d4be98
+selection-foreground = #1d2021
+cursor-color = #a89984
+cursor-text = #1d2021
+
+palette = 0=#665c54
+palette = 1=#ea6962
+palette = 2=#a9b665
+palette = 3=#d8a657
+palette = 4=#7daea3
+palette = 5=#d3869b
+palette = 6=#89b482
+palette = 7=#d4be98
+palette = 8=#928374
+palette = 9=#ea6962
+palette = 10=#a9b665
+palette = 11=#d8a657
+palette = 12=#7daea3
+palette = 13=#d3869b
+palette = 14=#89b482
+palette = 15=#d4be98
+
 # CURSOR
 cursor-style = block
 cursor-style-blink = false
@@ -73,7 +102,7 @@ cursor-style-blink = false
 confirm-close-surface = false
 mouse-hide-while-typing = true
 shell-integration = fish
-shell-integration-features = "cursor,title"
+shell-integration-features = "title"
 clipboard-read = "allow"
 macos-titlebar-style = "tabs"
 
