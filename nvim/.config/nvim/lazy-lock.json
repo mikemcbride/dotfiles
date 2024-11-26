@@ -6,6 +6,7 @@
   "electron_highlighter": { "branch": "main", "commit": "d35457f3989bcabb8d35bf16fb6c0e88f3505669" },
   "gitsigns.nvim": { "branch": "main", "commit": "863903631e676b33e8be2acb17512fdc1b80b4fb" },
   "gopher.nvim": { "branch": "main", "commit": "f55c15ada8e02398000c04a96ef44d986cd01051" },
+  "gruvbox-material.nvim": { "branch": "main", "commit": "286d52c9e7ce13fb927dc292e3c258937ccabdfc" },
   "indent-blankline.nvim": { "branch": "master", "commit": "e7a4442e055ec953311e77791546238d1eaae507" },
   "lazy.nvim": { "branch": "main", "commit": "1159bdccd8910a0fd0914b24d6c3d186689023d9" },
   "lsp-zero.nvim": { "branch": "v3.x", "commit": "56db3d5ce5476b183783160e6045f7337ba12b83" },
