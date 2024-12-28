@@ -214,7 +214,8 @@ Got all that working? Great. Here's what we did:
 - set up Neovim config
 - set up tmux config
 - installed a few packages that I have aliases or functions for that will throw errors if you don't have them installed:
-  - [z](http://github.com/agkozak/zsh-z) - super fast way to jump around files/folders
+  - [z](https://github.com/jethrokuan/z) - super fast way to jump around files/folders
+  - [eza](https://github.com/eza-community/eza) - better `ls`
   - [tree](http://brewformulas.org/tree) - linux `tree` command to show file structure
   - [trash-cli](http://github.com/sindresorhus/trash-cli) - a safer way to delete
   - [fnm](https://github.com/Schniz/fnm) - for managing multiple versions of Node.js
@@ -226,9 +227,7 @@ Got all that working? Great. Here's what we did:
 - installed a few desktop applications to make your life better:
   - [1Password](https://1password.com)
   - [Raycast](https://raycast.com)
-  - [Insomnia](https://insomnia.rest/)
   - Slack
-  - [Kap](https://getkap.co/)
   - Karabiner Elements (custom keymaps on macOS) and applied a Karabiner config
 
 ## Additional Setup
@@ -246,27 +245,18 @@ sh ~/dotfiles/.macos
 
 ### Logins
 
-- Sign in to 1Password and add the browser extension.
-- Download and install Arc and log in there
-- Set up a new GitHub Personal Access Token to access GitHub from the command line.
-- Open any file in Neovim and run `:Lazy` to make `lazy.nvim` install all plugins
+- Sign in to Arc so extensions and spaces will sync
+- Sign in to 1Password
+- Set up a new GitHub Personal Access Token to access GitHub from the command line
+- Open any file in Neovim and run `:Lazy` to install all the neovim plugins
 
 ### Raycast
 
-In this repo there's a `/raycast/[file].rayconfig` that you can import to bring over all your Raycast preferences. It's password protected. The password is in 1Password.
-
-### More Apps to Install
-
-Here are some apps that aren't available for download via Homebrew cask that you'll currently need to download manually:
-
-- Pixelmator Pro (App Store)
-- Bartender (website)
-- Battery Indicator (App Store)
-- Any fonts you want installed (grab Fonts folder from iCloud)
+In this repo there is a `/raycast/[file].rayconfig` that you can import to bring over all your Raycast preferences. It's password protected. The password is in 1Password.
 
 ### Browser Extensions
 
-Reinstall browser extensions. Arc might remember these? Not 100% sure.
+Arc _should_ sync these... but double check.
 
 ### Peripherals
 
