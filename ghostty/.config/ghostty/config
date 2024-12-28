@@ -1,25 +1,23 @@
+# this will be available soon
+# theme = electron-highlighter
+
 # FONTS
-font-family = JetBrains Mono
 font-size = 16
-
-# font is a little too thin without this, at least on mac retina displays
-font-thicken = true
-
-# disable some font features
-# generally I don't really prefer any ligatures,
-# I find it distracting when characters shift around
+# font-thicken = true
+# disable ligatures. I find them distracting:
 font-feature = "-calt"
 font-feature = "-liga"
 font-feature = "-dlig"
 
 # WINDOW
 window-padding-x = 6
-window-height = 50
-window-width = 140
+
+# OTHER
+mouse-hide-while-typing = true
+clipboard-read = "allow"
+macos-titlebar-style = "tabs"
 
 # COLORS
-
-# electron highlighter
 background = #24283b
 foreground = #a8b5d1
 selection-background = #283457
@@ -32,39 +30,25 @@ palette = 0=#15161e
 palette = 8=#506686
 # red
 palette = 1=#f7768e
-palette = 9=#f7768e
+palette = 9=#ff93a7
 # green
-palette = 2=#34febb
-palette = 10=#34febb
+palette = 2=#58ffc7
+palette = 10=#58ffc7
 # yellow
-palette = 3=#ffbf7a
-palette = 11=#ffbf7a
+palette = 3=#ffd9af
+palette = 11=#ffd9af
 # blue
 palette = 4=#82aaff
 palette = 12=#82aaff
 # purple
-palette = 5=#c792ea
-palette = 13=#c792ea
+palette = 5=#d2a6ef
+palette = 13=#d2a6ef
 # aqua
-palette = 6=#4ff2f8
-palette = 14=#4ff2f8
+palette = 6=#57f9ff
+palette = 14=#57f9ff
 # white
 palette = 7=#7c8eac
 palette = 15=#c5cee0
 # extra
 palette = 16=#ffbf7a
-palette = 17=#ff5874
-
-# CURSOR
-cursor-style = block
-cursor-style-blink = false
-
-
-# OTHER
-confirm-close-surface = false
-mouse-hide-while-typing = true
-shell-integration = fish
-shell-integration-features = "title"
-clipboard-read = "allow"
-macos-titlebar-style = "tabs"
-
+palette = 17=#ffd9af

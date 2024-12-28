@@ -12,13 +12,13 @@ if status is-interactive
         set foreground a8b5d1
         set selection 364a82
         set comment 506686
-        set red f7768e
-        set orange ff9e64
-        set yellow ffbf7a
-        set green 34febb
+        set red ff93a7
+        set orange ffd9af
+        set yellow ffd9af
+        set green 58ffc7
         set blue 82aaff
-        set purple c792ea
-        set cyan 4ff2f8
+        set purple d2a6ef
+        set cyan 57f9ff
     end
 
     # Syntax Highlighting Colors
