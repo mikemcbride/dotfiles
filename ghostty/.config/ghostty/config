@@ -1,54 +1,11 @@
-# this will be available soon
-# theme = electron-highlighter
+rheme = electron-highlighter
 
-# FONTS
 font-size = 16
 # font-thicken = true
-# disable ligatures. I find them distracting:
 font-feature = "-calt"
 font-feature = "-liga"
 font-feature = "-dlig"
-
-# WINDOW
 window-padding-x = 6
-
-# OTHER
 mouse-hide-while-typing = true
 clipboard-read = "allow"
 macos-titlebar-style = "tabs"
-
-# COLORS
-background = #24283b
-foreground = #a8b5d1
-selection-background = #283457
-selection-foreground = #a8b5d1
-cursor-color = #a8b5d1
-cursor-text = #1a1b26
-
-# black
-palette = 0=#15161e
-palette = 8=#506686
-# red
-palette = 1=#f7768e
-palette = 9=#ff93a7
-# green
-palette = 2=#58ffc7
-palette = 10=#58ffc7
-# yellow
-palette = 3=#ffd9af
-palette = 11=#ffd9af
-# blue
-palette = 4=#82aaff
-palette = 12=#82aaff
-# purple
-palette = 5=#d2a6ef
-palette = 13=#d2a6ef
-# aqua
-palette = 6=#57f9ff
-palette = 14=#57f9ff
-# white
-palette = 7=#7c8eac
-palette = 15=#c5cee0
-# extra
-palette = 16=#ffbf7a
-palette = 17=#ffd9af
