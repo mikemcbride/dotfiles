@@ -1,4 +1,4 @@
-rheme = electron-highlighter
+theme = electron-highlighter
 
 font-size = 16
 # font-thicken = true
