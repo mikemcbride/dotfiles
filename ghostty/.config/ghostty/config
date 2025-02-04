@@ -1,7 +1,5 @@
 theme = electron-highlighter
-
 font-size = 16
-# font-thicken = true
 font-feature = "-calt"
 font-feature = "-liga"
 font-feature = "-dlig"

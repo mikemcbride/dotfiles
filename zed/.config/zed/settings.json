@@ -21,7 +21,7 @@
   "ui_font_family": ".SystemUIFont",
   "theme": {
     "mode": "dark", // dark, light, or system
-    "dark": "Everforest Dark",
+    "dark": "One Dark",
     "light": "Catppuccin Latte - No Italics"
   },
   "cursor_blink": false,
