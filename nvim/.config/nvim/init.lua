@@ -24,4 +24,3 @@ require('keymaps')
 require('autocommands')
 require('commands')
 
-vim.cmd.colorscheme(os.getenv("CURRENT_THEME"))
