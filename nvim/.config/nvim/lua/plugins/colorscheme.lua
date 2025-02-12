@@ -9,6 +9,7 @@ return {
         },
         config = function(_, opts)
             require("electron_highlighter").setup(opts)
+            vim.cmd.colorscheme("electron_highlighter")
         end
     },
 }
