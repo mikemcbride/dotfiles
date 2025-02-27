@@ -1,11 +1,9 @@
-local _theme = os.getenv("CURRENT_THEME")
-
 return {
     'nvim-lualine/lualine.nvim',
     opts = {
         options = {
             icons_enabled = true,
-            theme = _theme,
+            theme = "electron_highlighter",
             component_separators = '|',
             section_separators = '',
             disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
