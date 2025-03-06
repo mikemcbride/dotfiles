@@ -44,15 +44,7 @@ return {
         },
         extensions = {
           file_browser = {
-            theme = "dropdown",
-            layout_strategy = "horizontal",
-            layout_config = {
-              width = 0.8,
-              height = 0.8,
-              prompt_position = "top",
-              preview_width = 0.5,
-              
-            },
+            theme = "ivy",
             hidden = true, -- show hidden files (dotfiles) in the file browser
             no_ignore = true, -- show ignored files in the browser
             hijack_netrw = true,
