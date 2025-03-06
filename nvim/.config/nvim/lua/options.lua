@@ -22,8 +22,12 @@ vim.o.updatetime = 250
 
 -- Set colorscheme
 vim.o.termguicolors = true
--- vim.opt.background = "light"
-vim.opt.background = "dark"
+local theme = os.getenv("CURRENT_THEME") or "electron_highlighter"
+if theme == "electron_highlighter" then
+    vim.opt.background = "dark"
+else
+    vim.opt.background = "light"
+end
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -112,4 +116,3 @@ vim.o.scrolloff = 8
 
 -- start scrolling when you are this many columns from the left/right of the screen
 vim.o.sidescrolloff = 8
-
