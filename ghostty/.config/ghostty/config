@@ -1,4 +1,4 @@
-theme = electron-highlighter
+# theme = electron-highlighter
 font-size = 16
 font-feature = "-calt"
 font-feature = "-liga"
@@ -7,3 +7,37 @@ window-padding-x = 6
 mouse-hide-while-typing = true
 clipboard-read = "allow"
 macos-titlebar-style = "tabs"
+
+# theme: everforest
+# the built-in theme has incorrect colors for "bright"
+background = #272e33
+foreground = #d3c6aa
+selection-background = #d3c6aa
+selection-foreground = #272e33
+cursor-color = #a6b0a0
+cursor-text = #272e33
+
+# black
+palette = 0=#272e33
+palette = 8=#7a8478
+# red
+palette = 1=#e67e80
+palette = 9=#e67e80
+# green
+palette = 2=#a7c080
+palette = 10=#a7c080
+# yellow
+palette = 3=#dbbc7f
+palette = 11=#dbbc7f
+# blue
+palette = 4=#7fbbb3
+palette = 12=#7fbbb3
+# purple
+palette = 5=#d699b6
+palette = 13=#d699b6
+# aqua
+palette = 6=#83c092
+palette = 14=#83c092
+# white
+palette = 7=#d3c6aa
+palette = 15=#a6b0a0

@@ -4,7 +4,8 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    set -l theme "electron_highlighter"
+    #set -l theme "electron_highlighter"
+    set -l theme "everforest"
 
     set -x CURRENT_THEME "$theme"
 
@@ -19,6 +20,19 @@ if status is-interactive
         set blue 82aaff
         set purple d2a6ef
         set cyan 57f9ff
+    end
+
+    if test "$theme" = "everforest"
+        set foreground d3c6aa
+        set selection 7a8478
+        set comment 9da9a0
+        set red e67e80
+        set orange e69875
+        set yellow dbbc7f
+        set green a7c080
+        set blue 7fbbb3
+        set purple d699b6
+        set cyan 83c092
     end
 
     # Syntax Highlighting Colors
@@ -95,4 +109,12 @@ if status is-interactive
     zoxide init fish | source
     thefuck --alias | source
     /Users/mike/.local/bin/mise activate fish | source
+
+    set -gx ATUIN_NOBIND "true"
+    atuin init fish | source
+
+    # bind to ctrl-r in normal and insert mode, add any other bindings you want here too
+    bind \cr _atuin_search
+    bind -M insert \cr _atuin_search
+    bind -M insert up _atuin_search
 end

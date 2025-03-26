@@ -6,7 +6,6 @@ format = """\
   $git_status\
   $golang\
   $nodejs\
-  $kubernetes\
   $line_break\
   $time\
   $character\

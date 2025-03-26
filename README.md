@@ -84,7 +84,7 @@ Now we're going to set up a bunch of symlinks to link things from this repo to t
 
 ```sh
 rm ~/.gitconfig
-stow -t ~ {ghostty,nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl}
+stow -t ~ {ghostty,nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl,atuin}
 ```
 
 We'll also install a Go binary that's used in some scripts. We should have Go set up from Homebrew at this point:
