@@ -9,7 +9,7 @@ git clone https://github.com/mikemcbride/dotfiles.git
 brew tap Homebrew/bundle
 cd ~/personal/dotfiles && brew bundle
 rm ~/.gitconfig
-stow -t ~ {ghostty,nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl}
+stow -t ~ {ghostty,nvim,bat,karabiner,starship,git,zed,bin,ripgrep,fish,zsh,tmux,ytdl,atuin}
 go install github.com/tj/node-prune@latest
 npm install
 node ~/personal/dotfiles/scripts/setDefaultApplications.js
