@@ -1,4 +1,19 @@
 return {
+{
+        "mikemcbride/gruvbox-material.nvim",
+        priority = 1000,
+        as = "gruvbox_material",
+        opts = {
+            transparent_mode = true,
+            contrast = "soft",
+            italic = {
+                strings = false,
+            }
+        },
+        config = function(_, opts)
+            require("gruvbox_material").setup(opts)
+        end
+    },
     {
         "neanias/everforest-nvim",
         version = false,
