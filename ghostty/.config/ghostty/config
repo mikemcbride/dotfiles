@@ -1,4 +1,4 @@
-# theme = electron-highlighter
+theme = electron-highlighter
 font-size = 16
 font-feature = "-calt"
 font-feature = "-liga"
@@ -7,37 +7,64 @@ window-padding-x = 6
 mouse-hide-while-typing = true
 clipboard-read = "allow"
 macos-titlebar-style = "tabs"
+shell-integration = fish
+shell-integration-features = "title"
 
 # theme: everforest
 # the built-in theme has incorrect colors for "bright"
-background = #272e33
-foreground = #d3c6aa
-selection-background = #d3c6aa
-selection-foreground = #272e33
-cursor-color = #a6b0a0
-cursor-text = #272e33
+# background = #272e33
+# foreground = #d3c6aa
+# selection-background = #d3c6aa
+# selection-foreground = #272e33
+# cursor-color = #a6b0a0
+# cursor-text = #272e33
+#
+# # black
+# palette = 0=#272e33
+# palette = 8=#7a8478
+# # red
+# palette = 1=#e67e80
+# palette = 9=#e67e80
+# # green
+# palette = 2=#a7c080
+# palette = 10=#a7c080
+# # yellow
+# palette = 3=#dbbc7f
+# palette = 11=#dbbc7f
+# # blue
+# palette = 4=#7fbbb3
+# palette = 12=#7fbbb3
+# # purple
+# palette = 5=#d699b6
+# palette = 13=#d699b6
+# # aqua
+# palette = 6=#83c092
+# palette = 14=#83c092
+# # white
+# palette = 7=#d3c6aa
+# palette = 15=#a6b0a0
 
-# black
-palette = 0=#272e33
-palette = 8=#7a8478
-# red
-palette = 1=#e67e80
-palette = 9=#e67e80
-# green
-palette = 2=#a7c080
-palette = 10=#a7c080
-# yellow
-palette = 3=#dbbc7f
-palette = 11=#dbbc7f
-# blue
-palette = 4=#7fbbb3
-palette = 12=#7fbbb3
-# purple
-palette = 5=#d699b6
-palette = 13=#d699b6
-# aqua
-palette = 6=#83c092
-palette = 14=#83c092
-# white
-palette = 7=#d3c6aa
-palette = 15=#a6b0a0
+# theme: gruvbox-material
+# background = #282828
+# foreground = #d4be98
+# selection-background = #d4be98
+# selection-foreground = #1d2021
+# cursor-color = #a89984
+# cursor-text = #1d2021
+#
+# palette = 0=#665c54
+# palette = 1=#ea6962
+# palette = 2=#a9b665
+# palette = 3=#d8a657
+# palette = 4=#7daea3
+# palette = 5=#d3869b
+# palette = 6=#89b482
+# palette = 7=#d4be98
+# palette = 8=#928374
+# palette = 9=#ea6962
+# palette = 10=#a9b665
+# palette = 11=#d8a657
+# palette = 12=#7daea3
+# palette = 13=#d3869b
+# palette = 14=#89b482
+# palette = 15=#d4be98

@@ -29,14 +29,18 @@
 # prefer ssh to https
 [url "ssh://git@github.com/"]
         insteadOf = https://github.com/
-# use separate file for user info
-# .gitconfig.local includes default git user info, as well as other stuff.
+[user]
+  name = Mike McBride
+  email = mike@mcbrides.us
+  signingkey = ~/.ssh/id_ed25519.pub
 # if the repo is inside the ~/work directory, load the work git config,
-# which will overwrite the git user to be my work credentials
-[include]
-    path = ~/.gitconfig.local
+# which will overwrite the git user email to be my work credentials
 [includeIf "gitdir:~/work/"]
     path = ~/.gitconfig.work
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
 [color "diff-highlight"]
     oldNormal = red
     oldHighlight = red bold 52
@@ -55,4 +59,4 @@
 [credential "https://gist.github.com"]
     helper = !/opt/homebrew/bin/gh auth git-credential
 [rerere]
-	enabled = true
+    enabled = true
