@@ -19,6 +19,7 @@
     publish = push -u origin $(git branch-name)
     pub = push -u origin $(git branch-name)
     conflicts = diff --name-only --diff-filter=U
+    discard = "!f() { git checkout -f && git clean -fd; }; f"
 [log]
     date = iso
 [filter "lfs"]

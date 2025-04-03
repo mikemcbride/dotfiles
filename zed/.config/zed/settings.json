@@ -24,7 +24,7 @@
   "ui_font_family": ".SystemUIFont",
   "theme": {
     "mode": "dark", // dark, light, or system
-    "dark": "Everforest Dark",
+    "dark": "Electron Highlighter",
     "light": "Catppuccin Latte - No Italics"
   },
   "cursor_blink": false,
@@ -35,5 +35,6 @@
     "enabled": false
   },
   "scroll_beyond_last_line": "vertical_scroll_margin",
-  "relative_line_numbers": true
+  "relative_line_numbers": true,
+  "experimental.theme_overrides": {}
 }
