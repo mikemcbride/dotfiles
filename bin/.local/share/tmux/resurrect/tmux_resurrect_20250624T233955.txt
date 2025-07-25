@@ -1,0 +1,9 @@
+pane	dotfiles	1	0	:	0	Bluey/Season 2	:/Volumes/Elements/TV\ Shows/Bluey/Season 2	1	rsync	:/opt/homebrew/bin/fish
+pane	dotfiles	2	0	:	0	bluey/Season 1	:/Volumes/Elements/TV\ Shows/optimized/Bluey/Season 1	1	rsync	:/opt/homebrew/bin/fish
+pane	dotfiles	3	1	:*	0	~/uploaded	:/Volumes/Elements/TV\ Shows/optimized/Bluey/Minisodes	1	ssh	:/opt/homebrew/bin/fish
+pane	dotfiles	4	0	:-	0	Bluey/Season 3	:/Volumes/Elements/TV\ Shows/optimized/Bluey/Season 3	1	rsync	:/opt/homebrew/bin/fish
+window	dotfiles	1	:rsync	0	:	c87d,169x46,0,0,0	:
+window	dotfiles	2	:rsync	0	:	c87e,169x46,0,0,1	:
+window	dotfiles	3	:ssh	1	:*	c87f,169x46,0,0,2	:
+window	dotfiles	4	:rsync	0	:-	c880,169x46,0,0,3	:
+state	dotfiles	
