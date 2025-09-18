@@ -1,3 +1,0 @@
-pane	dotfiles	1	1	:*	0	Library/TV Shows	:/Users/mike/Downloads	1	ssh	:/opt/homebrew/bin/fish
-window	dotfiles	1	:ssh	1	:*	c87d,169x46,0,0,0	:
-state	dotfiles	

@@ -1,0 +1,9 @@
+pane	dotfiles	1	1	:*	0	personal/dotfiles	:/Users/mike/personal/dotfiles	1	fish	:/opt/homebrew/bin/fish
+pane	two-beards	1	0	:-	0	personal/fulham-lineup	:/Users/mike/personal/fulham-lineup	1	fish	:/opt/homebrew/bin/fish
+pane	two-beards	2	1	:*	0	personal/fulham-lineup	:/Users/mike/personal/fulham-lineup	1	fish	:/opt/homebrew/bin/fish
+pane	website	1	1	:*	0	~/	:/Users/mike	1	fish	:/opt/homebrew/bin/fish
+window	dotfiles	1	:fish	1	:*	c87e,169x46,0,0,1	:
+window	two-beards	1	:fish	0	:-	c05f,84x46,0,0,2	:
+window	two-beards	2	:fish	1	:*	c061,84x46,0,0,4	:
+window	website	1	:fish	1	:*	c880,169x46,0,0,3	:
+state	two-beards	dotfiles
