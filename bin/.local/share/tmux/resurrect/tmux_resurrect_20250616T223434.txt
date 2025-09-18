@@ -1,7 +1,0 @@
-pane	dotfiles	1	0	:	0	Taskmaster/Season 01	:/Users/mike/Downloads	1	ssh	:/opt/homebrew/bin/fish
-pane	dotfiles	2	0	:-	0	downloads/TheQueensGambit	:/Users/mike/Downloads/TheQueensGambit	1	ffmpeg	:/opt/homebrew/bin/fish
-pane	dotfiles	3	1	:*	0	Downloads/TheQueensGambit	:/Users/mike/Downloads/TheQueensGambit	1	fish	:/opt/homebrew/bin/fish
-window	dotfiles	1	:ssh	0	:	c87d,169x46,0,0,0	:
-window	dotfiles	2	:ffmpeg	0	:-	c87e,169x46,0,0,1	:
-window	dotfiles	3	:fish	1	:*	c87f,169x46,0,0,2	:
-state	dotfiles	

@@ -1,3 +1,0 @@
-pane	dotfiles	1	1	:*	0	~	:/Users/mike	1	fish	:/opt/homebrew/bin/fish
-window	dotfiles	1	:fish	1	:*	c87d,169x46,0,0,0	:
-state	dotfiles	
