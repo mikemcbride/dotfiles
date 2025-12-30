@@ -1,0 +1,11 @@
+theme = Electron Highlighter
+font-size = 16
+font-feature = "-calt"
+font-feature = "-liga"
+font-feature = "-dlig"
+window-padding-x = 6
+mouse-hide-while-typing = true
+clipboard-read = "allow"
+macos-titlebar-style = "tabs"
+shell-integration = fish
+shell-integration-features = "title"

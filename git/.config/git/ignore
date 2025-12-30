@@ -46,3 +46,5 @@ tmp
 *.sass-cache
 *.seed
 *~
+
+**/.claude/settings.local.json
