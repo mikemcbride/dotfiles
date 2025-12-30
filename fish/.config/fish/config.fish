@@ -132,3 +132,4 @@ if status is-interactive
     bind -M insert \cr _atuin_search
     bind -M insert up _atuin_search
 end
+

@@ -9,8 +9,3 @@ clipboard-read = "allow"
 macos-titlebar-style = "tabs"
 shell-integration = fish
 shell-integration-features = "title"
-keybind = shift+enter=text:\x1b\r
-macos-icon = custom-style
-macos-icon-ghost-color = #427eff
-macos-icon-screen-color = #141820
-macos-icon-frame = plastic
