@@ -7,11 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
   "git_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "vim_mode": true,
   "ui_font_size": 16,
@@ -19,22 +24,18 @@
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_features": {
     // Disable ligatures:
-    "calt": false
+    "calt": false,
   },
   "ui_font_family": ".SystemUIFont",
-  "theme": {
-    "mode": "dark", // dark, light, or system
-    "dark": "Catppuccin Latte",
-    "light": "Catppuccin Latte - No Italics"
-  },
+  "theme": "Tokyo Night Storm",
   "cursor_blink": false,
   "gutter": {
-    "folds": false
+    "folds": false,
   },
   "indent_guides": {
-    "enabled": false
+    "enabled": false,
   },
   "scroll_beyond_last_line": "vertical_scroll_margin",
-  "relative_line_numbers": true,
-  "experimental.theme_overrides": {}
+  "relative_line_numbers": "enabled",
+  "experimental.theme_overrides": {},
 }

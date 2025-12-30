@@ -132,3 +132,10 @@ if status is-interactive
     bind -M insert \cr _atuin_search
     bind -M insert up _atuin_search
 end
+
+# pnpm
+set -gx PNPM_HOME "/Users/mike/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
