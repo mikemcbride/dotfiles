@@ -50,6 +50,9 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 -- Close buffers
 vim.keymap.set("n", "<leader>w", ":bd<cr>", { silent = true })
 
+-- Claude Code
+vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
+
 
 -- Visual --
 -- Stay in indent mode
