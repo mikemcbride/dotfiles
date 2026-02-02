@@ -1,0 +1,15 @@
+pane	christmas	1	0	:-	0	personal/christmas	:/Users/mike/personal/christmas	1	fish	:/opt/homebrew/bin/fish
+pane	christmas	2	1	:*	0	personal/christmas	:/Users/mike/personal/christmas	1	nvim	:/opt/homebrew/bin/fish
+pane	oak-brook-menu	1	0	:-	0	personal/oak-brook-menu	:/Users/mike/personal/oak-brook-menu	1	fish	:/opt/homebrew/bin/fish
+pane	oak-brook-menu	2	1	:*	0	personal/oak-brook-menu	:/Users/mike/personal/oak-brook-menu	1	fish	:/opt/homebrew/bin/fish
+pane	thepreamble-island	1	0	:	0	personal/thepreamble-island	:/Users/mike/personal/thepreamble-island	1	fish	:/opt/homebrew/bin/fish
+pane	thepreamble-island	2	0	:-	0	personal/thepreamble-island	:/Users/mike/personal/thepreamble-island	1	fish	:/opt/homebrew/bin/fish
+pane	thepreamble-island	3	1	:*	0	~/personal	:/Users/mike/personal	1	fish	:/opt/homebrew/bin/fish
+window	christmas	1	:fish	0	:-	c063,84x46,0,0,6	:
+window	christmas	2	:nvim	1	:*	c064,84x46,0,0,7	:
+window	oak-brook-menu	1	:fish	0	:-	c05e,84x46,0,0,1	:
+window	oak-brook-menu	2	:fish	1	:*	c05f,84x46,0,0,2	:
+window	thepreamble-island	1	:fish	0	:	c060,84x46,0,0,3	:
+window	thepreamble-island	2	:fish	0	:-	c061,84x46,0,0,4	:
+window	thepreamble-island	3	:fish	1	:*	c062,84x46,0,0,5	:
+state	christmas	oak-brook-menu
