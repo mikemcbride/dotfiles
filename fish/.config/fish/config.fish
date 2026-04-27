@@ -4,8 +4,8 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    # set -l theme "electron_highlighter"
-    set -l theme "tokyonight"
+    set -l theme "electron_highlighter"
+    # set -l theme "tokyonight"
     #set -l theme "everforest"
     #set -l theme "gruvbox_material"
 
