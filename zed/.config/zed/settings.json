@@ -6,10 +6,14 @@
     "dock": "left"
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "model": "claude-opus-4.6"
     },
     "model_parameters": []
   },
@@ -27,6 +31,7 @@
   },
   "ui_font_family": ".SystemUIFont",
   "theme": {
+    "mode": "dark",
     "dark": "Electron Highlighter",
     "light": "Catppuccin Latte - No Italics"
   },
