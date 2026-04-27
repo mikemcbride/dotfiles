@@ -1,15 +1,34 @@
 {
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
   "git_panel": {
     "dock": "right"
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "agent": {
+    "dock": "left",
+    "favorite_models": [
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-6-thinking-latest",
+        "enable_thinking": false
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-opus-4-6-latest",
+        "enable_thinking": false
+      }
+    ],
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "provider": "anthropic",
+      "model": "claude-opus-4-6-latest"
     },
     "model_parameters": []
   },
@@ -27,7 +46,7 @@
   },
   "ui_font_family": ".SystemUIFont",
   "theme": {
-    "dark": "Electron Highlighter",
+    "dark": "Tokyo Night Storm",
     "light": "Catppuccin Latte - No Italics"
   },
   "cursor_blink": false,

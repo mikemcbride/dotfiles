@@ -4,7 +4,8 @@ if status is-interactive
     set fish_greeting ''
 
     # set the theme
-    set -l theme "electron_highlighter"
+    # set -l theme "electron_highlighter"
+    set -l theme "tokyonight"
     #set -l theme "everforest"
     #set -l theme "gruvbox_material"
 
@@ -47,6 +48,19 @@ if status is-interactive
         set blue 7daea3
         set purple d3869b
         set cyan 89b482
+    end
+
+    if test "$theme" = "tokyonight"
+        set foreground c0caf5
+        set selection 2e3c64
+        set comment 565f89
+        set red f7768e
+        set orange ff9e64
+        set yellow e0af68
+        set green 9ece6a
+        set purple 9d7cd8
+        set cyan 7dcfff
+        set pink bb9af7
     end
 
     # Syntax Highlighting Colors
@@ -139,3 +153,6 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# opencode
+fish_add_path /Users/mike/.opencode/bin
