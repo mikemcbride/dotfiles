@@ -1,4 +1,8 @@
 {
+  "proxy": "",
+  "terminal": {
+    "dock": "bottom"
+  },
   "outline_panel": {
     "dock": "right"
   },
@@ -9,10 +13,13 @@
     "dock": "right"
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "left"
   },
   "agent": {
-    "dock": "left",
+    "tool_permissions": {
+      "default": "allow"
+    },
+    "dock": "right",
     "favorite_models": [
       {
         "provider": "anthropic",
@@ -25,10 +32,11 @@
         "enable_thinking": false
       }
     ],
-    "always_allow_tool_actions": true,
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "anthropic",
-      "model": "claude-opus-4-6-latest"
+      "model": "claude-opus-4-6"
     },
     "model_parameters": []
   },
@@ -40,14 +48,15 @@
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_family": ".ZedMono",
   "buffer_font_features": {
     "calt": false
   },
-  "ui_font_family": ".SystemUIFont",
+  "ui_font_family": ".ZedSans",
   "theme": {
-    "dark": "Tokyo Night Storm",
-    "light": "Catppuccin Latte - No Italics"
+    "mode": "dark",
+    "dark": "Electron Highlighter",
+    "light": "Catppuccin Latte"
   },
   "cursor_blink": false,
   "gutter": {

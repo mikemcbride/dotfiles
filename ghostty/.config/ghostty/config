@@ -1,4 +1,8 @@
+# Theme — managed by the `theme` command (source of truth: ~/.config/theme-mode).
+#   light -> Electron Highlighter Day        dark -> Electron Highlighter
+# Ghostty can't reload from the CLI, so after switching press cmd+shift+, to apply.
 theme = Electron Highlighter
+
 font-size = 16
 font-feature = "-calt"
 font-feature = "-liga"

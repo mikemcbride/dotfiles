@@ -57,11 +57,6 @@ style = "bright-green"
 symbol = " "
 format = '[$symbol$version]($style) '
 
-[rust]
-style = "red"
-symbol = " "
-format = '[$symbol$version]($style)'
-
 [kubernetes]
 disabled = false
 format = '[$symbol$context]($style)'

@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -20,7 +20,6 @@ vim.g.maplocalleader = ' '
 
 require('options')
 require("lazy").setup("plugins")
-vim.cmd.colorscheme(os.getenv("CURRENT_THEME") or "electron_highlighter")
 require('keymaps')
 require('autocommands')
 require('commands')

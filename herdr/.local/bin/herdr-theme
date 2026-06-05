@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# herdr-theme — swap herdr's [theme] block between the electron-highlighter
+# light and dark chrome themes, then reload the running server.
+#
+# Usage: herdr-theme <light|dark>
+#
+# The selected theme file replaces only the [theme] / [theme.custom] block in
+# config.toml; every other section is preserved untouched.
+
+set -euo pipefail
+
+config="$HOME/.config/herdr/config.toml"
+themes_dir="$HOME/.config/herdr/themes"
+choice="${1:-}"
+
+case "$choice" in
+  light) src="$themes_dir/electron-light.toml" ;;
+  dark)  src="$themes_dir/electron-dark.toml" ;;
+  *)     echo "usage: herdr-theme <light|dark>" >&2; exit 1 ;;
+esac
+
+[ -f "$config" ] || { echo "herdr-theme: missing $config" >&2; exit 1; }
+[ -f "$src" ]    || { echo "herdr-theme: missing theme file $src" >&2; exit 1; }
+
+tmp="$(mktemp)"
+trap 'rm -f "$tmp"' EXIT
+
+# Strip the existing [theme] block (the [theme] header through any
+# [theme.custom] sub-table), stopping at the next top-level section or EOF.
+awk '
+  /^[[:space:]]*\[theme(\.|\])/ { intheme=1; next }
+  /^[[:space:]]*\[/            { intheme=0 }
+  !intheme                     { print }
+' "$config" > "$tmp"
+
+# Drop trailing blank lines, then append exactly one separator and the theme.
+awk 'NF{p=NR} {a[NR]=$0} END{for(i=1;i<=p;i++) print a[i]}' "$tmp" > "$tmp.trim"
+mv "$tmp.trim" "$tmp"
+printf '\n' >> "$tmp"
+cat "$src" >> "$tmp"
+
+cp "$config" "$config.bak"
+mv "$tmp" "$config"
+trap - EXIT
+
+if herdr server reload-config; then
+  echo "herdr-theme: switched to $choice (backup at $config.bak)"
+else
+  echo "herdr-theme: reload failed — restoring previous config" >&2
+  mv "$config.bak" "$config"
+  exit 1
+fi

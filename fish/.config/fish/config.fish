@@ -3,15 +3,28 @@ if status is-interactive
     # to disable, set to empty string
     set fish_greeting ''
 
-    # set the theme
-    set -l theme "electron_highlighter"
-    # set -l theme "tokyonight"
-    #set -l theme "everforest"
-    #set -l theme "gruvbox_material"
+    # makes sure the global npm folder is in the PATH in the right spot
+    fish_add_path -m ~/.npm-global/bin
 
-    set -x CURRENT_THEME "$theme"
+    # Theme (light/dark). Single source of truth: ~/.config/theme-mode holds
+    # "light" or "dark". Switch everything at once with the `theme` function.
+    set -l theme_mode (cat ~/.config/theme-mode 2>/dev/null; or echo dark)
 
-    if test "$theme" = "electron_highlighter"
+    if test "$theme_mode" = "light"
+        set -gx CURRENT_THEME electron_highlighter_day
+        set foreground 2f3b54
+        set selection d6def5
+        set comment 7b88a8
+        set red f52a65
+        set orange f0633c
+        set yellow d18a16
+        set green 10a877
+        set blue 366ff0
+        set purple 8b4fe0
+        set cyan 0a9fbf
+        set pink e62b86
+    else
+        set -gx CURRENT_THEME electron_highlighter
         set foreground a8b5d1
         set selection 364a82
         set comment 506686
@@ -24,44 +37,14 @@ if status is-interactive
         set cyan 57f9ff
     end
 
-    if test "$theme" = "everforest"
-        set foreground d3c6aa
-        set selection 7a8478
-        set comment 9da9a0
-        set red e67e80
-        set orange e69875
-        set yellow dbbc7f
-        set green a7c080
-        set blue 7fbbb3
-        set purple d699b6
-        set cyan 83c092
-    end
-
-    if test "$theme" = "gruvbox_material"
-        set foreground d4be98
-        set selection 665c54
-        set comment 928374
-        set red ea6962
-        set orange e78a4e
-        set yellow e78a4e
-        set green a9b665
-        set blue 7daea3
-        set purple d3869b
-        set cyan 89b482
-    end
-
-    if test "$theme" = "tokyonight"
-        set foreground c0caf5
-        set selection 2e3c64
-        set comment 565f89
-        set red f7768e
-        set orange ff9e64
-        set yellow e0af68
-        set green 9ece6a
-        set purple 9d7cd8
-        set cyan 7dcfff
-        set pink bb9af7
-    end
+    # bat: the "base16" theme already follows the terminal's ANSI palette, so it
+    # tracks light/dark for free. When you add a dedicated bat day theme, wire it
+    # here (and drop the --theme line from ~/.config/bat/config):
+    # if test "$theme_mode" = "light"
+    #     set -gx BAT_THEME "Electron Highlighter Day"
+    # else
+    #     set -gx BAT_THEME "Electron Highlighter"
+    # end
 
     # Syntax Highlighting Colors
     # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables

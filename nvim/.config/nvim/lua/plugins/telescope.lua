@@ -2,7 +2,9 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
+    -- master (not 0.1.x): 0.1.x calls the old nvim-treesitter master API
+    -- (parsers.ft_to_lang) which is gone on Neovim 0.12 + treesitter `main`.
+    branch = 'master',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       local fb_actions = require("telescope").extensions.file_browser.actions
@@ -12,7 +14,18 @@ return {
       require('telescope').setup {
         defaults = {
           file_ignore_patterns = {
-            "node_modules"
+            "node_modules",
+            "%.git/",
+            -- If you use git worktrees nested INSIDE the repo, add the dir here
+            -- AND to the --glob excludes below, e.g. "%.worktrees/".
+          },
+          -- Used by live_grep/grep_string. Default respects .gitignore but NOT
+          -- nested worktrees (they aren't gitignored), so exclude them by glob.
+          vimgrep_arguments = {
+            'rg', '--color=never', '--no-heading', '--with-filename',
+            '--line-number', '--column', '--smart-case',
+            '--glob', '!**/.git/**',
+            -- '--glob', '!**/.worktrees/**',
           },
           mappings = {
             i = {
@@ -23,8 +36,15 @@ return {
         },
         pickers = {
           find_files = {
-            -- I want to be able to search all files, including hidden and gitignored ones.
-            find_command = { 'rg', '--no-ignore', '--files', '--hidden' }
+            -- Search all files, including hidden and gitignored ones, but never
+            -- descend into these heavy dirs (the real cause of monorepo +
+            -- nested-worktree slowness: --no-ignore otherwise walks every copy).
+            find_command = {
+              'rg', '--files', '--hidden', '--no-ignore',
+              '--glob', '!**/.git/**',
+              '--glob', '!**/node_modules/**',
+              -- '--glob', '!**/.worktrees/**', -- uncomment for nested worktrees
+            },
           },
           buffers = {
             show_all_buffers = true,

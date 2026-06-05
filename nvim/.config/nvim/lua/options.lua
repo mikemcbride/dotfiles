@@ -22,8 +22,8 @@ vim.o.updatetime = 250
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.opt.background = "dark"
--- vim.opt.background = "light"
+-- Background follows CURRENT_THEME (set from ~/.config/theme-mode by config.fish).
+vim.opt.background = (os.getenv("CURRENT_THEME") == "electron_highlighter_day") and "light" or "dark"
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

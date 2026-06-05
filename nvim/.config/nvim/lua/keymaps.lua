@@ -8,12 +8,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- Formatting
-vim.keymap.set('n', '<leader>F', ':LspZeroFormat<Cr>', { silent = true })
+-- Formatting (native LSP; lsp-zero's :LspZeroFormat is gone)
+vim.keymap.set('n', '<leader>F', function() vim.lsp.buf.format({ async = true }) end, { silent = true, desc = 'Format buffer' })
 
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+-- Diagnostic keymaps (goto_prev/goto_next were deprecated in 0.11 -> use jump)
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
 vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
@@ -49,9 +49,6 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true })
 
 -- Close buffers
 vim.keymap.set("n", "<leader>w", ":bd<cr>", { silent = true })
-
--- Claude Code
-vim.keymap.set('n', '<leader>cc', "<cmd>ClaudeCode<CR>", { desc = 'Toggle Claude Code' })
 
 -- Visual --
 -- Stay in indent mode
