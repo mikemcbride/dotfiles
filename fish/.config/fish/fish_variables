@@ -11,7 +11,7 @@ SETUVAR Z_EXCLUDE:\x5e/Users/mike\x24
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
-SETUVAR __fish_initialized:3800
+SETUVAR __fish_initialized:4300
 SETUVAR _fisher_danhper_2F_fish_2D_ssh_2D_agent_files:\x7e/\x2econfig/fish/functions/__ssh_agent_is_started\x2efish\x1e\x7e/\x2econfig/fish/functions/__ssh_agent_start\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fish\x2dssh\x2dagent\x2efish
 SETUVAR _fisher_jethrokuan_2F_z_files:\x7e/\x2econfig/fish/functions/__z\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_complete\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
@@ -44,7 +44,6 @@ SETUVAR fish_color_selection:\x2d\x2dbackground\x3d313244
 SETUVAR fish_color_status:f38ba8
 SETUVAR fish_color_user:94e2d5
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_background:\x1d
 SETUVAR fish_pager_color_completion:cdd6f4
 SETUVAR fish_pager_color_description:6c7086
@@ -58,5 +57,5 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR --export fish_user_paths:/Users/mike/\x2enpm\x2dglobal/bin\x1e/Users/mike/\x2eopencode/bin\x1e/opt/homebrew/opt/postgresql\x4015/bin\x1e/Users/mike/\x2ekrew/bin\x1e/Users/mike/\x2elocal/bin\x1e/Users/mike/go/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/Users/mike/\x2ecargo/bin\x1e/Users/mike\x1e/Users/mike/\x2eyarn/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
+SETUVAR fish_user_paths:/Users/mike/\x2eopencode/bin\x1e/opt/homebrew/opt/postgresql\x4015/bin\x1e/Users/mike/\x2ekrew/bin\x1e/Users/mike/\x2elocal/bin\x1e/Users/mike/go/bin\x1e/opt/homebrew/bin\x1e/opt/homebrew\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/Users/mike/\x2ecargo/bin\x1e/Users/mike\x1e/Users/mike/\x2eyarn/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
 SETUVAR fisher_dependency_count:rbenv\x1e\x1ez

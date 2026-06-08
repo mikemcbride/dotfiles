@@ -55,7 +55,7 @@
   "ui_font_family": ".ZedSans",
   "theme": {
     "mode": "dark",
-    "dark": "Electron Highlighter",
+    "dark": "Tokyo Night Storm",
     "light": "Catppuccin Latte"
   },
   "cursor_blink": false,
