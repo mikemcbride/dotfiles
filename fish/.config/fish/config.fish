@@ -119,10 +119,7 @@ if status is-interactive
     starship init fish | source
     zoxide init fish | source
     thefuck --alias | source
-    # mise manages work tooling (terraform, vault, etc.), but Node is owned
-    # exclusively by fnm (see conf.d/fnm.fish). Disabling node here prevents
-    # mise and fnm from fighting over the Node version.
-    set -gx MISE_DISABLE_TOOLS node
+    # mise manages all tool versions, including Node
     if command -q mise
         mise activate fish | source
     end
