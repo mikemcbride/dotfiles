@@ -119,7 +119,13 @@ if status is-interactive
     starship init fish | source
     zoxide init fish | source
     thefuck --alias | source
-    /Users/mike/.local/bin/mise activate fish | source
+    # mise manages work tooling (terraform, vault, etc.), but Node is owned
+    # exclusively by fnm (see conf.d/fnm.fish). Disabling node here prevents
+    # mise and fnm from fighting over the Node version.
+    set -gx MISE_DISABLE_TOOLS node
+    if command -q mise
+        mise activate fish | source
+    end
 
     set -gx ATUIN_NOBIND "true"
     atuin init fish | source
