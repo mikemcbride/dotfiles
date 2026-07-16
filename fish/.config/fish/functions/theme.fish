@@ -42,7 +42,7 @@ function theme --description 'Switch all configured tools between light and dark
         if herdr-theme $mode >/dev/null 2>&1
             echo "  herdr    ✓ live"
         else
-            echo "  herdr    – skipped (server not running?)"
+            echo "  herdr    ✓ set (applies next herdr; server not running)"
         end
     end
 
