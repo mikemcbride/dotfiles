@@ -3,6 +3,8 @@
 SETUVAR --export ANTHROPIC_API_KEY:sk\x2dant\x2dapi03\x2dofAjv8SitiyehrrSOYWqU6wbkuRHZImburDq7eQpaZH8QcOsFpT3Yhw4tb4mPT2hbMgkTFVlm6vAUyw1zOWjlQ\x2dvj5GWQAA
 SETUVAR --export AWS_REGION:us\x2deast\x2d1
 SETUVAR --export BUN_INSTALL:/Users/mike/\x2ebun
+SETUVAR --export LITELLM_API_KEY:sk\x2d81VlJsYEiYqMt6It\x2dOESEg
+SETUVAR --export OPENAI_API_KEY:sk\x2d1OKW8CiI8xUCm2JleR1R1Q
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/mike/\x2elocal/share/z/data

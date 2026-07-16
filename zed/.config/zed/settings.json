@@ -60,6 +60,7 @@
   },
   "cursor_blink": false,
   "gutter": {
-    "folds": false,
+    "folds": false
   },
 }
+

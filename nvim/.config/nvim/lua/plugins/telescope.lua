@@ -16,8 +16,8 @@ return {
           file_ignore_patterns = {
             "node_modules",
             "%.git/",
-            -- If you use git worktrees nested INSIDE the repo, add the dir here
-            -- AND to the --glob excludes below, e.g. "%.worktrees/".
+            "%.worktrees/",          -- manual git worktrees
+            "%.claude/worktrees/",   -- Claude Code's worktrees (the real dir)
           },
           -- Used by live_grep/grep_string. Default respects .gitignore but NOT
           -- nested worktrees (they aren't gitignored), so exclude them by glob.
@@ -25,7 +25,8 @@ return {
             'rg', '--color=never', '--no-heading', '--with-filename',
             '--line-number', '--column', '--smart-case',
             '--glob', '!**/.git/**',
-            -- '--glob', '!**/.worktrees/**',
+            '--glob', '!**/.worktrees/**',
+            '--glob', '!**/.claude/worktrees/**',
           },
           mappings = {
             i = {
@@ -36,14 +37,16 @@ return {
         },
         pickers = {
           find_files = {
-            -- Search all files, including hidden and gitignored ones, but never
-            -- descend into these heavy dirs (the real cause of monorepo +
-            -- nested-worktree slowness: --no-ignore otherwise walks every copy).
+            -- Respect .gitignore — the single biggest monorepo speedup, since
+            -- ignored build/dep/generated dirs dwarf the tracked files. Still
+            -- show tracked dotfiles (--hidden), and explicitly skip nested
+            -- worktrees (NOT gitignored) plus node_modules as a backstop.
             find_command = {
-              'rg', '--files', '--hidden', '--no-ignore',
+              'rg', '--files', '--hidden',
               '--glob', '!**/.git/**',
               '--glob', '!**/node_modules/**',
-              -- '--glob', '!**/.worktrees/**', -- uncomment for nested worktrees
+              '--glob', '!**/.worktrees/**',
+              '--glob', '!**/.claude/worktrees/**',
             },
           },
           buffers = {
@@ -100,6 +103,20 @@ return {
 
       vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = 'Search [F]iles' })
+      -- On-demand unrestricted search: walks gitignored files too (generated
+      -- code, build output). Pays the full-walk cost, so it's a separate
+      -- keybind rather than the default. Still skips .git and .worktrees.
+      vim.keymap.set('n', '<leader>F', function()
+        require('telescope.builtin').find_files {
+          prompt_title = 'Find Files (incl. ignored)',
+          find_command = {
+            'rg', '--files', '--hidden', '--no-ignore',
+            '--glob', '!**/.git/**',
+            '--glob', '!**/.worktrees/**',
+            '--glob', '!**/.claude/worktrees/**',
+          },
+        }
+      end, { desc = 'Search [F]iles (all, incl. gitignored)' })
       vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = '[S]earch [G]it Files' })
       vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>r', "<cmd>Telescope mru_files<CR>", { desc = 'Search [R]ecent Files' })
